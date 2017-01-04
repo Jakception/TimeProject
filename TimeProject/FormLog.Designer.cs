@@ -1,6 +1,6 @@
 ﻿namespace TimeProject
 {
-    partial class Form1
+    partial class FormLog
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormLog
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(645, 514);
+            this.Name = "FormLog";
+            this.Text = "FormAuthentification";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

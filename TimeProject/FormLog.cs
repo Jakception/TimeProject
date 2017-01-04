@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TimeProject
 {
-    public partial class Form1 : Form
+    public partial class FormLog : Form
     {
-        public Form1()
+        public FormLog()
         {
             InitializeComponent();
         }
