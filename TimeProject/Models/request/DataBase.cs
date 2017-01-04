@@ -11,7 +11,9 @@ namespace TimeProject.Models
 {
     public class DataBase
     {
-        private DbConnection connexion;
+        private static DbConnection connexion;
+        private static DbCommand commande;
+        private static DbDataReader dataReader;
 
         static DbConnection CreateDbConnection(string providerName, string connectionString)
         {
@@ -42,17 +44,48 @@ namespace TimeProject.Models
             return connection;
         }
 
-        public void Connexion(DbConnection connexion)
+        static public void Connexion(DbConnection connexion)
         {
             connexion.Open();
         }
-        public void DeConnexion(DbConnection connexion)
+        static public void DeConnexion(DbConnection connexion)
         {
             connexion.Close();
         }
 
-        public string ConnexionToDataBase()
+       static public string ConnexionToDataBase()
         {
+            string messErreur = "";
+
+            string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
+            string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
+
+            connexion = CreateDbConnection(providerName, connectionString);
+
+            if (connexion != null)
+            {
+                try
+                {
+                    Connexion(connexion);
+                    messErreur = "";
+                }
+                catch (Exception err)
+                {
+                    messErreur += (err.Message);
+                }
+                //finally
+                //{
+                //    DeConnexion(connexion);
+                //}
+            }
+            return messErreur;
+        }
+        // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
+        static public string TestConnexion()
+        {
+            // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
+            
+            string messRes = "";
             string messErreur = "";
 
             string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
@@ -74,10 +107,26 @@ namespace TimeProject.Models
                 //finally
                 //{
                 //    DeConnexion(connexion);
-                //    messErreur += "Deco";
                 //}
             }
-            return messErreur;
+
+            if (messErreur == "")
+            { 
+                commande = connexion.CreateCommand();
+                commande.CommandText = "SELECT NOMCLIENT FROM client;";
+                dataReader = commande.ExecuteReader();
+                if (dataReader.Read())
+                {
+                    messRes = dataReader[0].ToString();
+                }
+                dataReader.Close();
+            }
+            else
+            {
+                messRes = messErreur;
+            }
+
+            return messRes;
         }
     }
 }
