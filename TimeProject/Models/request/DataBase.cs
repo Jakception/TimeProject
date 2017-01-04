@@ -13,9 +13,6 @@ namespace TimeProject.Models
     {
         private DbConnection connexion;
 
-        // On lui passe à partir de : AppConfig
-        // string providerName = connex.ProviderName;
-        // string connectionString = connex.ConnectionString;
         static DbConnection CreateDbConnection(string providerName, string connectionString)
         {
             // Assume failure.
