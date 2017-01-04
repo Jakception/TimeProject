@@ -1,0 +1,10 @@
+Antracite : 47 47 47
+Gris clair : 197 197 197 
+Bleu clair : R 117, V 181, B 193
+Bleu foncé : R 69, V 90, B 165
+Blanc : 255 255 255
+
+Fonds anthractie
+Boutons bleu cleir
+Titres et liens bleus foncés (puis clair pour les liens)
+Textes blancs

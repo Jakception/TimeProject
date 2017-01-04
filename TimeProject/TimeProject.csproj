@@ -47,14 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Personne.cs" />
+    <Compile Include="Models\Class\Personne.cs" />
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLog.Designer.cs">
       <DependentUpon>FormLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataBase.cs" />
+    <Compile Include="Models\request\BDDPerson.cs" />
+    <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLog.resx">

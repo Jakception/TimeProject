@@ -16,5 +16,10 @@ namespace TimeProject
         {
             InitializeComponent();
         }
+
+        private void FormLog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
