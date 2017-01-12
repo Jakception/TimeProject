@@ -11,11 +11,11 @@ namespace TimeProject.Models
 {
     public class DataBase
     {
-        private static DbConnection connexion;
-        private static DbCommand commande;
-        private static DbDataReader dataReader;
+        private DbConnection Connexion { get; set; }
+        private DbCommand Command { get; set; }
+        private DbDataReader DataReader { get; set; }
 
-        static DbConnection CreateDbConnection(string providerName, string connectionString)
+        public DbConnection CreateDbConnection(string providerName, string connectionString)
         {
             // Assume failure.
             DbConnection connection = null;
@@ -44,29 +44,29 @@ namespace TimeProject.Models
             return connection;
         }
 
-        static public void Connexion(DbConnection connexion)
+        public void OpenConnexion(DbConnection connexion)
         {
             connexion.Open();
         }
-        static public void DeConnexion(DbConnection connexion)
+        public void DeConnexion(DbConnection connexion)
         {
             connexion.Close();
         }
 
-       static public string ConnexionToDataBase()
+       public string ConnexionToDataBase()
         {
             string messErreur = "";
 
             string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
             string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
 
-            connexion = CreateDbConnection(providerName, connectionString);
+            Connexion = CreateDbConnection(providerName, connectionString);
 
-            if (connexion != null)
+            if (Connexion != null)
             {
                 try
                 {
-                    Connexion(connexion);
+                    OpenConnexion(Connexion);
                     messErreur = "";
                 }
                 catch (Exception err)
@@ -81,7 +81,7 @@ namespace TimeProject.Models
             return messErreur;
         }
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
-        static public string TestConnexion()
+        public string TestConnexion()
         {
             // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
             
@@ -97,7 +97,7 @@ namespace TimeProject.Models
             {
                 try
                 {
-                    Connexion(connexion);
+                    OpenConnexion(connexion);
                     messErreur = "";
                 }
                 catch (Exception err)
@@ -112,14 +112,14 @@ namespace TimeProject.Models
 
             if (messErreur == "")
             { 
-                commande = connexion.CreateCommand();
-                commande.CommandText = "SELECT NOMCLIENT FROM client;";
-                dataReader = commande.ExecuteReader();
-                if (dataReader.Read())
+                Command = connexion.CreateCommand();
+                Command.CommandText = "SELECT NOMCLIENT FROM client;";
+                DataReader = Command.ExecuteReader();
+                if (DataReader.Read())
                 {
-                    messRes = dataReader[0].ToString();
+                    messRes = DataReader[0].ToString();
                 }
-                dataReader.Close();
+                DataReader.Close();
             }
             else
             {

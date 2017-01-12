@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.Data.Common;
+using TimeProject.Models;
+
 
 namespace TimeProject
 {
     public partial class FormLog : Form
     {
-        string nom;
 
         public FormLog()
         {
@@ -28,11 +28,29 @@ namespace TimeProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nom;
+           
+        }
 
-            nom = Models.DataBase.TestConnexion();
+        private void btn_valIdentification_Click(object sender, EventArgs e)
+        {
+            //string nom;
 
-            MessageBox.Show(nom);
+            //nom = Models.DataBase.TestConnexion();
+
+            //MessageBox.Show(nom);
+
+            string identifiant;
+            string mdp;
+
+            identifiant = textBox_Identifiant.Text;
+            mdp = textBox_pwd.Text;
+
+            if (identifiant != "" && mdp != "")
+            {
+                // Traitement
+                DataBase BDConnexion = new DataBase();
+                MessageBox.Show(BDConnexion.TestConnexion());
+            }
         }
     }
 }

@@ -53,6 +53,7 @@
             this.btn_valIdentification.TabIndex = 0;
             this.btn_valIdentification.Text = "Valider";
             this.btn_valIdentification.UseVisualStyleBackColor = false;
+            this.btn_valIdentification.Click += new System.EventHandler(this.btn_valIdentification_Click);
             // 
             // textBox_Identifiant
             // 
