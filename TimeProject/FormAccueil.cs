@@ -16,5 +16,14 @@ namespace TimeProject
         {
             InitializeComponent();
         }
+
+        private void FormAccueil_Load(object sender, EventArgs e)
+        {
+            string dt;
+
+            dt = System.DateTime.Today.Date.ToShortDateString();
+            lblDate.Text = "Date: " + dt;
+
+        }
     }
 }
