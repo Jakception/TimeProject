@@ -39,18 +39,36 @@ namespace TimeProject
            document.AddTitle("Liste des plans");*/
 
             PdfContentByte cb = writer.DirectContent;
-            cb.BeginText();
-            cb.EndText();
-            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("D:\\Ludivine\\Mes Images\\Fonds d'écran\\licorneDuNet.jpg");
-            img.ScalePercent(10);
-            img.SetAbsolutePosition(10, 480);
+            BaseFont f_cb = BaseFont.CreateFont("c:\\windows\\fonts\\calibrib.ttf", BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            cb.SetFontAndSize(f_cb, 14);
+            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("D:\\Ludivine\\Mes Documents\\Ingésup\\YDAYS\\TimeProject\\TimeProject\\logo.png");
+            img.ScalePercent(80);
+            img.SetAbsolutePosition(10, 470);
             cb.AddImage(img);
-           
-           
-            doc.Close();
-            writer.Close();
-            fs.Close();
+            cb.BeginText();
+            int matrixY = 440;
+            
+            cb.SetTextMatrix(30, matrixY);
+            cb.ShowText(label_date.Text);
+            matrixY -= 30;
+            cb.SetTextMatrix(30, matrixY);
+            cb.ShowText(label_Affairesuivie.Text);
+            matrixY -= 30;
+            cb.SetTextMatrix(30, matrixY);
+            cb.ShowText(label_refDossier.Text);
+            matrixY -= 50;
 
+            cb.SetTextMatrix(400, matrixY);
+            cb.ShowText(label_listePlans.Text);
+
+
+
+            cb.EndText();
+
+                doc.Close();
+                writer.Close();
+                fs.Close();
+            
         }
         
     }

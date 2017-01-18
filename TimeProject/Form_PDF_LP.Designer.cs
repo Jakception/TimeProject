@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_Affairesuivie = new System.Windows.Forms.Label();
             this.label_refDossier = new System.Windows.Forms.Label();
@@ -45,10 +44,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TimeProject.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(146, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -56,7 +55,7 @@
             // label_Affairesuivie
             // 
             this.label_Affairesuivie.AutoSize = true;
-            this.label_Affairesuivie.Location = new System.Drawing.Point(22, 163);
+            this.label_Affairesuivie.Location = new System.Drawing.Point(22, 124);
             this.label_Affairesuivie.Name = "label_Affairesuivie";
             this.label_Affairesuivie.Size = new System.Drawing.Size(91, 13);
             this.label_Affairesuivie.TabIndex = 1;
@@ -65,7 +64,7 @@
             // label_refDossier
             // 
             this.label_refDossier.AutoSize = true;
-            this.label_refDossier.Location = new System.Drawing.Point(22, 191);
+            this.label_refDossier.Location = new System.Drawing.Point(22, 152);
             this.label_refDossier.Name = "label_refDossier";
             this.label_refDossier.Size = new System.Drawing.Size(99, 13);
             this.label_refDossier.TabIndex = 2;
@@ -73,8 +72,10 @@
             // 
             // label_listePlans
             // 
+            this.label_listePlans.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_listePlans.AutoSize = true;
-            this.label_listePlans.Location = new System.Drawing.Point(393, 203);
+            this.label_listePlans.Location = new System.Drawing.Point(345, 177);
             this.label_listePlans.Name = "label_listePlans";
             this.label_listePlans.Size = new System.Drawing.Size(100, 13);
             this.label_listePlans.TabIndex = 3;
@@ -116,7 +117,7 @@
             // label_date
             // 
             this.label_date.AutoSize = true;
-            this.label_date.Location = new System.Drawing.Point(22, 139);
+            this.label_date.Location = new System.Drawing.Point(22, 100);
             this.label_date.Name = "label_date";
             this.label_date.Size = new System.Drawing.Size(30, 13);
             this.label_date.TabIndex = 5;
