@@ -113,7 +113,7 @@ namespace TimeProject.Models
             if (messErreur == "")
             { 
                 Command = connexion.CreateCommand();
-                Command.CommandText = "SELECT NOMCLIENT FROM client;";
+                Command.CommandText = "SELECT CODE_PROJET FROM projet;";
                 DataReader = Command.ExecuteReader();
                 if (DataReader.Read())
                 {
