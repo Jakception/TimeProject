@@ -21,10 +21,7 @@ namespace TimeProject
             InitializeComponent();
         }
 
-        private void FormLog_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,7 +31,7 @@ namespace TimeProject
         private void btn_valIdentification_Click(object sender, EventArgs e)
         {
             //string nom;
-
+            FormAccueil f1 = new FormAccueil();
             //nom = Models.DataBase.TestConnexion();
 
             //MessageBox.Show(nom);
@@ -51,6 +48,11 @@ namespace TimeProject
                 DataBase BDConnexion = new DataBase();
                 MessageBox.Show(BDConnexion.TestConnexion());
             }
+
+            this.Hide();
+            f1.ShowDialog();
+            this.Close();
+           
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -40,13 +40,13 @@
             // btn_valIdentification
             // 
             this.btn_valIdentification.AccessibleName = "";
-            this.btn_valIdentification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(181)))), ((int)(((byte)(193)))));
+            this.btn_valIdentification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btn_valIdentification.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(181)))), ((int)(((byte)(193)))));
             this.btn_valIdentification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(165)))));
             this.btn_valIdentification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(165)))));
             this.btn_valIdentification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_valIdentification.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_valIdentification.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_valIdentification.ForeColor = System.Drawing.Color.Black;
             this.btn_valIdentification.Location = new System.Drawing.Point(467, 399);
             this.btn_valIdentification.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_valIdentification.Name = "btn_valIdentification";
@@ -58,6 +58,7 @@
             // 
             // textBox_Identifiant
             // 
+            this.textBox_Identifiant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Identifiant.Location = new System.Drawing.Point(467, 218);
             this.textBox_Identifiant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Identifiant.Name = "textBox_Identifiant";
@@ -77,7 +78,7 @@
             this.lab_Identif.AccessibleName = "";
             this.lab_Identif.AutoSize = true;
             this.lab_Identif.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_Identif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(165)))));
+            this.lab_Identif.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lab_Identif.Location = new System.Drawing.Point(288, 218);
             this.lab_Identif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_Identif.Name = "lab_Identif";
@@ -90,7 +91,7 @@
             this.lab_pwdIdentif.AccessibleName = "";
             this.lab_pwdIdentif.AutoSize = true;
             this.lab_pwdIdentif.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_pwdIdentif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(165)))));
+            this.lab_pwdIdentif.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lab_pwdIdentif.Location = new System.Drawing.Point(288, 297);
             this.lab_pwdIdentif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab_pwdIdentif.Name = "lab_pwdIdentif";
@@ -103,7 +104,7 @@
             this.lab_TitleIdentif.AccessibleName = "lab_TitleIdentif";
             this.lab_TitleIdentif.AutoSize = true;
             this.lab_TitleIdentif.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_TitleIdentif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(165)))));
+            this.lab_TitleIdentif.ForeColor = System.Drawing.Color.Black;
             this.lab_TitleIdentif.Location = new System.Drawing.Point(335, 49);
             this.lab_TitleIdentif.Name = "lab_TitleIdentif";
             this.lab_TitleIdentif.Size = new System.Drawing.Size(323, 29);
@@ -124,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(968, 741);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lab_TitleIdentif);
@@ -134,10 +135,10 @@
             this.Controls.Add(this.textBox_Identifiant);
             this.Controls.Add(this.btn_valIdentification);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Coral;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormLog";
             this.Text = "Identification";
-            this.Load += new System.EventHandler(this.FormLog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

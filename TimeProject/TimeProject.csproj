@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAccueil.Designer.cs">
+      <DependentUpon>FormAccueil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_PDF_LP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAccueil.resx">
+      <DependentUpon>FormAccueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
