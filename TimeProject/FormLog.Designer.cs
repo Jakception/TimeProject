@@ -34,6 +34,7 @@
             this.lab_Identif = new System.Windows.Forms.Label();
             this.lab_pwdIdentif = new System.Windows.Forms.Label();
             this.lab_TitleIdentif = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_valIdentification
@@ -109,12 +110,23 @@
             this.lab_TitleIdentif.TabIndex = 5;
             this.lab_TitleIdentif.Text = "TimeProject - Identification";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(253, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 52);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FormLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(968, 741);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lab_TitleIdentif);
             this.Controls.Add(this.lab_pwdIdentif);
             this.Controls.Add(this.lab_Identif);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.Label lab_Identif;
         private System.Windows.Forms.Label lab_pwdIdentif;
         private System.Windows.Forms.Label lab_TitleIdentif;
+        private System.Windows.Forms.Button button1;
     }
 }
 

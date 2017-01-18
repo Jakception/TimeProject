@@ -52,5 +52,11 @@ namespace TimeProject
                 MessageBox.Show(BDConnexion.TestConnexion());
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.pdfCreator();
+        }
     }
 }
