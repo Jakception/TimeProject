@@ -61,13 +61,11 @@ namespace TimeProject
             cb.SetTextMatrix(400, matrixY);
             cb.ShowText(label_listePlans.Text);
 
-
-
             cb.EndText();
 
-                doc.Close();
-                writer.Close();
-                fs.Close();
+            doc.Close();
+            writer.Close();
+            fs.Close();
             
         }
         

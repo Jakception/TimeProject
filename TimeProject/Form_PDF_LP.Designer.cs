@@ -44,7 +44,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TimeProject.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 73);
