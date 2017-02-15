@@ -35,6 +35,8 @@
             this.lab_pwdIdentif = new System.Windows.Forms.Label();
             this.lab_TitleIdentif = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_valIdentification
@@ -113,13 +115,33 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(253, 391);
+            this.button1.Location = new System.Drawing.Point(12, 445);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 52);
             this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
+            this.button1.Text = "Liste des plans";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 503);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 52);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Compte-rendu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 561);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 52);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Bordereau";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormLog
             // 
@@ -127,6 +149,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(968, 741);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lab_TitleIdentif);
             this.Controls.Add(this.lab_pwdIdentif);
@@ -153,6 +177,8 @@
         private System.Windows.Forms.Label lab_pwdIdentif;
         private System.Windows.Forms.Label lab_TitleIdentif;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

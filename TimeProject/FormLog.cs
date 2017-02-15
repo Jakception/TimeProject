@@ -15,10 +15,12 @@ namespace TimeProject
 {
     public partial class FormLog : Form
     {
+        private Form1 f1 = new Form1();
 
         public FormLog()
         {
             InitializeComponent();
+            
         }
 
 
@@ -57,8 +59,18 @@ namespace TimeProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            
             f1.pdfCreator();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            f1.createCRpdf();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            f1.createBordereau();
         }
     }
 }
