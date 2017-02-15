@@ -38,6 +38,10 @@
             this.label_contact3 = new System.Windows.Forms.Label();
             this.label_contact4 = new System.Windows.Forms.Label();
             this.label_contact5 = new System.Windows.Forms.Label();
+            this.label_adr4 = new System.Windows.Forms.Label();
+            this.label_adr3 = new System.Windows.Forms.Label();
+            this.label_adr2 = new System.Windows.Forms.Label();
+            this.label_adr1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,11 +142,51 @@
             this.label_contact5.TabIndex = 10;
             this.label_contact5.Text = "www.global.monsiteweb.com";
             // 
+            // label_adr4
+            // 
+            this.label_adr4.AutoSize = true;
+            this.label_adr4.Location = new System.Drawing.Point(688, 111);
+            this.label_adr4.Name = "label_adr4";
+            this.label_adr4.Size = new System.Drawing.Size(63, 13);
+            this.label_adr4.TabIndex = 11;
+            this.label_adr4.Text = "75010 Paris";
+            // 
+            // label_adr3
+            // 
+            this.label_adr3.AutoSize = true;
+            this.label_adr3.Location = new System.Drawing.Point(688, 98);
+            this.label_adr3.Name = "label_adr3";
+            this.label_adr3.Size = new System.Drawing.Size(65, 13);
+            this.label_adr3.TabIndex = 12;
+            this.label_adr3.Text = "Complément";
+            // 
+            // label_adr2
+            // 
+            this.label_adr2.AutoSize = true;
+            this.label_adr2.Location = new System.Drawing.Point(688, 85);
+            this.label_adr2.Name = "label_adr2";
+            this.label_adr2.Size = new System.Drawing.Size(70, 13);
+            this.label_adr2.TabIndex = 13;
+            this.label_adr2.Text = "14 rue Bichat";
+            // 
+            // label_adr1
+            // 
+            this.label_adr1.AutoSize = true;
+            this.label_adr1.Location = new System.Drawing.Point(688, 72);
+            this.label_adr1.Name = "label_adr1";
+            this.label_adr1.Size = new System.Drawing.Size(28, 13);
+            this.label_adr1.TabIndex = 14;
+            this.label_adr1.Text = "CBS";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 429);
+            this.Controls.Add(this.label_adr1);
+            this.Controls.Add(this.label_adr2);
+            this.Controls.Add(this.label_adr3);
+            this.Controls.Add(this.label_adr4);
             this.Controls.Add(this.label_contact5);
             this.Controls.Add(this.label_contact4);
             this.Controls.Add(this.label_contact3);
@@ -174,5 +218,9 @@
         private System.Windows.Forms.Label label_contact3;
         private System.Windows.Forms.Label label_contact4;
         private System.Windows.Forms.Label label_contact5;
+        private System.Windows.Forms.Label label_adr4;
+        private System.Windows.Forms.Label label_adr3;
+        private System.Windows.Forms.Label label_adr2;
+        private System.Windows.Forms.Label label_adr1;
     }
 }
