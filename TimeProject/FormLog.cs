@@ -47,8 +47,7 @@ namespace TimeProject
             if (identifiant != "" && mdp != "")
             {
                 // Traitement
-                DataBase BDConnexion = new DataBase();
-                MessageBox.Show(BDConnexion.TestConnexion());
+                MessageBox.Show(DataBase.TestConnexion());
             }
 
             this.Hide();

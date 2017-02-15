@@ -9,13 +9,13 @@ using System.Configuration;
 
 namespace TimeProject.Models
 {
-    public class DataBase
+    public static class DataBase
     {
-        private DbConnection Connexion { get; set; }
-        private DbCommand Command { get; set; }
-        private DbDataReader DataReader { get; set; }
+        private static DbConnection Connexion { get; set; }
+        private static DbCommand Command { get; set; }
+        private static DbDataReader DataReader { get; set; }
 
-        public DbConnection CreateDbConnection(string providerName, string connectionString)
+        public static DbConnection CreateDbConnection(string providerName, string connectionString)
         {
             // Assume failure.
             DbConnection connection = null;
@@ -44,16 +44,16 @@ namespace TimeProject.Models
             return connection;
         }
 
-        public void OpenConnexion(DbConnection connexion)
+        public static void OpenConnexion(DbConnection connexion)
         {
             connexion.Open();
         }
-        public void DeConnexion(DbConnection connexion)
+        public static void DeConnexion(DbConnection connexion)
         {
             connexion.Close();
         }
 
-       public string ConnexionToDataBase()
+        public static string ConnexionToDataBase()
         {
             string messErreur = "";
 
@@ -81,7 +81,7 @@ namespace TimeProject.Models
             return messErreur;
         }
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
-        public string TestConnexion()
+        public static string TestConnexion()
         {
             // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
             
