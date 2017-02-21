@@ -30,29 +30,29 @@
         {
             this.lblTitre = new System.Windows.Forms.Label();
             this.pnl_Info = new System.Windows.Forms.Panel();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.pnlUser = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.pnl_Date = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlProjet = new System.Windows.Forms.Panel();
-            this.lstBoxProjet = new System.Windows.Forms.ListBox();
             this.lblProjet = new System.Windows.Forms.Label();
+            this.lstBoxProjet = new System.Windows.Forms.ListBox();
             this.lblRendu = new System.Windows.Forms.Panel();
-            this.pnlTacheUrgente = new System.Windows.Forms.Panel();
-            this.lblRenduTitre = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lstBoxRendu = new System.Windows.Forms.ListBox();
+            this.lblRenduTitre = new System.Windows.Forms.Label();
+            this.pnlTacheUrgente = new System.Windows.Forms.Panel();
             this.lstBoxTask = new System.Windows.Forms.ListBox();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.lblAdmin = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnl_Info.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
             this.pnlUser.SuspendLayout();
             this.pnl_Date.SuspendLayout();
             this.pnlProjet.SuspendLayout();
             this.lblRendu.SuspendLayout();
             this.pnlTacheUrgente.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -60,7 +60,7 @@
             this.lblTitre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(828, 53);
+            this.lblTitre.Location = new System.Drawing.Point(614, 53);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(150, 45);
             this.lblTitre.TabIndex = 0;
@@ -73,10 +73,31 @@
             this.pnl_Info.Controls.Add(this.pnlAdmin);
             this.pnl_Info.Controls.Add(this.pnlUser);
             this.pnl_Info.Controls.Add(this.pnl_Date);
-            this.pnl_Info.Location = new System.Drawing.Point(1579, 12);
+            this.pnl_Info.Location = new System.Drawing.Point(1150, 12);
             this.pnl_Info.Name = "pnl_Info";
             this.pnl_Info.Size = new System.Drawing.Size(200, 143);
             this.pnl_Info.TabIndex = 1;
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlAdmin.Controls.Add(this.lblAdmin);
+            this.pnlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 104);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(200, 26);
+            this.pnlAdmin.TabIndex = 1;
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblAdmin.Location = new System.Drawing.Point(23, 4);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(59, 20);
+            this.lblAdmin.TabIndex = 0;
+            this.lblAdmin.Text = "Admin";
             // 
             // pnlUser
             // 
@@ -133,17 +154,8 @@
             this.pnlProjet.Controls.Add(this.lstBoxProjet);
             this.pnlProjet.Location = new System.Drawing.Point(20, 199);
             this.pnlProjet.Name = "pnlProjet";
-            this.pnlProjet.Size = new System.Drawing.Size(283, 736);
+            this.pnlProjet.Size = new System.Drawing.Size(283, 475);
             this.pnlProjet.TabIndex = 3;
-            // 
-            // lstBoxProjet
-            // 
-            this.lstBoxProjet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.lstBoxProjet.FormattingEnabled = true;
-            this.lstBoxProjet.Location = new System.Drawing.Point(6, 76);
-            this.lstBoxProjet.Name = "lstBoxProjet";
-            this.lstBoxProjet.Size = new System.Drawing.Size(274, 641);
-            this.lstBoxProjet.TabIndex = 0;
             // 
             // lblProjet
             // 
@@ -156,6 +168,15 @@
             this.lblProjet.TabIndex = 1;
             this.lblProjet.Text = "Projets en cours";
             // 
+            // lstBoxProjet
+            // 
+            this.lstBoxProjet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.lstBoxProjet.FormattingEnabled = true;
+            this.lstBoxProjet.Location = new System.Drawing.Point(6, 76);
+            this.lstBoxProjet.Name = "lstBoxProjet";
+            this.lstBoxProjet.Size = new System.Drawing.Size(274, 641);
+            this.lstBoxProjet.TabIndex = 0;
+            // 
             // lblRendu
             // 
             this.lblRendu.Controls.Add(this.lstBoxRendu);
@@ -165,15 +186,14 @@
             this.lblRendu.Size = new System.Drawing.Size(922, 736);
             this.lblRendu.TabIndex = 4;
             // 
-            // pnlTacheUrgente
+            // lstBoxRendu
             // 
-            this.pnlTacheUrgente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTacheUrgente.Controls.Add(this.lstBoxTask);
-            this.pnlTacheUrgente.Controls.Add(this.label2);
-            this.pnlTacheUrgente.Location = new System.Drawing.Point(1338, 199);
-            this.pnlTacheUrgente.Name = "pnlTacheUrgente";
-            this.pnlTacheUrgente.Size = new System.Drawing.Size(441, 736);
-            this.pnlTacheUrgente.TabIndex = 5;
+            this.lstBoxRendu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.lstBoxRendu.FormattingEnabled = true;
+            this.lstBoxRendu.Location = new System.Drawing.Point(16, 76);
+            this.lstBoxRendu.Name = "lstBoxRendu";
+            this.lstBoxRendu.Size = new System.Drawing.Size(887, 641);
+            this.lstBoxRendu.TabIndex = 2;
             // 
             // lblRenduTitre
             // 
@@ -186,6 +206,25 @@
             this.lblRenduTitre.TabIndex = 2;
             this.lblRenduTitre.Text = "Rendu du jour";
             // 
+            // pnlTacheUrgente
+            // 
+            this.pnlTacheUrgente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTacheUrgente.Controls.Add(this.lstBoxTask);
+            this.pnlTacheUrgente.Controls.Add(this.label2);
+            this.pnlTacheUrgente.Location = new System.Drawing.Point(909, 199);
+            this.pnlTacheUrgente.Name = "pnlTacheUrgente";
+            this.pnlTacheUrgente.Size = new System.Drawing.Size(441, 736);
+            this.pnlTacheUrgente.TabIndex = 5;
+            // 
+            // lstBoxTask
+            // 
+            this.lstBoxTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.lstBoxTask.FormattingEnabled = true;
+            this.lstBoxTask.Location = new System.Drawing.Point(14, 80);
+            this.lstBoxTask.Name = "lstBoxTask";
+            this.lstBoxTask.Size = new System.Drawing.Size(412, 641);
+            this.lstBoxTask.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -197,52 +236,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Taches urgente en attente\r\n             d\'action";
             // 
-            // lstBoxRendu
-            // 
-            this.lstBoxRendu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.lstBoxRendu.FormattingEnabled = true;
-            this.lstBoxRendu.Location = new System.Drawing.Point(16, 76);
-            this.lstBoxRendu.Name = "lstBoxRendu";
-            this.lstBoxRendu.Size = new System.Drawing.Size(887, 641);
-            this.lstBoxRendu.TabIndex = 2;
-            // 
-            // lstBoxTask
-            // 
-            this.lstBoxTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.lstBoxTask.FormattingEnabled = true;
-            this.lstBoxTask.Location = new System.Drawing.Point(14, 80);
-            this.lstBoxTask.Name = "lstBoxTask";
-            this.lstBoxTask.Size = new System.Drawing.Size(412, 641);
-            this.lstBoxTask.TabIndex = 4;
-            // 
-            // pnlAdmin
-            // 
-            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlAdmin.Controls.Add(this.lblAdmin);
-            this.pnlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlAdmin.Location = new System.Drawing.Point(0, 104);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(200, 26);
-            this.pnlAdmin.TabIndex = 1;
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblAdmin.Location = new System.Drawing.Point(23, 4);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(59, 20);
-            this.lblAdmin.TabIndex = 0;
-            this.lblAdmin.Text = "Admin";
-            // 
             // FormAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1791, 1002);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.pnlTacheUrgente);
             this.Controls.Add(this.lblRendu);
             this.Controls.Add(this.pnlProjet);
@@ -255,6 +255,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormAccueil_Load);
             this.pnl_Info.ResumeLayout(false);
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
             this.pnl_Date.ResumeLayout(false);
@@ -265,8 +267,6 @@
             this.lblRendu.PerformLayout();
             this.pnlTacheUrgente.ResumeLayout(false);
             this.pnlTacheUrgente.PerformLayout();
-            this.pnlAdmin.ResumeLayout(false);
-            this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

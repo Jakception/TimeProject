@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using TimeProject.Models;
 
 
@@ -15,19 +14,11 @@ namespace TimeProject
 {
     public partial class FormLog : Form
     {
-        private Form1 f1 = new Form1();
+        
 
         public FormLog()
         {
-            InitializeComponent();
-            
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
+            InitializeComponent();         
         }
 
         private void btn_valIdentification_Click(object sender, EventArgs e)
@@ -56,20 +47,6 @@ namespace TimeProject
            
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-            f1.pdfCreator();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            f1.createCRpdf();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            f1.createBordereau();
-        }
+       
     }
 }
