@@ -92,6 +92,10 @@ namespace TimeProject.Models
 
             return Connexion;
         }
+        public static DbConnection GetConnexion()
+        {
+            return Connexion;
+        }
         // Requete
         // Create Command
         public static DbCommand DBCreateCommand(string requete)
@@ -101,12 +105,52 @@ namespace TimeProject.Models
 
             return Command;
         }
+        // Structure général pour Insert Update et Delete
+        public static int DBCUD(string requete)
+        {
+            int nbLigne = -1;
+
+            try
+            {
+                nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
+            }
+            catch(Exception err)
+            {
+                messErreur = (err.Message);
+            }
+
+            if (messErreur != "")
+            {
+                System.Windows.Forms.MessageBox.Show(messErreur);
+                messErreur = "";
+            }
+
+            return nbLigne;
+        }
         // Insert
         public static int DBInsert(string requete)
         {
+            int nbLigne = 0;
+
+            nbLigne = DBCUD(requete);
+
+            return nbLigne;
+        }
+        // Update
+        public static int DBUpdate(string requete)
+        {
+            int nbLigne = 0;
+
+            nbLigne = DBCUD(requete);
+
+            return nbLigne;
+        }
+        // Delete
+        public static int DBDelete(string requete)
+        {
             int nbLigne;
 
-            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
+            nbLigne = DBCUD(requete);
 
             return nbLigne;
         }
@@ -117,25 +161,10 @@ namespace TimeProject.Models
 
             return DataReader;
         }
-        // Update
-        public static int DBUpdate(string requete)
+        public static void FermeDataReader()
         {
-            int nbLigne;
-
-            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
-
-            return nbLigne;
+            DataReader.Close();
         }
-        // Delete
-        public static int DBDelete(string requete)
-        {
-            int nbLigne;
-
-            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
-
-            return nbLigne;
-        }
-
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
         //public static string TestConnexion()
         //{
