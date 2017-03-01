@@ -92,12 +92,55 @@ namespace TimeProject.Models
 
             return Connexion;
         }
+        // Requete
+        // Create Command
+        public static DbCommand DBCreateCommand(string requete)
+        {
+            Command = Connexion.CreateCommand();
+            Command.CommandText = requete;
+
+            return Command;
+        }
+        // Insert
+        public static int DBInsert(string requete)
+        {
+            int nbLigne;
+
+            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
+
+            return nbLigne;
+        }
+        // Read
+        public static DbDataReader DBSelect(string requete)
+        {
+            DataReader = DBCreateCommand(requete).ExecuteReader();
+
+            return DataReader;
+        }
+        // Update
+        public static int DBUpdate(string requete)
+        {
+            int nbLigne;
+
+            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
+
+            return nbLigne;
+        }
+        // Delete
+        public static int DBDelete(string requete)
+        {
+            int nbLigne;
+
+            nbLigne = DBCreateCommand(requete).ExecuteNonQuery();
+
+            return nbLigne;
+        }
 
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
         //public static string TestConnexion()
         //{
         //    // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
-            
+
         //    string messRes = "";
         //    string messErreur = "";
 
