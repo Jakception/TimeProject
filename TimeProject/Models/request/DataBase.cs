@@ -119,7 +119,18 @@ namespace TimeProject.Models
                 messErreur += (err.Message);
             }
 
-            if (messErreur != "")
+            if (messErreur == "")
+            { 
+                Command = connexion.CreateCommand();
+                Command.CommandText = "SELECT nom_user FROM user;";
+                DataReader = Command.ExecuteReader();
+                if (DataReader.Read())
+                {
+                    messRes = DataReader[0].ToString();
+                }
+                DataReader.Close();
+            }
+            else
             {
                 System.Windows.Forms.MessageBox.Show(messErreur);
                 messErreur = "";

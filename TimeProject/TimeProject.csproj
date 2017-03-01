@@ -88,12 +88,13 @@
     <Compile Include="FormProjet.Designer.cs">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_PDF_LP.cs">
+    <Compile Include="Form_PDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_PDF_LP.Designer.cs">
-      <DependentUpon>Form_PDF_LP.cs</DependentUpon>
+    <Compile Include="Form_PDF.Designer.cs">
+      <DependentUpon>Form_PDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class\PDF.cs" />
     <Compile Include="Models\Class\Personne.cs" />
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
@@ -116,8 +117,8 @@
     <EmbeddedResource Include="FormProjet.resx">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_PDF_LP.resx">
-      <DependentUpon>Form_PDF_LP.cs</DependentUpon>
+    <EmbeddedResource Include="Form_PDF.resx">
+      <DependentUpon>Form_PDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

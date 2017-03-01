@@ -12,26 +12,29 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 
-namespace TimeProject
+namespace TimeProject.Models.Class
 {
-    public partial class Form1 : Form
+    class PDF
     {
-        public Form1()
+        private String referentAffaire;
+        private String refDossier;
+        private String PDFTitle;
+        private String PDFname;
+
+        public PDF(String dossier, String title, String name)
         {
-            InitializeComponent();
+            referentAffaire = "Affaire suivie par : CALISTE JANVRE";
+            refDossier = dossier;
+            PDFname = "..\\PDF\\Liste_plans.pdf"; //name
+            PDFTitle = title;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {   
-
-        }
-
-        public void pdfCreator()
+        public void createLPpdf()
         {
+
             try
             {
-                FileStream fs = new FileStream("..\\PDF\\Liste_plans.pdf", FileMode.Create);
-
+                FileStream fs = new FileStream(PDFname, FileMode.Create);
                 Document doc = new Document(PageSize.A4.Rotate());
                 PdfWriter writer = PdfWriter.GetInstance(doc, fs);
                 doc.Open();
@@ -60,24 +63,24 @@ namespace TimeProject
 
                 // PERSONNE EN CHARGE DU DOSSIER
                 cb.SetTextMatrix(30, matrixY);
-                cb.ShowText(label_Affairesuivie.Text);
+                cb.ShowText(referentAffaire);
                 matrixY -= 20;
 
-                //REFERENCE DU DOSSIER
+                //REFERENCE DU DOSSIER -> Adresse client, afficher boite dialogue pour récupérer addr
                 cb.SetTextMatrix(30, matrixY);
-                cb.ShowText(label_refDossier.Text);
+                cb.ShowText(refDossier);
                 matrixY -= 40;
 
                 // TITRE DE LA TABLE
-                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_listePlans.Width / 2), matrixY);
-                cb.ShowText(label_listePlans.Text);
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (PDFTitle.Length / 2), matrixY);
+                cb.ShowText(PDFTitle);
 
                 // INFOS DE CONTACT
                 cb.SetFontAndSize(f_cb, 10);
                 float contactY = doc.PageSize.Height - (doc.PageSize.Height - (label_contact1.Height + label_contact2.Height
                     + label_contact3.Height + label_contact4.Height + label_contact5.Height)) + 5;
 
-                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact1.Width / 2), contactY );
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact1.Width / 2), contactY);
                 cb.ShowText(label_contact1.Text);
                 contactY -= 10;
                 cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact2.Width / 2), contactY);
@@ -117,11 +120,11 @@ namespace TimeProject
                 tableau.AddCell("1.3");
                 tableau.AddCell("1.4");
 
-                tableau.SpacingBefore = doc.PageSize.Height-matrixY-30;
+                tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
                 tableau.SpacingAfter = 30;
                 doc.Add(tableau);
-                
-   
+
+
                 cb.EndText();
                 doc.Close();
                 writer.Close();
@@ -135,115 +138,116 @@ namespace TimeProject
             }
         }
 
-        public void createCRpdf(){ 
+    /*    public void createCRpdf()
+        {
 
-                try
-                {
-                    FileStream fs = new FileStream("..\\PDF\\Compte_Rendu.pdf", FileMode.Create);
+            try
+            {
+                FileStream fs = new FileStream("..\\PDF\\Compte_Rendu.pdf", FileMode.Create);
 
-                    Document doc = new Document(PageSize.A4);
-                    PdfWriter writer = PdfWriter.GetInstance(doc, fs);
-                    doc.Open();
-                    /* document.AddAuthor("Micke Blomquist");
-                   document.AddCreator("Sample application using iTextSharp");
-                   document.AddKeywords("PDF tutorial education");
-                   document.AddSubject("Document subject - Describing the steps creating a PDF document");
-                   document.AddTitle("Liste des plans");*/
+                Document doc = new Document(PageSize.A4);
+                PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+                doc.Open();
+                /* document.AddAuthor("Micke Blomquist");
+               document.AddCreator("Sample application using iTextSharp");
+               document.AddKeywords("PDF tutorial education");
+               document.AddSubject("Document subject - Describing the steps creating a PDF document");
+               document.AddTitle("Liste des plans");
 
-                    PdfContentByte cb = writer.DirectContent;
-                    BaseFont f_cb = BaseFont.CreateFont("c:\\windows\\fonts\\calibrib.ttf", BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-                    cb.SetFontAndSize(f_cb, 14);
-                    float matrixY = 0f;
+                PdfContentByte cb = writer.DirectContent;
+                BaseFont f_cb = BaseFont.CreateFont("c:\\windows\\fonts\\calibrib.ttf", BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                cb.SetFontAndSize(f_cb, 14);
+                float matrixY = 0f;
 
-                    // LOGO
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(global::TimeProject.Properties.Resources.logo, BaseColor.WHITE);
-                    img.ScalePercent(80);
-                    matrixY = doc.PageSize.Height - img.Height + 30;
-                    img.SetAbsolutePosition(10, matrixY);
-                    cb.AddImage(img);
-                    matrixY -= 30;
+                // LOGO
+                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(global::TimeProject.Properties.Resources.logo, BaseColor.WHITE);
+                img.ScalePercent(80);
+                matrixY = doc.PageSize.Height - img.Height + 30;
+                img.SetAbsolutePosition(10, matrixY);
+                cb.AddImage(img);
+                matrixY -= 30;
 
-                    // TEXTE
-                    cb.BeginText();
+                // TEXTE
+                cb.BeginText();
 
-                    //DATE
-                    cb.SetTextMatrix(30, matrixY);
-                    cb.ShowText(label_date.Text);
-                    matrixY -= 20;
+                //DATE
+                cb.SetTextMatrix(30, matrixY);
+                cb.ShowText(label_date.Text);
+                matrixY -= 20;
 
-                    // PERSONNE EN CHARGE DU DOSSIER
-                    cb.SetTextMatrix(30, matrixY);
-                    cb.ShowText(label_Affairesuivie.Text);
-                    matrixY -= 20;
+                // PERSONNE EN CHARGE DU DOSSIER
+                cb.SetTextMatrix(30, matrixY);
+                cb.ShowText(label_Affairesuivie.Text);
+                matrixY -= 20;
 
-                    //REFERENCE DU DOSSIER
-                    cb.SetTextMatrix(30, matrixY);
-                    cb.ShowText(label_refDossier.Text);
-                    matrixY -= 40;
+                //REFERENCE DU DOSSIER
+                cb.SetTextMatrix(30, matrixY);
+                cb.ShowText(label_refDossier.Text);
+                matrixY -= 40;
 
-                    // TITRE DE LA TABLE
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_listePlans.Width / 2), matrixY);
-                    cb.ShowText("Compte rendu");
+                // TITRE DE LA TABLE
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_listePlans.Width / 2), matrixY);
+                cb.ShowText("Compte rendu");
 
-                    // INFOS DE CONTACT
-                    cb.SetFontAndSize(f_cb, 10);
-                    float contactY = doc.PageSize.Height - (doc.PageSize.Height - (label_contact1.Height + label_contact2.Height
-                        + label_contact3.Height + label_contact4.Height + label_contact5.Height)) + 5;
+                // INFOS DE CONTACT
+                cb.SetFontAndSize(f_cb, 10);
+                float contactY = doc.PageSize.Height - (doc.PageSize.Height - (label_contact1.Height + label_contact2.Height
+                    + label_contact3.Height + label_contact4.Height + label_contact5.Height)) + 5;
 
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact1.Width / 2), contactY);
-                    cb.ShowText(label_contact1.Text);
-                    contactY -= 10;
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact2.Width / 2), contactY);
-                    cb.ShowText(label_contact2.Text);
-                    contactY -= 10;
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact3.Width / 2), contactY);
-                    cb.ShowText(label_contact3.Text);
-                    contactY -= 10;
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact4.Width / 2), contactY);
-                    cb.ShowText(label_contact4.Text);
-                    contactY -= 10;
-                    cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact5.Width / 2), contactY);
-                    cb.ShowText(label_contact5.Text);
-                    contactY -= 10;
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact1.Width / 2), contactY);
+                cb.ShowText(label_contact1.Text);
+                contactY -= 10;
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact2.Width / 2), contactY);
+                cb.ShowText(label_contact2.Text);
+                contactY -= 10;
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact3.Width / 2), contactY);
+                cb.ShowText(label_contact3.Text);
+                contactY -= 10;
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact4.Width / 2), contactY);
+                cb.ShowText(label_contact4.Text);
+                contactY -= 10;
+                cb.SetTextMatrix((doc.PageSize.Width / 2) - (label_contact5.Width / 2), contactY);
+                cb.ShowText(label_contact5.Text);
+                contactY -= 10;
 
-                    doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph(" "));
 
-                    PdfPTable tableau = new PdfPTable(3);
-                    PdfPCell celluleTitre1 = new PdfPCell(new Paragraph("POLE"));
-                    celluleTitre1.Colspan = 1;
-                    tableau.AddCell(celluleTitre1);
+                PdfPTable tableau = new PdfPTable(3);
+                PdfPCell celluleTitre1 = new PdfPCell(new Paragraph("POLE"));
+                celluleTitre1.Colspan = 1;
+                tableau.AddCell(celluleTitre1);
 
-                    PdfPCell celluleTitre2 = new PdfPCell(new Paragraph("DESIGNATION"));
-                    celluleTitre2.Colspan = 1;
-                    tableau.AddCell(celluleTitre2);
+                PdfPCell celluleTitre2 = new PdfPCell(new Paragraph("DESIGNATION"));
+                celluleTitre2.Colspan = 1;
+                tableau.AddCell(celluleTitre2);
 
-                    PdfPCell celluleTitre3 = new PdfPCell(new Paragraph("CONCERNE"));
-                    celluleTitre3.Colspan = 1;
-                    tableau.AddCell(celluleTitre3);
-                    
-                    tableau.AddCell("1.1");
-                    tableau.AddCell("1.2");
-                    tableau.AddCell("1.3");
+                PdfPCell celluleTitre3 = new PdfPCell(new Paragraph("CONCERNE"));
+                celluleTitre3.Colspan = 1;
+                tableau.AddCell(celluleTitre3);
 
-                    tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
-                    tableau.SpacingAfter = 30;
-                    doc.Add(tableau);
+                tableau.AddCell("1.1");
+                tableau.AddCell("1.2");
+                tableau.AddCell("1.3");
+
+                tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
+                tableau.SpacingAfter = 30;
+                doc.Add(tableau);
 
 
-                    cb.EndText();
-                    doc.Close();
-                    writer.Close();
-                    fs.Close();
-                    MessageBox.Show("Fichier créé !");
+                cb.EndText();
+                doc.Close();
+                writer.Close();
+                fs.Close();
+                MessageBox.Show("Fichier créé !");
 
-                }
-                catch (IOException e)
-                {
-                    MessageBox.Show("Une erreur est survenue, le fichier n'a pas été créé !");
-                    Console.WriteLine(e);
-                }
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show("Une erreur est survenue, le fichier n'a pas été créé !");
+                Console.WriteLine(e);
+            }
         }
-        
+
         public void createBordereau()
         {
 
@@ -261,12 +265,12 @@ namespace TimeProject
                document.AddCreator("Sample application using iTextSharp");
                document.AddKeywords("PDF tutorial education");
                document.AddSubject("Document subject - Describing the steps creating a PDF document");
-               document.AddTitle("Liste des plans");*/
+               document.AddTitle("Liste des plans");
 
                 PdfContentByte cb = writer.DirectContent;
                 BaseFont f_cb = BaseFont.CreateFont("c:\\windows\\fonts\\calibrib.ttf", BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 cb.SetFontAndSize(f_cb, 14);
-                
+
 
                 // LOGO
                 iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(global::TimeProject.Properties.Resources.logo, BaseColor.WHITE);
@@ -292,7 +296,7 @@ namespace TimeProject
                 matrixY -= 20;
 
                 //  ADRESSE
-                
+
                 cb.SetTextMatrix(doc.PageSize.Width - label_adr1.Width - 30, adrY);
                 cb.ShowText(label_adr1.Text);
                 adrY -= 20;
@@ -338,7 +342,7 @@ namespace TimeProject
                 doc.Add(new Paragraph(" "));
 
                 // TABLE DES INFOS
-                float[] largeurs = {5,45,20,15,15};
+                float[] largeurs = { 5, 45, 20, 15, 15 };
                 PdfPTable tableau = new PdfPTable(5);
                 tableau.TotalWidth = doc.PageSize.Width - 100;
                 tableau.LockedWidth = true;
@@ -388,6 +392,26 @@ namespace TimeProject
                 Console.WriteLine(e);
             }
 
+        }
+*/
+        public void setReferentAffaire(String r)
+        {
+            referentAffaire = r;
+        }
+
+        public void setRefDossier(String dossier)
+        {
+            refDossier = dossier;
+        }
+
+        public void setPDFTitle(String title)
+        {
+            PDFTitle = title;
+        }
+
+        public void setPDFName(String name)
+        {
+            PDFname = name;
         }
     }
 }

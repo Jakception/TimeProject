@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeProject.Models.Class;
 
 namespace TimeProject
 {
@@ -25,5 +26,6 @@ namespace TimeProject
             lblDate.Text = "Date: " + dt;
 
         }
+        
     }
 }
