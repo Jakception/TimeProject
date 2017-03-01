@@ -16,10 +16,22 @@ namespace TimeProject
 {
     public partial class Form1 : Form
     {
+        private String referentAffaire;
+        private String refDossier;
+        private String PDFTitle;
+        private String PDFname;
+
         public Form1()
         {
+            (String dossier, String title, String name)
+            referentAffaire = "Affaire suivie par : CALISTE JANVRE";
+           // refDossier = dossier;
+            PDFname = "..\\PDF\\Liste_plans.pdf"; //name
+           // PDFTitle = title;
             InitializeComponent();
         }
+        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {   

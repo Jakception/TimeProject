@@ -119,7 +119,7 @@ namespace TimeProject.Models
                 messErreur += (err.Message);
             }
 
-            if (messErreur == "")
+            if (messErreur != "")
             {
                 System.Windows.Forms.MessageBox.Show(messErreur);
                 messErreur = "";
