@@ -116,7 +116,7 @@ namespace TimeProject.Models
             }
             catch(Exception err)
             {
-                messErreur = (err.Message);
+                messErreur += (err.Message);
             }
 
             if (messErreur != "")
@@ -130,7 +130,7 @@ namespace TimeProject.Models
         // Insert
         public static int DBInsert(string requete)
         {
-            int nbLigne = 0;
+            int nbLigne;
 
             nbLigne = DBCUD(requete);
 
@@ -139,7 +139,7 @@ namespace TimeProject.Models
         // Update
         public static int DBUpdate(string requete)
         {
-            int nbLigne = 0;
+            int nbLigne;
 
             nbLigne = DBCUD(requete);
 
@@ -157,8 +157,21 @@ namespace TimeProject.Models
         // Read
         public static DbDataReader DBSelect(string requete)
         {
-            DataReader = DBCreateCommand(requete).ExecuteReader();
+            try
+            {
+                DataReader = DBCreateCommand(requete).ExecuteReader();
+            }
+            catch (Exception err)
+            {
+                messErreur += (err.Message);
+            }
 
+            if (messErreur != "")
+            {
+                System.Windows.Forms.MessageBox.Show(messErreur);
+                messErreur = "";
+            }
+            
             return DataReader;
         }
         public static void FermeDataReader()
