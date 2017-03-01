@@ -101,6 +101,8 @@
     <Compile Include="FormLog.Designer.cs">
       <DependentUpon>FormLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class\Projet.cs" />
+    <Compile Include="Models\Class\TypeProfil.cs" />
     <Compile Include="Models\request\BDDPerson.cs" />
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />

@@ -14,7 +14,9 @@ namespace TimeProject.Models
         private static DbConnection Connexion { get; set; }
         private static DbCommand Command { get; set; }
         private static DbDataReader DataReader { get; set; }
+        private static string messErreur { get; set; }
 
+        // Récupère les informations du App.config et créée la connexion
         public static DbConnection CreateDbConnection(string providerName, string connectionString)
         {
             // Assume failure.
@@ -30,6 +32,8 @@ namespace TimeProject.Models
 
                     connection = factory.CreateConnection();
                     connection.ConnectionString = connectionString;
+
+                    messErreur = "";
                 }
                 catch (Exception ex)
                 {
@@ -38,6 +42,7 @@ namespace TimeProject.Models
                     {
                         connection = null;
                     }
+                    messErreur += ex.Message;
                 }
             }
             // Return the connection.
@@ -52,10 +57,10 @@ namespace TimeProject.Models
         {
             connexion.Close();
         }
-
-        public static string ConnexionToDataBase()
+        // Créer et ouvre la connexion
+        public static DbConnection ConnexionToDataBase()
         {
-            string messErreur = "";
+            // string messErreur = "";
 
             string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
             string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
@@ -78,55 +83,63 @@ namespace TimeProject.Models
                 //    DeConnexion(connexion);
                 //}
             }
-            return messErreur;
+
+            if(messErreur != "")
+            {
+                System.Windows.Forms.MessageBox.Show(messErreur);
+                messErreur = "";
+            }
+
+            return Connexion;
         }
+
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
-        public static string TestConnexion()
-        {
-            // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
+        //public static string TestConnexion()
+        //{
+        //    // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
             
-            string messRes = "";
-            string messErreur = "";
+        //    string messRes = "";
+        //    string messErreur = "";
 
-            string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
-            string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
+        //    string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
+        //    string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
 
-            DbConnection connexion = CreateDbConnection(providerName, connectionString);
+        //    DbConnection connexion = CreateDbConnection(providerName, connectionString);
 
-            if (connexion != null)
-            {
-                try
-                {
-                    OpenConnexion(connexion);
-                    messErreur = "";
-                }
-                catch (Exception err)
-                {
-                    messErreur = (err.Message);
-                }
-                //finally
-                //{
-                //    DeConnexion(connexion);
-                //}
-            }
+        //    if (connexion != null)
+        //    {
+        //        try
+        //        {
+        //            OpenConnexion(connexion);
+        //            messErreur = "";
+        //        }
+        //        catch (Exception err)
+        //        {
+        //            messErreur = (err.Message);
+        //        }
+        //        //finally
+        //        //{
+        //        //    DeConnexion(connexion);
+        //        //}
+        //    }
 
-            if (messErreur == "")
-            { 
-                Command = connexion.CreateCommand();
-                Command.CommandText = "SELECT CODE_PROJET FROM projet;";
-                DataReader = Command.ExecuteReader();
-                if (DataReader.Read())
-                {
-                    messRes = DataReader[0].ToString();
-                }
-                DataReader.Close();
-            }
-            else
-            {
-                messRes = messErreur;
-            }
+        //    if (messErreur == "")
+        //    { 
+        //        Command = connexion.CreateCommand();
+        //        Command.CommandText = "SELECT CODE_PROJET FROM projet;";
+        //        DataReader = Command.ExecuteReader();
+        //        if (DataReader.Read())
+        //        {
+        //            messRes = DataReader[0].ToString();
+        //        }
+        //        DataReader.Close();
+        //    }
+        //    else
+        //    {
+        //        messRes = messErreur;
+        //    }
 
-            return messRes;
-        }
+        //    return messRes;
+        //}
     }
 }
