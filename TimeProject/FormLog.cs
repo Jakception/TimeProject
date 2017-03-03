@@ -37,13 +37,17 @@ namespace TimeProject
 
             if (identifiant != "" && mdp != "")
             {
-                // Traitement
-                MessageBox.Show(DataBase.TestConnexion());
+
+                this.Hide();
+                f1.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Merci de renseigner tous les champs");
             }
 
-            this.Hide();
-            f1.ShowDialog();
-            this.Close();
+            
            
         }
 

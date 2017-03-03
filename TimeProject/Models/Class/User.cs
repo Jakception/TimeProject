@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TimeProject.Class;
+using TimeProject.Models.Class;
 
 namespace TimeProject.Class
 {
-    class Personne
+    class User
     {
         private int code { get; set; }
         private string grade { get; set; }
@@ -16,8 +18,9 @@ namespace TimeProject.Class
         private string fixe { get; set; }
         private string port { get; set; }
 
+        private List<Projet> lstProjet { get; set; }
 
-        public Personne (int id ,string level, string name, string surname, string mail, string tel, string mobile )
+        public User(int id ,string level, string name, string surname, string mail, string tel, string mobile , List<Projet> lstProj)
         {
             this.code = id;
             this.grade = level;
@@ -26,6 +29,7 @@ namespace TimeProject.Class
             this.mail = mail;
             this.fixe = tel;
             this.port = mobile;
+            this.lstProjet = lstProj;
         }
 
 

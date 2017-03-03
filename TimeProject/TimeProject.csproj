@@ -94,7 +94,7 @@
     <Compile Include="Form_PDF.Designer.cs">
       <DependentUpon>Form_PDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Class\Personne.cs" />
+    <Compile Include="Models\Class\User.cs" />
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
     </Compile>

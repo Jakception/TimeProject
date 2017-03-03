@@ -9,7 +9,7 @@ namespace TimeProject.Models.request
 {
     class BDDPerson
     {
-        private Personne pers;
-        private List<Personne> lstPers = new List<Personne>();
+        private User pers;
+        private List<User> lstPers = new List<User>();
     }
 }

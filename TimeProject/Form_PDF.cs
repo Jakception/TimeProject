@@ -23,7 +23,7 @@ namespace TimeProject
 
         public Form1()
         {
-            (String dossier, String title, String name)
+           // (String dossier, String title, String name)
             referentAffaire = "Affaire suivie par : CALISTE JANVRE";
            // refDossier = dossier;
             PDFname = "..\\PDF\\Liste_plans.pdf"; //name
