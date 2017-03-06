@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeProject.Class;
-using TimeProject.Models.Class;
 
-namespace TimeProject.Class
+namespace TimeProject.Models.Class
 {
     class User
     {
@@ -17,6 +15,7 @@ namespace TimeProject.Class
         private string mail { get; set; }
         private string fixe { get; set; }
         private string port { get; set; }
+        private int code_Tp_Profil { get; set; }
 
         private List<Projet> lstProjet { get; set; }
 

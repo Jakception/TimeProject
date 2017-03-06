@@ -94,6 +94,9 @@
     <Compile Include="Form_PDF.Designer.cs">
       <DependentUpon>Form_PDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class\CrPole.cs" />
+    <Compile Include="Models\Class\CrUser.cs" />
+    <Compile Include="Models\Class\Pole.cs" />
     <Compile Include="Models\Class\User.cs" />
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
@@ -103,6 +106,9 @@
     </Compile>
     <Compile Include="Models\Class\Projet.cs" />
     <Compile Include="Models\Class\TypeProfil.cs" />
+    <Compile Include="Models\Class\UserEvent.cs" />
+    <Compile Include="Models\Class\UserPole.cs" />
+    <Compile Include="Models\Class\UserProjet.cs" />
     <Compile Include="Models\request\BDDPerson.cs" />
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />
