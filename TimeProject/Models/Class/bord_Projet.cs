@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class bord_Projet
+    class Bord_Projet
     {
         private int code_Bordereau { get; set; }
         private int code_Projet { get; set; }

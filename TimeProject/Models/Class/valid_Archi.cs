@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class valid_Archi
+    class Valid_Archi
     {
         private int code_Plan { get; set; }
         private int indice { get; set; }
