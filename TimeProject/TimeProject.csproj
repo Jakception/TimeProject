@@ -94,8 +94,13 @@
     <Compile Include="Form_PDF.Designer.cs">
       <DependentUpon>Form_PDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class\Action.cs" />
+    <Compile Include="Models\Class\Compte_Rendu.cs" />
     <Compile Include="Models\Class\CrPole.cs" />
     <Compile Include="Models\Class\CrUser.cs" />
+    <Compile Include="Models\Class\Cr_Projet.cs" />
+    <Compile Include="Models\Class\Evenement.cs" />
+    <Compile Include="Models\Class\Information.cs" />
     <Compile Include="Models\Class\Pole.cs" />
     <Compile Include="Models\Class\User.cs" />
     <Compile Include="FormLog.cs">
