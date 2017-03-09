@@ -14,5 +14,7 @@ namespace TimeProject.Models.Class
         private string exemplaire { get; set; }
         private string version { get; set; }
         private int etat { get; set; }
+        public virtual List<Bord_Plan> listBordPlan { get; set; }
+        public virtual List<Bord_Projet> listBordProjet { get; set; }
     }
 }

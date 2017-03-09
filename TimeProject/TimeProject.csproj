@@ -117,6 +117,7 @@
     <Compile Include="Models\Class\CrUser.cs" />
     <Compile Include="Models\Class\Cr_Projet.cs" />
     <Compile Include="Models\Class\Evenement.cs" />
+    <Compile Include="Models\Class\EventProjet.cs" />
     <Compile Include="Models\Class\Information.cs" />
     <Compile Include="Models\Class\Plan.cs" />
     <Compile Include="Models\Class\Pole.cs" />

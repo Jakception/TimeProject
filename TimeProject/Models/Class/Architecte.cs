@@ -13,5 +13,7 @@ namespace TimeProject.Models.Class
         private string adresse_Archi { get; set; }
         private string cp_Archi { get; set; }
         private string ville_Archi { get; set; }
+        public virtual List<Valid_Archi> listValidArchi { get; set; }
+        public virtual List<Projet> listProjet { get; set; }
     }
 }
