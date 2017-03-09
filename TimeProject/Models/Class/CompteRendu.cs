@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class Compte_Rendu
+    class CompteRendu
     {
         private int code_Cr { get; set; }
         private string designation { get; set; }
+        public virtual List<CrProjet> listCrprojet { get; set; }
+        public virtual List<CrUser> listCrUser { get; set; }
+        public virtual List<CrPole> listCrPole { get; set; }
     }
 }

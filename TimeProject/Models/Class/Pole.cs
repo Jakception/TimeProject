@@ -10,5 +10,7 @@ namespace TimeProject.Models.Class
     {
         private int code_Pole { get; set; }
         private string nom_Pole { get; set; }
+        public virtual List<CrPole> listCrPole { get; set; }
+        public virtual List<UserPole> listUserPole { get; set; }
     }
 }

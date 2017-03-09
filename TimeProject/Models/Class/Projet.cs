@@ -22,7 +22,16 @@ namespace TimeProject.Models.Class
 
         private List<User> lstSalarieProjet { get; set; }
 
-        public Projet(int code_Projet, int id_Bc, int id_Archi, int id_User, string nom_Projet, string nom_Client, string adresse_Client, string ville_Client, DateTime dt_Deb_Projet, DateTime dt_Obj_Fin, DateTime dt_Fin_Reel, List<User> lstSalProjet)
+        public virtual User user { get; set; }
+        public virtual BureauControle bureauControle { get; set; }
+        public virtual Architecte architecte { get; set; }
+        public virtual List<UserProjet> listUserProjet { get; set; }
+        public virtual List<Plan> listPlan { get; set; }
+        public virtual List<BordProjet> listBordProjet { get; set; }
+        public virtual List<CrProjet> listCrProjet { get; set; }
+        public virtual List<EventProjet> listEventProjet { get; set; }
+
+    public Projet(int code_Projet, int id_Bc, int id_Archi, int id_User, string nom_Projet, string nom_Client, string adresse_Client, string ville_Client, DateTime dt_Deb_Projet, DateTime dt_Obj_Fin, DateTime dt_Fin_Reel, List<User> lstSalProjet)
         {
             this.code_Projet = code_Projet;
             this.id_Bc = id_Bc;

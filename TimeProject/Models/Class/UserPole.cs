@@ -10,5 +10,7 @@ namespace TimeProject.Models.Class
     {
         private int id_User { get; set; }
         private int code_Pole { get; set; }
+        public virtual User user { get; set; }
+        public virtual Pole pole { get; set; }
     }
 }

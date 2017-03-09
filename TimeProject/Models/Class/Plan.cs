@@ -15,5 +15,10 @@ namespace TimeProject.Models.Class
         private string libelle_Plan { get; set; }
         private string designation { get; set; }
         private DateTime dt_Plan { get; set; }
+        public virtual Projet projet { get; set; }
+        public virtual List<ValidArchi> listValidArchi { get; set; }
+        public virtual List<ValidBc> listValidBc { get; set; }
+        public virtual List<BordPlan> listBordPlan { get; set; }
+
     }
 }

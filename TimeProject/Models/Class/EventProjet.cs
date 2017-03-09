@@ -10,5 +10,7 @@ namespace TimeProject.Models.Class
     {
         private int code_Projet { get; set; }
         private int id_Event { get; set; }
+        public virtual Evenement evenement { get; set; }
+        public virtual Projet projet { get; set; }
     }
 }

@@ -108,14 +108,14 @@
     </Compile>
     <Compile Include="Models\Class\Action.cs" />
     <Compile Include="Models\Class\Architecte.cs" />
-    <Compile Include="Models\Class\Bordereau_Envoi.cs" />
-    <Compile Include="Models\Class\Bord_Plan.cs" />
-    <Compile Include="Models\Class\Bord_Projet.cs" />
-    <Compile Include="Models\Class\bureau_Controle.cs" />
-    <Compile Include="Models\Class\Compte_Rendu.cs" />
+    <Compile Include="Models\Class\BordereauEnvoi.cs" />
+    <Compile Include="Models\Class\BordPlan.cs" />
+    <Compile Include="Models\Class\BordProjet.cs" />
+    <Compile Include="Models\Class\BureauControle.cs" />
+    <Compile Include="Models\Class\CompteRendu.cs" />
     <Compile Include="Models\Class\CrPole.cs" />
     <Compile Include="Models\Class\CrUser.cs" />
-    <Compile Include="Models\Class\Cr_Projet.cs" />
+    <Compile Include="Models\Class\CrProjet.cs" />
     <Compile Include="Models\Class\Evenement.cs" />
     <Compile Include="Models\Class\EventProjet.cs" />
     <Compile Include="Models\Class\Information.cs" />
@@ -133,8 +133,8 @@
     <Compile Include="Models\Class\UserEvent.cs" />
     <Compile Include="Models\Class\UserPole.cs" />
     <Compile Include="Models\Class\UserProjet.cs" />
-    <Compile Include="Models\Class\Valid_Archi.cs" />
-    <Compile Include="Models\Class\Valid_Bc.cs" />
+    <Compile Include="Models\Class\ValidArchi.cs" />
+    <Compile Include="Models\Class\ValidBc.cs" />
     <Compile Include="Models\request\BDDPerson.cs" />
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />

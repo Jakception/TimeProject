@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class bureau_Controle
+    class BureauControle
     {
         private int id_Bc { get; set; }
         private string nom_Bc { get; set; }
         private string adresse_Bc { get; set; }
         private string cp_Bc { get; set; }
         private string ville_Bc { get; set; }
-        public virtual List<Valid_Bc> listValidBc { get; set; }
+        public virtual List<ValidBc> listValidBc { get; set; }
         public virtual List<Projet> projet { get; set; }
     }
 }

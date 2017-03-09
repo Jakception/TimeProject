@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class UserProjet
+    class CrProjet
     {
         private int code_Projet { get; set; }
-        private int id_User { get; set; }
+        private int code_Cr { get; set; }
+        public virtual CompteRendu compteRendu { get; set; }
         public virtual Projet projet { get; set; }
-        public virtual User user { get; set; }
     }
 }
