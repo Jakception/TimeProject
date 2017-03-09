@@ -26,6 +26,19 @@ namespace TimeProject
             lblDate.Text = "Date: " + dt;
 
         }
-        
+
+        private void lblAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdmininistration formAdmin = new FormAdmininistration();
+
+            formAdmin.ShowDialog();
+        }
+
+        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
+        {
+            FormAdmininistration formAdmin = new FormAdmininistration();
+
+            formAdmin.ShowDialog();
+        }
     }
 }

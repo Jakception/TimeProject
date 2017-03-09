@@ -76,16 +76,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAccueil.cs">
+    <Compile Include="FormGestionUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccueil.Designer.cs">
+    <Compile Include="FormGestionUser.Designer.cs">
+      <DependentUpon>FormGestionUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\administration\FormAdmininistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\administration\FormAdmininistration.Designer.cs">
+      <DependentUpon>FormAdmininistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAccueil.Designer.cs">
       <DependentUpon>FormAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProjet.cs">
+    <Compile Include="Form\FormProjet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProjet.Designer.cs">
+    <Compile Include="Form\FormProjet.Designer.cs">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_PDF.cs">
@@ -109,10 +121,10 @@
     <Compile Include="Models\Class\Plan.cs" />
     <Compile Include="Models\Class\Pole.cs" />
     <Compile Include="Models\Class\User.cs" />
-    <Compile Include="FormLog.cs">
+    <Compile Include="Form\FormLog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLog.Designer.cs">
+    <Compile Include="Form\FormLog.Designer.cs">
       <DependentUpon>FormLog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Class\Projet.cs" />
@@ -126,13 +138,19 @@
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAccueil.resx">
+    <EmbeddedResource Include="FormGestionUser.resx">
+      <DependentUpon>FormGestionUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\administration\FormAdmininistration.resx">
+      <DependentUpon>FormAdmininistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAccueil.resx">
       <DependentUpon>FormAccueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLog.resx">
+    <EmbeddedResource Include="Form\FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProjet.resx">
+    <EmbeddedResource Include="Form\FormProjet.resx">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_PDF.resx">
@@ -161,9 +179,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Images\logo.png" />
   </ItemGroup>
