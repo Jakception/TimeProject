@@ -174,9 +174,10 @@ namespace TimeProject.Models
             
             return DataReader;
         }
-        public static void FermeDataReader()
+        public static void FermeDataReader(DbDataReader dataReader)
         {
             DataReader.Close();
+            dataReader.Close();
         }
         // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
         //public static string TestConnexion()

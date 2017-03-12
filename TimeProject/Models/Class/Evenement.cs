@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class Evenement
+    public class Evenement
     {
         private int id_Event { get; set; }
         private DateTime dt_Event { get; set; }

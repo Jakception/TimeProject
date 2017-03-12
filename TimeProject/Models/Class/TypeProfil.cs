@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class TypeProfil
+    public  class TypeProfil
     {
         private int code_Tp_Profil { get; set; }
         private string libelle_Tp_Profil { get; set; }

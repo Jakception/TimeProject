@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class Architecte
+    public class Architecte
     {
         private int id_Archi { get; set; }
         private string nom_Archi { get; set; }

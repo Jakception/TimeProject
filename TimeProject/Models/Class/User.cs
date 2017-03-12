@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class User
+    public class User
     {
-        private int code { get; set; }
-        private string grade { get; set; }
+        private int id_User { get; set; }
+        private int code_Tp_Profil { get; set; }
+        private int init_User { get; set; }
         private string nom { get; set; }
         private string prenom { get; set; }
         private string mail { get; set; }
+        private string pwd { get; set; }
+        private string grade { get; set; }
         private string fixe { get; set; }
         private string port { get; set; }
-        private int code_Tp_Profil { get; set; }
+        
 
         private List<Projet> lstProjet { get; set; }
 
@@ -29,9 +32,20 @@ namespace TimeProject.Models.Class
         public virtual List<CrUser> listCrUser { get; set; }
         public virtual List<UserPole> listUserPole { get; set; }
 
+        public User(int id_User, int code_Tp_Profil, int init_User, string nom, string prenom, string mail, string pwd)
+        {
+            this.id_User = id_User;
+            this.code_Tp_Profil = code_Tp_Profil;
+            this.init_User = init_User;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.mail = mail;
+            this.pwd = pwd;
+        }
+
         public User(int id ,string level, string name, string surname, string mail, string tel, string mobile , List<Projet> lstProj)
         {
-            this.code = id;
+            this.id_User = id;
             this.grade = level;
             this.nom = name;
             this.prenom = surname;

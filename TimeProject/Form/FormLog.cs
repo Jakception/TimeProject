@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TimeProject.Models;
+using TimeProject.Models.Class;
+using TimeProject.Models.request;
 
 
 namespace TimeProject
@@ -31,16 +32,25 @@ namespace TimeProject
 
             string identifiant;
             string mdp;
+            User user;
 
             identifiant = textBox_Identifiant.Text;
             mdp = textBox_pwd.Text;
 
             if (identifiant != "" && mdp != "")
             {
+                user = Authentification.AuthentificationApp(identifiant, mdp);
 
-                this.Hide();
-                f1.ShowDialog();
-                this.Close();
+                if (user != null)
+                {
+                    this.Hide();
+                    f1.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erreur d'identifiant / Mot de passe");
+                }
             }
             else
             {

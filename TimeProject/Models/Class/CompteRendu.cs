@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    class CompteRendu
+    public class CompteRendu
     {
         private int code_Cr { get; set; }
         private string designation { get; set; }

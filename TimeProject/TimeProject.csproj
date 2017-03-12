@@ -135,6 +135,7 @@
     <Compile Include="Models\Class\UserProjet.cs" />
     <Compile Include="Models\Class\ValidArchi.cs" />
     <Compile Include="Models\Class\ValidBc.cs" />
+    <Compile Include="Models\request\Authentification.cs" />
     <Compile Include="Models\request\BDDPerson.cs" />
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Program.cs" />
