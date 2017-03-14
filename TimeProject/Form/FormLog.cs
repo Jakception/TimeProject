@@ -43,6 +43,7 @@ namespace TimeProject
 
                 if (user != null)
                 {
+                    MessageBox.Show(user.ToString());
                     this.Hide();
                     f1.ShowDialog();
                     this.Close();

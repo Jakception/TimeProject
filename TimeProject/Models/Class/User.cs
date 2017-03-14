@@ -9,8 +9,8 @@ namespace TimeProject.Models.Class
     public class User
     {
         private int id_User { get; set; }
-        private int code_Tp_Profil { get; set; }
-        private int init_User { get; set; }
+        private string code_Tp_Profil { get; set; }
+        private string init_User { get; set; }
         private string nom { get; set; }
         private string prenom { get; set; }
         private string mail { get; set; }
@@ -32,7 +32,7 @@ namespace TimeProject.Models.Class
         public virtual List<CrUser> listCrUser { get; set; }
         public virtual List<UserPole> listUserPole { get; set; }
 
-        public User(int id_User, int code_Tp_Profil, int init_User, string nom, string prenom, string mail, string pwd)
+        public User(int id_User, string code_Tp_Profil, string init_User, string nom, string prenom, string mail, string pwd)
         {
             this.id_User = id_User;
             this.code_Tp_Profil = code_Tp_Profil;
@@ -55,6 +55,10 @@ namespace TimeProject.Models.Class
             this.lstProjet = lstProj;
         }
 
+        public override string ToString()
+        {
+            return "Bonjour " + this.nom;
+        }
 
 
     }

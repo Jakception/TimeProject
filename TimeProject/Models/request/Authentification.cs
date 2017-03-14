@@ -21,7 +21,7 @@ namespace TimeProject.Models.request
             dataReader = DataBase.DBSelect("SELECT * FROM User WHERE NOM_USER = '" + identifiant + "' AND PWD = '" + mdp + "'");
             if (dataReader.Read())
             {
-                user = new User(Convert.ToInt32(dataReader[0]), Convert.ToInt32(dataReader[1]), Convert.ToInt32(dataReader[2]), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                user = new User(Convert.ToInt32(dataReader[0]), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
                 DataBase.FermeDataReader(dataReader);
             }
             else
