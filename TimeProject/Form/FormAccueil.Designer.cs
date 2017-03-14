@@ -174,27 +174,29 @@
             // 
             this.lstBoxProjet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.lstBoxProjet.FormattingEnabled = true;
-            this.lstBoxProjet.Location = new System.Drawing.Point(6, 76);
+            this.lstBoxProjet.Location = new System.Drawing.Point(3, 76);
             this.lstBoxProjet.Name = "lstBoxProjet";
-            this.lstBoxProjet.Size = new System.Drawing.Size(274, 641);
+            this.lstBoxProjet.Size = new System.Drawing.Size(274, 381);
             this.lstBoxProjet.TabIndex = 0;
             // 
             // lblRendu
             // 
+            this.lblRendu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblRendu.Controls.Add(this.lstBoxRendu);
             this.lblRendu.Controls.Add(this.lblRenduTitre);
             this.lblRendu.Location = new System.Drawing.Point(382, 199);
             this.lblRendu.Name = "lblRendu";
-            this.lblRendu.Size = new System.Drawing.Size(922, 736);
+            this.lblRendu.Size = new System.Drawing.Size(521, 736);
             this.lblRendu.TabIndex = 4;
             // 
             // lstBoxRendu
             // 
+            this.lstBoxRendu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstBoxRendu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.lstBoxRendu.FormattingEnabled = true;
-            this.lstBoxRendu.Location = new System.Drawing.Point(16, 76);
+            this.lstBoxRendu.Location = new System.Drawing.Point(31, 80);
             this.lstBoxRendu.Name = "lstBoxRendu";
-            this.lstBoxRendu.Size = new System.Drawing.Size(887, 641);
+            this.lstBoxRendu.Size = new System.Drawing.Size(470, 446);
             this.lstBoxRendu.TabIndex = 2;
             // 
             // lblRenduTitre
@@ -202,7 +204,7 @@
             this.lblRenduTitre.AutoSize = true;
             this.lblRenduTitre.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRenduTitre.ForeColor = System.Drawing.Color.Black;
-            this.lblRenduTitre.Location = new System.Drawing.Point(409, 23);
+            this.lblRenduTitre.Location = new System.Drawing.Point(187, 23);
             this.lblRenduTitre.Name = "lblRenduTitre";
             this.lblRenduTitre.Size = new System.Drawing.Size(168, 33);
             this.lblRenduTitre.TabIndex = 2;

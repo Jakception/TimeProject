@@ -37,19 +37,8 @@
             this.btn_ficheLancement = new System.Windows.Forms.Button();
             this.btn_suiviValidations = new System.Windows.Forms.Button();
             this.btn_historique = new System.Windows.Forms.Button();
-            this.pnl_Info = new System.Windows.Forms.Panel();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.lblAdmin = new System.Windows.Forms.Label();
-            this.pnlUser = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
-            this.pnl_Date = new System.Windows.Forms.Panel();
-            this.lblDate = new System.Windows.Forms.Label();
             this.lbl_histo = new System.Windows.Forms.Label();
             this.lbl_taches = new System.Windows.Forms.Label();
-            this.pnl_Info.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
-            this.pnlUser.SuspendLayout();
-            this.pnl_Date.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,77 +140,6 @@
             this.btn_historique.Text = "Historique Détaillé";
             this.btn_historique.UseVisualStyleBackColor = false;
             // 
-            // pnl_Info
-            // 
-            this.pnl_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.pnl_Info.Controls.Add(this.pnlAdmin);
-            this.pnl_Info.Controls.Add(this.pnlUser);
-            this.pnl_Info.Controls.Add(this.pnl_Date);
-            this.pnl_Info.Location = new System.Drawing.Point(1150, 12);
-            this.pnl_Info.Name = "pnl_Info";
-            this.pnl_Info.Size = new System.Drawing.Size(200, 143);
-            this.pnl_Info.TabIndex = 16;
-            // 
-            // pnlAdmin
-            // 
-            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlAdmin.Controls.Add(this.lblAdmin);
-            this.pnlAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlAdmin.Location = new System.Drawing.Point(0, 104);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(200, 26);
-            this.pnlAdmin.TabIndex = 1;
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblAdmin.Location = new System.Drawing.Point(23, 4);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(59, 20);
-            this.lblAdmin.TabIndex = 0;
-            this.lblAdmin.Text = "Admin";
-            // 
-            // pnlUser
-            // 
-            this.pnlUser.Controls.Add(this.lblName);
-            this.pnlUser.Location = new System.Drawing.Point(0, 19);
-            this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(200, 26);
-            this.pnlUser.TabIndex = 1;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(23, 4);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 20);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "lblName";
-            // 
-            // pnl_Date
-            // 
-            this.pnl_Date.Controls.Add(this.lblDate);
-            this.pnl_Date.Location = new System.Drawing.Point(0, 60);
-            this.pnl_Date.Name = "pnl_Date";
-            this.pnl_Date.Size = new System.Drawing.Size(200, 26);
-            this.pnl_Date.TabIndex = 0;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(23, 4);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(59, 20);
-            this.lblDate.TabIndex = 0;
-            this.lblDate.Text = "lblDate";
-            // 
             // lbl_histo
             // 
             this.lbl_histo.BackColor = System.Drawing.Color.MidnightBlue;
@@ -254,7 +172,6 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.lbl_taches);
             this.Controls.Add(this.lbl_histo);
-            this.Controls.Add(this.pnl_Info);
             this.Controls.Add(this.btn_historique);
             this.Controls.Add(this.btn_suiviValidations);
             this.Controls.Add(this.btn_ficheLancement);
@@ -266,13 +183,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormProjet";
             this.Text = "FormProjet";
-            this.pnl_Info.ResumeLayout(false);
-            this.pnlAdmin.ResumeLayout(false);
-            this.pnlAdmin.PerformLayout();
-            this.pnlUser.ResumeLayout(false);
-            this.pnlUser.PerformLayout();
-            this.pnl_Date.ResumeLayout(false);
-            this.pnl_Date.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,13 +199,6 @@
         private System.Windows.Forms.Button btn_ficheLancement;
         private System.Windows.Forms.Button btn_suiviValidations;
         private System.Windows.Forms.Button btn_historique;
-        private System.Windows.Forms.Panel pnl_Info;
-        private System.Windows.Forms.Panel pnlAdmin;
-        private System.Windows.Forms.Label lblAdmin;
-        private System.Windows.Forms.Panel pnlUser;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Panel pnl_Date;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbl_histo;
         private System.Windows.Forms.Label lbl_taches;
     }

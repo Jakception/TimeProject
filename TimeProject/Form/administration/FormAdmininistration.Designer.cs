@@ -66,7 +66,7 @@
             this.Controls.Add(this.btProjet);
             this.Controls.Add(this.btPersonne);
             this.Name = "FormAdmininistration";
-            this.Text = "FormAdmininistration";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FormAdmininistration_Load);
             this.ResumeLayout(false);
 
