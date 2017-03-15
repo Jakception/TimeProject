@@ -40,6 +40,7 @@
             this.txtBoxInit = new System.Windows.Forms.TextBox();
             this.txtBoxMail = new System.Windows.Forms.TextBox();
             this.checkBoxAdm = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstBoxUser
@@ -149,12 +150,23 @@
             this.checkBoxAdm.Text = "ADMIN";
             this.checkBoxAdm.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(325, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 24);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Gestion des utilisateurs";
+            // 
             // FormGestUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(776, 622);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxAdm);
             this.Controls.Add(this.txtBoxMail);
             this.Controls.Add(this.txtBoxInit);
@@ -167,6 +179,8 @@
             this.Controls.Add(this.btDelUser);
             this.Controls.Add(this.btCreaUser);
             this.Controls.Add(this.lstBoxUser);
+            this.MaximumSize = new System.Drawing.Size(792, 661);
+            this.MinimumSize = new System.Drawing.Size(792, 661);
             this.Name = "FormGestUser";
             this.Text = "FormGestUser";
             this.Load += new System.EventHandler(this.FormGestUser_Load);
@@ -189,5 +203,6 @@
         private System.Windows.Forms.TextBox txtBoxInit;
         private System.Windows.Forms.TextBox txtBoxMail;
         private System.Windows.Forms.CheckBox checkBoxAdm;
+        private System.Windows.Forms.Label label1;
     }
 }
