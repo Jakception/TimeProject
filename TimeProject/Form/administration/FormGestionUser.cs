@@ -31,6 +31,12 @@ namespace TimeProject
             pnlCreaUser.BackColor = Color.Transparent;
              pnlCreaUser.Visible = false;
             lblInitiale.Text = "";
+
+            /* 
+              select * from user 
+             charge une liste user
+             charge la liste dans la listBox
+             * */
         }
 
         private void btClosePnlCrea_Click(object sender, EventArgs e)
