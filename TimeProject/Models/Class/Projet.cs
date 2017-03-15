@@ -8,10 +8,10 @@ namespace TimeProject.Models.Class
 {
     public class Projet
     {
-        private int code_Projet { get; set; }
+        private string code_Projet { get; set; }
         private int id_Bc { get; set; }
         private int id_Archi { get; set; }
-        private int id_chefProjet { get; set; }
+        private string id_chefProjet { get; set; }
         private string nom_Projet { get; set; }
         private string nom_Client { get; set; }
         private string adresse_Client { get; set; }
@@ -31,7 +31,7 @@ namespace TimeProject.Models.Class
         public virtual List<CrProjet> listCrProjet { get; set; }
         public virtual List<EventProjet> listEventProjet { get; set; }
 
-    public Projet(int code_Projet, int id_Bc, int id_Archi, int id_User, string nom_Projet, string nom_Client, string adresse_Client, string ville_Client, DateTime dt_Deb_Projet, DateTime dt_Obj_Fin, DateTime dt_Fin_Reel, List<User> lstSalProjet)
+    public Projet(string code_Projet, int id_Bc, int id_Archi, string id_User, string nom_Projet, string nom_Client, string adresse_Client, string ville_Client, DateTime dt_Deb_Projet, DateTime dt_Obj_Fin, DateTime dt_Fin_Reel, List<User> lstSalProjet)
         {
             this.code_Projet = code_Projet;
             this.id_Bc = id_Bc;
@@ -45,6 +45,19 @@ namespace TimeProject.Models.Class
             this.dt_Obj_Fin = dt_Obj_Fin;
             this.dt_Fin_Reel = dt_Fin_Reel;
             this.lstSalarieProjet = lstSalProjet;
+        }
+
+        public Projet(string cdProj,string id_chef, string name, string clientName, string adresseClient, string villeClient, DateTime dtDeb, DateTime dtFinObj)
+        {
+            this.code_Projet = cdProj;
+            this.id_chefProjet = id_chef;
+            this.nom_Projet = name;
+            this.nom_Client = clientName;
+            this.adresse_Client = adresseClient;
+            this.ville_Client = villeClient;
+            this.dt_Deb_Projet = dtDeb;
+            this.dt_Obj_Fin = dtFinObj;
+
         }
     }
 }

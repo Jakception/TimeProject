@@ -188,9 +188,9 @@
             this.lblRendu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblRendu.Controls.Add(this.lstBoxRendu);
             this.lblRendu.Controls.Add(this.lblRenduTitre);
-            this.lblRendu.Location = new System.Drawing.Point(382, 199);
+            this.lblRendu.Location = new System.Drawing.Point(381, 199);
             this.lblRendu.Name = "lblRendu";
-            this.lblRendu.Size = new System.Drawing.Size(521, 736);
+            this.lblRendu.Size = new System.Drawing.Size(521, 530);
             this.lblRendu.TabIndex = 4;
             // 
             // lstBoxRendu
@@ -200,7 +200,7 @@
             this.lstBoxRendu.FormattingEnabled = true;
             this.lstBoxRendu.Location = new System.Drawing.Point(31, 80);
             this.lstBoxRendu.Name = "lstBoxRendu";
-            this.lstBoxRendu.Size = new System.Drawing.Size(470, 446);
+            this.lstBoxRendu.Size = new System.Drawing.Size(470, 433);
             this.lstBoxRendu.TabIndex = 2;
             // 
             // lblRenduTitre
@@ -221,16 +221,16 @@
             this.pnlTacheUrgente.Controls.Add(this.label2);
             this.pnlTacheUrgente.Location = new System.Drawing.Point(909, 199);
             this.pnlTacheUrgente.Name = "pnlTacheUrgente";
-            this.pnlTacheUrgente.Size = new System.Drawing.Size(441, 736);
+            this.pnlTacheUrgente.Size = new System.Drawing.Size(441, 530);
             this.pnlTacheUrgente.TabIndex = 5;
             // 
             // lstBoxTask
             // 
             this.lstBoxTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.lstBoxTask.FormattingEnabled = true;
-            this.lstBoxTask.Location = new System.Drawing.Point(14, 80);
+            this.lstBoxTask.Location = new System.Drawing.Point(29, 80);
             this.lstBoxTask.Name = "lstBoxTask";
-            this.lstBoxTask.Size = new System.Drawing.Size(412, 641);
+            this.lstBoxTask.Size = new System.Drawing.Size(395, 433);
             this.lstBoxTask.TabIndex = 4;
             // 
             // label2

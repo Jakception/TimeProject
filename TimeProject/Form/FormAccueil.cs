@@ -20,6 +20,14 @@ namespace TimeProject
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+            if (sessionUser.getTpProfil() != "adm")
+            {
+                pnlAdmin.Visible = false;
+            }
+            else
+            {
+                pnlAdmin.Visible = true;
+            }
             string dt;
 
             dt = System.DateTime.Today.Date.ToShortDateString();

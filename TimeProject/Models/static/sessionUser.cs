@@ -22,5 +22,14 @@ namespace TimeProject
         {
             return utilisateur.nom + " - " + utilisateur.prenom;
         }
+        static public string getTpProfil()
+        {
+            return utilisateur.code_Tp_Profil;
+        }
+
+        static public int getID()
+        {
+            return utilisateur.id_User;
+        }
     }
 }
