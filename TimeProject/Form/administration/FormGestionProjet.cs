@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeProject.Models.Class;
 using TimeProject.Models.request;
+using TimeProject.Models;
 
 namespace TimeProject
 {
@@ -17,11 +18,35 @@ namespace TimeProject
         public FormGestionProjet()
         {
             InitializeComponent();
-            lstBoxProjet.DataSource = null;
-           lstBoxProjet.DataSource =  requestProjet.getProjetEncours();
+            loadListProjet();
+            
         }
 
         private void btCreaProjet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btCloreProjet_Click(object sender, EventArgs e)
+        {
+
+            DateTime dtCloture;
+          
+            dtCloture = System.DateTime.Today.Date;
+
+            requestProjet.ProjetEncours();
+            loadListProjet();
+        }
+
+        private void loadListProjet()
+        {
+            lstBoxProjet.DataSource = null;
+            lstBoxProjet.DataSource = sessionUser.getListProj();
+        }
+
+        private void FormGestionProjet_Load(object sender, EventArgs e)
         {
 
         }

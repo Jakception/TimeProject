@@ -13,31 +13,29 @@ namespace TimeProject.Models.request
         private static DbDataReader dataReader { get; set; }
         private static string req;
 
-        public static List<Projet> getProjetEncours()
+        public static void ProjetEncours()
         {
             List<Projet> lstProj = new List<Projet>();
             DataBase.ConnexionToDataBase();
             req = "SELECT p.* FROM projet p where DT_FIN_REEL is null;";
 
             dataReader = DataBase.DBSelect(req);
-            if (dataReader.Read())
-            {
+
+           
                 while (dataReader.Read())
                 {
                     Projet p;
 
                     p = new Projet(dataReader[0].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), Convert.ToDateTime(dataReader[8]), Convert.ToDateTime(dataReader[9].ToString()));
+                    System.Windows.Forms.MessageBox.Show(p.ToString());
                     lstProj.Add(p);
                 }
+            
+                
 
-            }
-            else
-            {
-                lstProj = null;
-            }
-
+          
             DataBase.FermeDataReader(dataReader);
-            return lstProj;
+            sessionUser.setListProj(lstProj);
         }
 
 

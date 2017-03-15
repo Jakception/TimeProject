@@ -17,6 +17,7 @@ namespace TimeProject
         public FormAccueil()
         {
             InitializeComponent();
+            requestProjet.ProjetEncours();
         }
 
         private void FormAccueil_Load(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace TimeProject
             lblName.Text = sessionUser.getNomPrenom();
 
 
-            sessionUser.setListProj(requestProjet.getProjetEncours());
+           
             lstBoxProjet.DataSource = null;
             lstBoxProjet.DataSource = sessionUser.getListProj();
             

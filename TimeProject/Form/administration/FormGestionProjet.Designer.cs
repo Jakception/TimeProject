@@ -30,7 +30,7 @@
         {
             this.btCreaProjet = new System.Windows.Forms.Button();
             this.lstBoxProjet = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btCloreProjet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btCreaProjet
@@ -52,14 +52,15 @@
             this.lstBoxProjet.Size = new System.Drawing.Size(276, 394);
             this.lstBoxProjet.TabIndex = 1;
             // 
-            // button1
+            // btCloreProjet
             // 
-            this.button1.Location = new System.Drawing.Point(327, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Clore projet";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btCloreProjet.Location = new System.Drawing.Point(327, 336);
+            this.btCloreProjet.Name = "btCloreProjet";
+            this.btCloreProjet.Size = new System.Drawing.Size(95, 49);
+            this.btCloreProjet.TabIndex = 2;
+            this.btCloreProjet.Text = "Clore projet";
+            this.btCloreProjet.UseVisualStyleBackColor = true;
+            this.btCloreProjet.Click += new System.EventHandler(this.btCloreProjet_Click);
             // 
             // FormGestionProjet
             // 
@@ -67,13 +68,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(492, 542);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCloreProjet);
             this.Controls.Add(this.lstBoxProjet);
             this.Controls.Add(this.btCreaProjet);
             this.MaximumSize = new System.Drawing.Size(508, 581);
             this.MinimumSize = new System.Drawing.Size(508, 581);
             this.Name = "FormGestionProjet";
             this.Text = "FormGestionProjet";
+            this.Load += new System.EventHandler(this.FormGestionProjet_Load);
             this.ResumeLayout(false);
 
         }
@@ -82,6 +84,6 @@
 
         private System.Windows.Forms.Button btCreaProjet;
         private System.Windows.Forms.ListBox lstBoxProjet;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btCloreProjet;
     }
 }
