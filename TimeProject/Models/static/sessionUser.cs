@@ -31,5 +31,14 @@ namespace TimeProject
         {
             return utilisateur.id_User;
         }
+
+        public static void setListProj(List<Projet> lstProj)
+        {
+            lstProjetUSer = lstProj;
+        }
+        public static List<Projet> getListProj()
+        {
+            return lstProjetUSer;
+        }
     }
 }

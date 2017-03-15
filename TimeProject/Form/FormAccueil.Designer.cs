@@ -153,14 +153,13 @@
             // 
             // pnlProjet
             // 
-            this.pnlProjet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlProjet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnlProjet.BackColor = System.Drawing.Color.Transparent;
             this.pnlProjet.Controls.Add(this.lblProjet);
             this.pnlProjet.Controls.Add(this.lstBoxProjet);
             this.pnlProjet.Location = new System.Drawing.Point(20, 199);
             this.pnlProjet.Name = "pnlProjet";
-            this.pnlProjet.Size = new System.Drawing.Size(283, 475);
+            this.pnlProjet.Size = new System.Drawing.Size(283, 530);
             this.pnlProjet.TabIndex = 3;
             // 
             // lblProjet
@@ -176,11 +175,12 @@
             // 
             // lstBoxProjet
             // 
-            this.lstBoxProjet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.lstBoxProjet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstBoxProjet.BackColor = System.Drawing.SystemColors.Control;
             this.lstBoxProjet.FormattingEnabled = true;
             this.lstBoxProjet.Location = new System.Drawing.Point(3, 76);
             this.lstBoxProjet.Name = "lstBoxProjet";
-            this.lstBoxProjet.Size = new System.Drawing.Size(274, 381);
+            this.lstBoxProjet.Size = new System.Drawing.Size(274, 433);
             this.lstBoxProjet.TabIndex = 0;
             // 
             // lblRendu
@@ -216,16 +216,18 @@
             // 
             // pnlTacheUrgente
             // 
-            this.pnlTacheUrgente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTacheUrgente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnlTacheUrgente.Controls.Add(this.lstBoxTask);
             this.pnlTacheUrgente.Controls.Add(this.label2);
             this.pnlTacheUrgente.Location = new System.Drawing.Point(909, 199);
             this.pnlTacheUrgente.Name = "pnlTacheUrgente";
             this.pnlTacheUrgente.Size = new System.Drawing.Size(441, 530);
             this.pnlTacheUrgente.TabIndex = 5;
+            this.pnlTacheUrgente.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTacheUrgente_Paint);
             // 
             // lstBoxTask
             // 
+            this.lstBoxTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstBoxTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.lstBoxTask.FormattingEnabled = true;
             this.lstBoxTask.Location = new System.Drawing.Point(29, 80);

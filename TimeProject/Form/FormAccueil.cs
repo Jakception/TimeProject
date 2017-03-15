@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeProject.Models.Class;
+using TimeProject.Models.request;
 
 namespace TimeProject
 {
@@ -34,6 +35,11 @@ namespace TimeProject
             lblDate.Text = "Date: " + dt;
             lblName.Text = sessionUser.getNomPrenom();
 
+
+            sessionUser.setListProj(requestProjet.getProjetEncours());
+            lstBoxProjet.DataSource = null;
+            lstBoxProjet.DataSource = sessionUser.getListProj();
+            
         }
 
         private void lblAdmin_Click(object sender, EventArgs e)
@@ -70,6 +76,11 @@ namespace TimeProject
         private void lblAdmin_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
+        }
+
+        private void pnlTacheUrgente_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -15,48 +15,38 @@ namespace TimeProject.Models.request
     {
 
         private static DbDataReader dataReader { get; set; }
+        private static string req;
 
 
+        static private List<User> getAllUser()
+        {
+            List<User> lstUsers = new List<User>();
+            DataBase.ConnexionToDataBase();
+            req = "select * from user";
+
+            if (dataReader.Read())
+            {
+                while (dataReader.Read())
+                {
+                    User u;
+
+                    u = new User(Convert.ToInt32(dataReader[0]), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                   
+                    lstUsers.Add(u);
+                }
+
+            }
+            else
+            {
+                lstUsers = null;
+            }
+            DataBase.FermeDataReader(dataReader);
+            return lstUsers;
+        }
         //Recupere les projets si Admin
 
-        static public List<Projet> projetAdmin()
-        {
-
-            string req;
-            DataBase.ConnexionToDataBase();
-            List<Projet> lstProj = new List<Projet>();
-
-            req = "SELECT p.* FROM projet p";
-            dataReader = DataBase.DBSelect(req);
-
-            if (dataReader.Read())
-            {
-                
-            }
-            else
-            {
-                lstProj = null;  
-            }
-
-            return lstProj;
-        } 
 
 
-        static public void projetUser()
-        {
-            string req;
 
-            req= req = "SELECT p.* FROM projet p, user_projet up WHERE p.CODE_PROJET = up.CODE_PROJET AND p.ID_USER = " +sessionUser.getID() +" OR up.ID_USER = " + sessionUser.getID() + ";" ;
-            dataReader = DataBase.DBSelect(req);
-            if (dataReader.Read())
-            {
-
-            }
-            else
-            {
-
-            }
-
-        }
     }
 }

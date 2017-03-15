@@ -27,5 +27,12 @@ namespace TimeProject
             FormGestUser formGestUser = new FormGestUser();
             formGestUser.ShowDialog();
         }
+
+        private void btProjet_Click(object sender, EventArgs e)
+        {
+            FormGestionProjet fProj = new FormGestionProjet();
+
+            fProj.ShowDialog();
+        }
     }
 }

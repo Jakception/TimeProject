@@ -59,5 +59,11 @@ namespace TimeProject.Models.Class
             this.dt_Obj_Fin = dtFinObj;
 
         }
+
+
+        public override string ToString()
+        {
+            return "Projet : " + this.code_Projet + " - " + this.nom_Projet; 
+        }
     }
 }

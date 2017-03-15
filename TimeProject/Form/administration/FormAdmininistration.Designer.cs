@@ -56,6 +56,7 @@
             this.btProjet.TabIndex = 1;
             this.btProjet.Text = "Gérer les projets";
             this.btProjet.UseVisualStyleBackColor = false;
+            this.btProjet.Click += new System.EventHandler(this.btProjet_Click);
             // 
             // FormAdmininistration
             // 

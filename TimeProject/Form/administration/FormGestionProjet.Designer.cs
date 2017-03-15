@@ -41,6 +41,7 @@
             this.btCreaProjet.TabIndex = 0;
             this.btCreaProjet.Text = "Créer projet";
             this.btCreaProjet.UseVisualStyleBackColor = true;
+            this.btCreaProjet.Click += new System.EventHandler(this.btCreaProjet_Click);
             // 
             // lstBoxProjet
             // 
@@ -69,6 +70,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lstBoxProjet);
             this.Controls.Add(this.btCreaProjet);
+            this.MaximumSize = new System.Drawing.Size(508, 581);
+            this.MinimumSize = new System.Drawing.Size(508, 581);
             this.Name = "FormGestionProjet";
             this.Text = "FormGestionProjet";
             this.ResumeLayout(false);
