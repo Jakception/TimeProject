@@ -33,16 +33,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pnlCreaUser = new System.Windows.Forms.Panel();
+            this.lblIniti = new System.Windows.Forms.Label();
+            this.txtBoxMail = new System.Windows.Forms.TextBox();
+            this.txtBoxPrenom = new System.Windows.Forms.TextBox();
+            this.txtBoxNom = new System.Windows.Forms.TextBox();
             this.chBoxAdmin = new System.Windows.Forms.CheckBox();
             this.lblMail = new System.Windows.Forms.Label();
-            this.lblInitiale = new System.Windows.Forms.Label();
             this.btClosePnlCrea = new System.Windows.Forms.Button();
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
-            this.txtBoxNom = new System.Windows.Forms.TextBox();
-            this.txtBoxPrenom = new System.Windows.Forms.TextBox();
-            this.txtBoxMail = new System.Windows.Forms.TextBox();
-            this.lblIniti = new System.Windows.Forms.Label();
+            this.txtBoxInitial = new System.Windows.Forms.TextBox();
             this.pnlCreaUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,13 +86,13 @@
             // pnlCreaUser
             // 
             this.pnlCreaUser.BackColor = System.Drawing.Color.Yellow;
+            this.pnlCreaUser.Controls.Add(this.txtBoxInitial);
             this.pnlCreaUser.Controls.Add(this.lblIniti);
             this.pnlCreaUser.Controls.Add(this.txtBoxMail);
             this.pnlCreaUser.Controls.Add(this.txtBoxPrenom);
             this.pnlCreaUser.Controls.Add(this.txtBoxNom);
             this.pnlCreaUser.Controls.Add(this.chBoxAdmin);
             this.pnlCreaUser.Controls.Add(this.lblMail);
-            this.pnlCreaUser.Controls.Add(this.lblInitiale);
             this.pnlCreaUser.Controls.Add(this.btClosePnlCrea);
             this.pnlCreaUser.Controls.Add(this.lblPrenom);
             this.pnlCreaUser.Controls.Add(this.lblNom);
@@ -100,6 +100,38 @@
             this.pnlCreaUser.Name = "pnlCreaUser";
             this.pnlCreaUser.Size = new System.Drawing.Size(665, 600);
             this.pnlCreaUser.TabIndex = 4;
+            this.pnlCreaUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCreaUser_Paint);
+            // 
+            // lblIniti
+            // 
+            this.lblIniti.AutoSize = true;
+            this.lblIniti.Location = new System.Drawing.Point(40, 248);
+            this.lblIniti.Name = "lblIniti";
+            this.lblIniti.Size = new System.Drawing.Size(31, 13);
+            this.lblIniti.TabIndex = 10;
+            this.lblIniti.Text = "Initial";
+            // 
+            // txtBoxMail
+            // 
+            this.txtBoxMail.Location = new System.Drawing.Point(289, 109);
+            this.txtBoxMail.Name = "txtBoxMail";
+            this.txtBoxMail.Size = new System.Drawing.Size(351, 20);
+            this.txtBoxMail.TabIndex = 9;
+            // 
+            // txtBoxPrenom
+            // 
+            this.txtBoxPrenom.Location = new System.Drawing.Point(43, 203);
+            this.txtBoxPrenom.Name = "txtBoxPrenom";
+            this.txtBoxPrenom.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxPrenom.TabIndex = 8;
+            // 
+            // txtBoxNom
+            // 
+            this.txtBoxNom.Location = new System.Drawing.Point(43, 109);
+            this.txtBoxNom.Name = "txtBoxNom";
+            this.txtBoxNom.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxNom.TabIndex = 6;
+            this.txtBoxNom.TextChanged += new System.EventHandler(this.txtBoxNom_TextChanged);
             // 
             // chBoxAdmin
             // 
@@ -119,16 +151,6 @@
             this.lblMail.Size = new System.Drawing.Size(26, 13);
             this.lblMail.TabIndex = 4;
             this.lblMail.Text = "Mail";
-            // 
-            // lblInitiale
-            // 
-            this.lblInitiale.AutoSize = true;
-            this.lblInitiale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInitiale.Location = new System.Drawing.Point(39, 307);
-            this.lblInitiale.Name = "lblInitiale";
-            this.lblInitiale.Size = new System.Drawing.Size(63, 20);
-            this.lblInitiale.TabIndex = 3;
-            this.lblInitiale.Text = "Initiale";
             // 
             // btClosePnlCrea
             // 
@@ -158,36 +180,13 @@
             this.lblNom.TabIndex = 0;
             this.lblNom.Text = "Nom";
             // 
-            // txtBoxNom
+            // txtBoxInitial
             // 
-            this.txtBoxNom.Location = new System.Drawing.Point(43, 109);
-            this.txtBoxNom.Name = "txtBoxNom";
-            this.txtBoxNom.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxNom.TabIndex = 6;
-            this.txtBoxNom.TextChanged += new System.EventHandler(this.txtBoxNom_TextChanged);
-            // 
-            // txtBoxPrenom
-            // 
-            this.txtBoxPrenom.Location = new System.Drawing.Point(43, 203);
-            this.txtBoxPrenom.Name = "txtBoxPrenom";
-            this.txtBoxPrenom.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxPrenom.TabIndex = 8;
-            // 
-            // txtBoxMail
-            // 
-            this.txtBoxMail.Location = new System.Drawing.Point(289, 109);
-            this.txtBoxMail.Name = "txtBoxMail";
-            this.txtBoxMail.Size = new System.Drawing.Size(351, 20);
-            this.txtBoxMail.TabIndex = 9;
-            // 
-            // lblIniti
-            // 
-            this.lblIniti.AutoSize = true;
-            this.lblIniti.Location = new System.Drawing.Point(40, 267);
-            this.lblIniti.Name = "lblIniti";
-            this.lblIniti.Size = new System.Drawing.Size(43, 13);
-            this.lblIniti.TabIndex = 10;
-            this.lblIniti.Text = "Prenom";
+            this.txtBoxInitial.Location = new System.Drawing.Point(43, 287);
+            this.txtBoxInitial.Name = "txtBoxInitial";
+            this.txtBoxInitial.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxInitial.TabIndex = 11;
+            this.txtBoxInitial.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FormGestionUser
             // 
@@ -221,10 +220,10 @@
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.CheckBox chBoxAdmin;
         private System.Windows.Forms.Label lblMail;
-        private System.Windows.Forms.Label lblInitiale;
         private System.Windows.Forms.TextBox txtBoxMail;
         private System.Windows.Forms.TextBox txtBoxPrenom;
         private System.Windows.Forms.TextBox txtBoxNom;
         private System.Windows.Forms.Label lblIniti;
+        private System.Windows.Forms.TextBox txtBoxInitial;
     }
 }

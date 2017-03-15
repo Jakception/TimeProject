@@ -46,5 +46,15 @@ namespace TimeProject
                 MessageBox.Show(nom);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCreaUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
