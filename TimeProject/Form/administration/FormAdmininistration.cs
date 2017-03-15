@@ -24,7 +24,7 @@ namespace TimeProject
 
         private void btPersonne_Click(object sender, EventArgs e)
         {
-            FormGestionUser formGestUser = new FormGestionUser();
+            FormGestUser formGestUser = new FormGestUser();
             formGestUser.ShowDialog();
         }
     }
