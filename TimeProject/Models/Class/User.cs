@@ -8,19 +8,19 @@ namespace TimeProject.Models.Class
 {
     public class User
     {
-        private int id_User { get; set; }
-        private string code_Tp_Profil { get; set; }
-        private string init_User { get; set; }
-        private string nom { get; set; }
-        private string prenom { get; set; }
-        private string mail { get; set; }
-        private string pwd { get; set; }
-        private string grade { get; set; }
-        private string fixe { get; set; }
-        private string port { get; set; }
+        public int id_User { get; set; }
+        public string code_Tp_Profil { get; set; }
+        public string init_User { get; set; }
+        public string nom { get; set; }
+        public string prenom { get; set; }
+        public string mail { get; set; }
+        public string pwd { get; set; }
+        public string grade { get; set; }
+        public string fixe { get; set; }
+        public string port { get; set; }
         
 
-        private List<Projet> lstProjet { get; set; }
+        public List<Projet> lstProjet { get; set; }
 
         public virtual TypeProfil typeProfil { get; set; }
         public virtual List<UserProjet> listUserProjet { get; set; }

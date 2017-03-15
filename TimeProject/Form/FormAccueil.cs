@@ -24,6 +24,7 @@ namespace TimeProject
 
             dt = System.DateTime.Today.Date.ToShortDateString();
             lblDate.Text = "Date: " + dt;
+            lblName.Text = sessionUser.getNomPrenom();
 
         }
 
@@ -34,11 +35,33 @@ namespace TimeProject
             formAdmin.ShowDialog();
         }
 
-        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
+
+
+        private void pnlAdmin_Click(object sender, EventArgs e)
         {
             FormAdmininistration formAdmin = new FormAdmininistration();
 
             formAdmin.ShowDialog();
+        }
+
+        private void pnlAdmin_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pnlAdmin_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void lblAdmin_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void lblAdmin_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
         }
     }
 }

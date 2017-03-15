@@ -87,7 +87,9 @@
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(200, 26);
             this.pnlAdmin.TabIndex = 1;
-            this.pnlAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdmin_Paint);
+            this.pnlAdmin.Click += new System.EventHandler(this.pnlAdmin_Click);
+            this.pnlAdmin.MouseEnter += new System.EventHandler(this.pnlAdmin_MouseEnter);
+            this.pnlAdmin.MouseLeave += new System.EventHandler(this.pnlAdmin_MouseLeave);
             // 
             // lblAdmin
             // 
@@ -100,6 +102,8 @@
             this.lblAdmin.TabIndex = 0;
             this.lblAdmin.Text = "Admin";
             this.lblAdmin.Click += new System.EventHandler(this.lblAdmin_Click);
+            this.lblAdmin.MouseEnter += new System.EventHandler(this.lblAdmin_MouseEnter);
+            this.lblAdmin.MouseLeave += new System.EventHandler(this.lblAdmin_MouseLeave);
             // 
             // pnlUser
             // 

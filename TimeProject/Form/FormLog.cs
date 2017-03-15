@@ -44,6 +44,7 @@ namespace TimeProject
                 if (user != null)
                 {
                     // Session
+                    sessionUser.loadUser(user);
                     this.Hide();
                     f1.ShowDialog();
                     this.Close();
