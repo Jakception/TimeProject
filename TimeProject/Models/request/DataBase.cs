@@ -174,58 +174,11 @@ namespace TimeProject.Models
             
             return DataReader;
         }
+        // Fermeture du DataReader
         public static void FermeDataReader(DbDataReader dataReader)
         {
-            DataReader.Close();
+            // DataReader.Close();
             dataReader.Close();
         }
-        // FONCTION A VIRER DES QUE TOUT LES MONDE A TESTER
-        //public static string TestConnexion()
-        //{
-        //    // INSERT INTO `client`(`NOMCLIENT`) VALUES ('TEST');
-
-        //    string messRes = "";
-        //    string messErreur = "";
-
-        //    string providerName = ConfigurationManager.ConnectionStrings["MaConnection"].ProviderName;
-        //    string connectionString = ConfigurationManager.ConnectionStrings["MaConnection"].ConnectionString;
-
-        //    DbConnection connexion = CreateDbConnection(providerName, connectionString);
-
-        //    if (connexion != null)
-        //    {
-        //        try
-        //        {
-        //            OpenConnexion(connexion);
-        //            messErreur = "";
-        //        }
-        //        catch (Exception err)
-        //        {
-        //            messErreur = (err.Message);
-        //        }
-        //        //finally
-        //        //{
-        //        //    DeConnexion(connexion);
-        //        //}
-        //    }
-
-        //    if (messErreur == "")
-        //    { 
-        //        Command = connexion.CreateCommand();
-        //        Command.CommandText = "SELECT CODE_PROJET FROM projet;";
-        //        DataReader = Command.ExecuteReader();
-        //        if (DataReader.Read())
-        //        {
-        //            messRes = DataReader[0].ToString();
-        //        }
-        //        DataReader.Close();
-        //    }
-        //    else
-        //    {
-        //        messRes = messErreur;
-        //    }
-
-        //    return messRes;
-        //}
     }
 }
