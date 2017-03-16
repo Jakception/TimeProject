@@ -51,7 +51,7 @@
             // checkListUserProjet
             // 
             this.checkListUserProjet.FormattingEnabled = true;
-            this.checkListUserProjet.Location = new System.Drawing.Point(12, 68);
+            this.checkListUserProjet.Location = new System.Drawing.Point(23, 68);
             this.checkListUserProjet.Name = "checkListUserProjet";
             this.checkListUserProjet.Size = new System.Drawing.Size(254, 439);
             this.checkListUserProjet.TabIndex = 0;
@@ -150,6 +150,7 @@
             this.lstBoxChefProjet.FormattingEnabled = true;
             this.lstBoxChefProjet.Location = new System.Drawing.Point(334, 163);
             this.lstBoxChefProjet.Name = "lstBoxChefProjet";
+            this.lstBoxChefProjet.ScrollAlwaysVisible = true;
             this.lstBoxChefProjet.Size = new System.Drawing.Size(251, 30);
             this.lstBoxChefProjet.TabIndex = 12;
             // 
@@ -221,6 +222,7 @@
             this.Controls.Add(this.checkListUserProjet);
             this.Name = "FormCreationProjet";
             this.Text = "FormCreationProjet";
+            this.Load += new System.EventHandler(this.FormCreationProjet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

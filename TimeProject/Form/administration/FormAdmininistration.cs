@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeProject.Models.Class;
+using TimeProject.Models.request;
 
 namespace TimeProject
 {
@@ -19,7 +21,7 @@ namespace TimeProject
 
         private void FormAdmininistration_Load(object sender, EventArgs e)
         {
-
+            classAdministration.lstUser = BDDPerson.getAllUser();
         }
 
         private void btPersonne_Click(object sender, EventArgs e)

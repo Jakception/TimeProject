@@ -19,7 +19,8 @@ namespace TimeProject
 
         private void FormGestUser_Load(object sender, EventArgs e)
         {
-
+            lstBoxUser.DataSource = null;
+            lstBoxUser.DataSource = classAdministration.lstUser;
         }
 
         private void btCreaUser_Click(object sender, EventArgs e)

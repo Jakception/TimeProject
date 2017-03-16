@@ -55,5 +55,10 @@ namespace TimeProject.Models.Class
             this.lstProjet = lstProj;
         }
 
+        public override string ToString()
+        {
+            return this.nom + "  " + this.prenom + "  (" + this.init_User + ")";
+        }
+
     }
 }

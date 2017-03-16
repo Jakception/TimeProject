@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\static\classAdministration.cs" />
     <Compile Include="Form\administration\FormCreationProjet.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -63,6 +63,7 @@ namespace TimeProject
             formAdmin.ShowDialog();
             lstBoxProjet.DataSource = null;
             lstBoxProjet.DataSource = sessionUser.getListProj();
+
         }
 
         private void pnlAdmin_MouseEnter(object sender, EventArgs e)

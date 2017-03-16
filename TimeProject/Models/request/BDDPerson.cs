@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using TimeProject.Models.Class;
 using System.Data.Common;
-
+using TimeProject.Models.request;
 
 
 namespace TimeProject.Models.request
@@ -18,14 +18,14 @@ namespace TimeProject.Models.request
         private static string req;
 
 
-        static private List<User> getAllUser()
+        static public List<User> getAllUser()
         {
             List<User> lstUsers = new List<User>();
             DataBase.ConnexionToDataBase();
-            req = "select * from user";
+            req = "select * from user;";
 
-            if (dataReader.Read())
-            {
+            dataReader = DataBase.DBSelect(req);
+           
                 while (dataReader.Read())
                 {
                     User u;
@@ -35,11 +35,7 @@ namespace TimeProject.Models.request
                     lstUsers.Add(u);
                 }
 
-            }
-            else
-            {
-                lstUsers = null;
-            }
+          
             DataBase.FermeDataReader(dataReader);
             return lstUsers;
         }
