@@ -63,6 +63,7 @@
             this.textBox_Identifiant.Name = "textBox_Identifiant";
             this.textBox_Identifiant.Size = new System.Drawing.Size(242, 26);
             this.textBox_Identifiant.TabIndex = 1;
+            this.textBox_Identifiant.Text = "janvre.caliste@admin.fr";
             // 
             // textBox_pwd
             // 
@@ -71,6 +72,7 @@
             this.textBox_pwd.Name = "textBox_pwd";
             this.textBox_pwd.Size = new System.Drawing.Size(242, 26);
             this.textBox_pwd.TabIndex = 2;
+            this.textBox_pwd.Text = "root";
             // 
             // lab_Identif
             // 

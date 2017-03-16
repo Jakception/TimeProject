@@ -24,7 +24,10 @@ namespace TimeProject
 
         private void btCreaProjet_Click(object sender, EventArgs e)
         {
-
+            FormCreationProjet fproj = new FormCreationProjet();
+            this.Hide();
+            fproj.ShowDialog();
+            this.Show(); 
         }
 
 
@@ -33,11 +36,21 @@ namespace TimeProject
         {
 
             DateTime dtCloture;
-          
-            dtCloture = System.DateTime.Today.Date;
+            string date;
+            Projet p;
 
-            requestProjet.ProjetEncours();
-            loadListProjet();
+            dtCloture = System.DateTime.Today.Date;
+            date = DateTime.Now.ToString("yyyy-MM-dd");
+
+
+            p = (Projet)lstBoxProjet.SelectedItem;
+
+
+            
+                        requestProjet.clotureProjet(date, p.code_Projet);
+
+                        requestProjet.ProjetEncours();
+                        loadListProjet();
         }
 
         private void loadListProjet()

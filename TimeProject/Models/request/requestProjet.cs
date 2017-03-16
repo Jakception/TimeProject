@@ -27,7 +27,7 @@ namespace TimeProject.Models.request
                     Projet p;
 
                     p = new Projet(dataReader[0].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), Convert.ToDateTime(dataReader[8]), Convert.ToDateTime(dataReader[9].ToString()));
-                    System.Windows.Forms.MessageBox.Show(p.ToString());
+                    
                     lstProj.Add(p);
                 }
             
@@ -56,6 +56,24 @@ namespace TimeProject.Models.request
 
             DataBase.FermeDataReader(dataReader);
 
+        }
+
+        static public void clotureProjet(string date, string codeProjet)
+        {
+            int nbLigne;
+            
+            req = "UPDATE `projet` SET `DT_FIN_REEL`= '"+ date +"' WHERE `CODE_PROJET`= '"+ codeProjet +"';";
+            
+
+            nbLigne = DataBase.DBUpdate(req);
+             if (nbLigne == 0)
+             {
+                 System.Windows.Forms.MessageBox.Show("Erreur à l'enregistrement");
+             }
+             else
+             {
+                 System.Windows.Forms.MessageBox.Show("Projet Clos");
+             }
         }
     }
 }

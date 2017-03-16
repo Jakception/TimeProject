@@ -48,6 +48,10 @@ namespace TimeProject
             FormAdmininistration formAdmin = new FormAdmininistration();
 
             formAdmin.ShowDialog();
+
+            sessionUser.getListProj();
+            lstBoxProjet.DataSource = null;
+            lstBoxProjet.DataSource = sessionUser.getListProj();
         }
 
 
@@ -57,6 +61,8 @@ namespace TimeProject
             FormAdmininistration formAdmin = new FormAdmininistration();
 
             formAdmin.ShowDialog();
+            lstBoxProjet.DataSource = null;
+            lstBoxProjet.DataSource = sessionUser.getListProj();
         }
 
         private void pnlAdmin_MouseEnter(object sender, EventArgs e)
@@ -79,7 +85,28 @@ namespace TimeProject
             this.Cursor = Cursors.Hand;
         }
 
-        private void pnlTacheUrgente_Paint(object sender, PaintEventArgs e)
+        private void lblName_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblName_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void pnlUser_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+
+        }
+
+        private void pnlUser_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
         {
 
         }

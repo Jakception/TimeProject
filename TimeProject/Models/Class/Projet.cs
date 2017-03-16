@@ -8,19 +8,19 @@ namespace TimeProject.Models.Class
 {
     public class Projet
     {
-        private string code_Projet { get; set; }
-        private int id_Bc { get; set; }
-        private int id_Archi { get; set; }
-        private string id_chefProjet { get; set; }
-        private string nom_Projet { get; set; }
-        private string nom_Client { get; set; }
-        private string adresse_Client { get; set; }
-        private string ville_Client { get; set; }
-        private DateTime dt_Deb_Projet { get; set; }
-        private DateTime dt_Obj_Fin { get; set; }
-        private DateTime dt_Fin_Reel { get; set; }
+        public string code_Projet { get; set; }
+        public int id_Bc { get; set; }
+        public int id_Archi { get; set; }
+        public string id_chefProjet { get; set; }
+        public string nom_Projet { get; set; }
+        public string nom_Client { get; set; }
+        public string adresse_Client { get; set; }
+        public string ville_Client { get; set; }
+        public DateTime dt_Deb_Projet { get; set; }
+        public DateTime dt_Obj_Fin { get; set; }
+        public DateTime dt_Fin_Reel { get; set; }
 
-        private List<User> lstSalarieProjet { get; set; }
+        public List<User> lstSalarieProjet { get; set; }
 
         public virtual User user { get; set; }
         public virtual BureauControle bureauControle { get; set; }

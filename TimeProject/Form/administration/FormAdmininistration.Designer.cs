@@ -63,9 +63,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(925, 551);
+            this.ClientSize = new System.Drawing.Size(925, 275);
             this.Controls.Add(this.btProjet);
             this.Controls.Add(this.btPersonne);
+            this.MaximumSize = new System.Drawing.Size(941, 314);
+            this.MinimumSize = new System.Drawing.Size(941, 314);
             this.Name = "FormAdmininistration";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormAdmininistration_Load);
