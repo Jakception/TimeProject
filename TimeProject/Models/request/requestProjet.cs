@@ -75,5 +75,27 @@ namespace TimeProject.Models.request
                  System.Windows.Forms.MessageBox.Show("Projet Clos");
              }
         }
+
+        static public void creationProjet(string code, string nameProjet, string id_user, string nomClient, string adresseClient, string villeClient, DateTime dtDeb, DateTime dtFinPrev)
+        {
+            req = "INSERT INTO `projet`(`CODE_PROJET`,`ID_USER`, `NOM_PROJET`, `NOM_CLIENT`, `ADRESSE_CLIENT`, `VILLE_CLIENT`, `DT_DEB_PROJET`, `DT_OBJ_FIN`) VALUES ('" + code +"','" ;
+            req = req + id_user + "','" + nameProjet + "','";
+            req = req + nomClient + "','" + adresseClient +"','"+villeClient+ "','";
+            req = req + dtDeb + "','" + dtFinPrev + "';";
+
+            int nbligne;
+
+            nbligne = DataBase.DBInsert(req);
+
+            if (nbligne == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("FAIL");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("ok");
+            }
+
+        }
     }
 }

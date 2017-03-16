@@ -35,14 +35,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtChefProjet = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtVilleClient = new System.Windows.Forms.TextBox();
+            this.txtNomProjet = new System.Windows.Forms.TextBox();
+            this.txtNomClient = new System.Windows.Forms.TextBox();
+            this.txtAdresseClient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lstBoxChefProjet = new System.Windows.Forms.ListBox();
-            this.dtDeb = new System.Windows.Forms.DateTimePicker();
-            this.dtFinPrev = new System.Windows.Forms.DateTimePicker();
+            this.dtPickDeb = new System.Windows.Forms.DateTimePicker();
+            this.dtPickFinPrev = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btCreaProjet = new System.Windows.Forms.Button();
@@ -108,33 +108,33 @@
             this.txtChefProjet.Size = new System.Drawing.Size(251, 20);
             this.txtChefProjet.TabIndex = 6;
             // 
-            // textBox2
+            // txtVilleClient
             // 
-            this.textBox2.Location = new System.Drawing.Point(334, 403);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtVilleClient.Location = new System.Drawing.Point(334, 403);
+            this.txtVilleClient.Name = "txtVilleClient";
+            this.txtVilleClient.Size = new System.Drawing.Size(251, 20);
+            this.txtVilleClient.TabIndex = 7;
             // 
-            // textBox3
+            // txtNomProjet
             // 
-            this.textBox3.Location = new System.Drawing.Point(334, 224);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(251, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtNomProjet.Location = new System.Drawing.Point(334, 224);
+            this.txtNomProjet.Name = "txtNomProjet";
+            this.txtNomProjet.Size = new System.Drawing.Size(251, 20);
+            this.txtNomProjet.TabIndex = 8;
             // 
-            // textBox4
+            // txtNomClient
             // 
-            this.textBox4.Location = new System.Drawing.Point(334, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(251, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtNomClient.Location = new System.Drawing.Point(334, 291);
+            this.txtNomClient.Name = "txtNomClient";
+            this.txtNomClient.Size = new System.Drawing.Size(251, 20);
+            this.txtNomClient.TabIndex = 9;
             // 
-            // textBox5
+            // txtAdresseClient
             // 
-            this.textBox5.Location = new System.Drawing.Point(334, 341);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtAdresseClient.Location = new System.Drawing.Point(334, 341);
+            this.txtAdresseClient.Name = "txtAdresseClient";
+            this.txtAdresseClient.Size = new System.Drawing.Size(251, 20);
+            this.txtAdresseClient.TabIndex = 10;
             // 
             // label1
             // 
@@ -154,19 +154,19 @@
             this.lstBoxChefProjet.Size = new System.Drawing.Size(251, 30);
             this.lstBoxChefProjet.TabIndex = 12;
             // 
-            // dtDeb
+            // dtPickDeb
             // 
-            this.dtDeb.Location = new System.Drawing.Point(334, 457);
-            this.dtDeb.Name = "dtDeb";
-            this.dtDeb.Size = new System.Drawing.Size(200, 20);
-            this.dtDeb.TabIndex = 13;
+            this.dtPickDeb.Location = new System.Drawing.Point(334, 457);
+            this.dtPickDeb.Name = "dtPickDeb";
+            this.dtPickDeb.Size = new System.Drawing.Size(200, 20);
+            this.dtPickDeb.TabIndex = 13;
             // 
-            // dtFinPrev
+            // dtPickFinPrev
             // 
-            this.dtFinPrev.Location = new System.Drawing.Point(334, 504);
-            this.dtFinPrev.Name = "dtFinPrev";
-            this.dtFinPrev.Size = new System.Drawing.Size(200, 20);
-            this.dtFinPrev.TabIndex = 14;
+            this.dtPickFinPrev.Location = new System.Drawing.Point(334, 504);
+            this.dtPickFinPrev.Name = "dtPickFinPrev";
+            this.dtPickFinPrev.Size = new System.Drawing.Size(200, 20);
+            this.dtPickFinPrev.TabIndex = 14;
             // 
             // label2
             // 
@@ -205,14 +205,14 @@
             this.Controls.Add(this.btCreaProjet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtFinPrev);
-            this.Controls.Add(this.dtDeb);
+            this.Controls.Add(this.dtPickFinPrev);
+            this.Controls.Add(this.dtPickDeb);
             this.Controls.Add(this.lstBoxChefProjet);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAdresseClient);
+            this.Controls.Add(this.txtNomClient);
+            this.Controls.Add(this.txtNomProjet);
+            this.Controls.Add(this.txtVilleClient);
             this.Controls.Add(this.txtChefProjet);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -237,14 +237,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtChefProjet;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtVilleClient;
+        private System.Windows.Forms.TextBox txtNomProjet;
+        private System.Windows.Forms.TextBox txtNomClient;
+        private System.Windows.Forms.TextBox txtAdresseClient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBoxChefProjet;
-        private System.Windows.Forms.DateTimePicker dtDeb;
-        private System.Windows.Forms.DateTimePicker dtFinPrev;
+        private System.Windows.Forms.DateTimePicker dtPickDeb;
+        private System.Windows.Forms.DateTimePicker dtPickFinPrev;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btCreaProjet;
