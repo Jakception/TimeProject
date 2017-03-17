@@ -47,9 +47,9 @@ namespace TimeProject
 
 
             
-                        requestProjet.clotureProjet(date, p.code_Projet);
+                        BDDProjet.clotureProjet(date, p.code_Projet);
 
-                        requestProjet.ProjetEncours();
+                        BDDProjet.ProjetEncours();
                         loadListProjet();
         }
 

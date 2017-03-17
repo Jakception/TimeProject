@@ -17,7 +17,7 @@ namespace TimeProject
         public FormAccueil()
         {
             InitializeComponent();
-            requestProjet.ProjetEncours();
+            BDDProjet.ProjetEncours();
         }
 
         private void FormAccueil_Load(object sender, EventArgs e)

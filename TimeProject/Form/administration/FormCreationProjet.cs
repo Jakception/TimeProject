@@ -74,7 +74,7 @@ namespace TimeProject
                 }
 
                 // Création du projet
-                requestProjet.creationProjet(codeProjet, nomProjet = txtNomProjet.Text, chefProjet.id_User.ToString(), nomClient, adresseClient, villeClient, dtDeb, dtFinPrev);
+                BDDProjet.creationProjet(codeProjet, nomProjet = txtNomProjet.Text, chefProjet.id_User.ToString(), nomClient, adresseClient, villeClient, dtDeb, dtFinPrev);
 
                 // Enregistrement dans la table userprojet
             }

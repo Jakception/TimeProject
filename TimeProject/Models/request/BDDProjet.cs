@@ -8,7 +8,7 @@ using System.Data.Common;
 
 namespace TimeProject.Models.request
 {
-    static class requestProjet
+    static class BDDProjet
     {
         private static DbDataReader dataReader { get; set; }
         private static string req;
@@ -78,15 +78,15 @@ namespace TimeProject.Models.request
 
         static public void creationProjet(string code, string nameProjet, string id_user, string nomClient, string adresseClient, string villeClient, DateTime dtDeb, DateTime dtFinPrev)
         {
-            req = "INSERT INTO `projet`(`CODE_PROJET`,`ID_USER`, `NOM_PROJET`, `NOM_CLIENT`, `ADRESSE_CLIENT`, `VILLE_CLIENT`, `DT_DEB_PROJET`, `DT_OBJ_FIN`) VALUES ('" + code +"','" ;
-            req = req + id_user + "','" + nameProjet + "','";
-            req = req + nomClient + "','" + adresseClient +"','"+villeClient+ "','";
-            req = req + dtDeb + "','" + dtFinPrev + "';";
+            string dateDeb, dateFinPrev;
 
+            dateDeb = dtDeb.ToString("yy-MM-dd");
+            dateFinPrev = dtFinPrev.ToString("yy-MM-dd");
+            req = "INSERT INTO `timeproject`.`projet` (`CODE_PROJET`, `ID_BC`, `ID_ARCHI`, `ID_USER`, `NOM_PROJET`, `NOM_CLIENT`, `ADRESSE_CLIENT`, `VILLE_CLIENT`, `DT_DEB_PROJET`, `DT_OBJ_FIN`, `DT_FIN_REEL`) VALUES ('"+code +"', '', '', '"+id_user+"', '"+nameProjet+"', '"+nomClient+"', '"+adresseClient+" ', '"+villeClient+"', '"+dateDeb+"', '"+dateFinPrev+"', NULL);";
             int nbligne;
 
             nbligne = DataBase.DBInsert(req);
-
+            
             if (nbligne == 0)
             {
                 System.Windows.Forms.MessageBox.Show("FAIL");
