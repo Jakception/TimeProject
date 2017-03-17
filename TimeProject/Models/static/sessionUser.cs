@@ -27,7 +27,7 @@ namespace TimeProject
             return utilisateur.code_Tp_Profil;
         }
 
-        static public int getID()
+        static public string getID()
         {
             return utilisateur.id_User;
         }

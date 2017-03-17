@@ -97,5 +97,10 @@ namespace TimeProject.Models.request
             }
 
         }
+
+        static public void setUserProjet(string id_user, string code_projet)
+        {
+
+        }
     }
 }
