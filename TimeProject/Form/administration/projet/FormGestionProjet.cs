@@ -68,7 +68,15 @@ namespace TimeProject
 
         private void btGestionUser_Click(object sender, EventArgs e)
         {
+            Projet p;
 
+            p = (Projet)lstBoxProjet.SelectedItem;
+            classAdministration.projetModif = p;
+
+            FormGestUserProjet form = new FormGestUserProjet();
+            
+            form.ShowDialog();
+           
         }
     }
      

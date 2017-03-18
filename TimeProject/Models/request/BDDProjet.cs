@@ -81,7 +81,7 @@ namespace TimeProject.Models.request
             
         }
 
-        static List<User> getUserProjet(string code_projet)
+        static public List<User> getUserProjet(string code_projet)
         {
             List<User> lstUserProj = new List<User>();
 
@@ -101,6 +101,13 @@ namespace TimeProject.Models.request
 
             DataBase.FermeDataReader(dataReader);
             return lstUserProj;
+        }
+
+        static public void DelUserProjet(string id_user, string code_projet)
+        {
+            req = "DELETE from user_projet WHERE id_user ='"+id_user +"' AND code_projet ='" +code_projet +"';";
+            DataBase.DBDelete(req);
+
         }
     }
 }
