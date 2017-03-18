@@ -31,13 +31,14 @@
             this.btCreaProjet = new System.Windows.Forms.Button();
             this.lstBoxProjet = new System.Windows.Forms.ListBox();
             this.btCloreProjet = new System.Windows.Forms.Button();
+            this.btGestionUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btCreaProjet
             // 
             this.btCreaProjet.Location = new System.Drawing.Point(327, 164);
             this.btCreaProjet.Name = "btCreaProjet";
-            this.btCreaProjet.Size = new System.Drawing.Size(95, 49);
+            this.btCreaProjet.Size = new System.Drawing.Size(134, 49);
             this.btCreaProjet.TabIndex = 0;
             this.btCreaProjet.Text = "Créer projet";
             this.btCreaProjet.UseVisualStyleBackColor = true;
@@ -56,11 +57,21 @@
             // 
             this.btCloreProjet.Location = new System.Drawing.Point(327, 336);
             this.btCloreProjet.Name = "btCloreProjet";
-            this.btCloreProjet.Size = new System.Drawing.Size(95, 49);
+            this.btCloreProjet.Size = new System.Drawing.Size(134, 49);
             this.btCloreProjet.TabIndex = 2;
             this.btCloreProjet.Text = "Clore projet";
             this.btCloreProjet.UseVisualStyleBackColor = true;
             this.btCloreProjet.Click += new System.EventHandler(this.btCloreProjet_Click);
+            // 
+            // btGestionUser
+            // 
+            this.btGestionUser.Location = new System.Drawing.Point(327, 254);
+            this.btGestionUser.Name = "btGestionUser";
+            this.btGestionUser.Size = new System.Drawing.Size(134, 49);
+            this.btGestionUser.TabIndex = 3;
+            this.btGestionUser.Text = "Gestion des personnes";
+            this.btGestionUser.UseVisualStyleBackColor = true;
+            this.btGestionUser.Click += new System.EventHandler(this.btGestionUser_Click);
             // 
             // FormGestionProjet
             // 
@@ -68,6 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(492, 542);
+            this.Controls.Add(this.btGestionUser);
             this.Controls.Add(this.btCloreProjet);
             this.Controls.Add(this.lstBoxProjet);
             this.Controls.Add(this.btCreaProjet);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Button btCreaProjet;
         private System.Windows.Forms.ListBox lstBoxProjet;
         private System.Windows.Forms.Button btCloreProjet;
+        private System.Windows.Forms.Button btGestionUser;
     }
 }

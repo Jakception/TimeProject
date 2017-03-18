@@ -27,7 +27,9 @@ namespace TimeProject
             FormCreationProjet fproj = new FormCreationProjet();
             this.Hide();
             fproj.ShowDialog();
-            this.Show(); 
+            
+            this.Show();
+            loadListProjet();
         }
 
 
@@ -60,6 +62,11 @@ namespace TimeProject
         }
 
         private void FormGestionProjet_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btGestionUser_Click(object sender, EventArgs e)
         {
 
         }

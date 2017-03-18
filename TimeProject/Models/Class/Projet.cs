@@ -25,7 +25,7 @@ namespace TimeProject.Models.Class
         public virtual User user { get; set; }
         public virtual BureauControle bureauControle { get; set; }
         public virtual Architecte architecte { get; set; }
-        public virtual List<UserProjet> listUserProjet { get; set; }
+        public virtual List<User> listUserProjet { get; set; }
         public virtual List<Plan> listPlan { get; set; }
         public virtual List<BordProjet> listBordProjet { get; set; }
         public virtual List<CrProjet> listCrProjet { get; set; }
@@ -60,6 +60,11 @@ namespace TimeProject.Models.Class
 
         }
 
+
+        public void setListPersonne(List<User> lstUser)
+        {
+            this.listUserProjet = lstUser;
+        }
 
         public override string ToString()
         {

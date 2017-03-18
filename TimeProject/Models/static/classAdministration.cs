@@ -11,6 +11,8 @@ namespace TimeProject
     static class classAdministration
     {
         public static List<User> lstUser { get; set; }
+        public static List<User> lstUserProjet { get; set; }
         
+        public static Projet projetModif { get; set; }
     }
 }

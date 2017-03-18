@@ -77,21 +77,15 @@ namespace TimeProject
                 BDDProjet.creationProjet(codeProjet, nomProjet = txtNomProjet.Text, chefProjet.id_User.ToString(), nomClient, adresseClient, villeClient, dtDeb, dtFinPrev);
 
                 // Enregistrement dans la table userprojet
-
-
-
+                               
                 User u;
-                foreach (var item in checkListUserProjet.SelectedItems)
+                foreach (var item in checkListUserProjet.CheckedItems)
                 {
                     u = (User)item;
-
+                    MessageBox.Show(u.ToString());
                     BDDProjet.setUserProjet(u.id_User.ToString(), codeProjet);
                 }
-                {
-
-
-
-
+                
                     //remise des champs a vide 
 
                     txtChefProjet.Text = "";
@@ -99,15 +93,14 @@ namespace TimeProject
                     txtNomClient.Text = "";
                     txtVilleClient.Text = "";
                     txtAdresseClient.Text = "";
-
-                } 
+                 
             }
             else
             {
                 MessageBox.Show(messErreur);
             }
-                 
 
+            classAdministration.lstUser = BDDPerson.getAllUser();
 
 
         }

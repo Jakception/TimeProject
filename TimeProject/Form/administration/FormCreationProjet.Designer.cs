@@ -114,6 +114,7 @@
             this.txtVilleClient.Name = "txtVilleClient";
             this.txtVilleClient.Size = new System.Drawing.Size(251, 20);
             this.txtVilleClient.TabIndex = 7;
+            this.txtVilleClient.Text = "91310 Monthlery";
             // 
             // txtNomProjet
             // 
@@ -128,6 +129,7 @@
             this.txtNomClient.Name = "txtNomClient";
             this.txtNomClient.Size = new System.Drawing.Size(251, 20);
             this.txtNomClient.TabIndex = 9;
+            this.txtNomClient.Text = "Janvre Caliste";
             // 
             // txtAdresseClient
             // 
@@ -135,6 +137,7 @@
             this.txtAdresseClient.Name = "txtAdresseClient";
             this.txtAdresseClient.Size = new System.Drawing.Size(251, 20);
             this.txtAdresseClient.TabIndex = 10;
+            this.txtAdresseClient.Text = "13 rue de quelquepart";
             // 
             // label1
             // 
