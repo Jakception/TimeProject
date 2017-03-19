@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using TimeProject.Models.request;
+using TimeProject.Models.Class;
 
 namespace TimeProject
 {
@@ -43,7 +44,12 @@ namespace TimeProject
         private void btDelUser_Click(object sender, EventArgs e)
         {
             //supprime le user selectionne (requete avec le mail en where clause ou le nom - prenom) 
+            // Récupérer la liste des user en cours et rechercher par rapport à l'id.
+            User user;
 
+            user = (User)lstBoxUser.SelectedItem;
+
+            BDDPerson.DeleteUser(user.id_User);
 
             LoadUser();
         }

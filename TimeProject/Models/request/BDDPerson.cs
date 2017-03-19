@@ -106,11 +106,15 @@ namespace TimeProject.Models.request
             return user;
         }
         // Supprime l'utilisateur
-        public static int DeleteUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail)
+        public static int DeleteUser(string idUser)
         {
             int nbLigne = 0;
 
-            req = "";
+            req = "DELETE FROM Cr_user WHERE ID_USER = '" + idUser + "'; \n"
+                + " DELETE FROM User_event WHERE ID_USER = '" + idUser + "'; \n"
+                + " DELETE FROM User_pole WHERE ID_USER = '" + idUser + "'; \n"
+                + " DELETE FROM User_projet WHERE ID_USER = '" + idUser + "'; \n"
+                + " DELETE FROM User WHERE ID_USER = '" + idUser + "';";
 
             nbLigne = DataBase.DBDelete(req);
 
