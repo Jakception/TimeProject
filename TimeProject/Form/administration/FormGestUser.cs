@@ -37,9 +37,6 @@ namespace TimeProject
                 MessageBox.Show("L'utilisateur " + txtBoxNom.Text + " " + txtBoxPrenom.Text + " existe déjà !");
             }
 
-            lstBoxUser.DataSource = null;
-            lstBoxUser.DataSource = BDDPerson.getAllUser();
-
             LoadUser();
         }
 
@@ -55,7 +52,14 @@ namespace TimeProject
         private void LoadUser ()
         {
             // Charge tous les user dans  lstBoxUser et met a vide toutes les txtBox
+            lstBoxUser.DataSource = null;
+            lstBoxUser.DataSource = BDDPerson.getAllUser();
 
+            txtBoxNom.Text = "";
+            txtBoxPrenom.Text = "";
+            txtBoxInit.Text = "";
+            txtBoxMail.Text = "";
+            checkBoxAdm.Checked = false;
 
         }
 
