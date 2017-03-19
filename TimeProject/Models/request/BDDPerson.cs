@@ -85,6 +85,26 @@ namespace TimeProject.Models.request
 
             return pwd;
         }
+        // Vérifie si user déjà existant
+        public static User DejaExisteUser(string nomUser, string prenomUser)
+        {
+            User user;
+
+            DataBase.ConnexionToDataBase();
+            dataReader = DataBase.DBSelect("SELECT * FROM User WHERE NOM_USER = '" + nomUser + "' AND PRENOM_USER = '" + prenomUser + "'");
+            if (dataReader.Read())
+            {
+                user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+            }
+            else
+            {
+                user = null;
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return user;
+        }
         // Supprime l'utilisateur
         public static int DeleteUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail)
         {
