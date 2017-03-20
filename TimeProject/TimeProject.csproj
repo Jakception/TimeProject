@@ -158,6 +158,7 @@
     <Compile Include="Models\request\BDDPerson.cs" />
     <Compile Include="Models\request\DataBase.cs" />
     <Compile Include="Models\request\BDDProjet.cs" />
+    <Compile Include="Models\Utilitaire\Mail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\static\sessionUser.cs" />
