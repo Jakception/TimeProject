@@ -168,11 +168,11 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Maroon;
-            this.lblDate.Location = new System.Drawing.Point(328, 107);
+            this.lblDate.Location = new System.Drawing.Point(378, 108);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(898, 39);
+            this.lblDate.Size = new System.Drawing.Size(753, 33);
             this.lblDate.TabIndex = 19;
             this.lblDate.Text = "Date de début : xx/xx/XXXX - Objectif de fin : xx/xx/XXXX";
             // 
