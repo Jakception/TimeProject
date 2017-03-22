@@ -187,6 +187,7 @@
             this.lstBoxProjet.Name = "lstBoxProjet";
             this.lstBoxProjet.Size = new System.Drawing.Size(274, 433);
             this.lstBoxProjet.TabIndex = 0;
+            this.lstBoxProjet.DoubleClick += new System.EventHandler(this.lstBoxProjet_DoubleClick);
             // 
             // lblRendu
             // 

@@ -11,7 +11,7 @@ namespace TimeProject
     {
         static private User utilisateur;
         static private List<Projet> lstProjetUSer;
-
+        static public Projet projetModif { get; set; }
 
         static public void loadUser(User user)
         {

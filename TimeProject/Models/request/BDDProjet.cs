@@ -25,10 +25,11 @@ namespace TimeProject.Models.request
                 while (dataReader.Read())
                 {
                     Projet p;
+                
 
-                    p = new Projet(dataReader[0].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), Convert.ToDateTime(dataReader[8]), Convert.ToDateTime(dataReader[9].ToString()));
-                    
-                    lstProj.Add(p);
+                p = new Projet(dataReader[0].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), Convert.ToDateTime(dataReader[8].ToString()), Convert.ToDateTime(dataReader[9].ToString()));
+                
+                lstProj.Add(p);
                 }
             
                 

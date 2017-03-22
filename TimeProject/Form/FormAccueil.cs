@@ -111,5 +111,14 @@ namespace TimeProject
         {
 
         }
+
+        private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
+        {
+            sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
+            FormProjet fProj = new FormProjet();
+            this.Hide();    
+            fProj.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

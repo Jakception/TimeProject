@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeProject.Models.Class;
 
 namespace TimeProject
 {
     public partial class FormProjet : Form
     {
+        Projet p;
         private Form1 f1 = new Form1();
 
         public FormProjet()
@@ -38,6 +40,12 @@ namespace TimeProject
         private void lblTitre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormProjet_Load(object sender, EventArgs e)
+        {
+            p = sessionUser.projetModif;
+            lblDate.Text = "Date de début : " + p.dt_Deb_Projet.ToShortDateString() + "- Objectif de fin : " + p.dt_Obj_Fin.ToShortDateString();
         }
     }
 }

@@ -8,11 +8,8 @@ namespace TimeProject.Models.Class
 {
     public class Action : Evenement
     {
-        private int id_Event { get; set; }
-        private string etat { get; set; }
-        private DateTime dt_Event { get; set; }
-        private string event_Corps { get; set; }
-        private int importance { get; set; }
+        public string etat { get; set; }
+        public int importance { get; set; }
         public virtual User user { get; set; }
         public virtual List<UserEvent> listUserEvent { get; set; }
         public virtual List<EventProjet> listEventProjet { get; set; }
