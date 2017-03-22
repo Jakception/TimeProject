@@ -6,47 +6,27 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Configuration;
+using System.Collections;
+
 namespace TimeProject.Models.Utilitaire
 {
     public static class Mail
     {
-        public static void CreateTestMessage1(string server, int port)
+        public static void EnvoiMail(string sourceName, string emailRecepteur, string sujet, string contenuMail)
         {
-            string to = "gbeulaygue@gmail.com";
-            string from = "gbeulaygue@gmail.com";
-            string subject = "Using the new SMTP client.";
-            string body = @"Using this new feature, you can send an e-mail message from an application very easily.";
+            Hashtable section = (Hashtable)ConfigurationManager.GetSection(sourceName);
 
-            MailMessage message = new MailMessage(from, to, subject, body);
-            SmtpClient client = new SmtpClient(server, port);
-
-            // Credentials are necessary if the server requires the client
-            // to authenticate before it will send e-mail on the client's behalf.
-            client.Credentials = CredentialCache.DefaultNetworkCredentials;
-
-            try
-            {
-                client.Send(message);
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show("Exception caught in CreateTestMessage1(): {0}",
-                    ex.ToString());
-            }
-        }
-
-        public static void CreateTestMessage2()
-        {
-            var fromAddress = new MailAddress("EMAIL@EXEMPLE.COM", "From Name");
-            var toAddress = new MailAddress("EMAIL@EXEMPLE.COM", "To Name");
-            const string fromPassword = "MDP";
-            const string subject = "Subject";
-            const string body = "Body";
+            var fromAddress = new MailAddress(section["email"].ToString(), "From Name");
+            var toAddress = new MailAddress(emailRecepteur, "To Name");
+            string fromPassword = section["mdp"].ToString();
+            string subject = sujet;
+            string body = contenuMail;
 
             var smtp = new SmtpClient
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
+                Host = section["host"].ToString(),
+                Port = Convert.ToInt32(section["port"]),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
@@ -58,11 +38,50 @@ namespace TimeProject.Models.Utilitaire
                 Body = body
             })
             {
-                smtp.Send(message);
+                try
+                {
+                    smtp.Send(message);
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Exception caught in EnvoiMail(): {0}",
+                        ex.ToString());
+                }
             }
         }
+        //public static void EnvoiMail(string source, string emailRecepteur, string sujet, string contenuMail)
+        //{
+        //    var fromAddress = new MailAddress("EMAIL@EXEMPLE.COM", "From Name");
+        //    var toAddress = new MailAddress("EMAIL@EXEMPLE.COM", "To Name");
+        //    const string fromPassword = "MDP";
+        //    const string subject = "Subject";
+        //    const string body = "Body";
 
-        //SmtpClient client = new SmtpClient(server);
-        //client.Credentials = CredentialCache.DefaultNetworkCredentials;
+        //    var smtp = new SmtpClient
+        //    {
+        //        Host = "smtp.gmail.com",
+        //        Port = 587,
+        //        EnableSsl = true,
+        //        DeliveryMethod = SmtpDeliveryMethod.Network,
+        //        UseDefaultCredentials = false,
+        //        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+        //    };
+        //    using (var message = new MailMessage(fromAddress, toAddress)
+        //    {
+        //        Subject = subject,
+        //        Body = body
+        //    })
+        //    {
+        //        try
+        //        {
+        //            smtp.Send(message);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            System.Windows.Forms.MessageBox.Show("Exception caught in EnvoiMail(): {0}",
+        //                ex.ToString());
+        //        }
+        //    }
+        //}
     }
 }
