@@ -63,6 +63,10 @@ namespace TimeProject
            
         }
 
-       
+        private void linkLabel_PwdOublie_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TEST MAIL DANS UN PREMIER TEMPS
+            Models.Utilitaire.Mail.EnvoiMail("mailSettings", "", "", "");
+        }
     }
 }

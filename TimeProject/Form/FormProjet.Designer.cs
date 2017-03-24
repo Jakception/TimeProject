@@ -140,7 +140,6 @@
             this.btn_historique.TabIndex = 15;
             this.btn_historique.Text = "Historique Détaillé";
             this.btn_historique.UseVisualStyleBackColor = false;
-            this.btn_historique.Click += new System.EventHandler(this.btn_historique_Click);
             // 
             // lbl_histo
             // 
@@ -159,7 +158,7 @@
             this.lbl_taches.BackColor = System.Drawing.Color.MidnightBlue;
             this.lbl_taches.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_taches.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_taches.Location = new System.Drawing.Point(301, 515);
+            this.lbl_taches.Location = new System.Drawing.Point(301, 525);
             this.lbl_taches.Name = "lbl_taches";
             this.lbl_taches.Size = new System.Drawing.Size(830, 46);
             this.lbl_taches.TabIndex = 18;
@@ -169,13 +168,13 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Maroon;
-            this.lblDate.Location = new System.Drawing.Point(600, 116);
+            this.lblDate.Location = new System.Drawing.Point(378, 108);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(239, 24);
+            this.lblDate.Size = new System.Drawing.Size(753, 33);
             this.lblDate.TabIndex = 19;
-            this.lblDate.Text = "Date Debut - Objectif Fin";
+            this.lblDate.Text = "Date de début : xx/xx/XXXX - Objectif de fin : xx/xx/XXXX";
             // 
             // FormProjet
             // 
@@ -195,7 +194,6 @@
             this.Controls.Add(this.btn_listePlans);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1378, 780);
             this.Name = "FormProjet";
             this.Text = "FormProjet";
             this.Load += new System.EventHandler(this.FormProjet_Load);

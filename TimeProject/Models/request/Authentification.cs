@@ -22,12 +22,13 @@ namespace TimeProject.Models.request
             if (dataReader.Read())
             {
                 user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
-                DataBase.FermeDataReader(dataReader);
             }
             else
             {
                 user = null;
             }
+
+            DataBase.FermeDataReader(dataReader);
 
             return user;
         }
