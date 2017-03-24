@@ -14,6 +14,10 @@ namespace TimeProject
 {
     public partial class FormAccueil : Form
     {
+
+        // tache = table Action et information
+        // importance 1 = importance haute
+
         public FormAccueil()
         {
             InitializeComponent();
@@ -22,6 +26,8 @@ namespace TimeProject
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+
+            // TO DO Fonction permettant de charger les tâches des projets. 
             if (sessionUser.getTpProfil() != "adm")
             {
                 pnlAdmin.Visible = false;
@@ -107,9 +113,18 @@ namespace TimeProject
             this.Cursor = Cursors.Arrow;
         }
 
-        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
+        private void lstBoxProjet_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            Projet p;
+            FormProjet fProj = new FormProjet();
 
+            p = (Projet) lstBoxProjet.SelectedItem;
+            sessionUser.projetModif = p;
+
+            
+            this.Visible = false;
+            fProj.ShowDialog();
+            this.Visible = true;
         }
 
         private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
