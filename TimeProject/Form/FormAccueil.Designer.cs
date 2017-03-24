@@ -88,7 +88,6 @@
             this.pnlAdmin.Size = new System.Drawing.Size(200, 26);
             this.pnlAdmin.TabIndex = 1;
             this.pnlAdmin.Click += new System.EventHandler(this.pnlAdmin_Click);
-            this.pnlAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdmin_Paint);
             this.pnlAdmin.MouseEnter += new System.EventHandler(this.pnlAdmin_MouseEnter);
             this.pnlAdmin.MouseLeave += new System.EventHandler(this.pnlAdmin_MouseLeave);
             // 
@@ -185,8 +184,9 @@
             this.lstBoxProjet.FormattingEnabled = true;
             this.lstBoxProjet.Location = new System.Drawing.Point(3, 76);
             this.lstBoxProjet.Name = "lstBoxProjet";
-            this.lstBoxProjet.Size = new System.Drawing.Size(274, 433);
+            this.lstBoxProjet.Size = new System.Drawing.Size(274, 420);
             this.lstBoxProjet.TabIndex = 0;
+            this.lstBoxProjet.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstBoxProjet_MouseDoubleClick);
             // 
             // lblRendu
             // 
@@ -205,7 +205,7 @@
             this.lstBoxRendu.FormattingEnabled = true;
             this.lstBoxRendu.Location = new System.Drawing.Point(31, 80);
             this.lstBoxRendu.Name = "lstBoxRendu";
-            this.lstBoxRendu.Size = new System.Drawing.Size(470, 433);
+            this.lstBoxRendu.Size = new System.Drawing.Size(470, 420);
             this.lstBoxRendu.TabIndex = 2;
             // 
             // lblRenduTitre
@@ -236,7 +236,7 @@
             this.lstBoxTask.FormattingEnabled = true;
             this.lstBoxTask.Location = new System.Drawing.Point(29, 80);
             this.lstBoxTask.Name = "lstBoxTask";
-            this.lstBoxTask.Size = new System.Drawing.Size(395, 433);
+            this.lstBoxTask.Size = new System.Drawing.Size(395, 420);
             this.lstBoxTask.TabIndex = 4;
             // 
             // label2

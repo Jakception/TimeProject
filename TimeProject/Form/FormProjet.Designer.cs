@@ -39,6 +39,7 @@
             this.btn_historique = new System.Windows.Forms.Button();
             this.lbl_histo = new System.Windows.Forms.Label();
             this.lbl_taches = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +140,7 @@
             this.btn_historique.TabIndex = 15;
             this.btn_historique.Text = "Historique Détaillé";
             this.btn_historique.UseVisualStyleBackColor = false;
+            this.btn_historique.Click += new System.EventHandler(this.btn_historique_Click);
             // 
             // lbl_histo
             // 
@@ -157,12 +159,23 @@
             this.lbl_taches.BackColor = System.Drawing.Color.MidnightBlue;
             this.lbl_taches.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_taches.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_taches.Location = new System.Drawing.Point(301, 525);
+            this.lbl_taches.Location = new System.Drawing.Point(301, 515);
             this.lbl_taches.Name = "lbl_taches";
             this.lbl_taches.Size = new System.Drawing.Size(830, 46);
             this.lbl_taches.TabIndex = 18;
             this.lbl_taches.Text = "Tâches urgentes en attente d\'action";
             this.lbl_taches.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDate.Location = new System.Drawing.Point(600, 116);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(239, 24);
+            this.lblDate.TabIndex = 19;
+            this.lblDate.Text = "Date Debut - Objectif Fin";
             // 
             // FormProjet
             // 
@@ -170,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lbl_taches);
             this.Controls.Add(this.lbl_histo);
             this.Controls.Add(this.btn_historique);
@@ -181,8 +195,10 @@
             this.Controls.Add(this.btn_listePlans);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1378, 780);
             this.Name = "FormProjet";
             this.Text = "FormProjet";
+            this.Load += new System.EventHandler(this.FormProjet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +217,6 @@
         private System.Windows.Forms.Button btn_historique;
         private System.Windows.Forms.Label lbl_histo;
         private System.Windows.Forms.Label lbl_taches;
+        private System.Windows.Forms.Label lblDate;
     }
 }

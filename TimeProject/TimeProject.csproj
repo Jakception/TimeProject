@@ -76,35 +76,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\administration\projet\FormGestUserProjet.cs">
+    <Compile Include="FormGestionProfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\administration\projet\FormGestUserProjet.Designer.cs">
+    <Compile Include="FormGestionProfil.Designer.cs">
+      <DependentUpon>FormGestionProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistoDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoDet.Designer.cs">
+      <DependentUpon>FormHistoDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Administration\projet\FormGestUserProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Administration\projet\FormGestUserProjet.Designer.cs">
       <DependentUpon>FormGestUserProjet.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\static\classAdministration.cs" />
-    <Compile Include="Form\administration\projet\FormCreationProjet.cs">
+    <Compile Include="Form\Administration\projet\FormCreationProjet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\administration\projet\FormCreationProjet.Designer.cs">
+    <Compile Include="Form\Administration\projet\FormCreationProjet.Designer.cs">
       <DependentUpon>FormCreationProjet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\administration\FormGestUser.cs">
+    <Compile Include="Form\Administration\FormGestUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\administration\FormGestUser.Designer.cs">
+    <Compile Include="Form\Administration\FormGestUser.Designer.cs">
       <DependentUpon>FormGestUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\administration\projet\FormGestionProjet.cs">
+    <Compile Include="Form\Administration\projet\FormGestionProjet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\administration\projet\FormGestionProjet.Designer.cs">
+    <Compile Include="Form\Administration\projet\FormGestionProjet.Designer.cs">
       <DependentUpon>FormGestionProjet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\administration\FormAdmininistration.cs">
+    <Compile Include="Form\Administration\FormAdmininistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\administration\FormAdmininistration.Designer.cs">
+    <Compile Include="Form\Administration\FormAdmininistration.Designer.cs">
       <DependentUpon>FormAdmininistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FormAccueil.cs">
@@ -161,19 +173,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\static\sessionUser.cs" />
-    <EmbeddedResource Include="Form\administration\projet\FormGestUserProjet.resx">
+    <EmbeddedResource Include="FormGestionProfil.resx">
+      <DependentUpon>FormGestionProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoDet.resx">
+      <DependentUpon>FormHistoDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Administration\projet\FormGestUserProjet.resx">
       <DependentUpon>FormGestUserProjet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\administration\projet\FormCreationProjet.resx">
+    <EmbeddedResource Include="Form\Administration\projet\FormCreationProjet.resx">
       <DependentUpon>FormCreationProjet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\administration\FormGestUser.resx">
+    <EmbeddedResource Include="Form\Administration\FormGestUser.resx">
       <DependentUpon>FormGestUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\administration\projet\FormGestionProjet.resx">
+    <EmbeddedResource Include="Form\Administration\projet\FormGestionProjet.resx">
       <DependentUpon>FormGestionProjet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\administration\FormAdmininistration.resx">
+    <EmbeddedResource Include="Form\Administration\FormAdmininistration.resx">
       <DependentUpon>FormAdmininistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormAccueil.resx">
@@ -211,7 +229,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Form\HistoriqueDetaille\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Images\logo.png" />
   </ItemGroup>
