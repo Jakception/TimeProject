@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\request\BDDEvent.cs" />
     <Compile Include="FormAjoutEvent.cs">
       <SubType>Form</SubType>
     </Compile>

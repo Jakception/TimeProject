@@ -53,22 +53,30 @@ namespace TimeProject
 
             DateTime dtEvent;
             string idEvent, corpsEvent;
-            string etatEvent, importanceEvent;
+            status etatEvent, importanceEvent;
 
-            MessageBox.Show(type);
+            corpsEvent = txtCorpsEvent.Text;
 
             if (type == "Action")
             {
                 ActionProjet act;
 
                 idEvent = sessionUser.projetModif.code_Projet + "ACT" ;
+                dtEvent = dtAction.Value;
+                etatEvent = (status) lstBoxEtat.SelectedItem;
+                importanceEvent = (status)lstBoxImp.SelectedItem;
+                act = new ActionProjet(idEvent, dtEvent, corpsEvent, etatEvent.codeStatus.ToString(), importanceEvent.codeStatus);
             }
             else
             {
                 Information info;
-                idEvent = sessionUser.projetModif.code_Projet + "INF";  
-
+                idEvent = sessionUser.projetModif.code_Projet + "INF";
+                dtEvent = DateTime.Now.Date;
+                etatEvent = (status)lstBoxEtat.SelectedItem;
+                importanceEvent = (status)lstBoxImp.SelectedItem;
             }
+
+            MessageBox.Show(dtEvent.ToShortDateString());
         }
     }
 }
