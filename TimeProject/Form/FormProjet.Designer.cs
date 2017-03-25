@@ -140,6 +140,7 @@
             this.btn_historique.TabIndex = 15;
             this.btn_historique.Text = "Historique Détaillé";
             this.btn_historique.UseVisualStyleBackColor = false;
+            this.btn_historique.Click += new System.EventHandler(this.btn_historique_Click);
             // 
             // lbl_histo
             // 
@@ -148,7 +149,7 @@
             this.lbl_histo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_histo.Location = new System.Drawing.Point(301, 227);
             this.lbl_histo.Name = "lbl_histo";
-            this.lbl_histo.Size = new System.Drawing.Size(830, 46);
+            this.lbl_histo.Size = new System.Drawing.Size(371, 46);
             this.lbl_histo.TabIndex = 17;
             this.lbl_histo.Text = "Historique";
             this.lbl_histo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,9 +159,9 @@
             this.lbl_taches.BackColor = System.Drawing.Color.MidnightBlue;
             this.lbl_taches.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_taches.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_taches.Location = new System.Drawing.Point(301, 525);
+            this.lbl_taches.Location = new System.Drawing.Point(860, 227);
             this.lbl_taches.Name = "lbl_taches";
-            this.lbl_taches.Size = new System.Drawing.Size(830, 46);
+            this.lbl_taches.Size = new System.Drawing.Size(411, 46);
             this.lbl_taches.TabIndex = 18;
             this.lbl_taches.Text = "Tâches urgentes en attente d\'action";
             this.lbl_taches.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

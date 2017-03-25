@@ -26,7 +26,7 @@ namespace TimeProject
         private void btn_valIdentification_Click(object sender, EventArgs e)
         {
             //string nom;
-            FormAccueil f1 = new FormAccueil();
+           
             //nom = Models.DataBase.TestConnexion();
 
             //MessageBox.Show(nom);
@@ -44,11 +44,13 @@ namespace TimeProject
 
                 if (user != null)
                 {
+                   
                     // Session
                     sessionUser.loadUser(user);
+                    FormAccueil f1 = new FormAccueil();
                     this.Hide();
                     f1.ShowDialog();
-                    this.Close();
+                    this.Show();
                 }
                 else
                 {
@@ -91,6 +93,11 @@ namespace TimeProject
             {
                 MessageBox.Show("Veuillez renseigner un identifiant !");
             }
+        }
+
+        private void FormLog_Load(object sender, EventArgs e)
+        {
+            ConfigItem.initListeStatus();
         }
     }
 }
