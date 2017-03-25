@@ -105,6 +105,59 @@ namespace TimeProject.Models.request
 
             return user;
         }
+        // Vérifie mot de passe
+        public static User VerifieEmail(string mail)
+        {
+            User user;
+
+            DataBase.ConnexionToDataBase();
+            dataReader = DataBase.DBSelect("SELECT * FROM User WHERE MAIL = '" + mail + "';");
+            if (dataReader.Read())
+            {
+                user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+            }
+            else
+            {
+                user = null;
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return user;
+        }
+        public static string RecupereMdp(string idUser, string mail)
+        {
+            User user;
+            string mdp;
+
+            DataBase.ConnexionToDataBase();
+            dataReader = DataBase.DBSelect("SELECT * FROM User WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';");
+            if (dataReader.Read())
+            {
+                user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                mdp = user.pwd;
+            }
+            else
+            {
+                user = null;
+                mdp = "";
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return mdp;
+        }
+        // Mise à jour du PWD de l'utilisateur
+        public static int MajMdpUser(string idUser, string mail)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE User SET PWD = '" + GeneratePWD() + "' WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
         // Supprime l'utilisateur
         public static int DeleteUser(string idUser)
         {
