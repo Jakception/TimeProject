@@ -35,7 +35,7 @@ namespace TimeProject
             {
                 BDDPerson.CreateUser(GeneneCodeTypeProfi(checkBoxAdm.Checked), txtBoxInit.Text, txtBoxNom.Text, txtBoxPrenom.Text, txtBoxMail.Text);
                 user = BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text);
-                Mail.EnvoiMail("mailSettings", txtBoxMail.Text, "TimeProject Mot de passe", "Votre mot de passe est : " + user.pwd);
+                Mail.EnvoiMail(txtBoxMail.Text, "TimeProject Mot de passe", "Votre mot de passe est : " + user.pwd);
             }
             else
             {

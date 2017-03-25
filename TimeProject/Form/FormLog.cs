@@ -70,21 +70,29 @@ namespace TimeProject
         {
             User user;
             string pwd = "";
-            //Vérification de l'email
-            user = BDDPerson.VerifieEmail(textBox_Identifiant.Text);
-            if (user != null)
+            if (textBox_Identifiant.Text != "")
             {
-                // Màj du mdp
-                BDDPerson.MajMdpUser(user.id_User, user.mail);
-                // Envoi du mail
-                pwd = BDDPerson.RecupereMdp(user.id_User, user.pwd);
-                Mail.EnvoiMail("mailSettings", user.mail, "Changement mot de passe", "Votre mot de passe à été modifié et est maintnant : '" + pwd + "'. ");
-                //Mail.EnvoiMail("mailSettings", "", "", "");
+                //Vérification de l'email
+                user = BDDPerson.VerifieEmail(textBox_Identifiant.Text);
+                if (user != null)
+                {
+                    // Màj du mdp
+                    BDDPerson.MajMdpUser(user.id_User, user.mail);
+                    // Envoi du mail
+                    pwd = BDDPerson.RecupereMdp(user.id_User, user.mail);
+                    Mail.EnvoiMail(user.mail, "Changement mot de passe", "Votre mot de passe à été modifié et est maintnant : '" + pwd + "'. ");
+                    //Mail.EnvoiMail("mailSettings", "", "", "");
+                    MessageBox.Show("Le mot de passe a été modifier !\nVeuillez vérifier votre adresse mail.");
+                }
+                else
+                {
+                    MessageBox.Show("Le mail n'existe pas!");
+                }
             }
             else
             {
-                MessageBox.Show("Le mail n'existe pas!");
-            } 
+                MessageBox.Show("Veuillez renseigner un identifiant !");
+            }
         }
 
         private void FormLog_Load(object sender, EventArgs e)
