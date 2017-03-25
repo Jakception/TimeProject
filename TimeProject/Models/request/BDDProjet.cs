@@ -39,7 +39,31 @@ namespace TimeProject.Models.request
             sessionUser.setListProj(lstProj);
         }
 
+        public static void ProjetEnCoursUSer()
+        {
+            List<Projet> lstProj = new List<Projet>();
+            DataBase.ConnexionToDataBase();
+            req = "SELECT  Distinct p.* FROM projet p, user_projet up where up.code_projet = p.code_projet and p.DT_FIN_REEL is null and up.id_user = '"+ sessionUser.getID() +"' or p.id_user ='"+ sessionUser.getID() + "' ;";
 
+            dataReader = DataBase.DBSelect(req);
+
+
+            while (dataReader.Read())
+            {
+                Projet p;
+
+
+                p = new Projet(dataReader[0].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), Convert.ToDateTime(dataReader[8].ToString()), Convert.ToDateTime(dataReader[9].ToString()));
+
+                lstProj.Add(p);
+            }
+
+
+
+
+            DataBase.FermeDataReader(dataReader);
+            sessionUser.setListProj(lstProj);
+        }
 
 
         static public void clotureProjet(string date, string codeProjet)

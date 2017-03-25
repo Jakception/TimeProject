@@ -21,11 +21,20 @@ namespace TimeProject
         public FormAccueil()
         {
             InitializeComponent();
-            BDDProjet.ProjetEncours();
+            if (sessionUser.getTpProfil() == "adm")
+            {
+                BDDProjet.ProjetEncours();
+            }
+            else
+            {
+                BDDProjet.ProjetEnCoursUSer();
+            }
+            
         }
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+            ConfigItem.initListImportance();
 
             // TO DO Fonction permettant de charger les tâches des projets. 
             if (sessionUser.getTpProfil() != "adm")

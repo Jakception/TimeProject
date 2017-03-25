@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeProject.Models.Class
 {
-    public class Action : Evenement
+    public class ActionProjet : Evenement
     {
         public int id_Event { get; set; }
         public DateTime dt_Event { get; set; }
@@ -17,7 +17,7 @@ namespace TimeProject.Models.Class
         public virtual List<User> listUserEvent { get; set; }
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
-        public Action( int id_event, DateTime dt_event, string event_corps, string etat, int importance, User userCrea, List<User> lstUserConcerne )
+        public ActionProjet( int id_event, DateTime dt_event, string event_corps, string etat, int importance, User userCrea, List<User> lstUserConcerne )
         {
             this.id_Event = id_event;
             this.dt_Event = dt_event;
