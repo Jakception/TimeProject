@@ -38,6 +38,7 @@ namespace TimeProject
                     if(nbLigne != 0)
                     {
                         MessageBox.Show("Le mot de passe à bien été modifié !");
+                        this.Close();
                     }
                 }
                 else
@@ -49,6 +50,11 @@ namespace TimeProject
             {
                 MessageBox.Show("Veuillez remplir tout les champs !");
             }
+        }
+
+        private void buttonAnnulé_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
