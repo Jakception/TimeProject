@@ -16,18 +16,25 @@ namespace TimeProject
         private static string req;
 
 
-        public static void getEventProjet(string codeProjet)
+        public static List<Evenement> getEventProjet(string codeProjet)
         {
             List<ActionProjet> lstAct = new List<ActionProjet>();
             List<Information> lstInfo = new List<Information>();
             List<Evenement> lstEvent = new List<Evenement>();
 
             lstAct = getActionProjet(codeProjet);
-
+            lstInfo = getInfoProjet(codeProjet);
             foreach (var item in lstAct)
             {
                 lstEvent.Add(item);
             }
+
+            foreach (var item in lstInfo)
+            {
+                lstEvent.Add(item);
+            }
+            return lstEvent;
+
 
         }
 
@@ -52,9 +59,25 @@ namespace TimeProject
 
         }
 
-        public static void getInfoProjet(string codeProjet)
+        public static List<Information> getInfoProjet(string codeProjet)
         {
             List<Information> lstInfo = new List<Information>();
+
+            req = "select i.* from information i, eventprojet ep where ep.ID_EVENT = i.ID_EVENT AND ep.code_projet ='" + codeProjet + "';";
+            dataReader = DataBase.DBSelect(req);
+
+
+            while (dataReader.Read())
+            {
+                Information act;
+
+                act = new Information(dataReader[0].ToString(), Convert.ToDateTime(dataReader[1]), dataReader[2].ToString());
+                 
+                lstInfo.Add(act);
+            }
+
+            DataBase.FermeDataReader(dataReader);
+            return lstInfo;
         }
 
 

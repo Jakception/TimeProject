@@ -8,29 +8,23 @@ namespace TimeProject.Models.Class
 {
     public class Information : Evenement
     {
-        public int id_Event { get; set; }
+        public string id_Event { get; set; }
         public DateTime dt_Event { get; set; }
         public string event_Corps { get; set; }
-        public virtual User user { get; set; }
-        public virtual List<User> listUserEvent { get; set; }
+        public  User user { get; set; }
+       
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
-
-        public string getUserConcerne()
+        public Information(string id_event, DateTime dtEvent, string eventCorps)
         {
-            string userconcerne;
-            userconcerne = "";
-
-            foreach (var item in listUserEvent)
-            {
-                userconcerne = userconcerne + "/";
-            }
-            return userconcerne;
-        }
+            this.id_Event = id_event;
+            this.dt_Event = dtEvent;
+            this.event_Corps = eventCorps;
+         }
 
         public override string ToString()
         {
-            return getUserConcerne() + "   " + this.event_Corps + "  par : " + user.nom + "  " + user.prenom;
+            return  this.event_Corps + "  par : " + user.nom + "  " + user.prenom;
         }
     }
 }

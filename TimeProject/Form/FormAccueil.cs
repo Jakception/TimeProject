@@ -35,8 +35,37 @@ namespace TimeProject
         private void FormAccueil_Load(object sender, EventArgs e)
         {
             ConfigItem.initListImportance();
+            lstBoxProjet.DataSource = null;
+            lstBoxProjet.DataSource = sessionUser.getListProj();
 
             // TO DO Fonction permettant de charger les tâches des projets. 
+
+            List<Evenement> lstEvent = new List<Evenement>();
+            List<Evenement> lstTaskImp = new List<Evenement>();
+
+            ActionProjet act;
+            Information inf;
+            lstBoxTask.DataSource = null;
+            foreach (Projet item in sessionUser.getListProj())
+            {
+
+                item.lstEvent = BDDEvent.getEventProjet(item.code_Projet);
+
+                foreach (Evenement task in item.lstEvent)
+                {
+                    if (task is ActionProjet)
+                    {
+                        act =(ActionProjet) task;
+                        if (act.importance < 2)
+                        {
+                            lstTaskImp.Add(task);
+                        }
+                    }
+                   
+                }
+            }
+
+
             if (sessionUser.getTpProfil() != "adm")
             {
                 pnlAdmin.Visible = false;
@@ -53,8 +82,7 @@ namespace TimeProject
 
 
            
-            lstBoxProjet.DataSource = null;
-            lstBoxProjet.DataSource = sessionUser.getListProj();
+            
             
         }
 

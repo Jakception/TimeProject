@@ -76,6 +76,11 @@ namespace TimeProject.Models.Class
 
             return mess;
         }
+
+        public void recupProjet()
+        {
+
+        }
         public override string ToString()
         {
             return "Projet : " + this.code_Projet + " - " + this.nom_Projet; 
