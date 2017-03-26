@@ -158,6 +158,16 @@ namespace TimeProject.Models.request
 
             return nbLigne;
         }
+        public static int ChangerMdpUser(string idUser, string mdp)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE User SET PWD = '" + mdp + "' WHERE ID_USER = '" + idUser + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
         // Supprime l'utilisateur
         public static int DeleteUser(string idUser)
         {

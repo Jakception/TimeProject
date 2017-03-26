@@ -144,5 +144,11 @@ namespace TimeProject
             fProj.ShowDialog();
             this.Visible = true;
         }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            FormModifProfile fModifMdp = new FormModifProfile();
+            fModifMdp.ShowDialog();
+        }
     }
 }

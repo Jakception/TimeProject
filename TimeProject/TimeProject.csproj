@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModifProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifProfile.Designer.cs">
+      <DependentUpon>FormModifProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\request\BDDEvent.cs" />
     <Compile Include="FormAjoutEvent.cs">
       <SubType>Form</SubType>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionProfil.resx">
       <DependentUpon>FormGestionProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifProfile.resx">
+      <DependentUpon>FormModifProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\HistoriqueDetaille\FormHistoDet.resx">
       <DependentUpon>FormHistoDet.cs</DependentUpon>
