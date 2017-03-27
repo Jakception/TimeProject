@@ -27,40 +27,31 @@ namespace TimeProject
             lstBoxPlan.DataSource = BDDPlan.getAllPlan();
         }
 
-        private void btCreaPlan_Click(object sender, EventArgs e)
-        {
-            //Plan plan = BDDPlan.DejaExistePlan();
-            // créée le plan
-            //if (plan == null)
-            //{
-                //BDDPerson.CreatePlan();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Le plan existe déjà !");
-            //}
-
-            //LoadPlan();
-        }
-
-        private void btSupprimerPlan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LoadPlan()
         {
             // Charge tous les plans dans lstBoxPlan et met a vide toutes les txtBox
             lstBoxPlan.DataSource = null;
             lstBoxPlan.DataSource = BDDPerson.getAllUser();
+        }
 
-            txtBoxCodePlan.Text = "";
-            txtBoxIndice.Text = "";
-            txtBoxCodeProjet.Text = "";
-            txtBoxNumPlan.Text = "";
-            txtBoxLibellePlan.Text = "";
-            txtBoxDesignationPlan.Text = "";
-            dtPickPlan = null;
+        private void btn_Ajout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ModificationPlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Suppression_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_EditionPDF_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

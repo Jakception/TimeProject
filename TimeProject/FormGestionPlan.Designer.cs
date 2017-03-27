@@ -29,205 +29,127 @@
         private void InitializeComponent()
         {
             this.lstBoxPlan = new System.Windows.Forms.ListBox();
-            this.txtBoxCodeProjet = new System.Windows.Forms.TextBox();
-            this.txtBoxIndice = new System.Windows.Forms.TextBox();
-            this.txtBoxCodePlan = new System.Windows.Forms.TextBox();
-            this.lblIndice = new System.Windows.Forms.Label();
-            this.lblCodePlan = new System.Windows.Forms.Label();
             this.btSupprimerPlan = new System.Windows.Forms.Button();
             this.btCreaPlan = new System.Windows.Forms.Button();
             this.lblGestionPlan = new System.Windows.Forms.Label();
-            this.labelCodeProjet = new System.Windows.Forms.Label();
-            this.labelDesignation = new System.Windows.Forms.Label();
-            this.txtBoxDesignationPlan = new System.Windows.Forms.TextBox();
-            this.txtBoxLibellePlan = new System.Windows.Forms.TextBox();
-            this.txtBoxNumPlan = new System.Windows.Forms.TextBox();
-            this.labelLibelle = new System.Windows.Forms.Label();
-            this.labelNumPlan = new System.Windows.Forms.Label();
-            this.dtPickPlan = new System.Windows.Forms.DateTimePicker();
-            this.labelDtPlan = new System.Windows.Forms.Label();
+            this.btn_Ajout = new System.Windows.Forms.Button();
+            this.btn_EditionPDF = new System.Windows.Forms.Button();
+            this.btn_ListeDernierIndice = new System.Windows.Forms.Button();
+            this.btn_Suppression = new System.Windows.Forms.Button();
+            this.btn_ModificationPlan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstBoxPlan
             // 
             this.lstBoxPlan.FormattingEnabled = true;
-            this.lstBoxPlan.Location = new System.Drawing.Point(25, 95);
+            this.lstBoxPlan.Location = new System.Drawing.Point(293, 104);
             this.lstBoxPlan.Name = "lstBoxPlan";
             this.lstBoxPlan.ScrollAlwaysVisible = true;
-            this.lstBoxPlan.Size = new System.Drawing.Size(276, 420);
+            this.lstBoxPlan.Size = new System.Drawing.Size(713, 420);
             this.lstBoxPlan.TabIndex = 2;
-            // 
-            // txtBoxCodeProjet
-            // 
-            this.txtBoxCodeProjet.Location = new System.Drawing.Point(500, 222);
-            this.txtBoxCodeProjet.Name = "txtBoxCodeProjet";
-            this.txtBoxCodeProjet.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxCodeProjet.TabIndex = 21;
-            // 
-            // txtBoxIndice
-            // 
-            this.txtBoxIndice.Location = new System.Drawing.Point(499, 172);
-            this.txtBoxIndice.Name = "txtBoxIndice";
-            this.txtBoxIndice.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxIndice.TabIndex = 20;
-            // 
-            // txtBoxCodePlan
-            // 
-            this.txtBoxCodePlan.Location = new System.Drawing.Point(499, 122);
-            this.txtBoxCodePlan.Name = "txtBoxCodePlan";
-            this.txtBoxCodePlan.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxCodePlan.TabIndex = 19;
-            // 
-            // lblIndice
-            // 
-            this.lblIndice.AutoSize = true;
-            this.lblIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIndice.Location = new System.Drawing.Point(496, 145);
-            this.lblIndice.Name = "lblIndice";
-            this.lblIndice.Size = new System.Drawing.Size(61, 24);
-            this.lblIndice.TabIndex = 17;
-            this.lblIndice.Text = "Indice";
-            // 
-            // lblCodePlan
-            // 
-            this.lblCodePlan.AutoSize = true;
-            this.lblCodePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodePlan.Location = new System.Drawing.Point(496, 95);
-            this.lblCodePlan.Name = "lblCodePlan";
-            this.lblCodePlan.Size = new System.Drawing.Size(97, 24);
-            this.lblCodePlan.TabIndex = 15;
-            this.lblCodePlan.Text = "Code plan";
             // 
             // btSupprimerPlan
             // 
-            this.btSupprimerPlan.Location = new System.Drawing.Point(340, 287);
+            this.btSupprimerPlan.Location = new System.Drawing.Point(0, 0);
             this.btSupprimerPlan.Name = "btSupprimerPlan";
-            this.btSupprimerPlan.Size = new System.Drawing.Size(112, 61);
-            this.btSupprimerPlan.TabIndex = 14;
-            this.btSupprimerPlan.Text = "Supprimer";
-            this.btSupprimerPlan.UseVisualStyleBackColor = true;
-            this.btSupprimerPlan.Click += new System.EventHandler(this.btSupprimerPlan_Click);
+            this.btSupprimerPlan.Size = new System.Drawing.Size(75, 23);
+            this.btSupprimerPlan.TabIndex = 30;
             // 
             // btCreaPlan
             // 
-            this.btCreaPlan.Location = new System.Drawing.Point(340, 157);
+            this.btCreaPlan.Location = new System.Drawing.Point(0, 0);
             this.btCreaPlan.Name = "btCreaPlan";
-            this.btCreaPlan.Size = new System.Drawing.Size(112, 61);
-            this.btCreaPlan.TabIndex = 13;
-            this.btCreaPlan.Text = "Créer";
-            this.btCreaPlan.UseVisualStyleBackColor = true;
-            this.btCreaPlan.Click += new System.EventHandler(this.btCreaPlan_Click);
+            this.btCreaPlan.Size = new System.Drawing.Size(75, 23);
+            this.btCreaPlan.TabIndex = 31;
             // 
             // lblGestionPlan
             // 
             this.lblGestionPlan.AutoSize = true;
             this.lblGestionPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionPlan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblGestionPlan.Location = new System.Drawing.Point(287, 33);
+            this.lblGestionPlan.Location = new System.Drawing.Point(287, 37);
             this.lblGestionPlan.Name = "lblGestionPlan";
             this.lblGestionPlan.Size = new System.Drawing.Size(231, 31);
             this.lblGestionPlan.TabIndex = 24;
             this.lblGestionPlan.Text = "Gestion des plans";
             // 
-            // labelCodeProjet
+            // btn_Ajout
             // 
-            this.labelCodeProjet.AutoSize = true;
-            this.labelCodeProjet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodeProjet.Location = new System.Drawing.Point(496, 195);
-            this.labelCodeProjet.Name = "labelCodeProjet";
-            this.labelCodeProjet.Size = new System.Drawing.Size(135, 24);
-            this.labelCodeProjet.TabIndex = 25;
-            this.labelCodeProjet.Text = "Code du projet";
+            this.btn_Ajout.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Ajout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ajout.ForeColor = System.Drawing.Color.White;
+            this.btn_Ajout.Location = new System.Drawing.Point(41, 104);
+            this.btn_Ajout.Name = "btn_Ajout";
+            this.btn_Ajout.Size = new System.Drawing.Size(195, 61);
+            this.btn_Ajout.TabIndex = 29;
+            this.btn_Ajout.Text = "Ajout";
+            this.btn_Ajout.UseVisualStyleBackColor = false;
+            this.btn_Ajout.Click += new System.EventHandler(this.btn_Ajout_Click);
             // 
-            // labelDesignation
+            // btn_EditionPDF
             // 
-            this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDesignation.Location = new System.Drawing.Point(496, 345);
-            this.labelDesignation.Name = "labelDesignation";
-            this.labelDesignation.Size = new System.Drawing.Size(109, 24);
-            this.labelDesignation.TabIndex = 31;
-            this.labelDesignation.Text = "Désignation";
+            this.btn_EditionPDF.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_EditionPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditionPDF.ForeColor = System.Drawing.Color.White;
+            this.btn_EditionPDF.Location = new System.Drawing.Point(41, 463);
+            this.btn_EditionPDF.Name = "btn_EditionPDF";
+            this.btn_EditionPDF.Size = new System.Drawing.Size(195, 61);
+            this.btn_EditionPDF.TabIndex = 28;
+            this.btn_EditionPDF.Text = "Edition PDF";
+            this.btn_EditionPDF.UseVisualStyleBackColor = false;
+            this.btn_EditionPDF.Click += new System.EventHandler(this.btn_EditionPDF_Click);
             // 
-            // txtBoxDesignationPlan
+            // btn_ListeDernierIndice
             // 
-            this.txtBoxDesignationPlan.Location = new System.Drawing.Point(500, 372);
-            this.txtBoxDesignationPlan.Name = "txtBoxDesignationPlan";
-            this.txtBoxDesignationPlan.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxDesignationPlan.TabIndex = 30;
+            this.btn_ListeDernierIndice.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_ListeDernierIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListeDernierIndice.ForeColor = System.Drawing.Color.White;
+            this.btn_ListeDernierIndice.Location = new System.Drawing.Point(41, 371);
+            this.btn_ListeDernierIndice.Name = "btn_ListeDernierIndice";
+            this.btn_ListeDernierIndice.Size = new System.Drawing.Size(195, 61);
+            this.btn_ListeDernierIndice.TabIndex = 27;
+            this.btn_ListeDernierIndice.Text = "Liste dernier Indice";
+            this.btn_ListeDernierIndice.UseVisualStyleBackColor = false;
             // 
-            // txtBoxLibellePlan
+            // btn_Suppression
             // 
-            this.txtBoxLibellePlan.Location = new System.Drawing.Point(499, 322);
-            this.txtBoxLibellePlan.Name = "txtBoxLibellePlan";
-            this.txtBoxLibellePlan.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxLibellePlan.TabIndex = 29;
+            this.btn_Suppression.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Suppression.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Suppression.ForeColor = System.Drawing.Color.White;
+            this.btn_Suppression.Location = new System.Drawing.Point(41, 285);
+            this.btn_Suppression.Name = "btn_Suppression";
+            this.btn_Suppression.Size = new System.Drawing.Size(195, 61);
+            this.btn_Suppression.TabIndex = 26;
+            this.btn_Suppression.Text = "Suprression";
+            this.btn_Suppression.UseVisualStyleBackColor = false;
+            this.btn_Suppression.Click += new System.EventHandler(this.btn_Suppression_Click);
             // 
-            // txtBoxNumPlan
+            // btn_ModificationPlan
             // 
-            this.txtBoxNumPlan.Location = new System.Drawing.Point(499, 272);
-            this.txtBoxNumPlan.Name = "txtBoxNumPlan";
-            this.txtBoxNumPlan.Size = new System.Drawing.Size(273, 20);
-            this.txtBoxNumPlan.TabIndex = 28;
-            // 
-            // labelLibelle
-            // 
-            this.labelLibelle.AutoSize = true;
-            this.labelLibelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLibelle.Location = new System.Drawing.Point(496, 295);
-            this.labelLibelle.Name = "labelLibelle";
-            this.labelLibelle.Size = new System.Drawing.Size(65, 24);
-            this.labelLibelle.TabIndex = 27;
-            this.labelLibelle.Text = "Libelle";
-            // 
-            // labelNumPlan
-            // 
-            this.labelNumPlan.AutoSize = true;
-            this.labelNumPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumPlan.Location = new System.Drawing.Point(496, 245);
-            this.labelNumPlan.Name = "labelNumPlan";
-            this.labelNumPlan.Size = new System.Drawing.Size(120, 24);
-            this.labelNumPlan.TabIndex = 26;
-            this.labelNumPlan.Text = "Numéro plan";
-            // 
-            // dtPickPlan
-            // 
-            this.dtPickPlan.Location = new System.Drawing.Point(499, 422);
-            this.dtPickPlan.Name = "dtPickPlan";
-            this.dtPickPlan.Size = new System.Drawing.Size(273, 20);
-            this.dtPickPlan.TabIndex = 32;
-            // 
-            // labelDtPlan
-            // 
-            this.labelDtPlan.AutoSize = true;
-            this.labelDtPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDtPlan.Location = new System.Drawing.Point(496, 395);
-            this.labelDtPlan.Name = "labelDtPlan";
-            this.labelDtPlan.Size = new System.Drawing.Size(116, 24);
-            this.labelDtPlan.TabIndex = 33;
-            this.labelDtPlan.Text = "Date du plan";
+            this.btn_ModificationPlan.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_ModificationPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ModificationPlan.ForeColor = System.Drawing.Color.White;
+            this.btn_ModificationPlan.Location = new System.Drawing.Point(41, 195);
+            this.btn_ModificationPlan.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ModificationPlan.Name = "btn_ModificationPlan";
+            this.btn_ModificationPlan.Size = new System.Drawing.Size(195, 61);
+            this.btn_ModificationPlan.TabIndex = 25;
+            this.btn_ModificationPlan.Text = "Modification";
+            this.btn_ModificationPlan.UseVisualStyleBackColor = false;
+            this.btn_ModificationPlan.Click += new System.EventHandler(this.btn_ModificationPlan_Click);
             // 
             // FormGestionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(798, 558);
-            this.Controls.Add(this.labelDtPlan);
-            this.Controls.Add(this.dtPickPlan);
-            this.Controls.Add(this.labelDesignation);
-            this.Controls.Add(this.txtBoxDesignationPlan);
-            this.Controls.Add(this.txtBoxLibellePlan);
-            this.Controls.Add(this.txtBoxNumPlan);
-            this.Controls.Add(this.labelLibelle);
-            this.Controls.Add(this.labelNumPlan);
-            this.Controls.Add(this.labelCodeProjet);
+            this.ClientSize = new System.Drawing.Size(1051, 558);
+            this.Controls.Add(this.btn_Ajout);
+            this.Controls.Add(this.btn_EditionPDF);
+            this.Controls.Add(this.btn_ListeDernierIndice);
+            this.Controls.Add(this.btn_Suppression);
+            this.Controls.Add(this.btn_ModificationPlan);
             this.Controls.Add(this.lblGestionPlan);
-            this.Controls.Add(this.txtBoxCodeProjet);
-            this.Controls.Add(this.txtBoxIndice);
-            this.Controls.Add(this.txtBoxCodePlan);
-            this.Controls.Add(this.lblIndice);
-            this.Controls.Add(this.lblCodePlan);
             this.Controls.Add(this.btSupprimerPlan);
             this.Controls.Add(this.btCreaPlan);
             this.Controls.Add(this.lstBoxPlan);
@@ -241,22 +163,13 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstBoxPlan;
-        private System.Windows.Forms.TextBox txtBoxCodeProjet;
-        private System.Windows.Forms.TextBox txtBoxIndice;
-        private System.Windows.Forms.TextBox txtBoxCodePlan;
-        private System.Windows.Forms.Label lblIndice;
-        private System.Windows.Forms.Label lblCodePlan;
         private System.Windows.Forms.Button btSupprimerPlan;
         private System.Windows.Forms.Button btCreaPlan;
         private System.Windows.Forms.Label lblGestionPlan;
-        private System.Windows.Forms.Label labelCodeProjet;
-        private System.Windows.Forms.Label labelDesignation;
-        private System.Windows.Forms.TextBox txtBoxDesignationPlan;
-        private System.Windows.Forms.TextBox txtBoxLibellePlan;
-        private System.Windows.Forms.TextBox txtBoxNumPlan;
-        private System.Windows.Forms.Label labelLibelle;
-        private System.Windows.Forms.Label labelNumPlan;
-        private System.Windows.Forms.DateTimePicker dtPickPlan;
-        private System.Windows.Forms.Label labelDtPlan;
+        private System.Windows.Forms.Button btn_Ajout;
+        private System.Windows.Forms.Button btn_EditionPDF;
+        private System.Windows.Forms.Button btn_ListeDernierIndice;
+        private System.Windows.Forms.Button btn_Suppression;
+        private System.Windows.Forms.Button btn_ModificationPlan;
     }
 }
