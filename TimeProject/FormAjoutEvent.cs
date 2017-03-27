@@ -65,7 +65,7 @@ namespace TimeProject
                 dtEvent = dtAction.Value;
                 etatEvent = (status) lstBoxEtat.SelectedItem;
                 importanceEvent = (status)lstBoxImp.SelectedItem;
-                act = new ActionProjet(idEvent, dtEvent, corpsEvent, etatEvent.codeStatus.ToString(), importanceEvent.codeStatus);
+                act = new ActionProjet(idEvent,  corpsEvent, dtEvent, etatEvent.codeStatus.ToString(), importanceEvent.codeStatus);
             }
             else
             {

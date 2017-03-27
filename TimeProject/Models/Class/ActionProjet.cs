@@ -18,7 +18,7 @@ namespace TimeProject.Models.Class
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
 
-        public ActionProjet(string id_event, DateTime dt_event, string event_corps, string etat, int importance)
+        public ActionProjet(string id_event, string event_corps, DateTime dt_event, string etat, int importance)
         {
             this.id_Event = id_event;
             this.dt_Event = dt_event;
