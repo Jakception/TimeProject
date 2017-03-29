@@ -159,6 +159,7 @@ namespace TimeProject
             FormProjet fProj = new FormProjet();
 
             p = (Projet) lstBoxProjet.SelectedItem;
+            p.lstSalarieProjet = BDDProjet.getUserProjet(p.code_Projet);
             sessionUser.projetModif = p;
 
             
@@ -171,6 +172,8 @@ namespace TimeProject
         {
             sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
             FormProjet fProj = new FormProjet();
+
+
             this.Hide();    
             fProj.ShowDialog();
             this.Visible = true;
