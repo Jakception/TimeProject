@@ -41,6 +41,27 @@ namespace TimeProject.Models.request
         }
         //Recupere les projets si Admin
 
+            static public User getUser(string id_user)
+        {
+            User use = new User();
+            DataBase.ConnexionToDataBase();
+            req = "select * from user where id_user ='" + id_user +"';";
+
+            dataReader = DataBase.DBSelect(req);
+
+            while (dataReader.Read())
+            {
+
+                User u;
+                u = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                use = u;
+                
+            }
+         
+
+            DataBase.FermeDataReader(dataReader);
+            return use;
+        }
         //Créer un user
         public static int CreateUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail)
         {

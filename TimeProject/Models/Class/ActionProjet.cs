@@ -18,7 +18,7 @@ namespace TimeProject.Models.Class
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
 
-        public ActionProjet(string id_event, string event_corps, DateTime dt_event, string etat, int importance)
+        public ActionProjet(string id_event, string etat, DateTime dt_event, string event_corps, int importance)
         {
             this.id_Event = id_event;
             this.dt_Event = dt_event;
@@ -44,7 +44,7 @@ namespace TimeProject.Models.Class
 
         public override string ToString()
         {
-            return "ACTION: " + this.event_Corps;
+            return this.event_Corps + " pour le : " + this.dt_Event.ToShortDateString()  +" Crée par : " + this.user.nom + " - " + this.user.prenom;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace TimeProject
         private static List<status> lstImportance = new List<status>();
         public static void initListeStatus()
         {
-            status stat1, stat3, stat4;
+            status stat1, stat3, stat4, stat2, stat5;
             int cpt = lstStatus.Count;
 
             for (int i = 0; i <cpt ; i++)
@@ -26,12 +26,16 @@ namespace TimeProject
             stat1 = new status(1, "A faire");
             stat3 = new status(2, "En attente");
             stat4 = new status(3, "Validé");
+            stat2 = new status(4, "Rendu a Faire");
+            stat5 = new status(5, "Rendu validé");
 
             lstStatus.Add(stat1);
             lstStatus.Add(stat3);
             lstStatus.Add(stat4);
 
         }
+
+
 
         public static List<status> getListStatus()
         {
