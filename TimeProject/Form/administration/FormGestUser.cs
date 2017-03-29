@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using TimeProject.Models.request;
 using TimeProject.Models.Class;
+using TimeProject.Models.Utilitaire;
 
 namespace TimeProject
 {
@@ -28,10 +29,13 @@ namespace TimeProject
 
         private void btCreaUser_Click(object sender, EventArgs e)
         {
+            User user = BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text);
             // crée le user avec les info renseignés mdp générés auto
-            if(BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text) == null)
+            if (user == null)
             {
                 BDDPerson.CreateUser(GeneneCodeTypeProfi(checkBoxAdm.Checked), txtBoxInit.Text, txtBoxNom.Text, txtBoxPrenom.Text, txtBoxMail.Text);
+                user = BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text);
+                Mail.EnvoiMail(txtBoxMail.Text, "TimeProject Mot de passe", "Votre mot de passe est : " + user.pwd);
             }
             else
             {

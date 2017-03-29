@@ -41,6 +41,27 @@ namespace TimeProject.Models.request
         }
         //Recupere les projets si Admin
 
+            static public User getUser(string id_user)
+        {
+            User use = new User();
+            DataBase.ConnexionToDataBase();
+            req = "select * from user where id_user ='" + id_user +"';";
+
+            dataReader = DataBase.DBSelect(req);
+
+            while (dataReader.Read())
+            {
+
+                User u;
+                u = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                use = u;
+                
+            }
+         
+
+            DataBase.FermeDataReader(dataReader);
+            return use;
+        }
         //Créer un user
         public static int CreateUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail)
         {
@@ -104,6 +125,69 @@ namespace TimeProject.Models.request
             DataBase.FermeDataReader(dataReader);
 
             return user;
+        }
+        // Vérifie mot de passe
+        public static User VerifieEmail(string mail)
+        {
+            User user;
+
+            DataBase.ConnexionToDataBase();
+            dataReader = DataBase.DBSelect("SELECT * FROM User WHERE MAIL = '" + mail + "';");
+            if (dataReader.Read())
+            {
+                user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+            }
+            else
+            {
+                user = null;
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return user;
+        }
+        public static string RecupereMdp(string idUser, string mail)
+        {
+            User user;
+            string mdp;
+
+            DataBase.ConnexionToDataBase();
+            dataReader = DataBase.DBSelect("SELECT * FROM User WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';");
+            if (dataReader.Read())
+            {
+                user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                mdp = user.pwd;
+            }
+            else
+            {
+                user = null;
+                mdp = "";
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return mdp;
+        }
+        // Mise à jour du PWD de l'utilisateur
+        public static int MajMdpUser(string idUser, string mail)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE User SET PWD = '" + GeneratePWD() + "' WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
+        public static int ChangerMdpUser(string idUser, string mdp)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE User SET PWD = '" + mdp + "' WHERE ID_USER = '" + idUser + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
         }
         // Supprime l'utilisateur
         public static int DeleteUser(string idUser)

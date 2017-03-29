@@ -21,15 +21,15 @@ namespace TimeProject.Models.Class
         public DateTime dt_Fin_Reel { get; set; }
 
         public List<User> lstSalarieProjet { get; set; }
-
+        public List<ActionProjet> lstAction { get; set; }
+        public List<Information> lstInfo { get; set; }
         public virtual User user { get; set; }
         public virtual BureauControle bureauControle { get; set; }
         public virtual Architecte architecte { get; set; }
-        public virtual List<User> listUserProjet { get; set; }
         public virtual List<Plan> listPlan { get; set; }
         public virtual List<BordProjet> listBordProjet { get; set; }
         public virtual List<CrProjet> listCrProjet { get; set; }
-        public virtual List<EventProjet> listEventProjet { get; set; }
+
 
     public Projet(string code_Projet, int id_Bc, int id_Archi, string id_User, string nom_Projet, string nom_Client, string adresse_Client, string ville_Client, DateTime dt_Deb_Projet, DateTime dt_Obj_Fin, DateTime dt_Fin_Reel, List<User> lstSalProjet)
         {
@@ -63,9 +63,25 @@ namespace TimeProject.Models.Class
 
         public void setListPersonne(List<User> lstUser)
         {
-            this.listUserProjet = lstUser;
+            this.lstSalarieProjet=lstUser;
         }
 
+        public string getConcerne()
+        {
+            string mess = "";
+
+            foreach (var item in lstSalarieProjet)
+            {
+                mess = mess + item.init_User;
+            }
+
+            return mess;
+        }
+
+        public void recupProjet()
+        {
+
+        }
         public override string ToString()
         {
             return "Projet : " + this.code_Projet + " - " + this.nom_Projet; 

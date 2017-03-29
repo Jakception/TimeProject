@@ -149,7 +149,7 @@
             this.lbl_histo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_histo.Location = new System.Drawing.Point(301, 227);
             this.lbl_histo.Name = "lbl_histo";
-            this.lbl_histo.Size = new System.Drawing.Size(329, 46);
+            this.lbl_histo.Size = new System.Drawing.Size(371, 46);
             this.lbl_histo.TabIndex = 17;
             this.lbl_histo.Text = "Historique";
             this.lbl_histo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,9 +159,9 @@
             this.lbl_taches.BackColor = System.Drawing.Color.MidnightBlue;
             this.lbl_taches.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_taches.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_taches.Location = new System.Drawing.Point(827, 227);
+            this.lbl_taches.Location = new System.Drawing.Point(860, 227);
             this.lbl_taches.Name = "lbl_taches";
-            this.lbl_taches.Size = new System.Drawing.Size(438, 46);
+            this.lbl_taches.Size = new System.Drawing.Size(411, 46);
             this.lbl_taches.TabIndex = 18;
             this.lbl_taches.Text = "Tâches urgentes en attente d\'action";
             this.lbl_taches.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1362, 975);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lbl_taches);
             this.Controls.Add(this.lbl_histo);

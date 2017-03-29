@@ -12,7 +12,7 @@ namespace TimeProject.Models.Class
         private int id_User { get; set; }
         public virtual User user { get; set; }
         public virtual Evenement evenement { get; set; }
-        public virtual Action action { get; set; }
+        public virtual ActionProjet action { get; set; }
         public virtual Information information { get; set; }
 }
 }

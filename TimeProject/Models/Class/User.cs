@@ -27,11 +27,15 @@ namespace TimeProject.Models.Class
         public virtual List<Projet> listProjet { get; set; }
         public virtual List<UserEvent> listUserEvent { get; set; }
         public virtual List<Evenement> listEvenement { get; set; }
-        public virtual List<Action> listAction { get; set; }
+        public virtual List<ActionProjet> listAction { get; set; }
         public virtual List<Information> listInformation { get; set; }
         public virtual List<CrUser> listCrUser { get; set; }
         public virtual List<UserPole> listUserPole { get; set; }
 
+        public User()
+        {
+
+        }
         public User(string id_User, string code_Tp_Profil, string init_User, string nom, string prenom, string mail, string pwd)
         {
             this.id_User = id_User;
