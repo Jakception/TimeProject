@@ -22,7 +22,7 @@ namespace TimeProject
         {
             List<ActionProjet> lstAct = new List<ActionProjet>();
             User user;
-            req = "select a.* from action a, eventprojet ep where ep.ID_EVENT = a.ID_EVENT AND ep.code_projet ='" + codeProjet + "';";
+            req = "select a.* from action a, eventprojet ep where ep.ID_EVENT = a.ID_EVENT AND ep.code_projet ='" + codeProjet + "' ORDER BY DT_EVENT DESC;";
             dataReader = DataBase.DBSelect(req);
 
 
@@ -46,16 +46,18 @@ namespace TimeProject
         {
             List<Information> lstInfo = new List<Information>();
 
-            req = "select i.* from information i, eventprojet ep where ep.ID_EVENT = i.ID_EVENT AND ep.code_projet ='" + codeProjet + "';";
+            req = "select i.* from information i, eventprojet ep where ep.ID_EVENT = i.ID_EVENT AND ep.code_projet ='" + codeProjet + "' ORDER BY DT_EVENT DESC;";
             dataReader = DataBase.DBSelect(req);
 
-
+            User user;
             while (dataReader.Read())
             {
                 Information act;
 
                 act = new Information(dataReader[0].ToString(), Convert.ToDateTime(dataReader[1]), dataReader[2].ToString());
-                 
+                user = BDDPerson.getUser(dataReader[3].ToString());
+                act.user = user;
+                
                 lstInfo.Add(act);
             }
 

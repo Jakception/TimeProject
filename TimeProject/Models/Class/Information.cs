@@ -12,6 +12,7 @@ namespace TimeProject.Models.Class
         public DateTime dt_Event { get; set; }
         public string event_Corps { get; set; }
         public  User user { get; set; }
+        public Projet projet { get; set; }
        
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
@@ -24,7 +25,7 @@ namespace TimeProject.Models.Class
 
         public override string ToString()
         {
-            return  this.event_Corps + "  par : " + user.nom + "  " + user.prenom;
+            return this.projet.getConcerne() + " - " + this.event_Corps + "  par : " + user.init_User + " le " + dt_Event.ToShortDateString();
         }
     }
 }

@@ -70,9 +70,9 @@ namespace TimeProject.Models.Class
         {
             string mess = "";
 
-            foreach (var item in lstSalarieProjet)
+            foreach (var item in this.lstSalarieProjet)
             {
-                mess = mess + item.init_User;
+                mess = mess + item.init_User + "/";
             }
 
             return mess;
