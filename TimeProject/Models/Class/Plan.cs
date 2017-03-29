@@ -122,5 +122,10 @@ namespace TimeProject.Models.Class
             this.Designation = designation;
             this.Dt_Plan = dtPlan;
         }
+
+        public override string ToString()
+        {
+            return this.Code_Plan + " " + this.Indice + " " + this.Code_Projet + " " + this.Numero_Plan + " " + this.Libelle_Plan + " " + this.Designation + " " + this.Dt_Plan.ToString();
+        }
     }
 }

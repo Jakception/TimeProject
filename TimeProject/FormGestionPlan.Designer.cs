@@ -35,6 +35,7 @@
             this.btn_ListeDernierIndice = new System.Windows.Forms.Button();
             this.btn_SuppressionPlan = new System.Windows.Forms.Button();
             this.btn_ModificationPlan = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstBoxPlan
@@ -122,12 +123,23 @@
             this.btn_ModificationPlan.UseVisualStyleBackColor = false;
             this.btn_ModificationPlan.Click += new System.EventHandler(this.btn_ModificationPlan_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(119, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormGestionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1051, 558);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_AjoutPlan);
             this.Controls.Add(this.btn_EditionPDF);
             this.Controls.Add(this.btn_ListeDernierIndice);
@@ -137,6 +149,7 @@
             this.Controls.Add(this.lstBoxPlan);
             this.Name = "FormGestionPlan";
             this.Text = "Gestion des plans";
+            this.Load += new System.EventHandler(this.FormGestionPlan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Button btn_ListeDernierIndice;
         private System.Windows.Forms.Button btn_SuppressionPlan;
         private System.Windows.Forms.Button btn_ModificationPlan;
+        private System.Windows.Forms.Button button1;
     }
 }

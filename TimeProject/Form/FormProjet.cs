@@ -23,7 +23,11 @@ namespace TimeProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            f1.createLPpdf();
+            FormGestionPlan fgp = new FormGestionPlan();
+            this.Hide();
+            fgp.ShowDialog();
+            this.Show();
+            //f1.createLPpdf();
         }
 
         private void button2_Click(object sender, EventArgs e)
