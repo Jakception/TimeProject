@@ -66,9 +66,8 @@ namespace TimeProject
             {
                 MessageBox.Show("Erreur dans la recherche de l'indice.");
             }
-            // Traitement
-            // Obtenir l'indice max pour l'élément sélectionné
-            // Insérer un le même élément à l'indice n+1
+
+            LoadPlan();
         }
         private void btn_SuppressionPlan_Click(object sender, EventArgs e)
         {
@@ -96,6 +95,8 @@ namespace TimeProject
             {
                 MessageBox.Show("Erreur dans la recherche de l'indice.");
             }
+
+            LoadPlan();
         }
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
