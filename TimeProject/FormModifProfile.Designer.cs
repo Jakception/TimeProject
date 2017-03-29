@@ -42,7 +42,7 @@
             this.buttonValider.BackColor = System.Drawing.Color.Navy;
             this.buttonValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.buttonValider.ForeColor = System.Drawing.Color.White;
-            this.buttonValider.Location = new System.Drawing.Point(99, 359);
+            this.buttonValider.Location = new System.Drawing.Point(99, 246);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(121, 45);
             this.buttonValider.TabIndex = 5;
@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 74);
+            this.label1.Location = new System.Drawing.Point(96, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 24);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 168);
+            this.label2.Location = new System.Drawing.Point(68, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 271);
+            this.label3.Location = new System.Drawing.Point(68, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 13);
             this.label3.TabIndex = 3;
@@ -80,14 +80,14 @@
             // 
             // textBoxMdp
             // 
-            this.textBoxMdp.Location = new System.Drawing.Point(237, 165);
+            this.textBoxMdp.Location = new System.Drawing.Point(237, 131);
             this.textBoxMdp.Name = "textBoxMdp";
             this.textBoxMdp.Size = new System.Drawing.Size(170, 20);
             this.textBoxMdp.TabIndex = 6;
             // 
             // textBoxConfirmMdp
             // 
-            this.textBoxConfirmMdp.Location = new System.Drawing.Point(237, 268);
+            this.textBoxConfirmMdp.Location = new System.Drawing.Point(237, 180);
             this.textBoxConfirmMdp.Name = "textBoxConfirmMdp";
             this.textBoxConfirmMdp.Size = new System.Drawing.Size(170, 20);
             this.textBoxConfirmMdp.TabIndex = 7;
@@ -97,7 +97,7 @@
             this.buttonAnnulé.BackColor = System.Drawing.Color.Navy;
             this.buttonAnnulé.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.buttonAnnulé.ForeColor = System.Drawing.Color.White;
-            this.buttonAnnulé.Location = new System.Drawing.Point(260, 359);
+            this.buttonAnnulé.Location = new System.Drawing.Point(260, 246);
             this.buttonAnnulé.Name = "buttonAnnulé";
             this.buttonAnnulé.Size = new System.Drawing.Size(121, 45);
             this.buttonAnnulé.TabIndex = 8;
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(492, 430);
+            this.ClientSize = new System.Drawing.Size(492, 346);
             this.Controls.Add(this.buttonAnnulé);
             this.Controls.Add(this.textBoxConfirmMdp);
             this.Controls.Add(this.textBoxMdp);
