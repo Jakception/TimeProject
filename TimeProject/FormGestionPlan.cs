@@ -47,6 +47,7 @@ namespace TimeProject
             FormAjoutPlan f1 = new FormAjoutPlan();
             this.Hide();
             f1.ShowDialog();
+            LoadPlan();
             this.Show();
         }
 
@@ -122,6 +123,11 @@ namespace TimeProject
         private void button1_Click(object sender, EventArgs e)
         {
             LoadPlan();
+        }
+
+        private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
