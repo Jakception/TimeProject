@@ -16,15 +16,18 @@ namespace TimeProject
 {
     public partial class FormGestionPlan : Form
     {
-        public FormGestionPlan()
+        bool rechargement = false;
+
+        public FormGestionPlan(bool result)
         {
             InitializeComponent();
+
+            rechargement = result;
         }
 
         public void FormGestionPlan_Load(object sender, EventArgs e)
         {
-            lstBoxPlan.DataSource = null;
-            lstBoxPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+            LoadPlan();
         }
         private void LoadPlan()
         {
@@ -38,6 +41,12 @@ namespace TimeProject
             this.Hide();
             f1.ShowDialog();
             this.Show();
+
+            if(rechargement == true)
+            {
+                LoadPlan();
+                rechargement = false;
+            }
         }
 
         private void btn_ModificationPlan_Click(object sender, EventArgs e)
