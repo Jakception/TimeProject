@@ -23,14 +23,17 @@ namespace TimeProject
 
         private void buttonValiderPlan_Click(object sender, EventArgs e)
         {
-            string sNumPlan = "", libellePlan = "", codePlan = "", messErreur = "";
+            string sNumPlan = "", libellePlan = "", designationPlan = "", codePlan = "", messErreur = "";
             int numPlan = 0, nbLigne = 0;
+            DateTime datePlan;
             Plan plan;
 
             sNumPlan = textBoxLibellePlan.Text;
             libellePlan = textBoxLibellePlan.Text;
+            designationPlan = textBoxDesignation.Text;
+            datePlan = dateTimePickerDatePlan.Value;
 
-            if(sNumPlan != "" && libellePlan != "")
+            if(sNumPlan != "" && libellePlan != "" && designationPlan != "" && datePlan != null)
             {
                 try
                 {
@@ -49,7 +52,7 @@ namespace TimeProject
                     plan = BDDPlan.DejaExistePlan(codePlan, 1, sessionUser.projetModif.code_Projet);
                     if(plan == null)
                     {
-                        //nbLigne = BDDPlan.CreatePlan(sessionUser.getID(), nouveauMdp);
+                        nbLigne = BDDPlan.CreatePlan(codePlan, "1", sessionUser.projetModif.code_Projet, numPlan.ToString(), libellePlan, designationPlan, datePlan.ToString());
                     }
 
                     if (nbLigne != 0)

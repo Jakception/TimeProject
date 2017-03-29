@@ -28,7 +28,7 @@ namespace TimeProject.Models.request
             {
                 Plan p;
 
-                p = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), (DateTime)dataReader[6]);
+                p = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
 
                 lstPlans.Add(p);
             }
@@ -46,7 +46,7 @@ namespace TimeProject.Models.request
             dataReader = DataBase.DBSelect(req);
             if (dataReader.Read())
             {
-                plan = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), (DateTime)dataReader[6]);
+                plan = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
             }
             else
             {
@@ -54,9 +54,15 @@ namespace TimeProject.Models.request
             }
             return plan;
         }
-        //public static int CreatePlan()
-        //{
+        public static int CreatePlan(string codePlan, string indice, string codeProjet, string numeroPlan, string libellePlan, string designation, string dtPla)
+        {
+            int nbLigne = 0;
 
-        //}
+            req = "INSERT INTO `plan`(`CODE_PLAN`, `INDICE`, `CODE_PROJET`, `NUMERO_PLAN`, `LIBELLE_PLAN`, `DESIGNATION`, `DT_PLAN`) VALUES ('" + codePlan + "', '" + indice + "', '" + codeProjet + "', '" + numeroPlan + "', '" + libellePlan + "', '" + designation + "', '" + dtPla + "')";
+
+            nbLigne = DataBase.DBInsert(req);
+
+            return nbLigne;
+        }
     }
 }

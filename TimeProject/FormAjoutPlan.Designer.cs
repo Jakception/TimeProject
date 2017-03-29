@@ -35,6 +35,10 @@
             this.labelNumeroPlan = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonValiderPlan = new System.Windows.Forms.Button();
+            this.textBoxDesignation = new System.Windows.Forms.TextBox();
+            this.labelDesignation = new System.Windows.Forms.Label();
+            this.dateTimePickerDatePlan = new System.Windows.Forms.DateTimePicker();
+            this.labelDatePlan = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAnnulePlan
@@ -42,7 +46,7 @@
             this.buttonAnnulePlan.BackColor = System.Drawing.Color.Navy;
             this.buttonAnnulePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.buttonAnnulePlan.ForeColor = System.Drawing.Color.White;
-            this.buttonAnnulePlan.Location = new System.Drawing.Point(347, 285);
+            this.buttonAnnulePlan.Location = new System.Drawing.Point(334, 395);
             this.buttonAnnulePlan.Name = "buttonAnnulePlan";
             this.buttonAnnulePlan.Size = new System.Drawing.Size(121, 45);
             this.buttonAnnulePlan.TabIndex = 15;
@@ -52,22 +56,22 @@
             // 
             // textBoxLibellePlan
             // 
-            this.textBoxLibellePlan.Location = new System.Drawing.Point(324, 219);
+            this.textBoxLibellePlan.Location = new System.Drawing.Point(324, 197);
             this.textBoxLibellePlan.Name = "textBoxLibellePlan";
-            this.textBoxLibellePlan.Size = new System.Drawing.Size(170, 20);
+            this.textBoxLibellePlan.Size = new System.Drawing.Size(200, 20);
             this.textBoxLibellePlan.TabIndex = 14;
             // 
             // textBoxNumeroPlan
             // 
-            this.textBoxNumeroPlan.Location = new System.Drawing.Point(324, 170);
+            this.textBoxNumeroPlan.Location = new System.Drawing.Point(324, 139);
             this.textBoxNumeroPlan.Name = "textBoxNumeroPlan";
-            this.textBoxNumeroPlan.Size = new System.Drawing.Size(170, 20);
+            this.textBoxNumeroPlan.Size = new System.Drawing.Size(200, 20);
             this.textBoxNumeroPlan.TabIndex = 13;
             // 
             // labelLiebellePlan
             // 
             this.labelLiebellePlan.AutoSize = true;
-            this.labelLiebellePlan.Location = new System.Drawing.Point(155, 222);
+            this.labelLiebellePlan.Location = new System.Drawing.Point(155, 200);
             this.labelLiebellePlan.Name = "labelLiebellePlan";
             this.labelLiebellePlan.Size = new System.Drawing.Size(75, 13);
             this.labelLiebellePlan.TabIndex = 11;
@@ -76,7 +80,7 @@
             // labelNumeroPlan
             // 
             this.labelNumeroPlan.AutoSize = true;
-            this.labelNumeroPlan.Location = new System.Drawing.Point(155, 173);
+            this.labelNumeroPlan.Location = new System.Drawing.Point(155, 142);
             this.labelNumeroPlan.Name = "labelNumeroPlan";
             this.labelNumeroPlan.Size = new System.Drawing.Size(82, 13);
             this.labelNumeroPlan.TabIndex = 10;
@@ -86,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 79);
+            this.label1.Location = new System.Drawing.Point(183, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 24);
             this.label1.TabIndex = 9;
@@ -97,7 +101,7 @@
             this.buttonValiderPlan.BackColor = System.Drawing.Color.Navy;
             this.buttonValiderPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.buttonValiderPlan.ForeColor = System.Drawing.Color.White;
-            this.buttonValiderPlan.Location = new System.Drawing.Point(186, 285);
+            this.buttonValiderPlan.Location = new System.Drawing.Point(173, 395);
             this.buttonValiderPlan.Name = "buttonValiderPlan";
             this.buttonValiderPlan.Size = new System.Drawing.Size(121, 45);
             this.buttonValiderPlan.TabIndex = 12;
@@ -105,12 +109,48 @@
             this.buttonValiderPlan.UseVisualStyleBackColor = false;
             this.buttonValiderPlan.Click += new System.EventHandler(this.buttonValiderPlan_Click);
             // 
+            // textBoxDesignation
+            // 
+            this.textBoxDesignation.Location = new System.Drawing.Point(324, 253);
+            this.textBoxDesignation.Name = "textBoxDesignation";
+            this.textBoxDesignation.Size = new System.Drawing.Size(200, 20);
+            this.textBoxDesignation.TabIndex = 17;
+            // 
+            // labelDesignation
+            // 
+            this.labelDesignation.AutoSize = true;
+            this.labelDesignation.Location = new System.Drawing.Point(155, 256);
+            this.labelDesignation.Name = "labelDesignation";
+            this.labelDesignation.Size = new System.Drawing.Size(63, 13);
+            this.labelDesignation.TabIndex = 16;
+            this.labelDesignation.Text = "Désignation";
+            // 
+            // dateTimePickerDatePlan
+            // 
+            this.dateTimePickerDatePlan.Location = new System.Drawing.Point(324, 309);
+            this.dateTimePickerDatePlan.Name = "dateTimePickerDatePlan";
+            this.dateTimePickerDatePlan.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDatePlan.TabIndex = 18;
+            // 
+            // labelDatePlan
+            // 
+            this.labelDatePlan.AutoSize = true;
+            this.labelDatePlan.Location = new System.Drawing.Point(155, 315);
+            this.labelDatePlan.Name = "labelDatePlan";
+            this.labelDatePlan.Size = new System.Drawing.Size(95, 13);
+            this.labelDatePlan.TabIndex = 19;
+            this.labelDatePlan.Text = "Date de réalisation";
+            // 
             // FormAjoutPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(666, 443);
+            this.ClientSize = new System.Drawing.Size(666, 466);
+            this.Controls.Add(this.labelDatePlan);
+            this.Controls.Add(this.dateTimePickerDatePlan);
+            this.Controls.Add(this.textBoxDesignation);
+            this.Controls.Add(this.labelDesignation);
             this.Controls.Add(this.buttonAnnulePlan);
             this.Controls.Add(this.textBoxLibellePlan);
             this.Controls.Add(this.textBoxNumeroPlan);
@@ -134,5 +174,9 @@
         private System.Windows.Forms.Label labelNumeroPlan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonValiderPlan;
+        private System.Windows.Forms.TextBox textBoxDesignation;
+        private System.Windows.Forms.Label labelDesignation;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDatePlan;
+        private System.Windows.Forms.Label labelDatePlan;
     }
 }
