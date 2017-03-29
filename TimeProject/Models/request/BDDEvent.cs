@@ -50,7 +50,7 @@ namespace TimeProject
             {
                 ActionProjet act;
 
-                act = new ActionProjet(dataReader[0].ToString(), Convert.ToDateTime(dataReader[1]),dataReader[2].ToString(),dataReader[3].ToString(),Convert.ToInt32(dataReader[4]));
+                act = new ActionProjet(dataReader[0].ToString(), Convert.ToDateTime(dataReader[1].ToString()),dataReader[2].ToString(),dataReader[3].ToString(),Convert.ToInt32(dataReader[4]));
                 lstAct.Add(act);
             }
 
