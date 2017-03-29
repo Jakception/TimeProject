@@ -76,6 +76,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAjoutPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutPlan.Designer.cs">
+      <DependentUpon>FormAjoutPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionPlan.Designer.cs">
+      <DependentUpon>FormGestionPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModifProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,7 @@
     <Compile Include="FormAjoutEvent.Designer.cs">
       <DependentUpon>FormAjoutEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\request\BDDPlan.cs" />
     <Compile Include="Models\Utilitaire\ConfigItem.cs" />
     <Compile Include="FormGestionProfil.cs">
       <SubType>Form</SubType>
@@ -191,6 +204,12 @@
     <Compile Include="Models\classStatic\sessionUser.cs" />
     <EmbeddedResource Include="FormAjoutEvent.resx">
       <DependentUpon>FormAjoutEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjoutPlan.resx">
+      <DependentUpon>FormAjoutPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionPlan.resx">
+      <DependentUpon>FormGestionPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionProfil.resx">
       <DependentUpon>FormGestionProfil.cs</DependentUpon>

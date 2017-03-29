@@ -21,7 +21,8 @@ namespace TimeProject.Models.Class
         public DateTime dt_Fin_Reel { get; set; }
 
         public List<User> lstSalarieProjet { get; set; }
-        public List<Evenement> lstEvent { get; set; }
+        public List<ActionProjet> lstAction { get; set; }
+        public List<Information> lstInfo { get; set; }
         public virtual User user { get; set; }
         public virtual BureauControle bureauControle { get; set; }
         public virtual Architecte architecte { get; set; }
@@ -69,9 +70,9 @@ namespace TimeProject.Models.Class
         {
             string mess = "";
 
-            foreach (var item in lstSalarieProjet)
+            foreach (var item in this.lstSalarieProjet)
             {
-                mess = mess + item.init_User;
+                mess = mess + item.init_User + "/";
             }
 
             return mess;

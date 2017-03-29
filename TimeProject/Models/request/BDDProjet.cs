@@ -98,6 +98,7 @@ namespace TimeProject.Models.request
 
         }
 
+
         static public void setUserProjet(string id_user, string code_projet)
         {
             req = "INSERT INTO user_projet VALUES ('" + code_projet +"','"+ id_user +"');";

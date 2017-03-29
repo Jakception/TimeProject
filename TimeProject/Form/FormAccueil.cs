@@ -37,34 +37,42 @@ namespace TimeProject
             ConfigItem.initListImportance();
             lstBoxProjet.DataSource = null;
             lstBoxProjet.DataSource = sessionUser.getListProj();
-
+            
             // TO DO Fonction permettant de charger les tâches des projets. 
 
             List<Evenement> lstEvent = new List<Evenement>();
             List<Evenement> lstTaskImp = new List<Evenement>();
+            List<ActionProjet> lstAct;
+            List<ActionProjet> lstActImp = new List<ActionProjet>();
+            List<ActionProjet> lstRendu = new List<ActionProjet>();
 
-            ActionProjet act;
-            Information inf;
             lstBoxTask.DataSource = null;
+            lstBoxRendu.DataSource = null;
             foreach (Projet item in sessionUser.getListProj())
             {
 
-                item.lstEvent = BDDEvent.getEventProjet(item.code_Projet);
-
-                foreach (Evenement task in item.lstEvent)
+                item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
+                lstAct = BDDEvent.getActionProjet(item.code_Projet);
+                foreach (var action in lstAct)
                 {
-                    if (task is ActionProjet)
+                    action.projet = item;
+                }
+                item.lstAction = lstAct;
+                foreach (var act in lstAct)
+                {
+                    if (act.importance == 1)
                     {
-                        act =(ActionProjet) task;
-                        if (act.importance < 2)
-                        {
-                            lstTaskImp.Add(task);
-                        }
+                        lstActImp.Add(act);
                     }
-                   
+                    if (act.etat == "4")
+                    {
+                        lstRendu.Add(act);
+                    }
                 }
             }
 
+            lstBoxTask.DataSource = lstActImp;
+            lstBoxRendu.DataSource = lstRendu;
 
             if (sessionUser.getTpProfil() != "adm")
             {
@@ -156,6 +164,7 @@ namespace TimeProject
             FormProjet fProj = new FormProjet();
 
             p = (Projet) lstBoxProjet.SelectedItem;
+            p.lstSalarieProjet = BDDProjet.getUserProjet(p.code_Projet);
             sessionUser.projetModif = p;
 
             
@@ -167,7 +176,15 @@ namespace TimeProject
         private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
         {
             sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
+
+            sessionUser.projetModif.lstInfo = BDDEvent.getInfoProjet(sessionUser.projetModif.code_Projet);
+            foreach (var item in sessionUser.projetModif.lstInfo)
+            {
+                item.projet = sessionUser.projetModif;
+            }
             FormProjet fProj = new FormProjet();
+
+
             this.Hide();    
             fProj.ShowDialog();
             this.Visible = true;

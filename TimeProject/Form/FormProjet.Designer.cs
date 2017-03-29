@@ -40,6 +40,9 @@
             this.lbl_histo = new System.Windows.Forms.Label();
             this.lbl_taches = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.lstBoxHistorique = new System.Windows.Forms.ListBox();
+            this.lstTaskImp = new System.Windows.Forms.ListBox();
+            this.lstBoxInfo = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -177,12 +180,39 @@
             this.lblDate.TabIndex = 19;
             this.lblDate.Text = "Date de début : xx/xx/XXXX - Objectif de fin : xx/xx/XXXX";
             // 
+            // lstBoxHistorique
+            // 
+            this.lstBoxHistorique.FormattingEnabled = true;
+            this.lstBoxHistorique.Location = new System.Drawing.Point(306, 294);
+            this.lstBoxHistorique.Name = "lstBoxHistorique";
+            this.lstBoxHistorique.Size = new System.Drawing.Size(366, 186);
+            this.lstBoxHistorique.TabIndex = 20;
+            // 
+            // lstTaskImp
+            // 
+            this.lstTaskImp.FormattingEnabled = true;
+            this.lstTaskImp.Location = new System.Drawing.Point(865, 294);
+            this.lstTaskImp.Name = "lstTaskImp";
+            this.lstTaskImp.Size = new System.Drawing.Size(406, 433);
+            this.lstTaskImp.TabIndex = 21;
+            // 
+            // lstBoxInfo
+            // 
+            this.lstBoxInfo.FormattingEnabled = true;
+            this.lstBoxInfo.Location = new System.Drawing.Point(306, 513);
+            this.lstBoxInfo.Name = "lstBoxInfo";
+            this.lstBoxInfo.Size = new System.Drawing.Size(366, 186);
+            this.lstBoxInfo.TabIndex = 22;
+            // 
             // FormProjet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.lstBoxInfo);
+            this.Controls.Add(this.lstTaskImp);
+            this.Controls.Add(this.lstBoxHistorique);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lbl_taches);
             this.Controls.Add(this.lbl_histo);
@@ -196,7 +226,6 @@
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.panel1);
             this.Name = "FormProjet";
-            this.Text = "FormProjet";
             this.Load += new System.EventHandler(this.FormProjet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,5 +246,8 @@
         private System.Windows.Forms.Label lbl_histo;
         private System.Windows.Forms.Label lbl_taches;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.ListBox lstBoxHistorique;
+        private System.Windows.Forms.ListBox lstTaskImp;
+        private System.Windows.Forms.ListBox lstBoxInfo;
     }
 }

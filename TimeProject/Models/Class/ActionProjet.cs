@@ -18,7 +18,7 @@ namespace TimeProject.Models.Class
        // public virtual List<EventProjet> listEventProjet { get; set; }
 
 
-        public ActionProjet(string id_event, DateTime dt_event, string event_corps, string etat, int importance)
+        public ActionProjet(string id_event, string etat, DateTime dt_event, string event_corps, int importance)
         {
             this.id_Event = id_event;
             this.dt_Event = dt_event;
@@ -37,14 +37,16 @@ namespace TimeProject.Models.Class
             return userconcerne;
         }
 
-        /* public override string ToString()
-         {
-             return getUserConcerne() + "   " + this.event_Corps + "  par : "+ user.nom +"  " + user.prenom;
-         }*/
+
 
         public override string ToString()
         {
-            return "ACTION: " + this.event_Corps;
+            return projet.nom_Projet + ": "+ this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString()  +" Crée par : "+ this.user.init_User;
+        }
+
+        public string ActionDetaille()
+        {
+            return this.projet.getConcerne() + "  -  " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
         }
     }
 }
