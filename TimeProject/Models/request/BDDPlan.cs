@@ -33,8 +33,8 @@ namespace TimeProject.Models.request
                 lstPlans.Add(p);
             }
 
-
             DataBase.FermeDataReader(dataReader);
+
             return lstPlans;
         }
 
@@ -52,6 +52,9 @@ namespace TimeProject.Models.request
             {
                 plan = null;
             }
+
+            DataBase.FermeDataReader(dataReader);
+
             return plan;
         }
         public static int CreatePlan(string codePlan, string indice, string codeProjet, string numeroPlan, string libellePlan, string designation, string dtPlan)
@@ -79,6 +82,8 @@ namespace TimeProject.Models.request
             {
                 maxIndice = 0;
             }
+
+            DataBase.FermeDataReader(dataReader);
 
             return maxIndice;
         }

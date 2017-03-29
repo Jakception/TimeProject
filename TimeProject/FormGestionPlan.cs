@@ -16,100 +16,112 @@ namespace TimeProject
 {
     public partial class FormGestionPlan : Form
     {
-        bool rechargement = false;
 
-        public FormGestionPlan(bool result)
-        {
+        public FormGestionPlan()
+        {   
             InitializeComponent();
-
-            rechargement = result;
         }
 
         public void FormGestionPlan_Load(object sender, EventArgs e)
         {
+            lstBoxPlan.DataSource = null;
+            lstBoxPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
             LoadPlan();
         }
         private void LoadPlan()
         {
             // Charge tous les plans dans lstBoxPlan et met a vide toutes les txtBox
+            //List<Plan> lstPlan = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+            //int nbOccurence = lstPlan.Count();
+
             lstBoxPlan.DataSource = null;
             lstBoxPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+            //for(int i = 0; i < nbOccurence; i++)
+            //{
+            //    lstBoxPlan.Items 
+            //}
         }
+
         private void btn_AjoutPlan_Click(object sender, EventArgs e)
         {
             FormAjoutPlan f1 = new FormAjoutPlan();
             this.Hide();
             f1.ShowDialog();
             this.Show();
-
-            if(rechargement == true)
-            {
-                LoadPlan();
-                rechargement = false;
-            }
         }
 
         private void btn_ModificationPlan_Click(object sender, EventArgs e)
         {
             Plan plan;
             int maxIndice = 0, nbLigne = 0;
-
-            plan = (Plan)lstBoxPlan.SelectedItem;
-            maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
-
-            if(maxIndice > 0)
+            
+            if(lstBoxPlan.Items.Count > 0)
             {
-                maxIndice = maxIndice + 1;
-                nbLigne = BDDPlan.CreatePlan(plan.Code_Plan, maxIndice.ToString(), plan.Code_Projet, plan.Numero_Plan.ToString(), plan.Libelle_Plan, plan.Designation, plan.Dt_Plan.ToString());
+                plan = (Plan)lstBoxPlan.SelectedItem;
+                maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
 
-                if (nbLigne != 0)
+                if (maxIndice > 0)
                 {
-                    MessageBox.Show("Le plan à bien été ajouté !");
+                    maxIndice = maxIndice + 1;
+                    nbLigne = BDDPlan.CreatePlan(plan.Code_Plan, maxIndice.ToString(), plan.Code_Projet, plan.Numero_Plan.ToString(), plan.Libelle_Plan, plan.Designation, plan.Dt_Plan.ToString());
+
+                    if (nbLigne != 0)
+                    {
+                        MessageBox.Show("Le plan à bien été ajouté !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout du plan.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erreur lors de l'ajout du plan.");
+                    MessageBox.Show("Erreur dans la recherche de l'indice.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Erreur dans la recherche de l'indice.");
-            }
 
-            LoadPlan();
+                LoadPlan();
+            }
+            
         }
         private void btn_SuppressionPlan_Click(object sender, EventArgs e)
         {
             Plan plan;
             int maxIndice = 0, nbLigne = 0;
 
-            plan = (Plan)lstBoxPlan.SelectedItem;
-            maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
-
-            if (maxIndice > 0)
+            if (lstBoxPlan.Items.Count > 0)
             {
-                maxIndice = maxIndice + 1;
-                nbLigne = BDDPlan.DeletePlan(plan.Code_Plan, maxIndice.ToString());
+                plan = (Plan)lstBoxPlan.SelectedItem;
+                maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
 
-                if (nbLigne != 0)
+                if (maxIndice > 0)
                 {
-                    MessageBox.Show("Le plan à bien été Supprimé !");
+                    nbLigne = BDDPlan.DeletePlan(plan.Code_Plan, maxIndice.ToString());
+
+                    if (nbLigne != 0)
+                    {
+                        MessageBox.Show("Le plan à bien été Supprimé !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de la suppression du plan.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erreur lors de la suppression du plan.");
+                    MessageBox.Show("Erreur dans la recherche de l'indice.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Erreur dans la recherche de l'indice.");
-            }
 
-            LoadPlan();
+                LoadPlan();
+            }
         }
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadPlan();
         }
     }
 }

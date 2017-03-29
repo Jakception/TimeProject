@@ -23,7 +23,7 @@ namespace TimeProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormGestionPlan fgp = new FormGestionPlan(false);
+            FormGestionPlan fgp = new FormGestionPlan();
             this.Hide();
             fgp.ShowDialog();
             this.Show();
