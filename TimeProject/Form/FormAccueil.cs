@@ -17,11 +17,12 @@ namespace TimeProject
         public FormAccueil()
         {
             InitializeComponent();
-            BDDProjet.ProjetEncours();
+            
         }
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+            BDDProjet.ProjetEncours();
             if (sessionUser.getTpProfil() != "adm")
             {
                 pnlAdmin.Visible = false;

@@ -47,5 +47,10 @@ namespace TimeProject
             p = sessionUser.projetModif;
             lblDate.Text = "Date de début : " + p.dt_Deb_Projet.ToShortDateString() + "- Objectif de fin : " + p.dt_Obj_Fin.ToShortDateString();
         }
+
+        private void btn_historique_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
