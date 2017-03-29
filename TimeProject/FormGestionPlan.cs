@@ -42,7 +42,32 @@ namespace TimeProject
 
         private void btn_ModificationPlan_Click(object sender, EventArgs e)
         {
+            Plan plan;
+            int maxIndice = 0, nbLigne = 0;
 
+            plan = (Plan)lstBoxPlan.SelectedItem;
+
+            if(maxIndice > 0)
+            {
+                maxIndice = maxIndice + 1;
+                nbLigne = BDDPlan.CreatePlan(plan.Code_Plan, maxIndice.ToString(), plan.Code_Projet, plan.Numero_Plan.ToString(), plan.Libelle_Plan, plan.Designation, plan.Dt_Plan.ToString());
+
+                if (nbLigne != 0)
+                {
+                    MessageBox.Show("Le plan à bien été ajouté !");
+                }
+                else
+                {
+                    MessageBox.Show("Erreur lors de l'ajout du plan.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erreur dans la recherche de l'indice.");
+            }
+            // Traitement
+            // Obtenir l'indice max pour l'élément sélectionné
+            // Insérer un le même élément à l'indice n+1
         }
         private void btn_SuppressionPlan_Click(object sender, EventArgs e)
         {

@@ -8,27 +8,119 @@ namespace TimeProject.Models.Class
 {
     public class Plan
     {
-        private string code_Plan { get; set; }
-        private int indice { get; set; }
-        private string code_Projet { get; set; }
-        private int numero_Plan { get; set; }
-        private string libelle_Plan { get; set; }
-        private string designation { get; set; }
-        private DateTime dt_Plan { get; set; }
-        //public virtual Projet projet { get; set; }
-        //public virtual List<ValidArchi> listValidArchi { get; set; }
-        //public virtual List<ValidBc> listValidBc { get; set; }
-        //public virtual List<BordPlan> listBordPlan { get; set; }
+        private string code_Plan;
+        private int indice;
+        private string code_Projet;
+        private int numero_Plan;
+        private string libelle_Plan;
+        private string designation;
+        private DateTime dt_Plan;
+
+        public string Code_Plan
+        {
+            get
+            {
+                return code_Plan;
+            }
+
+            set
+            {
+                code_Plan = value;
+            }
+        }
+
+        public int Indice
+        {
+            get
+            {
+                return indice;
+            }
+
+            set
+            {
+                indice = value;
+            }
+        }
+
+        public string Code_Projet
+        {
+            get
+            {
+                return code_Projet;
+            }
+
+            set
+            {
+                code_Projet = value;
+            }
+        }
+
+        public int Numero_Plan
+        {
+            get
+            {
+                return numero_Plan;
+            }
+
+            set
+            {
+                numero_Plan = value;
+            }
+        }
+
+        public string Libelle_Plan
+        {
+            get
+            {
+                return libelle_Plan;
+            }
+
+            set
+            {
+                libelle_Plan = value;
+            }
+        }
+
+        public string Designation
+        {
+            get
+            {
+                return designation;
+            }
+
+            set
+            {
+                designation = value;
+            }
+        }
+
+        public DateTime Dt_Plan
+        {
+            get
+            {
+                return dt_Plan;
+            }
+
+            set
+            {
+                dt_Plan = value;
+            }
+        }
+
+        //public virtual Projet projet ;
+        //public virtual List<ValidArchi> listValidArchi ;
+        //public virtual List<ValidBc> listValidBc ;
+        //public virtual List<BordPlan> listBordPlan ;
 
         public Plan(string codePlan, int indice, string codeProjet, int numeroPlan, string libellePlan, string designation, DateTime dtPlan)
         {
-            this.code_Plan = codePlan;
-            this.indice = indice;
-            this.code_Projet = codeProjet;
-            this.numero_Plan = numeroPlan;
-            this.libelle_Plan = libellePlan;
-            this.designation = designation;
-            this.dt_Plan = dtPlan;
+            this.Code_Plan = codePlan;
+            this.Indice = indice;
+            this.Code_Projet = codeProjet;
+            this.Numero_Plan = numeroPlan;
+            this.Libelle_Plan = libellePlan;
+            this.Designation = designation;
+            this.Dt_Plan = dtPlan;
         }
     }
 }
