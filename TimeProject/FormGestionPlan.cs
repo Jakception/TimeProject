@@ -46,6 +46,7 @@ namespace TimeProject
             int maxIndice = 0, nbLigne = 0;
 
             plan = (Plan)lstBoxPlan.SelectedItem;
+            maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
 
             if(maxIndice > 0)
             {
@@ -71,7 +72,30 @@ namespace TimeProject
         }
         private void btn_SuppressionPlan_Click(object sender, EventArgs e)
         {
+            Plan plan;
+            int maxIndice = 0, nbLigne = 0;
 
+            plan = (Plan)lstBoxPlan.SelectedItem;
+            maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
+
+            if (maxIndice > 0)
+            {
+                maxIndice = maxIndice + 1;
+                nbLigne = BDDPlan.DeletePlan(plan.Code_Plan, maxIndice.ToString());
+
+                if (nbLigne != 0)
+                {
+                    MessageBox.Show("Le plan à bien été Supprimé !");
+                }
+                else
+                {
+                    MessageBox.Show("Erreur lors de la suppression du plan.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erreur dans la recherche de l'indice.");
+            }
         }
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {

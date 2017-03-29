@@ -82,5 +82,16 @@ namespace TimeProject.Models.request
 
             return maxIndice;
         }
+
+        public static int DeletePlan(string codePlan, string indice)
+        {
+            int nbLigne = 0;
+
+            req = "DELETE FROM `plan` WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "';";
+
+            nbLigne = DataBase.DBDelete(req);
+
+            return nbLigne;
+        }
     }
 }
