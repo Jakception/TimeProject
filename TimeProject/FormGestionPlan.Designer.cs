@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.lstBoxPlan = new System.Windows.Forms.ListBox();
-            this.btSupprimerPlan = new System.Windows.Forms.Button();
-            this.btCreaPlan = new System.Windows.Forms.Button();
             this.lblGestionPlan = new System.Windows.Forms.Label();
-            this.btn_Ajout = new System.Windows.Forms.Button();
+            this.btn_AjoutPlan = new System.Windows.Forms.Button();
             this.btn_EditionPDF = new System.Windows.Forms.Button();
             this.btn_ListeDernierIndice = new System.Windows.Forms.Button();
-            this.btn_Suppression = new System.Windows.Forms.Button();
+            this.btn_SuppressionPlan = new System.Windows.Forms.Button();
             this.btn_ModificationPlan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -48,20 +46,6 @@
             this.lstBoxPlan.Size = new System.Drawing.Size(713, 420);
             this.lstBoxPlan.TabIndex = 2;
             // 
-            // btSupprimerPlan
-            // 
-            this.btSupprimerPlan.Location = new System.Drawing.Point(0, 0);
-            this.btSupprimerPlan.Name = "btSupprimerPlan";
-            this.btSupprimerPlan.Size = new System.Drawing.Size(75, 23);
-            this.btSupprimerPlan.TabIndex = 30;
-            // 
-            // btCreaPlan
-            // 
-            this.btCreaPlan.Location = new System.Drawing.Point(0, 0);
-            this.btCreaPlan.Name = "btCreaPlan";
-            this.btCreaPlan.Size = new System.Drawing.Size(75, 23);
-            this.btCreaPlan.TabIndex = 31;
-            // 
             // lblGestionPlan
             // 
             this.lblGestionPlan.AutoSize = true;
@@ -73,18 +57,18 @@
             this.lblGestionPlan.TabIndex = 24;
             this.lblGestionPlan.Text = "Gestion des plans";
             // 
-            // btn_Ajout
+            // btn_AjoutPlan
             // 
-            this.btn_Ajout.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Ajout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajout.ForeColor = System.Drawing.Color.White;
-            this.btn_Ajout.Location = new System.Drawing.Point(41, 104);
-            this.btn_Ajout.Name = "btn_Ajout";
-            this.btn_Ajout.Size = new System.Drawing.Size(195, 61);
-            this.btn_Ajout.TabIndex = 29;
-            this.btn_Ajout.Text = "Ajout";
-            this.btn_Ajout.UseVisualStyleBackColor = false;
-            this.btn_Ajout.Click += new System.EventHandler(this.btn_Ajout_Click);
+            this.btn_AjoutPlan.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_AjoutPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AjoutPlan.ForeColor = System.Drawing.Color.White;
+            this.btn_AjoutPlan.Location = new System.Drawing.Point(41, 104);
+            this.btn_AjoutPlan.Name = "btn_AjoutPlan";
+            this.btn_AjoutPlan.Size = new System.Drawing.Size(195, 61);
+            this.btn_AjoutPlan.TabIndex = 29;
+            this.btn_AjoutPlan.Text = "Ajout";
+            this.btn_AjoutPlan.UseVisualStyleBackColor = false;
+            this.btn_AjoutPlan.Click += new System.EventHandler(this.btn_AjoutPlan_Click);
             // 
             // btn_EditionPDF
             // 
@@ -111,18 +95,18 @@
             this.btn_ListeDernierIndice.Text = "Liste dernier Indice";
             this.btn_ListeDernierIndice.UseVisualStyleBackColor = false;
             // 
-            // btn_Suppression
+            // btn_SuppressionPlan
             // 
-            this.btn_Suppression.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Suppression.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Suppression.ForeColor = System.Drawing.Color.White;
-            this.btn_Suppression.Location = new System.Drawing.Point(41, 285);
-            this.btn_Suppression.Name = "btn_Suppression";
-            this.btn_Suppression.Size = new System.Drawing.Size(195, 61);
-            this.btn_Suppression.TabIndex = 26;
-            this.btn_Suppression.Text = "Suprression";
-            this.btn_Suppression.UseVisualStyleBackColor = false;
-            this.btn_Suppression.Click += new System.EventHandler(this.btn_Suppression_Click);
+            this.btn_SuppressionPlan.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_SuppressionPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuppressionPlan.ForeColor = System.Drawing.Color.White;
+            this.btn_SuppressionPlan.Location = new System.Drawing.Point(41, 285);
+            this.btn_SuppressionPlan.Name = "btn_SuppressionPlan";
+            this.btn_SuppressionPlan.Size = new System.Drawing.Size(195, 61);
+            this.btn_SuppressionPlan.TabIndex = 26;
+            this.btn_SuppressionPlan.Text = "Suprression";
+            this.btn_SuppressionPlan.UseVisualStyleBackColor = false;
+            this.btn_SuppressionPlan.Click += new System.EventHandler(this.btn_SuppressionPlan_Click);
             // 
             // btn_ModificationPlan
             // 
@@ -144,17 +128,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1051, 558);
-            this.Controls.Add(this.btn_Ajout);
+            this.Controls.Add(this.btn_AjoutPlan);
             this.Controls.Add(this.btn_EditionPDF);
             this.Controls.Add(this.btn_ListeDernierIndice);
-            this.Controls.Add(this.btn_Suppression);
+            this.Controls.Add(this.btn_SuppressionPlan);
             this.Controls.Add(this.btn_ModificationPlan);
             this.Controls.Add(this.lblGestionPlan);
-            this.Controls.Add(this.btSupprimerPlan);
-            this.Controls.Add(this.btCreaPlan);
             this.Controls.Add(this.lstBoxPlan);
             this.Name = "FormGestionPlan";
-            this.Text = "FormGestionPlan";
+            this.Text = "Gestion des plans";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,13 +145,11 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstBoxPlan;
-        private System.Windows.Forms.Button btSupprimerPlan;
-        private System.Windows.Forms.Button btCreaPlan;
         private System.Windows.Forms.Label lblGestionPlan;
-        private System.Windows.Forms.Button btn_Ajout;
+        private System.Windows.Forms.Button btn_AjoutPlan;
         private System.Windows.Forms.Button btn_EditionPDF;
         private System.Windows.Forms.Button btn_ListeDernierIndice;
-        private System.Windows.Forms.Button btn_Suppression;
+        private System.Windows.Forms.Button btn_SuppressionPlan;
         private System.Windows.Forms.Button btn_ModificationPlan;
     }
 }

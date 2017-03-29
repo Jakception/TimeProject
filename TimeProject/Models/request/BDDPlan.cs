@@ -16,11 +16,11 @@ namespace TimeProject.Models.request
         private static string req;
 
 
-        static public List<Plan> getAllPlan()
+        static public List<Plan> getAllPlan(string codeProjet)
         {
             List<Plan> lstPlans = new List<Plan>();
             DataBase.ConnexionToDataBase();
-            req = "select * from plan;";
+            req = "select * from plan where code_projet = '" + codeProjet + "';";
 
             dataReader = DataBase.DBSelect(req);
 
@@ -28,7 +28,7 @@ namespace TimeProject.Models.request
             {
                 Plan p;
 
-                p = new Plan(Convert.ToInt32(dataReader[0]), Convert.ToInt32(dataReader[1]), Convert.ToInt32(dataReader[2]), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), (DateTime)dataReader[6]);
+                p = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), (DateTime)dataReader[6]);
 
                 lstPlans.Add(p);
             }
@@ -38,10 +38,22 @@ namespace TimeProject.Models.request
             return lstPlans;
         }
 
-        //public static Plan DejaExistePlan(int param1, int param2)
-        //{
+        public static Plan DejaExistePlan(string codePlan, int indice, string codeProjet)
+        {
+            Plan plan;
 
-        //}
+            req = "SELECT * FROM PLAN WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND CODE_PROJET = '" + codeProjet + "';";
+            dataReader = DataBase.DBSelect(req);
+            if (dataReader.Read())
+            {
+                plan = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), (DateTime)dataReader[6]);
+            }
+            else
+            {
+                plan = null;
+            }
+            return plan;
+        }
         //public static int CreatePlan()
         //{
 
