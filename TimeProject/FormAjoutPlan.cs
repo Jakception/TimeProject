@@ -60,6 +60,10 @@ namespace TimeProject
                         MessageBox.Show("Le plan à bien été ajouté !");
                         this.Close();
                     }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout du plan.");
+                    }
                 }
                 else
                 {

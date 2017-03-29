@@ -54,15 +54,33 @@ namespace TimeProject.Models.request
             }
             return plan;
         }
-        public static int CreatePlan(string codePlan, string indice, string codeProjet, string numeroPlan, string libellePlan, string designation, string dtPla)
+        public static int CreatePlan(string codePlan, string indice, string codeProjet, string numeroPlan, string libellePlan, string designation, string dtPlan)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `plan`(`CODE_PLAN`, `INDICE`, `CODE_PROJET`, `NUMERO_PLAN`, `LIBELLE_PLAN`, `DESIGNATION`, `DT_PLAN`) VALUES ('" + codePlan + "', '" + indice + "', '" + codeProjet + "', '" + numeroPlan + "', '" + libellePlan + "', '" + designation + "', '" + dtPla + "')";
+            req = "INSERT INTO `plan`(`CODE_PLAN`, `INDICE`, `CODE_PROJET`, `NUMERO_PLAN`, `LIBELLE_PLAN`, `DESIGNATION`, `DT_PLAN`) VALUES ('" + codePlan + "', '" + indice + "', '" + codeProjet + "', '" + numeroPlan + "', '" + libellePlan + "', '" + designation + "', '" + dtPlan + "')";
 
             nbLigne = DataBase.DBInsert(req);
 
             return nbLigne;
+        }
+        public static int RecupereDernierIndice(string codePlan)
+        {
+            int maxIndice;
+
+            req = "SELECT MAX(INDICE) FROM `plan` WHERE `CODE_PLAN` = '" + codePlan + "';";
+
+            dataReader = DataBase.DBSelect(req);
+            if (dataReader.Read())
+            {
+                maxIndice = Convert.ToInt32(dataReader[0]);
+            }
+            else
+            {
+                maxIndice = 0;
+            }
+
+            return maxIndice;
         }
     }
 }
