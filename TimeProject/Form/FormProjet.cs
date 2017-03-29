@@ -46,6 +46,27 @@ namespace TimeProject
             p = sessionUser.projetModif;
             lblTitre.Text = lblTitre.Text + "  "+p.nom_Projet;
             lblDate.Text = "Date de début : " + p.dt_Deb_Projet.ToShortDateString() + "- Objectif de fin : " + p.dt_Obj_Fin.ToShortDateString();
+
+            lstBoxHistorique.DataSource = null;
+            lstBoxInfo.DataSource = null;
+            lstTaskImp.DataSource = null;
+
+            lstBoxHistorique.DataSource = p.lstAction;
+            lstBoxInfo.DataSource = p.lstInfo;
+
+            List<ActionProjet> lstActPro = new List<ActionProjet>();
+            foreach (var item in p.lstAction)
+            {
+                if (item.importance == 1   )
+                {
+                    if (Convert.ToInt32(item.etat) < 3)
+                    {
+                        lstActPro.Add(item);
+                    }
+                }
+            }
+
+            lstTaskImp.DataSource = lstActPro;
         }
 
         private void btn_historique_Click(object sender, EventArgs e)

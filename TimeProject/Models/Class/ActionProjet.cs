@@ -37,14 +37,16 @@ namespace TimeProject.Models.Class
             return userconcerne;
         }
 
-        /* public override string ToString()
-         {
-             return getUserConcerne() + "   " + this.event_Corps + "  par : "+ user.nom +"  " + user.prenom;
-         }*/
+
 
         public override string ToString()
         {
-            return this.event_Corps + " pour le : " + this.dt_Event.ToShortDateString()  +" Crée par : " + this.user.nom + " - " + this.user.prenom;
+            return projet.nom_Projet + ": "+ this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString()  +" Crée par : "+ this.user.init_User;
+        }
+
+        public string ActionDetaille()
+        {
+            return this.projet.getConcerne() + "  -  " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
         }
     }
 }

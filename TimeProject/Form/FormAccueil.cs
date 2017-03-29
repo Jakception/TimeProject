@@ -51,7 +51,12 @@ namespace TimeProject
             foreach (Projet item in sessionUser.getListProj())
             {
 
+                item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
                 lstAct = BDDEvent.getActionProjet(item.code_Projet);
+                foreach (var action in lstAct)
+                {
+                    action.projet = item;
+                }
                 item.lstAction = lstAct;
                 foreach (var act in lstAct)
                 {
@@ -171,6 +176,12 @@ namespace TimeProject
         private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
         {
             sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
+
+            sessionUser.projetModif.lstInfo = BDDEvent.getInfoProjet(sessionUser.projetModif.code_Projet);
+            foreach (var item in sessionUser.projetModif.lstInfo)
+            {
+                item.projet = sessionUser.projetModif;
+            }
             FormProjet fProj = new FormProjet();
 
 
