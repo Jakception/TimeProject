@@ -127,7 +127,8 @@ namespace TimeProject
 
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
         {
-
+            lstBoxPlan.DataSource = null;
+            lstBoxPlan.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
         }
     }
 }
