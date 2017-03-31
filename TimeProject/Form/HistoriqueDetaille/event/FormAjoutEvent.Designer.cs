@@ -38,6 +38,8 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.dtAction = new System.Windows.Forms.DateTimePicker();
             this.btCreaEvent = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             this.txtCorpsEvent.Location = new System.Drawing.Point(257, 58);
             this.txtCorpsEvent.Multiline = true;
             this.txtCorpsEvent.Name = "txtCorpsEvent";
-            this.txtCorpsEvent.Size = new System.Drawing.Size(389, 416);
+            this.txtCorpsEvent.Size = new System.Drawing.Size(389, 144);
             this.txtCorpsEvent.TabIndex = 2;
             // 
             // lstBoxImp
@@ -131,7 +133,7 @@
             this.btCreaEvent.BackColor = System.Drawing.Color.Navy;
             this.btCreaEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.btCreaEvent.ForeColor = System.Drawing.Color.White;
-            this.btCreaEvent.Location = new System.Drawing.Point(33, 404);
+            this.btCreaEvent.Location = new System.Drawing.Point(340, 251);
             this.btCreaEvent.Name = "btCreaEvent";
             this.btCreaEvent.Size = new System.Drawing.Size(177, 57);
             this.btCreaEvent.TabIndex = 5;
@@ -139,12 +141,32 @@
             this.btCreaEvent.UseVisualStyleBackColor = false;
             this.btCreaEvent.Click += new System.EventHandler(this.btCreaEvent_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Type de l\'évènement";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(382, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Description";
+            // 
             // FormAjoutEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(700, 499);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btCreaEvent);
             this.Controls.Add(this.pnlAction);
             this.Controls.Add(this.txtCorpsEvent);
@@ -171,5 +193,7 @@
         private System.Windows.Forms.Label lblImportance;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btCreaEvent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

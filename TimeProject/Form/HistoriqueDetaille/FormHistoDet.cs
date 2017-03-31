@@ -25,12 +25,40 @@ namespace TimeProject
             p = sessionUser.projetModif;
             lblTitre.Text = lblTitre.Text + "  " + p.nom_Projet;
             lblDate.Text = "Date de début : " + p.dt_Deb_Projet.ToShortDateString() + "- Objectif de fin : " + p.dt_Obj_Fin.ToShortDateString();
+
+            loadDataGrid();
         }
 
         private void btAjoutEvent_Click(object sender, EventArgs e)
         {
             FormAjoutEvent fadd = new FormAjoutEvent();
             fadd.ShowDialog();
+        }
+
+        private void loadDataGrid()
+        {
+            List<ActionProjet> lstAction = new List<ActionProjet>();
+            List<ActionProjet> lstRendu = new List<ActionProjet>();
+
+            dataAction.DataSource = null;
+            dataInfo.DataSource = null;
+            dataRendu.DataSource = null;
+
+            foreach (var item in p.lstAction)
+            {
+                if (Convert.ToInt32(item.etat) > 3 )
+                {
+                    lstRendu.Add(item);
+                }
+                else
+                {
+                    lstAction.Add(item);
+                }
+            }
+
+            dataAction.DataSource = lstAction;
+            dataRendu.DataSource = lstRendu;
+            dataInfo.DataSource = p.lstInfo;
         }
     }
 }

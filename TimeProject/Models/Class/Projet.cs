@@ -68,13 +68,14 @@ namespace TimeProject.Models.Class
 
         public string getConcerne()
         {
-            string mess = "";
+            string mess = "(";
 
             foreach (var item in this.lstSalarieProjet)
             {
                 mess = mess + item.init_User + "/";
             }
 
+            mess = mess + ")       ";
             return mess;
         }
 
