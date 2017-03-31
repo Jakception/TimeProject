@@ -24,22 +24,13 @@ namespace TimeProject
 
         public void FormGestionPlan_Load(object sender, EventArgs e)
         {
-            lstBoxPlan.DataSource = null;
-            lstBoxPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
             LoadPlan();
         }
         private void LoadPlan()
         {
             // Charge tous les plans dans lstBoxPlan et met a vide toutes les txtBox
-            //List<Plan> lstPlan = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
-            //int nbOccurence = lstPlan.Count();
-
-            lstBoxPlan.DataSource = null;
-            lstBoxPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
-            //for(int i = 0; i < nbOccurence; i++)
-            //{
-            //    lstBoxPlan.Items 
-            //}
+            dataGridViewPlan.DataSource = null;
+            dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
         }
 
         private void btn_AjoutPlan_Click(object sender, EventArgs e)
@@ -56,9 +47,9 @@ namespace TimeProject
             Plan plan;
             int maxIndice = 0, nbLigne = 0;
             
-            if(lstBoxPlan.Items.Count > 0)
+            if(dataGridViewPlan.Rows.Count > 0)
             {
-                plan = (Plan)lstBoxPlan.SelectedItem;
+                plan = new Plan (dataGridViewPlan.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewPlan.CurrentRow.Cells[1].Value), dataGridViewPlan.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewPlan.CurrentRow.Cells[3].Value), dataGridViewPlan.CurrentRow.Cells[4].Value.ToString(), dataGridViewPlan.CurrentRow.Cells[5].Value.ToString(), Convert.ToDateTime(dataGridViewPlan.CurrentRow.Cells[6].Value));
                 maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
 
                 if (maxIndice > 0)
@@ -86,12 +77,40 @@ namespace TimeProject
         }
         private void btn_SuppressionPlan_Click(object sender, EventArgs e)
         {
+            //Plan plan;
+            //int maxIndice = 0, nbLigne = 0;
+
+            //if (lstBoxPlan.Items.Count > 0)
+            //{
+            //    plan = (Plan)lstBoxPlan.SelectedItem;
+            //    maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
+
+            //    if (maxIndice > 0)
+            //    {
+            //        nbLigne = BDDPlan.DeletePlan(plan.Code_Plan, maxIndice.ToString());
+
+            //        if (nbLigne != 0)
+            //        {
+            //            MessageBox.Show("Le plan à bien été Supprimé !");
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Erreur lors de la suppression du plan.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Erreur dans la recherche de l'indice.");
+            //    }
+
+            //    LoadPlan();
+
             Plan plan;
             int maxIndice = 0, nbLigne = 0;
 
-            if (lstBoxPlan.Items.Count > 0)
+            if (dataGridViewPlan.Rows.Count > 0)
             {
-                plan = (Plan)lstBoxPlan.SelectedItem;
+                plan = new Plan(dataGridViewPlan.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewPlan.CurrentRow.Cells[1].Value), dataGridViewPlan.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewPlan.CurrentRow.Cells[3].Value), dataGridViewPlan.CurrentRow.Cells[4].Value.ToString(), dataGridViewPlan.CurrentRow.Cells[5].Value.ToString(), Convert.ToDateTime(dataGridViewPlan.CurrentRow.Cells[6].Value));
                 maxIndice = BDDPlan.RecupereDernierIndice(plan.Code_Plan);
 
                 if (maxIndice > 0)
@@ -120,15 +139,11 @@ namespace TimeProject
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadPlan();
-        }
-
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
         {
-            lstBoxPlan.DataSource = null;
-            lstBoxPlan.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
+            dataGridViewPlan.DataSource = null;
+            dataGridViewPlan.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
         }
+
     }
 }
