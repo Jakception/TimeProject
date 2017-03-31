@@ -41,12 +41,17 @@ namespace TimeProject.Models.Class
 
         public override string ToString()
         {
-            return projet.nom_Projet + ": "+ this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString()  +" Crée par : "+ this.user.init_User;
+            if (Convert.ToInt32(this.etat)  > 3)
+            {
+                return "RENDU " + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
+            }
+            else
+            {
+                return projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
+            }
+            
         }
 
-        public string ActionDetaille()
-        {
-            return this.projet.getConcerne() + "  -  " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
-        }
+
     }
 }

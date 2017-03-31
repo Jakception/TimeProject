@@ -15,6 +15,12 @@ namespace TimeProject
     public partial class FormAccueil : Form
     {
 
+        List<Evenement> lstEvent = new List<Evenement>();
+        List<Evenement> lstTaskImp = new List<Evenement>();
+        List<ActionProjet> lstAct;
+        List<ActionProjet> lstActImp = new List<ActionProjet>();
+        List<ActionProjet> lstRendu = new List<ActionProjet>();
+
         // tache = table Action et information
         // importance 1 = importance haute
 
@@ -40,39 +46,14 @@ namespace TimeProject
             
             // TO DO Fonction permettant de charger les tâches des projets. 
 
-            List<Evenement> lstEvent = new List<Evenement>();
-            List<Evenement> lstTaskImp = new List<Evenement>();
-            List<ActionProjet> lstAct;
-            List<ActionProjet> lstActImp = new List<ActionProjet>();
-            List<ActionProjet> lstRendu = new List<ActionProjet>();
+            
 
             lstBoxTask.DataSource = null;
             lstBoxRendu.DataSource = null;
-            foreach (Projet item in sessionUser.getListProj())
-            {
 
-                item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
-                lstAct = BDDEvent.getActionProjet(item.code_Projet);
-                foreach (var action in lstAct)
-                {
-                    action.projet = item;
-                }
-                item.lstAction = lstAct;
-                foreach (var act in lstAct)
-                {
-                    if (act.importance == 1)
-                    {
-                        lstActImp.Add(act);
-                    }
-                    if (act.etat == "4")
-                    {
-                        lstRendu.Add(act);
-                    }
-                }
-            }
+            loadListBox();
 
-            lstBoxTask.DataSource = lstActImp;
-            lstBoxRendu.DataSource = lstRendu;
+            
 
             if (sessionUser.getTpProfil() != "adm")
             {
@@ -116,7 +97,85 @@ namespace TimeProject
             lstBoxProjet.DataSource = sessionUser.getListProj();
 
         }
+      
+        private void lstBoxProjet_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Projet p;
+            FormProjet fProj = new FormProjet();
 
+            p = (Projet) lstBoxProjet.SelectedItem;
+            p.lstSalarieProjet = BDDProjet.getUserProjet(p.code_Projet);
+            sessionUser.projetModif = p;
+
+            
+            this.Visible = false;
+            fProj.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
+        {
+            sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
+
+            sessionUser.projetModif.lstInfo = BDDEvent.getInfoProjet(sessionUser.projetModif.code_Projet);
+            foreach (var item in sessionUser.projetModif.lstInfo)
+            {
+                item.projet = sessionUser.projetModif;
+            }
+            FormProjet fProj = new FormProjet();
+
+
+            this.Hide();    
+            fProj.ShowDialog();
+            this.Visible = true;
+
+
+            loadListBox();
+            lstBoxRendu.DataSource = lstRendu;
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            FormModifProfile fModifMdp = new FormModifProfile();
+            fModifMdp.ShowDialog();
+        }
+
+        private void loadListBox()
+        {
+            foreach (Projet item in sessionUser.getListProj())
+            {
+
+                item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
+                lstAct = BDDEvent.getActionProjet(item.code_Projet);
+                foreach (var action in lstAct)
+                {
+                    action.projet = item;
+                }
+                item.lstAction = lstAct;
+                foreach (var act in lstAct)
+                {
+                    if (act.importance == 1)
+                    {
+                        lstActImp.Add(act);
+                    }
+                    if (act.etat == "4")
+                    {
+                       
+                        if ( DateTime.Now.ToShortDateString() == act.dt_Event.ToShortDateString() )
+                        {
+                            lstRendu.Add(act);
+                        }
+                        
+                    }
+                }
+            }
+
+            lstBoxTask.DataSource = lstActImp;
+            lstBoxRendu.DataSource = lstRendu;
+        }
+
+        #region Mouse
         private void pnlAdmin_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
@@ -158,42 +217,6 @@ namespace TimeProject
             this.Cursor = Cursors.Arrow;
         }
 
-        private void lstBoxProjet_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Projet p;
-            FormProjet fProj = new FormProjet();
-
-            p = (Projet) lstBoxProjet.SelectedItem;
-            p.lstSalarieProjet = BDDProjet.getUserProjet(p.code_Projet);
-            sessionUser.projetModif = p;
-
-            
-            this.Visible = false;
-            fProj.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
-        {
-            sessionUser.projetModif = (Projet)lstBoxProjet.SelectedItem;
-
-            sessionUser.projetModif.lstInfo = BDDEvent.getInfoProjet(sessionUser.projetModif.code_Projet);
-            foreach (var item in sessionUser.projetModif.lstInfo)
-            {
-                item.projet = sessionUser.projetModif;
-            }
-            FormProjet fProj = new FormProjet();
-
-
-            this.Hide();    
-            fProj.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void lblName_Click(object sender, EventArgs e)
-        {
-            FormModifProfile fModifMdp = new FormModifProfile();
-            fModifMdp.ShowDialog();
-        }
+        #endregion
     }
 }
