@@ -111,7 +111,7 @@ namespace TimeProject.Models.request
         {
             List<User> lstUserProj = new List<User>();
 
-            req = "SELECT u.* FROM user u, user_projet up WHERE u.id_user = up.id_user AND up.code_projet = '" + code_projet +"';";
+            req = "SELECT DISTINCT u.* FROM user u left join user_projet up on up.id_user = u.id_user left join projet p on p.id_user = u.id_user WHERE up.code_projet = 'projetTest' OR p.code_projet = '" + code_projet +"';";
             dataReader = DataBase.DBSelect(req);
            
 
@@ -126,9 +126,32 @@ namespace TimeProject.Models.request
             
 
             DataBase.FermeDataReader(dataReader);
+
             return lstUserProj;
         }
 
+
+        static public User getChefProjet(string code_projet)
+        {
+            User u = new User();
+            req = "SELECT u.* FROM user u, projet p WHERE u.id_user = p.id_user AND p.code_projet = '" + code_projet + "';";
+            dataReader = DataBase.DBSelect(req);
+
+
+            while (dataReader.Read())
+            {
+                User use;
+
+                use = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString(), dataReader[6].ToString());
+                u = use;
+
+            }
+
+            
+
+            DataBase.FermeDataReader(dataReader);
+            return u;
+        }
         static public void DelUserProjet(string id_user, string code_projet)
         {
             req = "DELETE from user_projet WHERE id_user ='"+id_user +"' AND code_projet ='" +code_projet +"';";
