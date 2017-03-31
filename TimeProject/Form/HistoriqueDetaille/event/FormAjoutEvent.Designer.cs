@@ -33,10 +33,10 @@
             this.txtCorpsEvent = new System.Windows.Forms.TextBox();
             this.lstBoxImp = new System.Windows.Forms.ListBox();
             this.pnlAction = new System.Windows.Forms.Panel();
-            this.dtAction = new System.Windows.Forms.DateTimePicker();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblImportance = new System.Windows.Forms.Label();
             this.lblDtRendu = new System.Windows.Forms.Label();
+            this.lblImportance = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.dtAction = new System.Windows.Forms.DateTimePicker();
             this.btCreaEvent = new System.Windows.Forms.Button();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +56,10 @@
             // lstBoxEtat
             // 
             this.lstBoxEtat.FormattingEnabled = true;
-            this.lstBoxEtat.Location = new System.Drawing.Point(21, 48);
+            this.lstBoxEtat.Location = new System.Drawing.Point(21, 38);
             this.lstBoxEtat.Name = "lstBoxEtat";
             this.lstBoxEtat.ScrollAlwaysVisible = true;
-            this.lstBoxEtat.Size = new System.Drawing.Size(177, 43);
+            this.lstBoxEtat.Size = new System.Drawing.Size(177, 69);
             this.lstBoxEtat.TabIndex = 1;
             // 
             // txtCorpsEvent
@@ -92,21 +92,14 @@
             this.pnlAction.Size = new System.Drawing.Size(228, 286);
             this.pnlAction.TabIndex = 4;
             // 
-            // dtAction
+            // lblDtRendu
             // 
-            this.dtAction.Location = new System.Drawing.Point(16, 236);
-            this.dtAction.Name = "dtAction";
-            this.dtAction.Size = new System.Drawing.Size(200, 20);
-            this.dtAction.TabIndex = 4;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(62, 22);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(86, 13);
-            this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = "Statut de l\'action";
+            this.lblDtRendu.AutoSize = true;
+            this.lblDtRendu.Location = new System.Drawing.Point(62, 205);
+            this.lblDtRendu.Name = "lblDtRendu";
+            this.lblDtRendu.Size = new System.Drawing.Size(89, 13);
+            this.lblDtRendu.TabIndex = 7;
+            this.lblDtRendu.Text = "Date d\'échéance";
             // 
             // lblImportance
             // 
@@ -117,14 +110,21 @@
             this.lblImportance.TabIndex = 6;
             this.lblImportance.Text = "Importance de l\'action";
             // 
-            // lblDtRendu
+            // lblStatus
             // 
-            this.lblDtRendu.AutoSize = true;
-            this.lblDtRendu.Location = new System.Drawing.Point(62, 205);
-            this.lblDtRendu.Name = "lblDtRendu";
-            this.lblDtRendu.Size = new System.Drawing.Size(89, 13);
-            this.lblDtRendu.TabIndex = 7;
-            this.lblDtRendu.Text = "Date d\'échéance";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(62, 22);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(86, 13);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "Statut de l\'action";
+            // 
+            // dtAction
+            // 
+            this.dtAction.Location = new System.Drawing.Point(16, 236);
+            this.dtAction.Name = "dtAction";
+            this.dtAction.Size = new System.Drawing.Size(200, 20);
+            this.dtAction.TabIndex = 4;
             // 
             // btCreaEvent
             // 
