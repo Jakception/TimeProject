@@ -30,12 +30,14 @@ namespace TimeProject
         private void btCreaUser_Click(object sender, EventArgs e)
         {
             User user = BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text);
+            string pwd = "";
             // crée le user avec les info renseignés mdp générés auto
             if (user == null)
             {
-                BDDPerson.CreateUser(GeneneCodeTypeProfi(checkBoxAdm.Checked), txtBoxInit.Text, txtBoxNom.Text, txtBoxPrenom.Text, txtBoxMail.Text);
+                pwd = BDDPerson.GeneratePWD();
+                BDDPerson.CreateUser(GeneneCodeTypeProfi(checkBoxAdm.Checked), txtBoxInit.Text, txtBoxNom.Text, txtBoxPrenom.Text, txtBoxMail.Text, pwd);
                 user = BDDPerson.DejaExisteUser(txtBoxNom.Text, txtBoxPrenom.Text);
-                Mail.EnvoiMail(txtBoxMail.Text, "TimeProject Mot de passe", "Votre mot de passe est : " + user.pwd);
+                Mail.EnvoiMail(txtBoxMail.Text, "TimeProject Mot de passe", "Votre mot de passe est : " + pwd);
             }
             else
             {

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Security.Cryptography;
+
 using TimeProject.Models.Class;
 using System.Data.Common;
 using TimeProject.Models.request;
@@ -63,11 +65,19 @@ namespace TimeProject.Models.request
             return use;
         }
         //Créer un user
-        public static int CreateUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail)
+        public static int CreateUser(string codeTpProfil, string initial, string nomUser, string prenomUser, string mail, string pwd)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `user`(`ID_USER`, `CODE_TP_PROFIL`, `INIT_USER`, `NOM_USER`, `PRENOM_USER`, `MAIL`, `PWD`) VALUES ('" + GenerateIDUser(nomUser, prenomUser) + "', '" + codeTpProfil + "', '" + initial + "', '" + nomUser + "', '" + prenomUser + "', '" + mail + "', '" + GeneratePWD() + "')";
+            if(pwd == "")
+            {
+                req = "INSERT INTO `user`(`ID_USER`, `CODE_TP_PROFIL`, `INIT_USER`, `NOM_USER`, `PRENOM_USER`, `MAIL`, `PWD`) VALUES ('" + GenerateIDUser(nomUser, prenomUser) + "', '" + codeTpProfil + "', '" + initial + "', '" + nomUser + "', '" + prenomUser + "', '" + mail + "', '" + EncodeMD5(GeneratePWD()) + "')";
+
+            }
+            else
+            {
+                req = "INSERT INTO `user`(`ID_USER`, `CODE_TP_PROFIL`, `INIT_USER`, `NOM_USER`, `PRENOM_USER`, `MAIL`, `PWD`) VALUES ('" + GenerateIDUser(nomUser, prenomUser) + "', '" + codeTpProfil + "', '" + initial + "', '" + nomUser + "', '" + prenomUser + "', '" + mail + "', '" + EncodeMD5(pwd) + "')";
+            }
 
             nbLigne = DataBase.DBInsert(req);
 
@@ -105,6 +115,11 @@ namespace TimeProject.Models.request
             }
 
             return pwd;
+        }
+        public static string EncodeMD5(string motDePasse)
+        {
+            string motDePasseSel = "TimeProject" + motDePasse + "GlobalEngineering";
+            return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
         // Vérifie si user déjà existant
         public static User DejaExisteUser(string nomUser, string prenomUser)
@@ -169,11 +184,18 @@ namespace TimeProject.Models.request
             return mdp;
         }
         // Mise à jour du PWD de l'utilisateur
-        public static int MajMdpUser(string idUser, string mail)
+        public static int MajMdpUser(string idUser, string mail, string pwd)
         {
             int nbLigne = 0;
 
-            req = "UPDATE User SET PWD = '" + GeneratePWD() + "' WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';";
+            if(pwd == "")
+            {
+                req = "UPDATE User SET PWD = '" + EncodeMD5(GeneratePWD()) + "' WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';";
+            }
+            else
+            {
+                req = "UPDATE User SET PWD = '" + EncodeMD5(pwd) + "' WHERE ID_USER = '" + idUser + "' AND MAIL = '" + mail + "';";
+            }
 
             nbLigne = DataBase.DBUpdate(req);
 
@@ -183,7 +205,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "UPDATE User SET PWD = '" + mdp + "' WHERE ID_USER = '" + idUser + "';";
+            req = "UPDATE User SET PWD = '" + EncodeMD5(mdp) + "' WHERE ID_USER = '" + idUser + "';";
 
             nbLigne = DataBase.DBUpdate(req);
 

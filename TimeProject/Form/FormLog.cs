@@ -70,6 +70,7 @@ namespace TimeProject
         {
             User user;
             string pwd = "";
+
             if (textBox_Identifiant.Text != "")
             {
                 //Vérification de l'email
@@ -77,10 +78,13 @@ namespace TimeProject
                 if (user != null)
                 {
                     // Màj du mdp
-                    BDDPerson.MajMdpUser(user.id_User, user.mail);
+                    pwd = BDDPerson.GeneratePWD();
+                    user.pwd = pwd;
+                    BDDPerson.MajMdpUser(user.id_User, user.mail, user.pwd);
                     // Envoi du mail
-                    pwd = BDDPerson.RecupereMdp(user.id_User, user.mail);
-                    Mail.EnvoiMail(user.mail, "Changement mot de passe", "Votre mot de passe à été modifié et est maintnant : '" + pwd + "'. ");
+                    //pwd = BDDPerson.RecupereMdp(user.id_User, user.mail);
+                    
+                    Mail.EnvoiMail(user.mail, "Changement mot de passe", "Votre mot de passe à été modifié et est maintnant : '" + user.pwd + "'. ");
                     //Mail.EnvoiMail("mailSettings", "", "", "");
                     MessageBox.Show("Le mot de passe a été modifier !\nVeuillez vérifier votre adresse mail.");
                 }
