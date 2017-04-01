@@ -35,6 +35,7 @@
             this.lab_pwdIdentif = new System.Windows.Forms.Label();
             this.lab_TitleIdentif = new System.Windows.Forms.Label();
             this.linkLabel_PwdOublie = new System.Windows.Forms.LinkLabel();
+            this.linkLabelCM = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btn_valIdentification
@@ -124,12 +125,24 @@
             this.linkLabel_PwdOublie.Text = "Mot de passe oublié?";
             this.linkLabel_PwdOublie.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_PwdOublie_LinkClicked);
             // 
+            // linkLabelCM
+            // 
+            this.linkLabelCM.AutoSize = true;
+            this.linkLabelCM.Location = new System.Drawing.Point(398, 477);
+            this.linkLabelCM.Name = "linkLabelCM";
+            this.linkLabelCM.Size = new System.Drawing.Size(209, 20);
+            this.linkLabelCM.TabIndex = 7;
+            this.linkLabelCM.TabStop = true;
+            this.linkLabelCM.Text = "Cliquez Moi pour le MDP!!!!!!!";
+            this.linkLabelCM.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCM_LinkClicked);
+            // 
             // FormLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(968, 741);
+            this.Controls.Add(this.linkLabelCM);
             this.Controls.Add(this.linkLabel_PwdOublie);
             this.Controls.Add(this.lab_TitleIdentif);
             this.Controls.Add(this.lab_pwdIdentif);
@@ -157,6 +170,7 @@
         private System.Windows.Forms.Label lab_pwdIdentif;
         private System.Windows.Forms.Label lab_TitleIdentif;
         private System.Windows.Forms.LinkLabel linkLabel_PwdOublie;
+        private System.Windows.Forms.LinkLabel linkLabelCM;
     }
 }
 

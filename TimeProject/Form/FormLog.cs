@@ -103,5 +103,34 @@ namespace TimeProject
         {
             ConfigItem.initListeStatus();
         }
+
+        private void linkLabelCM_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            User user;
+            string pwd = "";
+
+            if (textBox_Identifiant.Text != "")
+            {
+                //Vérification de l'email
+                user = BDDPerson.VerifieEmail(textBox_Identifiant.Text);
+                if (user != null)
+                {
+                    // Màj du mdp
+                    pwd = BDDPerson.GeneratePWD();
+                    user.pwd = pwd;
+                    BDDPerson.MajMdpUser(user.id_User, user.mail, user.pwd);
+                    MessageBox.Show("Nouveau mot de passe : " + user.pwd + "\nVeuillez me détruire une fois que le MDP à été réinitialiser!");
+                    textBox_pwd.Text = user.pwd;
+                }
+                else
+                {
+                    MessageBox.Show("Le mail n'existe pas!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez renseigner un identifiant !");
+            }
+        }
     }
 }
