@@ -33,11 +33,13 @@
             this.txtCorpsEvent = new System.Windows.Forms.TextBox();
             this.lstBoxImp = new System.Windows.Forms.ListBox();
             this.pnlAction = new System.Windows.Forms.Panel();
-            this.dtAction = new System.Windows.Forms.DateTimePicker();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblImportance = new System.Windows.Forms.Label();
             this.lblDtRendu = new System.Windows.Forms.Label();
+            this.lblImportance = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.dtAction = new System.Windows.Forms.DateTimePicker();
             this.btCreaEvent = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,10 +58,10 @@
             // lstBoxEtat
             // 
             this.lstBoxEtat.FormattingEnabled = true;
-            this.lstBoxEtat.Location = new System.Drawing.Point(21, 48);
+            this.lstBoxEtat.Location = new System.Drawing.Point(21, 38);
             this.lstBoxEtat.Name = "lstBoxEtat";
             this.lstBoxEtat.ScrollAlwaysVisible = true;
-            this.lstBoxEtat.Size = new System.Drawing.Size(177, 43);
+            this.lstBoxEtat.Size = new System.Drawing.Size(177, 69);
             this.lstBoxEtat.TabIndex = 1;
             // 
             // txtCorpsEvent
@@ -67,7 +69,7 @@
             this.txtCorpsEvent.Location = new System.Drawing.Point(257, 58);
             this.txtCorpsEvent.Multiline = true;
             this.txtCorpsEvent.Name = "txtCorpsEvent";
-            this.txtCorpsEvent.Size = new System.Drawing.Size(389, 416);
+            this.txtCorpsEvent.Size = new System.Drawing.Size(389, 144);
             this.txtCorpsEvent.TabIndex = 2;
             // 
             // lstBoxImp
@@ -92,21 +94,14 @@
             this.pnlAction.Size = new System.Drawing.Size(228, 286);
             this.pnlAction.TabIndex = 4;
             // 
-            // dtAction
+            // lblDtRendu
             // 
-            this.dtAction.Location = new System.Drawing.Point(16, 236);
-            this.dtAction.Name = "dtAction";
-            this.dtAction.Size = new System.Drawing.Size(200, 20);
-            this.dtAction.TabIndex = 4;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(62, 22);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(86, 13);
-            this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = "Statut de l\'action";
+            this.lblDtRendu.AutoSize = true;
+            this.lblDtRendu.Location = new System.Drawing.Point(62, 205);
+            this.lblDtRendu.Name = "lblDtRendu";
+            this.lblDtRendu.Size = new System.Drawing.Size(89, 13);
+            this.lblDtRendu.TabIndex = 7;
+            this.lblDtRendu.Text = "Date d\'échéance";
             // 
             // lblImportance
             // 
@@ -117,21 +112,28 @@
             this.lblImportance.TabIndex = 6;
             this.lblImportance.Text = "Importance de l\'action";
             // 
-            // lblDtRendu
+            // lblStatus
             // 
-            this.lblDtRendu.AutoSize = true;
-            this.lblDtRendu.Location = new System.Drawing.Point(62, 205);
-            this.lblDtRendu.Name = "lblDtRendu";
-            this.lblDtRendu.Size = new System.Drawing.Size(89, 13);
-            this.lblDtRendu.TabIndex = 7;
-            this.lblDtRendu.Text = "Date d\'échéance";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(62, 22);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(86, 13);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "Statut de l\'action";
+            // 
+            // dtAction
+            // 
+            this.dtAction.Location = new System.Drawing.Point(16, 236);
+            this.dtAction.Name = "dtAction";
+            this.dtAction.Size = new System.Drawing.Size(200, 20);
+            this.dtAction.TabIndex = 4;
             // 
             // btCreaEvent
             // 
             this.btCreaEvent.BackColor = System.Drawing.Color.Navy;
             this.btCreaEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.btCreaEvent.ForeColor = System.Drawing.Color.White;
-            this.btCreaEvent.Location = new System.Drawing.Point(33, 404);
+            this.btCreaEvent.Location = new System.Drawing.Point(340, 251);
             this.btCreaEvent.Name = "btCreaEvent";
             this.btCreaEvent.Size = new System.Drawing.Size(177, 57);
             this.btCreaEvent.TabIndex = 5;
@@ -139,12 +141,32 @@
             this.btCreaEvent.UseVisualStyleBackColor = false;
             this.btCreaEvent.Click += new System.EventHandler(this.btCreaEvent_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Type de l\'évènement";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(382, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Description";
+            // 
             // FormAjoutEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(700, 499);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btCreaEvent);
             this.Controls.Add(this.pnlAction);
             this.Controls.Add(this.txtCorpsEvent);
@@ -171,5 +193,7 @@
         private System.Windows.Forms.Label lblImportance;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btCreaEvent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -47,7 +47,7 @@ namespace TimeProject.Models.Class
             }
             else
             {
-                return projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
+                return projet.getConcerne() + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
             }
             
         }

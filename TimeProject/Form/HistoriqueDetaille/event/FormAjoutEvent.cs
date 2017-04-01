@@ -27,6 +27,7 @@ namespace TimeProject
             lstBoxImp.DataSource = null;
             lstBoxImp.DataSource = ConfigItem.getImportance();
 
+            cbBoxType.SelectedIndex = 0;
         }
 
         private void cbBoxType_SelectedIndexChanged(object sender, EventArgs e)

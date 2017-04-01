@@ -32,6 +32,8 @@ namespace TimeProject
             lstStatus.Add(stat1);
             lstStatus.Add(stat3);
             lstStatus.Add(stat4);
+            lstStatus.Add(stat2);
+            lstStatus.Add(stat5);
 
         }
 

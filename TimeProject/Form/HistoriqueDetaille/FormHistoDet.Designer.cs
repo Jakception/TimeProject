@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstBoxTache = new System.Windows.Forms.ListBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
             this.lblHisto = new System.Windows.Forms.Label();
@@ -37,15 +36,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.dataAction = new System.Windows.Forms.ListBox();
+            this.dataInfo = new System.Windows.Forms.ListBox();
+            this.dataRendu = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // lstBoxTache
-            // 
-            this.lstBoxTache.FormattingEnabled = true;
-            this.lstBoxTache.Location = new System.Drawing.Point(302, 255);
-            this.lstBoxTache.Name = "lstBoxTache";
-            this.lstBoxTache.Size = new System.Drawing.Size(734, 628);
-            this.lstBoxTache.TabIndex = 0;
             // 
             // lblDate
             // 
@@ -141,12 +135,43 @@
             this.button5.Text = "Rendus";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // dataAction
+            // 
+            this.dataAction.FormattingEnabled = true;
+            this.dataAction.Location = new System.Drawing.Point(263, 271);
+            this.dataAction.Name = "dataAction";
+            this.dataAction.ScrollAlwaysVisible = true;
+            this.dataAction.Size = new System.Drawing.Size(757, 225);
+            this.dataAction.TabIndex = 31;
+            // 
+            // dataInfo
+            // 
+            this.dataInfo.FormattingEnabled = true;
+            this.dataInfo.Location = new System.Drawing.Point(263, 514);
+            this.dataInfo.Name = "dataInfo";
+            this.dataInfo.ScrollAlwaysVisible = true;
+            this.dataInfo.Size = new System.Drawing.Size(757, 225);
+            this.dataInfo.TabIndex = 32;
+            // 
+            // dataRendu
+            // 
+            this.dataRendu.FormattingEnabled = true;
+            this.dataRendu.Location = new System.Drawing.Point(263, 775);
+            this.dataRendu.Name = "dataRendu";
+            this.dataRendu.ScrollAlwaysVisible = true;
+            this.dataRendu.Size = new System.Drawing.Size(757, 225);
+            this.dataRendu.TabIndex = 33;
+            // 
             // FormHistoDet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1058, 893);
+            this.ClientSize = new System.Drawing.Size(1058, 1053);
+            this.Controls.Add(this.dataRendu);
+            this.Controls.Add(this.dataInfo);
+            this.Controls.Add(this.dataAction);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -155,8 +180,7 @@
             this.Controls.Add(this.lblHisto);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblTitre);
-            this.Controls.Add(this.lstBoxTache);
-            this.MaximumSize = new System.Drawing.Size(1074, 932);
+            this.MaximumSize = new System.Drawing.Size(1074, 1092);
             this.Name = "FormHistoDet";
             this.Load += new System.EventHandler(this.FormHistoDet_Load);
             this.ResumeLayout(false);
@@ -165,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstBoxTache;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label lblHisto;
@@ -175,5 +197,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ListBox dataRendu;
+        private System.Windows.Forms.ListBox dataInfo;
+        private System.Windows.Forms.ListBox dataAction;
     }
 }
