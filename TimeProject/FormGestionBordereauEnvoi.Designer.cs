@@ -35,11 +35,12 @@
             this.btn_ModificationBE = new System.Windows.Forms.Button();
             this.dataGridViewBE = new System.Windows.Forms.DataGridView();
             this.Column_CodeBordereau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_NumeroBordereau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_NumeroPlans = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Exemplaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBE)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,12 @@
             this.dataGridViewBE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBE.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_CodeBordereau,
-            this.Column_Etat,
-            this.Column_Date,
             this.Column_NumeroBordereau,
+            this.Column_Designation,
             this.Column_NumeroPlans,
-            this.Column_Indice});
+            this.Column_Exemplaire,
+            this.Column_Version,
+            this.Column_Etat});
             this.dataGridViewBE.Location = new System.Drawing.Point(290, 104);
             this.dataGridViewBE.MultiSelect = false;
             this.dataGridViewBE.Name = "dataGridViewBE";
@@ -133,23 +135,17 @@
             this.Column_CodeBordereau.ReadOnly = true;
             this.Column_CodeBordereau.Visible = false;
             // 
-            // Column_Etat
-            // 
-            this.Column_Etat.HeaderText = "Etat";
-            this.Column_Etat.Name = "Column_Etat";
-            this.Column_Etat.ReadOnly = true;
-            // 
-            // Column_Date
-            // 
-            this.Column_Date.HeaderText = "Date";
-            this.Column_Date.Name = "Column_Date";
-            this.Column_Date.ReadOnly = true;
-            // 
             // Column_NumeroBordereau
             // 
             this.Column_NumeroBordereau.HeaderText = "Numéro";
             this.Column_NumeroBordereau.Name = "Column_NumeroBordereau";
             this.Column_NumeroBordereau.ReadOnly = true;
+            // 
+            // Column_Designation
+            // 
+            this.Column_Designation.HeaderText = "Désignation";
+            this.Column_Designation.Name = "Column_Designation";
+            this.Column_Designation.ReadOnly = true;
             // 
             // Column_NumeroPlans
             // 
@@ -157,11 +153,23 @@
             this.Column_NumeroPlans.Name = "Column_NumeroPlans";
             this.Column_NumeroPlans.ReadOnly = true;
             // 
-            // Column_Indice
+            // Column_Exemplaire
             // 
-            this.Column_Indice.HeaderText = "Indice";
-            this.Column_Indice.Name = "Column_Indice";
-            this.Column_Indice.ReadOnly = true;
+            this.Column_Exemplaire.HeaderText = "Exemplaire";
+            this.Column_Exemplaire.Name = "Column_Exemplaire";
+            this.Column_Exemplaire.ReadOnly = true;
+            // 
+            // Column_Version
+            // 
+            this.Column_Version.HeaderText = "Version";
+            this.Column_Version.Name = "Column_Version";
+            this.Column_Version.ReadOnly = true;
+            // 
+            // Column_Etat
+            // 
+            this.Column_Etat.HeaderText = "Etat";
+            this.Column_Etat.Name = "Column_Etat";
+            this.Column_Etat.ReadOnly = true;
             // 
             // FormGestionBE
             // 
@@ -192,10 +200,11 @@
         private System.Windows.Forms.Button btn_ModificationBE;
         private System.Windows.Forms.DataGridView dataGridViewBE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_CodeBordereau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Etat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_NumeroBordereau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Designation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_NumeroPlans;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Indice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Exemplaire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Version;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Etat;
     }
 }

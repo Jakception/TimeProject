@@ -64,8 +64,35 @@ namespace TimeProject
         private void LoadPlan()
         {
             // Charge tous les bordereaux d'envois dans le dataGridViewBE
+            List<BordereauEnvoi> listBE = BDDBordereauEnvoi.getAllBE(sessionUser.projetModif.code_Projet);
+            string listPlans = "";
+            int nbPlan = 0;
+            int compteur = 0;
+
             dataGridViewBE.DataSource = null;
-            dataGridViewBE.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+
+            foreach (BordereauEnvoi be in listBE)
+            {
+                nbPlan = be.ListPlan.Count();
+                if(nbPlan != 0)
+                {
+                    foreach (Plan plan in be.ListPlan)
+                    {
+                        if (compteur == nbPlan)
+                        {
+                            listPlans += plan.Numero_Plan;
+                        }
+                        else
+                        {
+                            listPlans += plan.Numero_Plan + " - ";
+                        }
+
+                        compteur++;
+                    }
+                }
+                
+                this.dataGridViewBE.Rows.Add(be.Code_Bordereau, be.Numero_Bordereau, be.Designation, listPlans, be.Exemplaire, be.Version, be.Etat);
+            }
         }
 
     }
