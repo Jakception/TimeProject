@@ -34,6 +34,12 @@
             this.btn_ValidationBE = new System.Windows.Forms.Button();
             this.btn_ModificationBE = new System.Windows.Forms.Button();
             this.dataGridViewBE = new System.Windows.Forms.DataGridView();
+            this.Column_CodeBordereau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Etat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_NumeroBordereau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_NumeroPlans = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBE)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,12 +112,56 @@
             this.dataGridViewBE.AllowUserToAddRows = false;
             this.dataGridViewBE.AllowUserToDeleteRows = false;
             this.dataGridViewBE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBE.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_CodeBordereau,
+            this.Column_Etat,
+            this.Column_Date,
+            this.Column_NumeroBordereau,
+            this.Column_NumeroPlans,
+            this.Column_Indice});
             this.dataGridViewBE.Location = new System.Drawing.Point(290, 104);
             this.dataGridViewBE.MultiSelect = false;
             this.dataGridViewBE.Name = "dataGridViewBE";
             this.dataGridViewBE.ReadOnly = true;
-            this.dataGridViewBE.Size = new System.Drawing.Size(741, 420);
+            this.dataGridViewBE.Size = new System.Drawing.Size(713, 420);
             this.dataGridViewBE.TabIndex = 30;
+            // 
+            // Column_CodeBordereau
+            // 
+            this.Column_CodeBordereau.HeaderText = "Code bordereau";
+            this.Column_CodeBordereau.Name = "Column_CodeBordereau";
+            this.Column_CodeBordereau.ReadOnly = true;
+            this.Column_CodeBordereau.Visible = false;
+            // 
+            // Column_Etat
+            // 
+            this.Column_Etat.HeaderText = "Etat";
+            this.Column_Etat.Name = "Column_Etat";
+            this.Column_Etat.ReadOnly = true;
+            // 
+            // Column_Date
+            // 
+            this.Column_Date.HeaderText = "Date";
+            this.Column_Date.Name = "Column_Date";
+            this.Column_Date.ReadOnly = true;
+            // 
+            // Column_NumeroBordereau
+            // 
+            this.Column_NumeroBordereau.HeaderText = "Numéro";
+            this.Column_NumeroBordereau.Name = "Column_NumeroBordereau";
+            this.Column_NumeroBordereau.ReadOnly = true;
+            // 
+            // Column_NumeroPlans
+            // 
+            this.Column_NumeroPlans.HeaderText = "Numéro / Plan";
+            this.Column_NumeroPlans.Name = "Column_NumeroPlans";
+            this.Column_NumeroPlans.ReadOnly = true;
+            // 
+            // Column_Indice
+            // 
+            this.Column_Indice.HeaderText = "Indice";
+            this.Column_Indice.Name = "Column_Indice";
+            this.Column_Indice.ReadOnly = true;
             // 
             // FormGestionBE
             // 
@@ -141,5 +191,11 @@
         private System.Windows.Forms.Button btn_ValidationBE;
         private System.Windows.Forms.Button btn_ModificationBE;
         private System.Windows.Forms.DataGridView dataGridViewBE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_CodeBordereau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Etat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_NumeroBordereau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_NumeroPlans;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Indice;
     }
 }

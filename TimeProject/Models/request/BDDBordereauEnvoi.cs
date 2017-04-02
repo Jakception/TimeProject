@@ -15,26 +15,62 @@ namespace TimeProject.Models.request
         private static DbDataReader dataReader { get; set; }
         private static string req;
 
-        static public List<Plan> getAllBE(string codeProjet)
+        static public List<BordereauEnvoi> getAllBE(string codeProjet)
         {
-            List<Plan> lstPlans = new List<Plan>();
-            DataBase.ConnexionToDataBase();
-            req = "select * from plan where code_projet = '" + codeProjet + "';";
+            // Charger les bordereau par rapport au code projet et ensuite les plans de chaque bordereau :)
+            List<BordereauEnvoi> listBE = new List<BordereauEnvoi>();
+
+            req = "SELECT BE.CODE_BORDEREAU, BE.NUMERO_BORDEREAU, BE.DESIGNATION, BE.EXEMPLAIRE, BE.VERSION, BE.ETAT " +
+                  "FROM bordereau_envoi BE" +
+                  "INNER JOIN bord_projet BP ON BE.CODE_BORDEREAU = BP.CODE_BORDEREAU " +
+                  "WHERE BP.code_projet = '" + codeProjet + "';";
 
             dataReader = DataBase.DBSelect(req);
 
             while (dataReader.Read())
             {
-                Plan p;
+                BordereauEnvoi be;
+                List<Plan> listPlan = new List<Plan>();
 
-                p = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
+                be = new BordereauEnvoi(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), Convert.ToInt32(dataReader[5]), listPlan);
 
-                lstPlans.Add(p);
+                listBE.Add(be);
             }
 
             DataBase.FermeDataReader(dataReader);
 
-            return lstPlans;
+            foreach(BordereauEnvoi be in listBE)
+            {
+                be.ListPlan = getAllPlan(be.Code_Bordereau, codeProjet);
+            }
+
+            return listBE;
+        }
+
+        static public List<Plan> getAllPlan(string codeBordereau, string codeProjet)
+        {
+            List<Plan> listPlan = new List<Plan>();
+            
+            req = "SELECT p.CODE_PLAN, p.INDICE, p.CODE_PROJET, p.NUMERO_PLAN, p.LIBELLE_PLAN, p.DESIGNATION, p.DT_PLAN " +
+                  "FROM plan p " +
+                  "INNER JOIN bord_plan bp ON p.CODE_PLAN = bp.CODE_PLAN " +
+                  "WHERE p.code_projet = '" + codeProjet + "' " +
+                  "AND bp.CODE_BORDEREAU = '" + codeBordereau + "';";
+
+            dataReader = DataBase.DBSelect(req);
+
+            while (dataReader.Read())
+            {
+                Plan plan;
+
+                plan = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
+
+                listPlan.Add(plan);
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return listPlan;
         }
 
         public static Plan DejaExistePlan(string codePlan, int indice, string codeProjet)
