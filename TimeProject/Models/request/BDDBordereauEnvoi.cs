@@ -47,11 +47,11 @@ namespace TimeProject.Models.request
             return listBE;
         }
 
-        public static int CreateBordereauEnvoi(string codeProjet, int numeroBordereau, string designation, string exemplaire, string version, int etat)
+        public static int CreateBordereauEnvoi(string codeProjet, string codeBordereau,int numeroBordereau, string designation, string exemplaire, string version, int etat)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `bordereau_envoi`(`CODE_BORDEREAU`, `NUMERO_BORDEREAU`, `DESIGNATION`, `EXEMPLAIRE`, `VERSION`, `ETAT`) VALUES ('" + GenerateCodeBE(codeProjet) + "', '" + numeroBordereau.ToString() + "', '" + designation + "', '" + exemplaire + "', '" + version + "', '" + etat  + "')";
+            req = "INSERT INTO `bordereau_envoi`(`CODE_BORDEREAU`, `NUMERO_BORDEREAU`, `DESIGNATION`, `EXEMPLAIRE`, `VERSION`, `ETAT`) VALUES ('" + codeBordereau + "', '" + numeroBordereau.ToString() + "', '" + designation + "', '" + exemplaire + "', '" + version + "', '" + etat  + "')";
 
             nbLigne = DataBase.DBInsert(req);
 
@@ -90,32 +90,6 @@ namespace TimeProject.Models.request
             nbLigne = DataBase.DBDelete(req);
 
             return nbLigne;
-        }
-
-        public static List<Plan> GetPlanWithMaxIndice(string codeProjet)
-        {
-            List<Plan> lstPlans = new List<Plan>();
-
-            req = "SELECT CODE_PLAN, MAX(INDICE), CODE_PROJET, NUMERO_PLAN, LIBELLE_PLAN, DESIGNATION, DT_PLAN " +
-                  "FROM PLAN " +
-                  "WHERE CODE_PROJET = '" + codeProjet + "' " +
-                  "GROUP BY CODE_PLAN, CODE_PROJET, NUMERO_PLAN, LIBELLE_PLAN, DESIGNATION, DT_PLAN " +
-                  "ORDER BY CODE_PLAN;";
-
-            dataReader = DataBase.DBSelect(req);
-
-            while (dataReader.Read())
-            {
-                Plan p;
-
-                p = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
-
-                lstPlans.Add(p);
-            }
-
-            DataBase.FermeDataReader(dataReader);
-
-            return lstPlans;
         }
     }
 }

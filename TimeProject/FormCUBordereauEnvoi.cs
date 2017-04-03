@@ -20,10 +20,11 @@ namespace TimeProject
         {
             InitializeComponent();
 
-            if(bordereauEnvoi == null)
+            List<Plan> listPlans = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+
+            if (bordereauEnvoi == null)
             {
                 // Création
-                List<Plan> listPlans = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
 
                 this.Text = "Ajout d'un bordereau d'envoi";
                 lblGestionBE.Text = "Ajout d'un bordereau d'envoi";
@@ -48,12 +49,27 @@ namespace TimeProject
             {
                 // Modifcation
                 this.Text = "Modification d'un bordereau d'envoi";
+                textBoxNumeroBordereau.Text = bordereauEnvoi.Numero_Bordereau.ToString();
+                textBoxDesignationBordereau.Text = bordereauEnvoi.Designation;
+                textBoxExemplaireBordereau.Text = bordereauEnvoi.Exemplaire;
+                textBoxVersionBordereau.Text = bordereauEnvoi.Version;
+                textBoxEtatBordereau.Text = bordereauEnvoi.Etat.ToString();
+
+                dataGridViewPlan.DataSource = null;
+                dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+                if (listPlans.Count() > 0)
+                {
+                    foreach (Plan plan in listPlans)
+                    {
+                        this.dataGridViewPlan.Rows.Add(plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
+                    }
+                }
             }
         }
 
         private void buttonValiderBE_Click(object sender, EventArgs e)
         {
-            string designation = "", exemplaire = "", version = "", messErreur = "";
+            string codeBordereau = "", designation = "", exemplaire = "", version = "", messErreur = "";
             int numeroBordereau = 0, etat = 0, nbLigne = 0;
 
             if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "" && textBoxEtatBordereau.Text != "")
@@ -70,15 +86,17 @@ namespace TimeProject
 
                 if(messErreur == "")
                 {
+                    codeBordereau = BDDBordereauEnvoi.GenerateCodeBE(sessionUser.projetModif.code_Projet);
                     designation = textBoxDesignationBordereau.Text;
                     exemplaire = textBoxExemplaireBordereau.Text;
                     version = textBoxVersionBordereau.Text;
                     // On créé le bordereau_envoi
-                    BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, numeroBordereau, designation, exemplaire, version, etat);
+                    nbLigne =  BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
 
                     if (nbLigne != 0)
                     {
                         // On créé le bord_projet
+                        nbLigne = BDDBordProjet.CreateBordereauProjet(sessionUser.projetModif.code_Projet, codeBordereau);
                         // On créé le bord_plan
                         MessageBox.Show("Le bordereau à bien été ajouté !");
                         this.Close();

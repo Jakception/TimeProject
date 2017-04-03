@@ -107,6 +107,7 @@
       <DependentUpon>FormModifProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\request\BDDBordereauEnvoi.cs" />
+    <Compile Include="Models\request\BDDBordProjet.cs" />
     <Compile Include="Models\request\BDDEvent.cs" />
     <Compile Include="Form\HistoriqueDetaille\event\FormAjoutEvent.cs">
       <SubType>Form</SubType>
