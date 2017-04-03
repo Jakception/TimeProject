@@ -81,5 +81,45 @@ namespace TimeProject
         {
             this.Close();
         }
+
+        private void dateTimePickerDatePlan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxDesignation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDesignation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDatePlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxLibellePlan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNumeroPlan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelLiebellePlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNumeroPlan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

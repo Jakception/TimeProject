@@ -24,15 +24,15 @@ namespace TimeProject
 
         private void FormGestionBE_Load(object sender, EventArgs e)
         {
-            LoadPlan();
+            LoadBE();
         }
 
         private void btn_AjoutPlan_Click(object sender, EventArgs e)
         {
-            FormAjoutPlan f1 = new FormAjoutPlan();
+            FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(null);
             this.Hide();
             f1.ShowDialog();
-            LoadPlan();
+            LoadBE();
             this.Show();
         }
         private void btn_EditionPDF_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace TimeProject
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
         {
             dataGridViewBE.DataSource = null;
-            dataGridViewBE.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
+            //dataGridViewBE.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
         }
 
         private void btn_CreationBE_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace TimeProject
 
         }
 
-        private void LoadPlan()
+        private void LoadBE()
         {
             // Charge tous les bordereaux d'envois dans le dataGridViewBE
             List<BordereauEnvoi> listBE = BDDBordereauEnvoi.getAllBE(sessionUser.projetModif.code_Projet);

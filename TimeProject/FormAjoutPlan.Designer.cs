@@ -60,6 +60,7 @@
             this.textBoxLibellePlan.Name = "textBoxLibellePlan";
             this.textBoxLibellePlan.Size = new System.Drawing.Size(200, 20);
             this.textBoxLibellePlan.TabIndex = 14;
+            this.textBoxLibellePlan.TextChanged += new System.EventHandler(this.textBoxLibellePlan_TextChanged);
             // 
             // textBoxNumeroPlan
             // 
@@ -67,6 +68,7 @@
             this.textBoxNumeroPlan.Name = "textBoxNumeroPlan";
             this.textBoxNumeroPlan.Size = new System.Drawing.Size(200, 20);
             this.textBoxNumeroPlan.TabIndex = 13;
+            this.textBoxNumeroPlan.TextChanged += new System.EventHandler(this.textBoxNumeroPlan_TextChanged);
             // 
             // labelLiebellePlan
             // 
@@ -76,6 +78,7 @@
             this.labelLiebellePlan.Size = new System.Drawing.Size(75, 13);
             this.labelLiebellePlan.TabIndex = 11;
             this.labelLiebellePlan.Text = "Libelle du plan";
+            this.labelLiebellePlan.Click += new System.EventHandler(this.labelLiebellePlan_Click);
             // 
             // labelNumeroPlan
             // 
@@ -85,6 +88,7 @@
             this.labelNumeroPlan.Size = new System.Drawing.Size(82, 13);
             this.labelNumeroPlan.TabIndex = 10;
             this.labelNumeroPlan.Text = "Numéro du plan";
+            this.labelNumeroPlan.Click += new System.EventHandler(this.labelNumeroPlan_Click);
             // 
             // label1
             // 
@@ -115,6 +119,7 @@
             this.textBoxDesignation.Name = "textBoxDesignation";
             this.textBoxDesignation.Size = new System.Drawing.Size(200, 20);
             this.textBoxDesignation.TabIndex = 17;
+            this.textBoxDesignation.TextChanged += new System.EventHandler(this.textBoxDesignation_TextChanged);
             // 
             // labelDesignation
             // 
@@ -124,6 +129,7 @@
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 16;
             this.labelDesignation.Text = "Désignation";
+            this.labelDesignation.Click += new System.EventHandler(this.labelDesignation_Click);
             // 
             // dateTimePickerDatePlan
             // 
@@ -131,6 +137,7 @@
             this.dateTimePickerDatePlan.Name = "dateTimePickerDatePlan";
             this.dateTimePickerDatePlan.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDatePlan.TabIndex = 18;
+            this.dateTimePickerDatePlan.ValueChanged += new System.EventHandler(this.dateTimePickerDatePlan_ValueChanged);
             // 
             // labelDatePlan
             // 
@@ -140,6 +147,7 @@
             this.labelDatePlan.Size = new System.Drawing.Size(95, 13);
             this.labelDatePlan.TabIndex = 19;
             this.labelDatePlan.Text = "Date de réalisation";
+            this.labelDatePlan.Click += new System.EventHandler(this.labelDatePlan_Click);
             // 
             // FormAjoutPlan
             // 

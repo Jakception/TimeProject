@@ -31,12 +31,12 @@
             this.lblGestionBE = new System.Windows.Forms.Label();
             this.textBoxExemplaireBordereau = new System.Windows.Forms.TextBox();
             this.labelExemplaireBordereau = new System.Windows.Forms.Label();
-            this.buttonAnnulePlan = new System.Windows.Forms.Button();
+            this.buttonAnnuleBE = new System.Windows.Forms.Button();
             this.textBoxDesignationBordereau = new System.Windows.Forms.TextBox();
             this.textBoxNumeroBordereau = new System.Windows.Forms.TextBox();
             this.labelLiebelleDesignationBordereau = new System.Windows.Forms.Label();
             this.labelNumeroBordereau = new System.Windows.Forms.Label();
-            this.buttonValiderPlan = new System.Windows.Forms.Button();
+            this.buttonValiderBE = new System.Windows.Forms.Button();
             this.textBoxEtatBordereau = new System.Windows.Forms.TextBox();
             this.labelEtatBordereau = new System.Windows.Forms.Label();
             this.textBoxVersionBordereau = new System.Windows.Forms.TextBox();
@@ -80,17 +80,18 @@
             this.labelExemplaireBordereau.TabIndex = 32;
             this.labelExemplaireBordereau.Text = "Exemplaire";
             // 
-            // buttonAnnulePlan
+            // buttonAnnuleBE
             // 
-            this.buttonAnnulePlan.BackColor = System.Drawing.Color.Navy;
-            this.buttonAnnulePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.buttonAnnulePlan.ForeColor = System.Drawing.Color.White;
-            this.buttonAnnulePlan.Location = new System.Drawing.Point(1175, 557);
-            this.buttonAnnulePlan.Name = "buttonAnnulePlan";
-            this.buttonAnnulePlan.Size = new System.Drawing.Size(121, 45);
-            this.buttonAnnulePlan.TabIndex = 31;
-            this.buttonAnnulePlan.Text = "Annuler";
-            this.buttonAnnulePlan.UseVisualStyleBackColor = false;
+            this.buttonAnnuleBE.BackColor = System.Drawing.Color.Navy;
+            this.buttonAnnuleBE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.buttonAnnuleBE.ForeColor = System.Drawing.Color.White;
+            this.buttonAnnuleBE.Location = new System.Drawing.Point(1175, 557);
+            this.buttonAnnuleBE.Name = "buttonAnnuleBE";
+            this.buttonAnnuleBE.Size = new System.Drawing.Size(121, 45);
+            this.buttonAnnuleBE.TabIndex = 31;
+            this.buttonAnnuleBE.Text = "Annuler";
+            this.buttonAnnuleBE.UseVisualStyleBackColor = false;
+            this.buttonAnnuleBE.Click += new System.EventHandler(this.buttonAnnuleBE_Click);
             // 
             // textBoxDesignationBordereau
             // 
@@ -124,17 +125,18 @@
             this.labelNumeroBordereau.TabIndex = 26;
             this.labelNumeroBordereau.Text = "Numéro du bordereau";
             // 
-            // buttonValiderPlan
+            // buttonValiderBE
             // 
-            this.buttonValiderPlan.BackColor = System.Drawing.Color.Navy;
-            this.buttonValiderPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.buttonValiderPlan.ForeColor = System.Drawing.Color.White;
-            this.buttonValiderPlan.Location = new System.Drawing.Point(1014, 557);
-            this.buttonValiderPlan.Name = "buttonValiderPlan";
-            this.buttonValiderPlan.Size = new System.Drawing.Size(121, 45);
-            this.buttonValiderPlan.TabIndex = 28;
-            this.buttonValiderPlan.Text = "Valider";
-            this.buttonValiderPlan.UseVisualStyleBackColor = false;
+            this.buttonValiderBE.BackColor = System.Drawing.Color.Navy;
+            this.buttonValiderBE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.buttonValiderBE.ForeColor = System.Drawing.Color.White;
+            this.buttonValiderBE.Location = new System.Drawing.Point(1014, 557);
+            this.buttonValiderBE.Name = "buttonValiderBE";
+            this.buttonValiderBE.Size = new System.Drawing.Size(121, 45);
+            this.buttonValiderBE.TabIndex = 28;
+            this.buttonValiderBE.Text = "Valider";
+            this.buttonValiderBE.UseVisualStyleBackColor = false;
+            this.buttonValiderBE.Click += new System.EventHandler(this.buttonValiderBE_Click);
             // 
             // textBoxEtatBordereau
             // 
@@ -182,7 +184,7 @@
             this.Column_LibellePlan,
             this.Column_Designation,
             this.Column_DtPlan});
-            this.dataGridViewPlan.Location = new System.Drawing.Point(458, 98);
+            this.dataGridViewPlan.Location = new System.Drawing.Point(458, 101);
             this.dataGridViewPlan.MultiSelect = false;
             this.dataGridViewPlan.Name = "dataGridViewPlan";
             this.dataGridViewPlan.ReadOnly = true;
@@ -250,12 +252,12 @@
             this.Controls.Add(this.labelVersionBordereau);
             this.Controls.Add(this.textBoxExemplaireBordereau);
             this.Controls.Add(this.labelExemplaireBordereau);
-            this.Controls.Add(this.buttonAnnulePlan);
+            this.Controls.Add(this.buttonAnnuleBE);
             this.Controls.Add(this.textBoxDesignationBordereau);
             this.Controls.Add(this.textBoxNumeroBordereau);
             this.Controls.Add(this.labelLiebelleDesignationBordereau);
             this.Controls.Add(this.labelNumeroBordereau);
-            this.Controls.Add(this.buttonValiderPlan);
+            this.Controls.Add(this.buttonValiderBE);
             this.Controls.Add(this.lblGestionBE);
             this.Name = "FormCUBordereauEnvoi";
             this.Text = "Gestion bordereau d\'envoi";
@@ -270,12 +272,12 @@
         private System.Windows.Forms.Label lblGestionBE;
         private System.Windows.Forms.TextBox textBoxExemplaireBordereau;
         private System.Windows.Forms.Label labelExemplaireBordereau;
-        private System.Windows.Forms.Button buttonAnnulePlan;
+        private System.Windows.Forms.Button buttonAnnuleBE;
         private System.Windows.Forms.TextBox textBoxDesignationBordereau;
         private System.Windows.Forms.TextBox textBoxNumeroBordereau;
         private System.Windows.Forms.Label labelLiebelleDesignationBordereau;
         private System.Windows.Forms.Label labelNumeroBordereau;
-        private System.Windows.Forms.Button buttonValiderPlan;
+        private System.Windows.Forms.Button buttonValiderBE;
         private System.Windows.Forms.TextBox textBoxEtatBordereau;
         private System.Windows.Forms.Label labelEtatBordereau;
         private System.Windows.Forms.TextBox textBoxVersionBordereau;
