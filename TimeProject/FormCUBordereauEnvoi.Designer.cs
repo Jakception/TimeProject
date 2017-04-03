@@ -42,6 +42,14 @@
             this.textBoxVersionBordereau = new System.Windows.Forms.TextBox();
             this.labelVersionBordereau = new System.Windows.Forms.Label();
             this.dataGridViewPlan = new System.Windows.Forms.DataGridView();
+            this.Column_CheckBoxPlan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_CodePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_CodeProjet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_NumeroPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_LibellePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_DtPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +66,7 @@
             // 
             // textBoxExemplaireBordereau
             // 
-            this.textBoxExemplaireBordereau.Location = new System.Drawing.Point(230, 213);
+            this.textBoxExemplaireBordereau.Location = new System.Drawing.Point(210, 213);
             this.textBoxExemplaireBordereau.Name = "textBoxExemplaireBordereau";
             this.textBoxExemplaireBordereau.Size = new System.Drawing.Size(200, 20);
             this.textBoxExemplaireBordereau.TabIndex = 33;
@@ -66,7 +74,7 @@
             // labelExemplaireBordereau
             // 
             this.labelExemplaireBordereau.AutoSize = true;
-            this.labelExemplaireBordereau.Location = new System.Drawing.Point(61, 216);
+            this.labelExemplaireBordereau.Location = new System.Drawing.Point(41, 216);
             this.labelExemplaireBordereau.Name = "labelExemplaireBordereau";
             this.labelExemplaireBordereau.Size = new System.Drawing.Size(58, 13);
             this.labelExemplaireBordereau.TabIndex = 32;
@@ -86,14 +94,14 @@
             // 
             // textBoxDesignationBordereau
             // 
-            this.textBoxDesignationBordereau.Location = new System.Drawing.Point(230, 156);
+            this.textBoxDesignationBordereau.Location = new System.Drawing.Point(210, 156);
             this.textBoxDesignationBordereau.Name = "textBoxDesignationBordereau";
             this.textBoxDesignationBordereau.Size = new System.Drawing.Size(200, 20);
             this.textBoxDesignationBordereau.TabIndex = 30;
             // 
             // textBoxNumeroBordereau
             // 
-            this.textBoxNumeroBordereau.Location = new System.Drawing.Point(230, 98);
+            this.textBoxNumeroBordereau.Location = new System.Drawing.Point(210, 98);
             this.textBoxNumeroBordereau.Name = "textBoxNumeroBordereau";
             this.textBoxNumeroBordereau.Size = new System.Drawing.Size(200, 20);
             this.textBoxNumeroBordereau.TabIndex = 29;
@@ -101,7 +109,7 @@
             // labelLiebelleDesignationBordereau
             // 
             this.labelLiebelleDesignationBordereau.AutoSize = true;
-            this.labelLiebelleDesignationBordereau.Location = new System.Drawing.Point(61, 159);
+            this.labelLiebelleDesignationBordereau.Location = new System.Drawing.Point(41, 159);
             this.labelLiebelleDesignationBordereau.Name = "labelLiebelleDesignationBordereau";
             this.labelLiebelleDesignationBordereau.Size = new System.Drawing.Size(130, 13);
             this.labelLiebelleDesignationBordereau.TabIndex = 27;
@@ -110,7 +118,7 @@
             // labelNumeroBordereau
             // 
             this.labelNumeroBordereau.AutoSize = true;
-            this.labelNumeroBordereau.Location = new System.Drawing.Point(61, 101);
+            this.labelNumeroBordereau.Location = new System.Drawing.Point(41, 101);
             this.labelNumeroBordereau.Name = "labelNumeroBordereau";
             this.labelNumeroBordereau.Size = new System.Drawing.Size(110, 13);
             this.labelNumeroBordereau.TabIndex = 26;
@@ -130,7 +138,7 @@
             // 
             // textBoxEtatBordereau
             // 
-            this.textBoxEtatBordereau.Location = new System.Drawing.Point(230, 329);
+            this.textBoxEtatBordereau.Location = new System.Drawing.Point(210, 329);
             this.textBoxEtatBordereau.Name = "textBoxEtatBordereau";
             this.textBoxEtatBordereau.Size = new System.Drawing.Size(200, 20);
             this.textBoxEtatBordereau.TabIndex = 37;
@@ -138,7 +146,7 @@
             // labelEtatBordereau
             // 
             this.labelEtatBordereau.AutoSize = true;
-            this.labelEtatBordereau.Location = new System.Drawing.Point(61, 332);
+            this.labelEtatBordereau.Location = new System.Drawing.Point(41, 332);
             this.labelEtatBordereau.Name = "labelEtatBordereau";
             this.labelEtatBordereau.Size = new System.Drawing.Size(26, 13);
             this.labelEtatBordereau.TabIndex = 36;
@@ -146,7 +154,7 @@
             // 
             // textBoxVersionBordereau
             // 
-            this.textBoxVersionBordereau.Location = new System.Drawing.Point(230, 272);
+            this.textBoxVersionBordereau.Location = new System.Drawing.Point(210, 272);
             this.textBoxVersionBordereau.Name = "textBoxVersionBordereau";
             this.textBoxVersionBordereau.Size = new System.Drawing.Size(200, 20);
             this.textBoxVersionBordereau.TabIndex = 35;
@@ -154,7 +162,7 @@
             // labelVersionBordereau
             // 
             this.labelVersionBordereau.AutoSize = true;
-            this.labelVersionBordereau.Location = new System.Drawing.Point(61, 275);
+            this.labelVersionBordereau.Location = new System.Drawing.Point(41, 275);
             this.labelVersionBordereau.Name = "labelVersionBordereau";
             this.labelVersionBordereau.Size = new System.Drawing.Size(42, 13);
             this.labelVersionBordereau.TabIndex = 34;
@@ -165,12 +173,69 @@
             this.dataGridViewPlan.AllowUserToAddRows = false;
             this.dataGridViewPlan.AllowUserToDeleteRows = false;
             this.dataGridViewPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPlan.Location = new System.Drawing.Point(494, 98);
+            this.dataGridViewPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_CheckBoxPlan,
+            this.Column_CodePlan,
+            this.Column_Indice,
+            this.Column_CodeProjet,
+            this.Column_NumeroPlan,
+            this.Column_LibellePlan,
+            this.Column_Designation,
+            this.Column_DtPlan});
+            this.dataGridViewPlan.Location = new System.Drawing.Point(458, 98);
             this.dataGridViewPlan.MultiSelect = false;
             this.dataGridViewPlan.Name = "dataGridViewPlan";
             this.dataGridViewPlan.ReadOnly = true;
-            this.dataGridViewPlan.Size = new System.Drawing.Size(802, 420);
+            this.dataGridViewPlan.Size = new System.Drawing.Size(838, 420);
             this.dataGridViewPlan.TabIndex = 38;
+            // 
+            // Column_CheckBoxPlan
+            // 
+            this.Column_CheckBoxPlan.HeaderText = "";
+            this.Column_CheckBoxPlan.Name = "Column_CheckBoxPlan";
+            this.Column_CheckBoxPlan.ReadOnly = true;
+            // 
+            // Column_CodePlan
+            // 
+            this.Column_CodePlan.HeaderText = "Code plan";
+            this.Column_CodePlan.Name = "Column_CodePlan";
+            this.Column_CodePlan.ReadOnly = true;
+            // 
+            // Column_Indice
+            // 
+            this.Column_Indice.HeaderText = "Indice";
+            this.Column_Indice.Name = "Column_Indice";
+            this.Column_Indice.ReadOnly = true;
+            // 
+            // Column_CodeProjet
+            // 
+            this.Column_CodeProjet.HeaderText = "Code projet";
+            this.Column_CodeProjet.Name = "Column_CodeProjet";
+            this.Column_CodeProjet.ReadOnly = true;
+            // 
+            // Column_NumeroPlan
+            // 
+            this.Column_NumeroPlan.HeaderText = "Numéro du plan";
+            this.Column_NumeroPlan.Name = "Column_NumeroPlan";
+            this.Column_NumeroPlan.ReadOnly = true;
+            // 
+            // Column_LibellePlan
+            // 
+            this.Column_LibellePlan.HeaderText = "Libelle du plan";
+            this.Column_LibellePlan.Name = "Column_LibellePlan";
+            this.Column_LibellePlan.ReadOnly = true;
+            // 
+            // Column_Designation
+            // 
+            this.Column_Designation.HeaderText = "Désignation";
+            this.Column_Designation.Name = "Column_Designation";
+            this.Column_Designation.ReadOnly = true;
+            // 
+            // Column_DtPlan
+            // 
+            this.Column_DtPlan.HeaderText = "Date de création";
+            this.Column_DtPlan.Name = "Column_DtPlan";
+            this.Column_DtPlan.ReadOnly = true;
             // 
             // FormCUBordereauEnvoi
             // 
@@ -216,5 +281,13 @@
         private System.Windows.Forms.TextBox textBoxVersionBordereau;
         private System.Windows.Forms.Label labelVersionBordereau;
         private System.Windows.Forms.DataGridView dataGridViewPlan;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_CheckBoxPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_CodePlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Indice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_CodeProjet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_NumeroPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_LibellePlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Designation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_DtPlan;
     }
 }
