@@ -54,7 +54,7 @@ namespace TimeProject
         private void buttonValiderBE_Click(object sender, EventArgs e)
         {
             string designation = "", exemplaire = "", version = "", messErreur = "";
-            int numeroBordereau = 0, etat = 0;
+            int numeroBordereau = 0, etat = 0, nbLigne = 0;
 
             if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "" && textBoxEtatBordereau.Text != "")
             {
@@ -70,7 +70,23 @@ namespace TimeProject
 
                 if(messErreur == "")
                 {
-                    
+                    designation = textBoxDesignationBordereau.Text;
+                    exemplaire = textBoxExemplaireBordereau.Text;
+                    version = textBoxVersionBordereau.Text;
+                    // On créé le bordereau_envoi
+                    BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, numeroBordereau, designation, exemplaire, version, etat);
+
+                    if (nbLigne != 0)
+                    {
+                        // On créé le bord_projet
+                        // On créé le bord_plan
+                        MessageBox.Show("Le bordereau à bien été ajouté !");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout du bordereau.");
+                    }
                 }
                 else
                 {

@@ -18,7 +18,7 @@ namespace TimeProject.Models.Utilitaire
         {
             var appSettings = ConfigurationManager.AppSettings;
 
-            var fromAddress = new MailAddress(ConfigurationManager.AppSettings["email"].ToString(), "From Name");
+            var fromAddress = new MailAddress(ConfigurationManager.AppSettings["email"].ToString(), "From Timeporject");
             var toAddress = new MailAddress(emailRecepteur, "To Name");
             string fromPassword = ConfigurationManager.AppSettings["mdp"].ToString();
             string subject = sujet;

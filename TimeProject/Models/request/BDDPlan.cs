@@ -37,6 +37,31 @@ namespace TimeProject.Models.request
 
             return lstPlans;
         }
+        static public List<Plan> getAllPlanBE(string codeBordereau, string codeProjet)
+        {
+            List<Plan> listPlan = new List<Plan>();
+
+            req = "SELECT p.CODE_PLAN, p.INDICE, p.CODE_PROJET, p.NUMERO_PLAN, p.LIBELLE_PLAN, p.DESIGNATION, p.DT_PLAN " +
+                  "FROM plan p " +
+                  "INNER JOIN bord_plan bp ON p.CODE_PLAN = bp.CODE_PLAN " +
+                  "WHERE p.code_projet = '" + codeProjet + "' " +
+                  "AND bp.CODE_BORDEREAU = '" + codeBordereau + "';";
+
+            dataReader = DataBase.DBSelect(req);
+
+            while (dataReader.Read())
+            {
+                Plan plan;
+
+                plan = new Plan(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), Convert.ToInt32(dataReader[3]), dataReader[4].ToString(), dataReader[5].ToString(), Convert.ToDateTime(dataReader[6]));
+
+                listPlan.Add(plan);
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return listPlan;
+        }
 
         public static Plan DejaExistePlan(string codePlan, int indice, string codeProjet)
         {
