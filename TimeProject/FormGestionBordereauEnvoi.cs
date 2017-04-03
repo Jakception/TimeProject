@@ -71,28 +71,32 @@ namespace TimeProject
 
             dataGridViewBE.DataSource = null;
 
-            foreach (BordereauEnvoi be in listBE)
+            if(listBE.Count() != 0)
             {
-                nbPlan = be.ListPlan.Count();
-                if(nbPlan != 0)
+                foreach (BordereauEnvoi be in listBE)
                 {
-                    foreach (Plan plan in be.ListPlan)
+                    nbPlan = be.ListPlan.Count();
+                    if (nbPlan != 0)
                     {
-                        if (compteur == nbPlan)
+                        foreach (Plan plan in be.ListPlan)
                         {
-                            listPlans += plan.Numero_Plan;
-                        }
-                        else
-                        {
-                            listPlans += plan.Numero_Plan + " - ";
-                        }
+                            if (compteur == nbPlan)
+                            {
+                                listPlans += plan.Numero_Plan;
+                            }
+                            else
+                            {
+                                listPlans += plan.Numero_Plan + " - ";
+                            }
 
-                        compteur++;
+                            compteur++;
+                        }
                     }
+
+                    this.dataGridViewBE.Rows.Add(be.Code_Bordereau, be.Numero_Bordereau, be.Designation, listPlans, be.Exemplaire, be.Version, be.Etat);
                 }
-                
-                this.dataGridViewBE.Rows.Add(be.Code_Bordereau, be.Numero_Bordereau, be.Designation, listPlans, be.Exemplaire, be.Version, be.Etat);
             }
+            
         }
 
     }

@@ -73,7 +73,7 @@ namespace TimeProject.Models.request
             return listPlan;
         }
 
-        public static Plan DejaExistePlan(string codePlan, int indice, string codeProjet)
+        public static Plan DejaExisteBordereauEnvoi(string codePlan, int indice, string codeProjet)
         {
             Plan plan;
 
