@@ -16,6 +16,9 @@ namespace TimeProject
 {
     public partial class FormCUBordereauEnvoi : Form
     {
+        private int mode = 0;
+        private BordereauEnvoi be;
+
         public FormCUBordereauEnvoi(BordereauEnvoi bordereauEnvoi)
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace TimeProject
             if (bordereauEnvoi == null)
             {
                 // Création
+                mode = 1;
 
                 this.Text = "Ajout d'un bordereau d'envoi";
                 lblGestionBE.Text = "Ajout d'un bordereau d'envoi";
@@ -48,6 +52,9 @@ namespace TimeProject
             else
             {
                 // Modifcation
+                mode = 2;
+                be = bordereauEnvoi;
+
                 this.Text = "Modification d'un bordereau d'envoi";
                 textBoxNumeroBordereau.Text = bordereauEnvoi.Numero_Bordereau.ToString();
                 textBoxDesignationBordereau.Text = bordereauEnvoi.Designation;
@@ -70,7 +77,7 @@ namespace TimeProject
         private void buttonValiderBE_Click(object sender, EventArgs e)
         {
             string codeBordereau = "", designation = "", exemplaire = "", version = "", messErreur = "";
-            int numeroBordereau = 0, etat = 0, nbLigne = 0;
+            int numeroBordereau = 0, etat = 0, nbLigne = 0, nbdtgv = 0;
 
             if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "" && textBoxEtatBordereau.Text != "")
             {
@@ -86,25 +93,45 @@ namespace TimeProject
 
                 if(messErreur == "")
                 {
-                    codeBordereau = BDDBordereauEnvoi.GenerateCodeBE(sessionUser.projetModif.code_Projet);
                     designation = textBoxDesignationBordereau.Text;
                     exemplaire = textBoxExemplaireBordereau.Text;
                     version = textBoxVersionBordereau.Text;
-                    // On créé le bordereau_envoi
-                    nbLigne =  BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
 
-                    if (nbLigne != 0)
+                    if(this.mode == 1)
                     {
-                        // On créé le bord_projet
-                        nbLigne = BDDBordProjet.CreateBordereauProjet(sessionUser.projetModif.code_Projet, codeBordereau);
-                        // On créé le bord_plan
-                        MessageBox.Show("Le bordereau à bien été ajouté !");
-                        this.Close();
+                        // On créé le bordereau_envoi
+
+                        codeBordereau = BDDBordereauEnvoi.GenerateCodeBE(sessionUser.projetModif.code_Projet);
+                        
+                        nbLigne = BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
+
+                        if (nbLigne != 0)
+                        {
+                            // On créé le bord_projet
+                            nbLigne = BDDBordProjet.CreateBordereauProjet(sessionUser.projetModif.code_Projet, codeBordereau);
+                            // On créé le bord_plan
+                            foreach (DataGridViewRow row in dataGridViewPlan.Rows)
+                            {
+                                if (Convert.ToBoolean(row.Cells[0].Value))
+                                {
+                                    nbLigne = BDDBordPlan.CreateBordPlan(codeBordereau, row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value));
+                                }
+                            }
+
+                            MessageBox.Show("Le bordereau à bien été ajouté !");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erreur lors de l'ajout du bordereau.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Erreur lors de l'ajout du bordereau.");
+                        // On modifie le bordereau_envoi
+                        codeBordereau = this.be.Code_Bordereau;
                     }
+                    
                 }
                 else
                 {
