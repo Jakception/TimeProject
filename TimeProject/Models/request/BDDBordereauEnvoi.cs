@@ -81,15 +81,15 @@ namespace TimeProject.Models.request
             return codeBE;
         }
 
-        public static int DeletePlan(string codePlan, string indice)
-        {
-            int nbLigne = 0;
+        //public static int DeletePlan(string codePlan, string indice)
+        //{
+        //    int nbLigne = 0;
 
-            req = "DELETE FROM `plan` WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "';";
+        //    req = "DELETE FROM `plan` WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "';";
 
-            nbLigne = DataBase.DBDelete(req);
+        //    nbLigne = DataBase.DBDelete(req);
 
-            return nbLigne;
-        }
+        //    return nbLigne;
+        //}
     }
 }

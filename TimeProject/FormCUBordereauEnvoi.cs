@@ -80,6 +80,7 @@ namespace TimeProject
                     }
                 }
             }
+            this.dataGridViewPlan.Columns[0].ReadOnly = true;
         }
 
         private void buttonValiderBE_Click(object sender, EventArgs e)

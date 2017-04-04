@@ -78,7 +78,7 @@ namespace TimeProject
                     {
                         foreach (Plan plan in be.ListPlan)
                         {
-                            if (compteur == nbPlan)
+                            if (compteur >= nbPlan)
                             {
                                 listPlans += plan.Numero_Plan;
                             }
