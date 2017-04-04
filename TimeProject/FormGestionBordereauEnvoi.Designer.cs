@@ -133,7 +133,6 @@
             this.Column_CodeBordereau.HeaderText = "Code bordereau";
             this.Column_CodeBordereau.Name = "Column_CodeBordereau";
             this.Column_CodeBordereau.ReadOnly = true;
-            this.Column_CodeBordereau.Visible = false;
             // 
             // Column_NumeroBordereau
             // 

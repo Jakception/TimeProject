@@ -88,5 +88,15 @@ namespace TimeProject
 
             lstTaskImp.DataSource = lstActPro;
         }
+
+        private void btn_bordereau_Click(object sender, EventArgs e)
+        {
+            FormGestionBE fGBE = new FormGestionBE();
+
+            this.Hide();
+            fGBE.ShowDialog();
+            loadListBox();
+            this.Show();
+        }
     }
 }

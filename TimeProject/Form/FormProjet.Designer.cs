@@ -75,6 +75,7 @@
             this.btn_bordereau.TabIndex = 11;
             this.btn_bordereau.Text = "Bordereau d\'envoi";
             this.btn_bordereau.UseVisualStyleBackColor = false;
+            this.btn_bordereau.Click += new System.EventHandler(this.btn_bordereau_Click);
             // 
             // btn_cptRendu
             // 

@@ -39,12 +39,12 @@ namespace TimeProject
                 textBoxEtatBordereau.Text = "";
 
                 dataGridViewPlan.DataSource = null;
-                dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+                //dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
                 if(listPlans.Count() > 0)
                 {
                     foreach(Plan plan in listPlans)
                     {
-                        this.dataGridViewPlan.Rows.Add(plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
+                        this.dataGridViewPlan.Rows.Add(0, plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
                     }
                 }
                 
@@ -56,19 +56,27 @@ namespace TimeProject
                 be = bordereauEnvoi;
 
                 this.Text = "Modification d'un bordereau d'envoi";
-                textBoxNumeroBordereau.Text = bordereauEnvoi.Numero_Bordereau.ToString();
-                textBoxDesignationBordereau.Text = bordereauEnvoi.Designation;
-                textBoxExemplaireBordereau.Text = bordereauEnvoi.Exemplaire;
-                textBoxVersionBordereau.Text = bordereauEnvoi.Version;
-                textBoxEtatBordereau.Text = bordereauEnvoi.Etat.ToString();
+                textBoxNumeroBordereau.Text = be.Numero_Bordereau.ToString();
+                textBoxDesignationBordereau.Text = be.Designation;
+                textBoxExemplaireBordereau.Text = be.Exemplaire;
+                textBoxVersionBordereau.Text = be.Version;
+                textBoxEtatBordereau.Text = be.Etat.ToString();
 
                 dataGridViewPlan.DataSource = null;
-                dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
+                // dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
                 if (listPlans.Count() > 0)
                 {
                     foreach (Plan plan in listPlans)
                     {
-                        this.dataGridViewPlan.Rows.Add(plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
+                        if (be.ListPlan.Contains(plan))
+                        {
+                            this.dataGridViewPlan.Rows.Add(1, plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
+                        }
+                        else
+                        {
+                            this.dataGridViewPlan.Rows.Add(0, plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
+                        }
+                        
                     }
                 }
             }

@@ -27,18 +27,6 @@ namespace TimeProject
             LoadBE();
         }
 
-        private void btn_AjoutPlan_Click(object sender, EventArgs e)
-        {
-            FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(null);
-            this.Hide();
-            f1.ShowDialog();
-            LoadBE();
-            this.Show();
-        }
-        private void btn_EditionPDF_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
         {
@@ -48,10 +36,20 @@ namespace TimeProject
 
         private void btn_CreationBE_Click(object sender, EventArgs e)
         {
-
+            BordereauEnvoi be = null;
+            FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(be);
+            this.Hide();
+            f1.ShowDialog();
+            LoadBE();
+            this.Show();
         }
 
         private void btn_ModificationBE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
 
         }

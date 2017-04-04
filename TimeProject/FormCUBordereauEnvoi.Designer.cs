@@ -184,7 +184,7 @@
             this.Column_LibellePlan,
             this.Column_Designation,
             this.Column_DtPlan});
-            this.dataGridViewPlan.Location = new System.Drawing.Point(458, 101);
+            this.dataGridViewPlan.Location = new System.Drawing.Point(458, 98);
             this.dataGridViewPlan.MultiSelect = false;
             this.dataGridViewPlan.Name = "dataGridViewPlan";
             this.dataGridViewPlan.ReadOnly = true;
