@@ -66,7 +66,39 @@ namespace TimeProject
         }
 
 
-        public static void insertAction()
+        public static void insertAction(ActionProjet act)
+        {
+            string id,date;
+            date = act.dt_Event.ToString("yy-MM-dd");
+            id = act.id_Event + getKey(act.projet);
+
+            req = "INSERT INTO `action` VALUES ('" + id + "','" + act.etat + "','" +date + "','"+ act.event_Corps + "','" + act.importance  +"','"+ act.user.id_User +"');" ;
+            DataBase.DBInsert(req);
+
+            req = "INSERT INTO eventprojet VALUES ('" + act.projet.code_Projet + "','"+ id +"')";
+            DataBase.DBInsert(req);
+
+            
+        }
+
+        public static int getKey(Projet p)
+        {
+            int key;
+            
+            req = "SELECT Count(*) FROM `eventprojet` WHERE `CODE_PROJET` = '" + p.code_Projet + "';";
+            dataReader = DataBase.DBSelect(req);
+            key = 0;
+            
+            while (dataReader.Read())
+            {
+                key = Convert.ToInt32(dataReader[0]) +1;
+            }
+
+            DataBase.FermeDataReader(dataReader);
+            return key;
+        }
+
+        public static void insertInfo(Information info)
         {
 
         }

@@ -18,8 +18,6 @@ namespace TimeProject
         {
             InitializeComponent();
             
-            
-
             lstBoxEtat.DataSource = null;
             lstBoxEtat.DataSource = ConfigItem.getListStatus();
             pnlAction.Visible = false;
@@ -57,7 +55,12 @@ namespace TimeProject
             status etatEvent, importanceEvent;
 
             corpsEvent = txtCorpsEvent.Text;
+            string mess = "";
 
+            if (corpsEvent == "")
+            {
+                mess = "Merci de remplir la description de l'évènement";
+            }
             if (type == "Action")
             {
                 ActionProjet act;
@@ -66,7 +69,27 @@ namespace TimeProject
                 dtEvent = dtAction.Value;
                 etatEvent = (status) lstBoxEtat.SelectedItem;
                 importanceEvent = (status)lstBoxImp.SelectedItem;
-                act = new ActionProjet(idEvent,  corpsEvent, dtEvent, etatEvent.codeStatus.ToString(), importanceEvent.codeStatus);
+
+                MessageBox.Show(dtEvent.ToShortDateString());
+                if (dtEvent < DateTime.Now.Date)
+                {
+                    mess = mess + ((char)13) + "La date de l'action doit être égale ou supérieure à la date du jour";
+                }
+
+                if (mess != "")
+                {
+                    MessageBox.Show(mess);
+                }
+                else
+                {
+                    act = new ActionProjet(idEvent, etatEvent.codeStatus.ToString(), dtEvent,corpsEvent, importanceEvent.codeStatus);
+                    act.projet = sessionUser.projetModif;
+                    act.user = sessionUser.utilisateur;
+                    sessionUser.projetModif.lstAction.Add(act);
+                    BDDEvent.insertAction(act);
+                    MessageBox.Show("Enregistrement de l'evenement");
+                }
+                
             }
             else
             {
@@ -75,9 +98,21 @@ namespace TimeProject
                 dtEvent = DateTime.Now.Date;
                 etatEvent = (status)lstBoxEtat.SelectedItem;
                 importanceEvent = (status)lstBoxImp.SelectedItem;
+
+                if (mess != "")
+                {
+                    MessageBox.Show(mess);
+                }
+                else
+                {
+                    info = new Information(idEvent, dtEvent, corpsEvent);
+                    info.projet = sessionUser.projetModif;
+                    info.user = sessionUser.utilisateur;
+                }
             }
 
-            MessageBox.Show(dtEvent.ToShortDateString());
+
+           
         }
     }
 }

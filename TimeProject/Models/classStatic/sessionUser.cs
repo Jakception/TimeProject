@@ -9,7 +9,7 @@ namespace TimeProject
 {
     static class sessionUser
     {
-        static private User utilisateur;
+        static public User utilisateur { get; set; }
         static private List<Projet> lstProjetUSer;
         static public Projet projetModif { get; set; }
 

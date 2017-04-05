@@ -32,10 +32,10 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.lblHisto = new System.Windows.Forms.Label();
             this.btAjoutEvent = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btDelEvent = new System.Windows.Forms.Button();
+            this.btClassementImp = new System.Windows.Forms.Button();
+            this.btValAction = new System.Windows.Forms.Button();
+            this.btRendu = new System.Windows.Forms.Button();
             this.dataAction = new System.Windows.Forms.ListBox();
             this.dataInfo = new System.Windows.Forms.ListBox();
             this.dataRendu = new System.Windows.Forms.ListBox();
@@ -57,7 +57,7 @@
             this.lblTitre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(426, 18);
+            this.lblTitre.Location = new System.Drawing.Point(417, 18);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(134, 45);
             this.lblTitre.TabIndex = 20;
@@ -68,7 +68,7 @@
             this.lblHisto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHisto.AutoSize = true;
             this.lblHisto.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHisto.Location = new System.Drawing.Point(537, 167);
+            this.lblHisto.Location = new System.Drawing.Point(528, 167);
             this.lblHisto.Name = "lblHisto";
             this.lblHisto.Size = new System.Drawing.Size(291, 45);
             this.lblHisto.TabIndex = 22;
@@ -87,79 +87,80 @@
             this.btAjoutEvent.UseVisualStyleBackColor = false;
             this.btAjoutEvent.Click += new System.EventHandler(this.btAjoutEvent_Click);
             // 
-            // button2
+            // btDelEvent
             // 
-            this.button2.BackColor = System.Drawing.Color.Navy;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(37, 370);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 61);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Suppression Evenement";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btDelEvent.BackColor = System.Drawing.Color.Navy;
+            this.btDelEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDelEvent.ForeColor = System.Drawing.Color.White;
+            this.btDelEvent.Location = new System.Drawing.Point(37, 370);
+            this.btDelEvent.Name = "btDelEvent";
+            this.btDelEvent.Size = new System.Drawing.Size(195, 61);
+            this.btDelEvent.TabIndex = 24;
+            this.btDelEvent.Text = "Suppression Evenement";
+            this.btDelEvent.UseVisualStyleBackColor = false;
+            this.btDelEvent.Click += new System.EventHandler(this.btDelEvent_Click);
             // 
-            // button3
+            // btClassementImp
             // 
-            this.button3.BackColor = System.Drawing.Color.Navy;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(37, 476);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(195, 61);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Classement Importance";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btClassementImp.BackColor = System.Drawing.Color.Navy;
+            this.btClassementImp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btClassementImp.ForeColor = System.Drawing.Color.White;
+            this.btClassementImp.Location = new System.Drawing.Point(37, 476);
+            this.btClassementImp.Name = "btClassementImp";
+            this.btClassementImp.Size = new System.Drawing.Size(195, 61);
+            this.btClassementImp.TabIndex = 25;
+            this.btClassementImp.Text = "Classement Importance";
+            this.btClassementImp.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btValAction
             // 
-            this.button4.BackColor = System.Drawing.Color.Navy;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(37, 586);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(195, 61);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Validation Action Attente";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btValAction.BackColor = System.Drawing.Color.Navy;
+            this.btValAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btValAction.ForeColor = System.Drawing.Color.White;
+            this.btValAction.Location = new System.Drawing.Point(37, 586);
+            this.btValAction.Name = "btValAction";
+            this.btValAction.Size = new System.Drawing.Size(195, 61);
+            this.btValAction.TabIndex = 26;
+            this.btValAction.Text = "Validation Action Attente";
+            this.btValAction.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btRendu
             // 
-            this.button5.BackColor = System.Drawing.Color.Navy;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(37, 710);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(195, 61);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "Rendus";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btRendu.BackColor = System.Drawing.Color.Navy;
+            this.btRendu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRendu.ForeColor = System.Drawing.Color.White;
+            this.btRendu.Location = new System.Drawing.Point(37, 710);
+            this.btRendu.Name = "btRendu";
+            this.btRendu.Size = new System.Drawing.Size(195, 61);
+            this.btRendu.TabIndex = 27;
+            this.btRendu.Text = "Rendus";
+            this.btRendu.UseVisualStyleBackColor = false;
             // 
             // dataAction
             // 
             this.dataAction.FormattingEnabled = true;
-            this.dataAction.Location = new System.Drawing.Point(263, 271);
+            this.dataAction.Location = new System.Drawing.Point(249, 267);
             this.dataAction.Name = "dataAction";
             this.dataAction.ScrollAlwaysVisible = true;
-            this.dataAction.Size = new System.Drawing.Size(757, 225);
+            this.dataAction.Size = new System.Drawing.Size(767, 225);
             this.dataAction.TabIndex = 31;
             // 
             // dataInfo
             // 
             this.dataInfo.FormattingEnabled = true;
-            this.dataInfo.Location = new System.Drawing.Point(263, 514);
+            this.dataInfo.Location = new System.Drawing.Point(249, 517);
             this.dataInfo.Name = "dataInfo";
             this.dataInfo.ScrollAlwaysVisible = true;
-            this.dataInfo.Size = new System.Drawing.Size(757, 225);
+            this.dataInfo.Size = new System.Drawing.Size(767, 225);
             this.dataInfo.TabIndex = 32;
             // 
             // dataRendu
             // 
             this.dataRendu.FormattingEnabled = true;
-            this.dataRendu.Location = new System.Drawing.Point(263, 775);
+            this.dataRendu.Location = new System.Drawing.Point(249, 758);
             this.dataRendu.Name = "dataRendu";
             this.dataRendu.ScrollAlwaysVisible = true;
-            this.dataRendu.Size = new System.Drawing.Size(757, 225);
+            this.dataRendu.Size = new System.Drawing.Size(767, 225);
             this.dataRendu.TabIndex = 33;
             // 
             // FormHistoDet
@@ -168,14 +169,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1058, 1053);
+            this.ClientSize = new System.Drawing.Size(1058, 995);
             this.Controls.Add(this.dataRendu);
             this.Controls.Add(this.dataInfo);
             this.Controls.Add(this.dataAction);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btRendu);
+            this.Controls.Add(this.btValAction);
+            this.Controls.Add(this.btClassementImp);
+            this.Controls.Add(this.btDelEvent);
             this.Controls.Add(this.btAjoutEvent);
             this.Controls.Add(this.lblHisto);
             this.Controls.Add(this.lblDate);
@@ -193,10 +194,10 @@
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label lblHisto;
         private System.Windows.Forms.Button btAjoutEvent;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btDelEvent;
+        private System.Windows.Forms.Button btClassementImp;
+        private System.Windows.Forms.Button btValAction;
+        private System.Windows.Forms.Button btRendu;
         private System.Windows.Forms.ListBox dataRendu;
         private System.Windows.Forms.ListBox dataInfo;
         private System.Windows.Forms.ListBox dataAction;

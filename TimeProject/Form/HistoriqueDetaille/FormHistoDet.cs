@@ -33,6 +33,7 @@ namespace TimeProject
         {
             FormAjoutEvent fadd = new FormAjoutEvent();
             fadd.ShowDialog();
+            loadDataGrid();
         }
 
         private void loadDataGrid()
@@ -59,6 +60,12 @@ namespace TimeProject
             dataAction.DataSource = lstAction;
             dataRendu.DataSource = lstRendu;
             dataInfo.DataSource = p.lstInfo;
+        }
+
+        private void btDelEvent_Click(object sender, EventArgs e)
+        {
+
+            loadDataGrid();
         }
     }
 }
