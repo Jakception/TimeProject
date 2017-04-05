@@ -48,9 +48,9 @@ namespace TimeProject
         private void FormProjet_Load(object sender, EventArgs e)
         {
             p = sessionUser.projetModif;
+            
             lblTitre.Text = lblTitre.Text + "  "+p.nom_Projet;
             lblDate.Text = "Date de début : " + p.dt_Deb_Projet.ToShortDateString() + "- Objectif de fin : " + p.dt_Obj_Fin.ToShortDateString();
-
             loadListBox();
            
         }

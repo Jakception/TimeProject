@@ -18,6 +18,7 @@ namespace TimeProject.Models.request
             User user;
 
             DataBase.ConnexionToDataBase();
+
             dataReader = DataBase.DBSelect("SELECT * FROM User WHERE MAIL = '" + identifiant + "' AND PWD = '" + BDDPerson.EncodeMD5(mdp) + "'");
 
             if (dataReader.Read())

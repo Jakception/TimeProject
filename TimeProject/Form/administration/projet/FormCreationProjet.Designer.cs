@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btCreaProjet = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkListUserProjet
@@ -199,12 +200,22 @@
             this.btCreaProjet.UseVisualStyleBackColor = true;
             this.btCreaProjet.Click += new System.EventHandler(this.btCreaProjet_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Liste des salariés sur le projet:";
+            // 
             // FormCreationProjet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(911, 568);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btCreaProjet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -251,5 +262,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btCreaProjet;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -44,6 +44,7 @@ namespace TimeProject
             lstBoxProjet.DataSource = null;
             lstBoxProjet.DataSource = sessionUser.getListProj();
             
+            
             // TO DO Fonction permettant de charger les tâches des projets. 
 
             
@@ -98,20 +99,7 @@ namespace TimeProject
 
         }
       
-        private void lstBoxProjet_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Projet p;
-            FormProjet fProj = new FormProjet();
-
-            p = (Projet) lstBoxProjet.SelectedItem;
-            p.lstSalarieProjet = BDDProjet.getUserProjet(p.code_Projet);
-            sessionUser.projetModif = p;
-
-            
-            this.Visible = false;
-            fProj.ShowDialog();
-            this.Visible = true;
-        }
+  
 
         private void lstBoxProjet_DoubleClick(object sender, EventArgs e)
         {
@@ -147,6 +135,7 @@ namespace TimeProject
             {
 
                 item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
+                item.chefProjet = BDDProjet.getChefProjet(item.code_Projet);
                 lstAct = BDDEvent.getActionProjet(item.code_Projet);
                 foreach (var action in lstAct)
                 {
@@ -218,5 +207,10 @@ namespace TimeProject
         }
 
         #endregion
+
+        private void lstBoxProjet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

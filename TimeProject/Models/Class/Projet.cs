@@ -23,7 +23,7 @@ namespace TimeProject.Models.Class
         public List<User> lstSalarieProjet { get; set; }
         public List<ActionProjet> lstAction { get; set; }
         public List<Information> lstInfo { get; set; }
-        public virtual User user { get; set; }
+        public virtual User chefProjet { get; set; }
         public virtual BureauControle bureauControle { get; set; }
         public virtual Architecte architecte { get; set; }
         public virtual List<Plan> listPlan { get; set; }
@@ -68,14 +68,22 @@ namespace TimeProject.Models.Class
 
         public string getConcerne()
         {
-            string mess = "(";
+            string mess = "(" + this.chefProjet.init_User  + " - ";
 
             foreach (var item in this.lstSalarieProjet)
             {
-                mess = mess + item.init_User + "/";
+                if (mess == "(" + this.chefProjet.init_User + " - ")
+                {
+                    mess = mess + item.init_User;
+                }
+                else
+                {
+                    mess = mess + "/" + item.init_User;
+                }
+                
             }
 
-            mess = mess + ")       ";
+            mess = mess +  ")   ";
             return mess;
         }
 
