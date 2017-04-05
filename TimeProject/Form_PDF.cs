@@ -430,6 +430,10 @@ namespace TimeProject
                     Console.WriteLine(e);
                 }
             }
+            else
+            {
+                MessageBox.Show("Pas de bordereau à exporter !");
+            }
 
         }
 
