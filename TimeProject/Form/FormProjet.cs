@@ -98,5 +98,10 @@ namespace TimeProject
             loadListBox();
             this.Show();
         }
+
+        private void btn_cptRendu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

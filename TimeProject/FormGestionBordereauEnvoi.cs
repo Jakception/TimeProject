@@ -51,7 +51,8 @@ namespace TimeProject
 
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
-
+            Form1 f1 = new Form1();
+            f1.createBordereau(sessionUser.projetModif.code_Projet);
         }
 
         private void btn_ValidationBE_Click(object sender, EventArgs e)

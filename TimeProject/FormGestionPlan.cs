@@ -16,6 +16,7 @@ namespace TimeProject
 {
     public partial class FormGestionPlan : Form
     {
+        private Form1 formPDF = new Form1();
 
         public FormGestionPlan()
         {   
@@ -136,7 +137,7 @@ namespace TimeProject
         }
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
-
+            formPDF.createLPpdf(sessionUser.projetModif.code_Projet);
         }
 
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
