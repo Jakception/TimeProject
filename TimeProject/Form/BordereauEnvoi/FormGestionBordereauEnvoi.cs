@@ -74,7 +74,8 @@ namespace TimeProject
             {
                 foreach (BordereauEnvoi be in listBE)
                 {
-                    nbPlan = be.ListPlan.Count();
+                    compteur = 0;
+                    nbPlan = be.ListPlan.Count() - 1;
                     if (nbPlan != 0)
                     {
                         foreach (Plan plan in be.ListPlan)
