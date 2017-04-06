@@ -57,7 +57,7 @@ namespace TimeProject
 
         private void btn_ValidationBE_Click(object sender, EventArgs e)
         {
-
+            dataGridViewBE.DataSource = null;
         }
 
         private void LoadBE()
@@ -66,34 +66,33 @@ namespace TimeProject
             List<BordereauEnvoi> listBE = BDDBordereauEnvoi.getAllBE(sessionUser.projetModif.code_Projet);
             string listPlans = "";
             int nbPlan = 0;
-            int compteur = 0;
 
             dataGridViewBE.DataSource = null;
+            dataGridViewBE.Rows.Clear();
 
             if(listBE.Count() != 0)
             {
                 foreach (BordereauEnvoi be in listBE)
                 {
-                    compteur = 0;
-                    nbPlan = be.ListPlan.Count() - 1;
+                    nbPlan = be.ListPlan.Count();
                     if (nbPlan != 0)
                     {
                         foreach (Plan plan in be.ListPlan)
                         {
-                            if (compteur >= nbPlan)
+                            if(listPlans != "")
                             {
-                                listPlans += plan.Numero_Plan;
+                                listPlans += " - " + plan.Numero_Plan;
                             }
                             else
                             {
-                                listPlans += plan.Numero_Plan + " - ";
+                                listPlans += plan.Numero_Plan;
                             }
-
-                            compteur++;
                         }
                     }
 
                     this.dataGridViewBE.Rows.Add(be.Code_Bordereau, be.Numero_Bordereau, be.Designation, listPlans, be.Exemplaire, be.Version, be.Etat);
+
+                    listPlans = "";
                 }
             }
             

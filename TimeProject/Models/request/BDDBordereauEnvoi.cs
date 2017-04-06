@@ -20,7 +20,7 @@ namespace TimeProject.Models.request
             // Charger les bordereau par rapport au code projet et ensuite les plans de chaque bordereau :)
             List<BordereauEnvoi> listBE = new List<BordereauEnvoi>();
 
-            req = "SELECT BE.CODE_BORDEREAU, BE.NUMERO_BORDEREAU, BE.DESIGNATION, BE.EXEMPLAIRE, BE.VERSION, BE.ETAT " +
+            req = "SELECT DISTINCT BE.CODE_BORDEREAU, BE.NUMERO_BORDEREAU, BE.DESIGNATION, BE.EXEMPLAIRE, BE.VERSION, BE.ETAT " +
                   "FROM bordereau_envoi BE " +
                   "INNER JOIN bord_projet BP ON BE.CODE_BORDEREAU = BP.CODE_BORDEREAU " +
                   "WHERE BP.code_projet = '" + codeProjet + "';";
