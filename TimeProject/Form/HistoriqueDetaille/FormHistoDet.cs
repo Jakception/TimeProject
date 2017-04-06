@@ -67,5 +67,32 @@ namespace TimeProject
 
             loadDataGrid();
         }
+
+        private void checkAct_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkAct.Checked)
+            {
+                checkInfo.Checked = false;
+                checkRendu.Checked = false;
+            }
+        }
+
+        private void checkInfo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkInfo.Checked)
+            {
+                checkRendu.Checked = false;
+                checkAct.Checked = false;
+            }
+        }
+
+        private void checkRendu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkRendu.Checked)
+            {
+                checkInfo.Checked = false;
+                checkAct.Checked = false;
+            }
+        }
     }
 }
