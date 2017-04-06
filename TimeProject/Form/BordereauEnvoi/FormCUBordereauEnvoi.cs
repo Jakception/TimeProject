@@ -158,5 +158,20 @@ namespace TimeProject
         {
             this.Close();
         }
+
+        private void dataGridViewPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                if((int)dataGridViewPlan.CurrentCell.Value == 1)
+                {
+                    dataGridViewPlan.CurrentCell.Value = 0;
+                }
+                else
+                {
+                    dataGridViewPlan.CurrentCell.Value = 1;
+                }
+            }
+        }
     }
 }
