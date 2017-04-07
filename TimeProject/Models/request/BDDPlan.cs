@@ -41,9 +41,9 @@ namespace TimeProject.Models.request
         {
             List<Plan> listPlan = new List<Plan>();
 
-            req = "SELECT p.CODE_PLAN, p.INDICE, p.CODE_PROJET, p.NUMERO_PLAN, p.LIBELLE_PLAN, p.DESIGNATION, p.DT_PLAN " +
+            req = "SELECT DISTINCT p.CODE_PLAN, p.INDICE, p.CODE_PROJET, p.NUMERO_PLAN, p.LIBELLE_PLAN, p.DESIGNATION, p.DT_PLAN " +
                   "FROM plan p " +
-                  "INNER JOIN bord_plan bp ON p.CODE_PLAN = bp.CODE_PLAN " +
+                  "INNER JOIN bord_plan bp ON p.CODE_PLAN = bp.CODE_PLAN AND p.INDICE = bp.INDICE " +
                   "WHERE p.code_projet = '" + codeProjet + "' " +
                   "AND bp.CODE_BORDEREAU = '" + codeBordereau + "';";
 
@@ -148,6 +148,20 @@ namespace TimeProject.Models.request
             DataBase.FermeDataReader(dataReader);
 
             return lstPlans;
+        }
+        public static bool containsInListPlan(List<Plan> listPlan, Plan plan)
+        {
+            bool result = false;
+
+            foreach(Plan p in listPlan)
+            {
+                if (p.Equals(plan))
+                {
+                    result = true;
+                }
+            }
+
+            return result;
         }
     }
 }

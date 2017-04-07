@@ -68,7 +68,7 @@ namespace TimeProject
                 {
                     foreach (Plan plan in listPlans)
                     {
-                        if (be.ListPlan.Contains(plan))
+                        if (BDDPlan.containsInListPlan(be.ListPlan, plan))
                         {
                             this.dataGridViewPlan.Rows.Add(1, plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
                         }
@@ -76,7 +76,6 @@ namespace TimeProject
                         {
                             this.dataGridViewPlan.Rows.Add(0, plan.Code_Plan, plan.Indice, plan.Code_Projet, plan.Numero_Plan, plan.Libelle_Plan, plan.Designation, plan.Dt_Plan);
                         }
-                        
                     }
                 }
             }
@@ -157,6 +156,21 @@ namespace TimeProject
         private void buttonAnnuleBE_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridViewPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                if((int)dataGridViewPlan.CurrentCell.Value == 1)
+                {
+                    dataGridViewPlan.CurrentCell.Value = 0;
+                }
+                else
+                {
+                    dataGridViewPlan.CurrentCell.Value = 1;
+                }
+            }
         }
     }
 }

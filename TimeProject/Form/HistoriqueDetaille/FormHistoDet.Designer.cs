@@ -39,6 +39,9 @@
             this.dataAction = new System.Windows.Forms.ListBox();
             this.dataInfo = new System.Windows.Forms.ListBox();
             this.dataRendu = new System.Windows.Forms.ListBox();
+            this.checkAct = new System.Windows.Forms.CheckBox();
+            this.checkInfo = new System.Windows.Forms.CheckBox();
+            this.checkRendu = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblDate
@@ -163,6 +166,39 @@
             this.dataRendu.Size = new System.Drawing.Size(767, 225);
             this.dataRendu.TabIndex = 33;
             // 
+            // checkAct
+            // 
+            this.checkAct.AutoSize = true;
+            this.checkAct.Location = new System.Drawing.Point(254, 236);
+            this.checkAct.Name = "checkAct";
+            this.checkAct.Size = new System.Drawing.Size(56, 17);
+            this.checkAct.TabIndex = 34;
+            this.checkAct.Text = "Action";
+            this.checkAct.UseVisualStyleBackColor = true;
+            this.checkAct.CheckedChanged += new System.EventHandler(this.checkAct_CheckedChanged);
+            // 
+            // checkInfo
+            // 
+            this.checkInfo.AutoSize = true;
+            this.checkInfo.Location = new System.Drawing.Point(353, 236);
+            this.checkInfo.Name = "checkInfo";
+            this.checkInfo.Size = new System.Drawing.Size(78, 17);
+            this.checkInfo.TabIndex = 35;
+            this.checkInfo.Text = "Information";
+            this.checkInfo.UseVisualStyleBackColor = true;
+            this.checkInfo.CheckedChanged += new System.EventHandler(this.checkInfo_CheckedChanged);
+            // 
+            // checkRendu
+            // 
+            this.checkRendu.AutoSize = true;
+            this.checkRendu.Location = new System.Drawing.Point(453, 236);
+            this.checkRendu.Name = "checkRendu";
+            this.checkRendu.Size = new System.Drawing.Size(58, 17);
+            this.checkRendu.TabIndex = 36;
+            this.checkRendu.Text = "Rendu";
+            this.checkRendu.UseVisualStyleBackColor = true;
+            this.checkRendu.CheckedChanged += new System.EventHandler(this.checkRendu_CheckedChanged);
+            // 
             // FormHistoDet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +206,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1058, 995);
+            this.Controls.Add(this.checkRendu);
+            this.Controls.Add(this.checkInfo);
+            this.Controls.Add(this.checkAct);
             this.Controls.Add(this.dataRendu);
             this.Controls.Add(this.dataInfo);
             this.Controls.Add(this.dataAction);
@@ -201,5 +240,8 @@
         private System.Windows.Forms.ListBox dataRendu;
         private System.Windows.Forms.ListBox dataInfo;
         private System.Windows.Forms.ListBox dataAction;
+        private System.Windows.Forms.CheckBox checkAct;
+        private System.Windows.Forms.CheckBox checkInfo;
+        private System.Windows.Forms.CheckBox checkRendu;
     }
 }

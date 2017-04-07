@@ -87,6 +87,7 @@
             this.btn_cptRendu.TabIndex = 10;
             this.btn_cptRendu.Text = "Compte-rendu";
             this.btn_cptRendu.UseVisualStyleBackColor = false;
+            this.btn_cptRendu.Click += new System.EventHandler(this.btn_cptRendu_Click);
             // 
             // btn_listePlans
             // 

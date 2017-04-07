@@ -190,6 +190,7 @@
             this.dataGridViewPlan.ReadOnly = true;
             this.dataGridViewPlan.Size = new System.Drawing.Size(838, 420);
             this.dataGridViewPlan.TabIndex = 38;
+            this.dataGridViewPlan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPlan_CellContentClick);
             // 
             // Column_CheckBoxPlan
             // 

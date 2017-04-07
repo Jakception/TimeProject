@@ -127,5 +127,25 @@ namespace TimeProject.Models.Class
         {
             return this.Code_Plan + " " + this.Indice + " " + this.Code_Projet + " " + this.Numero_Plan + " " + this.Libelle_Plan + " " + this.Designation + " " + this.Dt_Plan.ToString();
         }
+        public bool Equals(Plan plan)
+        {
+            bool result = false;
+            // If parameter is null return false:
+            if (plan == null)
+            {
+                result = false;
+            }
+            else
+            {
+                if (this.Code_Plan == plan.code_Plan && this.Indice == plan.indice && this.Code_Projet == plan.code_Projet && this.Numero_Plan == plan.numero_Plan && this.Libelle_Plan == plan.libelle_Plan && 
+                    this.Designation == plan.designation && this.Dt_Plan == plan.dt_Plan)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
     }
 }
