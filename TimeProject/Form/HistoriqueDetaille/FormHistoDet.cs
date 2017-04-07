@@ -64,6 +64,27 @@ namespace TimeProject
 
         private void btDelEvent_Click(object sender, EventArgs e)
         {
+            ActionProjet act;
+            Information info;
+            if (checkAct.Checked)
+            {
+                act = (ActionProjet)dataAction.SelectedItem;
+                BDDEvent.delAction(act);
+            }
+            else if (checkRendu.Checked)
+            {
+                info = (Information)dataInfo.SelectedItem;
+                BDDEvent.delInfo(info);
+            }
+            else if (checkInfo.Checked)
+            {
+                act = (ActionProjet)dataRendu.SelectedItem;
+                BDDEvent.delAction(act);
+            }
+            else
+            {
+                MessageBox.Show("Merci de cocher le type d'event à supprimer");
+            }
 
             loadDataGrid();
         }

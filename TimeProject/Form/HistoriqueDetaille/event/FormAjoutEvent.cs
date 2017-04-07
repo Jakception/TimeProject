@@ -70,7 +70,7 @@ namespace TimeProject
                 etatEvent = (status) lstBoxEtat.SelectedItem;
                 importanceEvent = (status)lstBoxImp.SelectedItem;
 
-                MessageBox.Show(dtEvent.ToShortDateString());
+                
                 if (dtEvent < DateTime.Now.Date)
                 {
                     mess = mess + ((char)13) + "La date de l'action doit être égale ou supérieure à la date du jour";
@@ -108,6 +108,10 @@ namespace TimeProject
                     info = new Information(idEvent, dtEvent, corpsEvent);
                     info.projet = sessionUser.projetModif;
                     info.user = sessionUser.utilisateur;
+                    BDDEvent.insertInfo(info);
+                    
+                    sessionUser.projetModif.lstInfo.Add(info);
+                    MessageBox.Show("Enregistrement de l'evenement");
                 }
             }
 

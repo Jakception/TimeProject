@@ -67,7 +67,6 @@ namespace TimeProject.Models.request
             sessionUser.setListProj(lstProj);
         }
 
-
         static public void clotureProjet(string date, string codeProjet)
         {
             int nbLigne;
@@ -100,7 +99,6 @@ namespace TimeProject.Models.request
 
         }
 
-
         static public void setUserProjet(string id_user, string code_projet)
         {
             req = "INSERT INTO user_projet VALUES ('" + code_projet +"','"+ id_user +"');";
@@ -132,7 +130,6 @@ namespace TimeProject.Models.request
             return lstUserProj;
         }
 
-
         static public User getChefProjet(string code_projet)
         {
             User u = new User();
@@ -154,11 +151,13 @@ namespace TimeProject.Models.request
             DataBase.FermeDataReader(dataReader);
             return u;
         }
+
         static public void DelUserProjet(string id_user, string code_projet)
         {
             req = "DELETE from user_projet WHERE id_user ='"+id_user +"' AND code_projet ='" +code_projet +"';";
             DataBase.DBDelete(req);
 
         }
+
     }
 }

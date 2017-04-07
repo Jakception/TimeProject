@@ -72,6 +72,7 @@ namespace TimeProject
             date = act.dt_Event.ToString("yy-MM-dd");
             id = act.id_Event + getKey(act.projet);
 
+            act.id_Event = id;
             req = "INSERT INTO `action` VALUES ('" + id + "','" + act.etat + "','" +date + "','"+ act.event_Corps + "','" + act.importance  +"','"+ act.user.id_User +"');" ;
             DataBase.DBInsert(req);
 
@@ -100,7 +101,34 @@ namespace TimeProject
 
         public static void insertInfo(Information info)
         {
+            string req,date;
+            string id;
 
+            id = info.id_Event + getKey(info.projet);
+            System.Windows.Forms.MessageBox.Show(id);
+            info.id_Event = id;
+            date = info.dt_Event.ToString("yy-MM-dd");
+
+            req = "INSERT INTO `information` VALUES ('" + id + "','"+ date + "','" + info.event_Corps  +"','"+ info.user.id_User + "');";
+            DataBase.DBInsert(req);
+
+            //req = "INSERT INTO eventprojet VALUES ('" + info.projet.code_Projet + "','" + id + "')";
+            //DataBase.DBInsert(req);
+        }
+
+        public static void delAction(ActionProjet act)
+        {
+            string req;
+
+            req = "DELETE FROM 'action' WHERE ID_EVENT ='"+ act.id_Event +"';";
+            DataBase.DBDelete(req);
+        }
+        public static void delInfo(Information info)
+        {
+            string req;
+
+            req = "DELETE FROM 'information' WHERE ID_EVENT ='" + info.id_Event + "';";
+            DataBase.DBDelete(req);
         }
 
     }

@@ -59,10 +59,10 @@ namespace TimeProject
         {
             FormHistoDet fHist = new FormHistoDet();
 
-            this.Hide();
+            
             fHist.ShowDialog();
             loadListBox();
-            this.Show();
+            
         }
 
         private void loadListBox()
