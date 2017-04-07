@@ -139,9 +139,8 @@ namespace TimeProject
                         // On modifie le bordereau_envoi
                         codeBordereau = this.be.Code_Bordereau;
                         // Update BE
-
+                        nbLigne = BDDBordereauEnvoi.UpdateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
                         // Update Bord_Plan
-                        // Récupère les plans coché dans une lise et les compare au plan déjà existant
                         foreach (DataGridViewRow row in dataGridViewPlan.Rows)
                         {
                             Plan plan = new Plan(row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString(), Convert.ToDateTime(row.Cells[7].Value));

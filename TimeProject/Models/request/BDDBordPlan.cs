@@ -30,7 +30,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "DELETE FROM `bord_plan` WHERE CODE_BORDEREAU = '" + codeBordereau + "' AND CODE_PLAN '" + codePlan + "' AND INDICE = '" + indice.ToString() + "';";
+            req = "DELETE FROM `bord_plan` WHERE CODE_BORDEREAU = '" + codeBordereau + "' AND CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice.ToString() + "';";
 
             nbLigne = DataBase.DBDelete(req);
 
