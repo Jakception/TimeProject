@@ -30,8 +30,6 @@ namespace TimeProject
 
         private void btn_ListeDernierIndice_Click(object sender, EventArgs e)
         {
-            dataGridViewBE.DataSource = null;
-            //dataGridViewBE.DataSource = BDDPlan.GetPlanWithMaxIndice(sessionUser.projetModif.code_Projet);
         }
 
         private void btn_CreationBE_Click(object sender, EventArgs e)
@@ -46,7 +44,18 @@ namespace TimeProject
 
         private void btn_ModificationBE_Click(object sender, EventArgs e)
         {
+            BordereauEnvoi be;
 
+            if (dataGridViewBE.Rows.Count > 0)
+            {
+                be = new BordereauEnvoi(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[1].Value), dataGridViewBE.CurrentRow.Cells[2].Value.ToString(), dataGridViewBE.CurrentRow.Cells[4].Value.ToString(), dataGridViewBE.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[6].Value), BDDPlan.getAllPlanBE(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), sessionUser.projetModif.code_Projet));
+
+                FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(be);
+                this.Hide();
+                f1.ShowDialog();
+                LoadBE();
+                this.Show();
+            }
         }
 
         private void btn_EditionPDF_Click(object sender, EventArgs e)

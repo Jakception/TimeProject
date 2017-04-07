@@ -149,5 +149,19 @@ namespace TimeProject.Models.request
 
             return lstPlans;
         }
+        public static bool containsInListPlan(List<Plan> listPlan, Plan plan)
+        {
+            bool result = false;
+
+            foreach(Plan p in listPlan)
+            {
+                if (p.Equals(plan))
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
     }
 }
