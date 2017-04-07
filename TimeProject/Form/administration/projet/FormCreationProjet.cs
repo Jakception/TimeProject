@@ -72,17 +72,19 @@ namespace TimeProject
                 {
                     lstUserProj.Add((User)item);
                 }
-
+                nomProjet = txtNomProjet.Text;
                 // Création du projet
-                BDDProjet.creationProjet(codeProjet, nomProjet = txtNomProjet.Text, chefProjet.id_User.ToString(), nomClient, adresseClient, villeClient, dtDeb, dtFinPrev);
+                BDDProjet.creationProjet(codeProjet, nomProjet, chefProjet.id_User.ToString(), nomClient, adresseClient, villeClient, dtDeb, dtFinPrev);
 
+                Projet p = new Projet(codeProjet, chefProjet.id_User, nomProjet,nomClient,adresseClient, villeClient,dtDeb,dtFinPrev);
+                sessionUser.AddProj(p);
                 // Enregistrement dans la table userprojet
-                               
+
                 User u;
                 foreach (var item in checkListUserProjet.CheckedItems)
                 {
                     u = (User)item;
-                    MessageBox.Show(u.ToString());
+                   
                     BDDProjet.setUserProjet(u.id_User.ToString(), codeProjet);
                 }
                 

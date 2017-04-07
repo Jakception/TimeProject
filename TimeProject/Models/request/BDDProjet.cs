@@ -113,7 +113,7 @@ namespace TimeProject.Models.request
         {
             List<User> lstUserProj = new List<User>();
 
-            req = "SELECT DISTINCT u.* FROM user u left join user_projet up on up.id_user = u.id_user left join projet p on p.id_user = u.id_user WHERE up.code_projet = 'projetTest' OR p.code_projet = '" + code_projet +"';";
+            req = "SELECT DISTINCT u.* FROM user u left join user_projet up on up.id_user = u.id_user left join projet p on p.id_user = u.id_user WHERE up.code_projet = '"+code_projet+"' OR p.code_projet = '" + code_projet +"';";
             dataReader = DataBase.DBSelect(req);
            
 

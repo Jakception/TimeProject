@@ -28,6 +28,7 @@ namespace TimeProject
         {
             FormGestUser formGestUser = new FormGestUser();
             formGestUser.ShowDialog();
+            classAdministration.lstUser = BDDPerson.getAllUser();
         }
 
         private void btProjet_Click(object sender, EventArgs e)

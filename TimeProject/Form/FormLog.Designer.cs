@@ -72,6 +72,7 @@
             this.textBox_pwd.Location = new System.Drawing.Point(467, 297);
             this.textBox_pwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_pwd.Name = "textBox_pwd";
+            this.textBox_pwd.PasswordChar = '*';
             this.textBox_pwd.Size = new System.Drawing.Size(242, 26);
             this.textBox_pwd.TabIndex = 2;
             this.textBox_pwd.Text = "root";

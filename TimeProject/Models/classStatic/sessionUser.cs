@@ -40,5 +40,10 @@ namespace TimeProject
         {
             return lstProjetUSer;
         }
+
+        public static void AddProj(Projet p)
+        {
+            lstProjetUSer.Add(p);
+        }
     }
 }
