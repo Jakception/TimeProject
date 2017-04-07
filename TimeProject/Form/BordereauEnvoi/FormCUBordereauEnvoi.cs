@@ -138,6 +138,34 @@ namespace TimeProject
                     {
                         // On modifie le bordereau_envoi
                         codeBordereau = this.be.Code_Bordereau;
+                        // Update BE
+
+                        // Update Bord_Plan
+                        // Récupère les plans coché dans une lise et les compare au plan déjà existant
+                        foreach (DataGridViewRow row in dataGridViewPlan.Rows)
+                        {
+                            Plan plan = new Plan(row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString(), Convert.ToDateTime(row.Cells[7].Value));
+                            // Si le plan est coché
+                            if (Convert.ToBoolean(row.Cells[0].Value))
+                            {
+                                if (!BDDPlan.containsInListPlan(be.ListPlan, plan))
+                                {
+                                    // On ajoute un bord plan
+                                    nbLigne = BDDBordPlan.CreateBordPlan(codeBordereau, row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value));
+                                }
+                            }
+                            else
+                            {
+                                if (BDDPlan.containsInListPlan(be.ListPlan, plan))
+                                {
+                                    // DELETE
+                                    nbLigne = BDDBordPlan.DeleteBordPlan(codeBordereau, row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value));
+                                }
+                            }
+                        }
+
+                        MessageBox.Show("Le bordereau à bien été modifié !");
+                        this.Close();
                     }
                     
                 }
