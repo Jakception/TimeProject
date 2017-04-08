@@ -37,8 +37,6 @@
             this.labelLiebelleDesignationBordereau = new System.Windows.Forms.Label();
             this.labelNumeroBordereau = new System.Windows.Forms.Label();
             this.buttonValiderBE = new System.Windows.Forms.Button();
-            this.textBoxEtatBordereau = new System.Windows.Forms.TextBox();
-            this.labelEtatBordereau = new System.Windows.Forms.Label();
             this.textBoxVersionBordereau = new System.Windows.Forms.TextBox();
             this.labelVersionBordereau = new System.Windows.Forms.Label();
             this.dataGridViewPlan = new System.Windows.Forms.DataGridView();
@@ -138,22 +136,6 @@
             this.buttonValiderBE.UseVisualStyleBackColor = false;
             this.buttonValiderBE.Click += new System.EventHandler(this.buttonValiderBE_Click);
             // 
-            // textBoxEtatBordereau
-            // 
-            this.textBoxEtatBordereau.Location = new System.Drawing.Point(210, 329);
-            this.textBoxEtatBordereau.Name = "textBoxEtatBordereau";
-            this.textBoxEtatBordereau.Size = new System.Drawing.Size(200, 20);
-            this.textBoxEtatBordereau.TabIndex = 37;
-            // 
-            // labelEtatBordereau
-            // 
-            this.labelEtatBordereau.AutoSize = true;
-            this.labelEtatBordereau.Location = new System.Drawing.Point(41, 332);
-            this.labelEtatBordereau.Name = "labelEtatBordereau";
-            this.labelEtatBordereau.Size = new System.Drawing.Size(26, 13);
-            this.labelEtatBordereau.TabIndex = 36;
-            this.labelEtatBordereau.Text = "Etat";
-            // 
             // textBoxVersionBordereau
             // 
             this.textBoxVersionBordereau.Location = new System.Drawing.Point(210, 272);
@@ -247,8 +229,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1344, 614);
             this.Controls.Add(this.dataGridViewPlan);
-            this.Controls.Add(this.textBoxEtatBordereau);
-            this.Controls.Add(this.labelEtatBordereau);
             this.Controls.Add(this.textBoxVersionBordereau);
             this.Controls.Add(this.labelVersionBordereau);
             this.Controls.Add(this.textBoxExemplaireBordereau);
@@ -279,8 +259,6 @@
         private System.Windows.Forms.Label labelLiebelleDesignationBordereau;
         private System.Windows.Forms.Label labelNumeroBordereau;
         private System.Windows.Forms.Button buttonValiderBE;
-        private System.Windows.Forms.TextBox textBoxEtatBordereau;
-        private System.Windows.Forms.Label labelEtatBordereau;
         private System.Windows.Forms.TextBox textBoxVersionBordereau;
         private System.Windows.Forms.Label labelVersionBordereau;
         private System.Windows.Forms.DataGridView dataGridViewPlan;

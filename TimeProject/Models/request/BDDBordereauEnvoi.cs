@@ -81,16 +81,25 @@ namespace TimeProject.Models.request
             return codeBE;
         }
 
-        public static int UpdateBordereauEnvoi(string codeProjet, string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version, int etat)
+        public static int UpdateBordereauEnvoi(string codeProjet, string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version)
         {
             int nbLigne = 0;
 
-            req = "UPDATE `bordereau_envoi` SET NUMERO_BORDEREAU = '" + numeroBordereau.ToString() + "', DESIGNATION = '" + designation + "', EXEMPLAIRE = '" + exemplaire + "', VERSION = '" + version + "', ETAT = '" + etat + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
+            req = "UPDATE `bordereau_envoi` SET NUMERO_BORDEREAU = '" + numeroBordereau.ToString() + "', DESIGNATION = '" + designation + "', EXEMPLAIRE = '" + exemplaire + "', VERSION = '" + version + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
 
             nbLigne = DataBase.DBUpdate(req);
 
             return nbLigne;
         }
+        public static int UpdateBordereauEnvoiValidation(string codeBordereau, int etat)
+        {
+            int nbLigne = 0;
 
+            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
     }
 }

@@ -36,7 +36,6 @@ namespace TimeProject
                 textBoxDesignationBordereau.Text = "";
                 textBoxExemplaireBordereau.Text = "";
                 textBoxVersionBordereau.Text = "";
-                textBoxEtatBordereau.Text = "";
 
                 dataGridViewPlan.DataSource = null;
                 //dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
@@ -60,7 +59,6 @@ namespace TimeProject
                 textBoxDesignationBordereau.Text = be.Designation;
                 textBoxExemplaireBordereau.Text = be.Exemplaire;
                 textBoxVersionBordereau.Text = be.Version;
-                textBoxEtatBordereau.Text = be.Etat.ToString();
 
                 dataGridViewPlan.DataSource = null;
                 // dataGridViewPlan.DataSource = BDDPlan.getAllPlan(sessionUser.projetModif.code_Projet);
@@ -85,14 +83,13 @@ namespace TimeProject
         private void buttonValiderBE_Click(object sender, EventArgs e)
         {
             string codeBordereau = "", designation = "", exemplaire = "", version = "", messErreur = "";
-            int numeroBordereau = 0, etat = 0, nbLigne = 0, nbdtgv = 0;
+            int numeroBordereau = 0, nbLigne = 0, nbdtgv = 0;
 
-            if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "" && textBoxEtatBordereau.Text != "")
+            if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "")
             {
                 try
                 {
                     numeroBordereau = Convert.ToInt32(textBoxNumeroBordereau.Text);
-                    etat = Convert.ToInt32(textBoxEtatBordereau.Text);
                 }
                 catch(Exception err)
                 {
@@ -111,7 +108,7 @@ namespace TimeProject
 
                         codeBordereau = BDDBordereauEnvoi.GenerateCodeBE(sessionUser.projetModif.code_Projet);
                         
-                        nbLigne = BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
+                        nbLigne = BDDBordereauEnvoi.CreateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, 1);
 
                         if (nbLigne != 0)
                         {
@@ -139,7 +136,7 @@ namespace TimeProject
                         // On modifie le bordereau_envoi
                         codeBordereau = this.be.Code_Bordereau;
                         // Update BE
-                        nbLigne = BDDBordereauEnvoi.UpdateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version, etat);
+                        nbLigne = BDDBordereauEnvoi.UpdateBordereauEnvoi(sessionUser.projetModif.code_Projet, codeBordereau, numeroBordereau, designation, exemplaire, version);
                         // Update Bord_Plan
                         foreach (DataGridViewRow row in dataGridViewPlan.Rows)
                         {
