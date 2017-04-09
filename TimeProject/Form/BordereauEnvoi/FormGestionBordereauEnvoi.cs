@@ -49,12 +49,18 @@ namespace TimeProject
             if (dataGridViewBE.Rows.Count > 0)
             {
                 be = new BordereauEnvoi(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[1].Value), dataGridViewBE.CurrentRow.Cells[2].Value.ToString(), dataGridViewBE.CurrentRow.Cells[4].Value.ToString(), dataGridViewBE.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[6].Value), BDDPlan.getAllPlanBE(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), sessionUser.projetModif.code_Projet));
-
-                FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(be);
-                this.Hide();
-                f1.ShowDialog();
-                LoadBE();
-                this.Show();
+                if(be.Etat == 1)
+                {
+                    FormCUBordereauEnvoi f1 = new FormCUBordereauEnvoi(be);
+                    this.Hide();
+                    f1.ShowDialog();
+                    LoadBE();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Le bordereau " + be.Code_Bordereau + " a été validé et ne peut plus être modifié !");
+                }
             }
         }
 
@@ -66,7 +72,20 @@ namespace TimeProject
 
         private void btn_ValidationBE_Click(object sender, EventArgs e)
         {
-            dataGridViewBE.DataSource = null;
+            BordereauEnvoi be;
+
+            if (dataGridViewBE.Rows.Count > 0)
+            {
+                be = new BordereauEnvoi(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[1].Value), dataGridViewBE.CurrentRow.Cells[2].Value.ToString(), dataGridViewBE.CurrentRow.Cells[4].Value.ToString(), dataGridViewBE.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[6].Value), BDDPlan.getAllPlanBE(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), sessionUser.projetModif.code_Projet));
+                if (be.Etat == 1)
+                {
+                    BDDBordereauEnvoi.UpdateBordereauEnvoiValidation(be.Code_Bordereau, 2);
+                }
+                else
+                {
+                    MessageBox.Show("Le bordereau " + be.Code_Bordereau + " a déjà été validé !");
+                }
+            }
         }
 
         private void LoadBE()

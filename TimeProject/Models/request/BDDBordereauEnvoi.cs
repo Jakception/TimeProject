@@ -51,7 +51,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `bordereau_envoi`(`CODE_BORDEREAU`, `NUMERO_BORDEREAU`, `DESIGNATION`, `EXEMPLAIRE`, `VERSION`, `ETAT`) VALUES ('" + codeBordereau + "', '" + numeroBordereau.ToString() + "', '" + designation + "', '" + exemplaire + "', '" + version + "', '" + etat  + "')";
+            req = "INSERT INTO `bordereau_envoi`(`CODE_BORDEREAU`, `NUMERO_BORDEREAU`, `DESIGNATION`, `EXEMPLAIRE`, `VERSION`, `ETAT`) VALUES ('" + codeBordereau + "', '" + numeroBordereau.ToString() + "', '" + designation + "', '" + exemplaire + "', '" + version + "', '" + etat  + "');";
 
             nbLigne = DataBase.DBInsert(req);
 
@@ -81,15 +81,25 @@ namespace TimeProject.Models.request
             return codeBE;
         }
 
-        //public static int DeletePlan(string codePlan, string indice)
-        //{
-        //    int nbLigne = 0;
+        public static int UpdateBordereauEnvoi(string codeProjet, string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version)
+        {
+            int nbLigne = 0;
 
-        //    req = "DELETE FROM `plan` WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "';";
+            req = "UPDATE `bordereau_envoi` SET NUMERO_BORDEREAU = '" + numeroBordereau.ToString() + "', DESIGNATION = '" + designation + "', EXEMPLAIRE = '" + exemplaire + "', VERSION = '" + version + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
 
-        //    nbLigne = DataBase.DBDelete(req);
+            nbLigne = DataBase.DBUpdate(req);
 
-        //    return nbLigne;
-        //}
+            return nbLigne;
+        }
+        public static int UpdateBordereauEnvoiValidation(string codeBordereau, int etat)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
     }
 }
