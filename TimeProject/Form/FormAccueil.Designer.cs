@@ -36,7 +36,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pnl_Date = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlProjet = new System.Windows.Forms.Panel();
             this.lblProjet = new System.Windows.Forms.Label();
             this.lstBoxProjet = new System.Windows.Forms.ListBox();
@@ -46,6 +45,10 @@
             this.pnlTacheUrgente = new System.Windows.Forms.Panel();
             this.lstBoxTask = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlLoading = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblLoading = new System.Windows.Forms.Label();
             this.pnl_Info.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
             this.pnlUser.SuspendLayout();
@@ -53,6 +56,8 @@
             this.pnlProjet.SuspendLayout();
             this.lblRendu.SuspendLayout();
             this.pnlTacheUrgente.SuspendLayout();
+            this.pnlLoading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -148,14 +153,6 @@
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "lblDate";
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::TimeProject.Properties.Resources.logo;
-            this.panel1.Location = new System.Drawing.Point(19, 18);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 151);
-            this.panel1.TabIndex = 2;
-            // 
             // pnlProjet
             // 
             this.pnlProjet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -185,6 +182,7 @@
             this.lstBoxProjet.FormattingEnabled = true;
             this.lstBoxProjet.Location = new System.Drawing.Point(3, 76);
             this.lstBoxProjet.Name = "lstBoxProjet";
+            this.lstBoxProjet.ScrollAlwaysVisible = true;
             this.lstBoxProjet.Size = new System.Drawing.Size(274, 433);
             this.lstBoxProjet.TabIndex = 0;
             this.lstBoxProjet.SelectedIndexChanged += new System.EventHandler(this.lstBoxProjet_SelectedIndexChanged);
@@ -207,6 +205,7 @@
             this.lstBoxRendu.FormattingEnabled = true;
             this.lstBoxRendu.Location = new System.Drawing.Point(31, 80);
             this.lstBoxRendu.Name = "lstBoxRendu";
+            this.lstBoxRendu.ScrollAlwaysVisible = true;
             this.lstBoxRendu.Size = new System.Drawing.Size(470, 433);
             this.lstBoxRendu.TabIndex = 2;
             // 
@@ -238,6 +237,7 @@
             this.lstBoxTask.FormattingEnabled = true;
             this.lstBoxTask.Location = new System.Drawing.Point(29, 80);
             this.lstBoxTask.Name = "lstBoxTask";
+            this.lstBoxTask.ScrollAlwaysVisible = true;
             this.lstBoxTask.Size = new System.Drawing.Size(395, 433);
             this.lstBoxTask.TabIndex = 4;
             // 
@@ -252,6 +252,46 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Taches urgente en attente\r\n             d\'action";
             // 
+            // pnlLoading
+            // 
+            this.pnlLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.pnlLoading.Controls.Add(this.lblLoading);
+            this.pnlLoading.Controls.Add(this.pictureBox1);
+            this.pnlLoading.Location = new System.Drawing.Point(12, 175);
+            this.pnlLoading.Name = "pnlLoading";
+            this.pnlLoading.Size = new System.Drawing.Size(1349, 563);
+            this.pnlLoading.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::TimeProject.Properties.Resources.logo;
+            this.panel1.Location = new System.Drawing.Point(19, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(285, 151);
+            this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TimeProject.Properties.Resources.sablier;
+            this.pictureBox1.Location = new System.Drawing.Point(241, 211);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(267, 322);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(555, 363);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(289, 39);
+            this.lblLoading.TabIndex = 1;
+            this.lblLoading.Text = "Chargement des données";
+            // 
             // FormAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +299,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.pnlTacheUrgente);
             this.Controls.Add(this.lblRendu);
             this.Controls.Add(this.pnlProjet);
@@ -283,6 +324,9 @@
             this.lblRendu.PerformLayout();
             this.pnlTacheUrgente.ResumeLayout(false);
             this.pnlTacheUrgente.PerformLayout();
+            this.pnlLoading.ResumeLayout(false);
+            this.pnlLoading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +352,8 @@
         private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.ListBox lstBoxRendu;
         private System.Windows.Forms.ListBox lstBoxTask;
+        private System.Windows.Forms.Panel pnlLoading;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblLoading;
     }
 }

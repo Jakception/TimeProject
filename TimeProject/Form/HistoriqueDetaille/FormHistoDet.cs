@@ -66,20 +66,28 @@ namespace TimeProject
         {
             ActionProjet act;
             Information info;
+            int index;
+
             if (checkAct.Checked)
             {
                 act = (ActionProjet)dataAction.SelectedItem;
                 BDDEvent.delAction(act);
-            }
-            else if (checkRendu.Checked)
-            {
-                info = (Information)dataInfo.SelectedItem;
-                BDDEvent.delInfo(info);
+                index = sessionUser.projetModif.lstAction.IndexOf(act);
+                sessionUser.projetModif.lstAction.RemoveAt(index);
             }
             else if (checkInfo.Checked)
             {
+                info = (Information)dataInfo.SelectedItem;
+                BDDEvent.delInfo(info);
+                index = sessionUser.projetModif.lstInfo.IndexOf(info);
+                sessionUser.projetModif.lstInfo.RemoveAt(index);
+            }
+            else if (checkRendu.Checked)
+            {
                 act = (ActionProjet)dataRendu.SelectedItem;
                 BDDEvent.delAction(act);
+                index = sessionUser.projetModif.lstAction.IndexOf(act);
+                sessionUser.projetModif.lstAction.RemoveAt(index);
             }
             else
             {
@@ -114,6 +122,81 @@ namespace TimeProject
                 checkInfo.Checked = false;
                 checkAct.Checked = false;
             }
+        }
+
+        private void btClassementImp_Click(object sender, EventArgs e)
+        {
+            List<ActionProjet> lstActImp = new List<ActionProjet>();
+            List<ActionProjet> lstRenduImp = new List<ActionProjet>();
+
+            for (int i = 1; i < 4; i++)
+            {
+                
+                foreach (var even in sessionUser.projetModif.lstAction)
+                {
+                    if (Convert.ToInt32(even.etat) < 4)
+                    {
+                        if (even.importance == i)
+                        {
+                            lstActImp.Add(even);
+                        }
+                    }
+                    else
+                    {
+                        if (even.importance == i)
+                        {
+                            lstRenduImp.Add(even);
+                        }
+                    }
+                }
+            }
+
+            dataAction.DataSource = null;
+            dataAction.DataSource = lstActImp;
+
+            dataRendu.DataSource = null;
+            dataRendu.DataSource = lstRenduImp;
+            
+        }
+
+        private void btValAction_Click(object sender, EventArgs e)
+        {
+            ActionProjet act = (ActionProjet) dataAction.SelectedItem;
+
+            if (act.etat == "3")
+            {
+                MessageBox.Show("L'action a déjà été finalisé");
+            }
+            else
+            {
+                int etat;
+
+                etat = Convert.ToInt32(act.etat) + 1;
+                act.etat = etat.ToString();
+                BDDEvent.changeEtat(act);
+            }
+
+            loadDataGrid(); 
+        }
+
+        private void btRendu_Click(object sender, EventArgs e)
+        {
+            ActionProjet act = (ActionProjet)dataRendu.SelectedItem;
+
+            if (act.etat == "5")
+            {
+                MessageBox.Show("Le rendu a déjà été finalisé");
+            }
+            else
+            {
+                int etat;
+
+                etat = Convert.ToInt32(act.etat) + 1;
+                act.etat = etat.ToString();
+                BDDEvent.changeEtat(act);
+            }
+            loadDataGrid();
+
         }
     }
 }

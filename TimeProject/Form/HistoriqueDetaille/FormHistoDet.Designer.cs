@@ -114,6 +114,7 @@
             this.btClassementImp.TabIndex = 25;
             this.btClassementImp.Text = "Classement Importance";
             this.btClassementImp.UseVisualStyleBackColor = false;
+            this.btClassementImp.Click += new System.EventHandler(this.btClassementImp_Click);
             // 
             // btValAction
             // 
@@ -124,8 +125,9 @@
             this.btValAction.Name = "btValAction";
             this.btValAction.Size = new System.Drawing.Size(195, 61);
             this.btValAction.TabIndex = 26;
-            this.btValAction.Text = "Validation Action Attente";
+            this.btValAction.Text = "Etat Action";
             this.btValAction.UseVisualStyleBackColor = false;
+            this.btValAction.Click += new System.EventHandler(this.btValAction_Click);
             // 
             // btRendu
             // 
@@ -138,10 +140,12 @@
             this.btRendu.TabIndex = 27;
             this.btRendu.Text = "Rendus";
             this.btRendu.UseVisualStyleBackColor = false;
+            this.btRendu.Click += new System.EventHandler(this.btRendu_Click);
             // 
             // dataAction
             // 
             this.dataAction.FormattingEnabled = true;
+            this.dataAction.HorizontalScrollbar = true;
             this.dataAction.Location = new System.Drawing.Point(249, 267);
             this.dataAction.Name = "dataAction";
             this.dataAction.ScrollAlwaysVisible = true;
@@ -151,6 +155,7 @@
             // dataInfo
             // 
             this.dataInfo.FormattingEnabled = true;
+            this.dataInfo.HorizontalScrollbar = true;
             this.dataInfo.Location = new System.Drawing.Point(249, 517);
             this.dataInfo.Name = "dataInfo";
             this.dataInfo.ScrollAlwaysVisible = true;
@@ -160,6 +165,7 @@
             // dataRendu
             // 
             this.dataRendu.FormattingEnabled = true;
+            this.dataRendu.HorizontalScrollbar = true;
             this.dataRendu.Location = new System.Drawing.Point(249, 758);
             this.dataRendu.Name = "dataRendu";
             this.dataRendu.ScrollAlwaysVisible = true;

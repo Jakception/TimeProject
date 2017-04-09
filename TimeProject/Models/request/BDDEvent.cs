@@ -65,7 +65,6 @@ namespace TimeProject
             return lstInfo;
         }
 
-
         public static void insertAction(ActionProjet act)
         {
             string id,date;
@@ -105,30 +104,41 @@ namespace TimeProject
             string id;
 
             id = info.id_Event + getKey(info.projet);
-            System.Windows.Forms.MessageBox.Show(id);
             info.id_Event = id;
             date = info.dt_Event.ToString("yy-MM-dd");
 
             req = "INSERT INTO `information` VALUES ('" + id + "','"+ date + "','" + info.event_Corps  +"','"+ info.user.id_User + "');";
             DataBase.DBInsert(req);
 
-            //req = "INSERT INTO eventprojet VALUES ('" + info.projet.code_Projet + "','" + id + "')";
-            //DataBase.DBInsert(req);
+            req = "INSERT INTO eventprojet VALUES ('" + info.projet.code_Projet + "','" + id + "')";
+            DataBase.DBInsert(req);
         }
 
         public static void delAction(ActionProjet act)
         {
             string req;
 
-            req = "DELETE FROM 'action' WHERE ID_EVENT ='"+ act.id_Event +"';";
+            req = "DELETE FROM action WHERE ID_EVENT ='"+ act.id_Event +"';";
+            DataBase.DBDelete(req);
+
+            req = "DELETE FROM eventprojet WHERE ID_EVENT ='" + act.id_Event + "' AND CODE_PROJET ='" + act.projet.code_Projet + "';";
             DataBase.DBDelete(req);
         }
+
         public static void delInfo(Information info)
         {
             string req;
 
-            req = "DELETE FROM 'information' WHERE ID_EVENT ='" + info.id_Event + "';";
+            req = "DELETE FROM information WHERE ID_EVENT ='" + info.id_Event + "';";
             DataBase.DBDelete(req);
+            req = "DELETE FROM eventprojet WHERE ID_EVENT ='" + info.id_Event + "' AND CODE_PROJET ='" + info.projet.code_Projet + "';";
+            DataBase.DBDelete(req);
+        }
+
+        public static void changeEtat(ActionProjet act)
+        {
+            string req = "UPDATE action set etat ='" + act.etat + "' WHERE ID_EVENT ='" + act.id_Event  +"';";
+            DataBase.DBUpdate(req);
         }
 
     }

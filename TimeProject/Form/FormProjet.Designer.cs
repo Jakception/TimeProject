@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitre = new System.Windows.Forms.Label();
             this.btn_bordereau = new System.Windows.Forms.Button();
             this.btn_cptRendu = new System.Windows.Forms.Button();
@@ -43,15 +42,8 @@
             this.lstBoxHistorique = new System.Windows.Forms.ListBox();
             this.lstTaskImp = new System.Windows.Forms.ListBox();
             this.lstBoxInfo = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::TimeProject.Properties.Resources.logo;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 151);
-            this.panel1.TabIndex = 3;
             // 
             // lblTitre
             // 
@@ -69,7 +61,7 @@
             // 
             this.btn_bordereau.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_bordereau.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_bordereau.Location = new System.Drawing.Point(32, 410);
+            this.btn_bordereau.Location = new System.Drawing.Point(32, 361);
             this.btn_bordereau.Name = "btn_bordereau";
             this.btn_bordereau.Size = new System.Drawing.Size(180, 52);
             this.btn_bordereau.TabIndex = 11;
@@ -81,7 +73,7 @@
             // 
             this.btn_cptRendu.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_cptRendu.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cptRendu.Location = new System.Drawing.Point(32, 352);
+            this.btn_cptRendu.Location = new System.Drawing.Point(32, 564);
             this.btn_cptRendu.Name = "btn_cptRendu";
             this.btn_cptRendu.Size = new System.Drawing.Size(180, 52);
             this.btn_cptRendu.TabIndex = 10;
@@ -106,7 +98,7 @@
             // 
             this.btn_suiviTH.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_suiviTH.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_suiviTH.Location = new System.Drawing.Point(32, 584);
+            this.btn_suiviTH.Location = new System.Drawing.Point(32, 488);
             this.btn_suiviTH.Name = "btn_suiviTH";
             this.btn_suiviTH.Size = new System.Drawing.Size(180, 52);
             this.btn_suiviTH.TabIndex = 12;
@@ -117,7 +109,7 @@
             // 
             this.btn_ficheLancement.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_ficheLancement.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ficheLancement.Location = new System.Drawing.Point(32, 526);
+            this.btn_ficheLancement.Location = new System.Drawing.Point(32, 635);
             this.btn_ficheLancement.Name = "btn_ficheLancement";
             this.btn_ficheLancement.Size = new System.Drawing.Size(180, 52);
             this.btn_ficheLancement.TabIndex = 13;
@@ -128,7 +120,7 @@
             // 
             this.btn_suiviValidations.BackColor = System.Drawing.Color.MidnightBlue;
             this.btn_suiviValidations.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_suiviValidations.Location = new System.Drawing.Point(32, 468);
+            this.btn_suiviValidations.Location = new System.Drawing.Point(32, 419);
             this.btn_suiviValidations.Name = "btn_suiviValidations";
             this.btn_suiviValidations.Size = new System.Drawing.Size(180, 52);
             this.btn_suiviValidations.TabIndex = 14;
@@ -185,26 +177,40 @@
             // lstBoxHistorique
             // 
             this.lstBoxHistorique.FormattingEnabled = true;
+            this.lstBoxHistorique.HorizontalScrollbar = true;
             this.lstBoxHistorique.Location = new System.Drawing.Point(306, 294);
             this.lstBoxHistorique.Name = "lstBoxHistorique";
+            this.lstBoxHistorique.ScrollAlwaysVisible = true;
             this.lstBoxHistorique.Size = new System.Drawing.Size(366, 186);
             this.lstBoxHistorique.TabIndex = 20;
             // 
             // lstTaskImp
             // 
             this.lstTaskImp.FormattingEnabled = true;
+            this.lstTaskImp.HorizontalScrollbar = true;
             this.lstTaskImp.Location = new System.Drawing.Point(865, 294);
             this.lstTaskImp.Name = "lstTaskImp";
+            this.lstTaskImp.ScrollAlwaysVisible = true;
             this.lstTaskImp.Size = new System.Drawing.Size(406, 433);
             this.lstTaskImp.TabIndex = 21;
             // 
             // lstBoxInfo
             // 
             this.lstBoxInfo.FormattingEnabled = true;
+            this.lstBoxInfo.HorizontalScrollbar = true;
             this.lstBoxInfo.Location = new System.Drawing.Point(306, 513);
             this.lstBoxInfo.Name = "lstBoxInfo";
+            this.lstBoxInfo.ScrollAlwaysVisible = true;
             this.lstBoxInfo.Size = new System.Drawing.Size(366, 186);
             this.lstBoxInfo.TabIndex = 22;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::TimeProject.Properties.Resources.logo;
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(285, 151);
+            this.panel1.TabIndex = 3;
             // 
             // FormProjet
             // 

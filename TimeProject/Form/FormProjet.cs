@@ -47,6 +47,10 @@ namespace TimeProject
 
         private void FormProjet_Load(object sender, EventArgs e)
         {
+            btn_cptRendu.Visible = false;
+            btn_ficheLancement.Visible = false;
+            btn_suiviTH.Visible = false; 
+
             p = sessionUser.projetModif;
             
             lblTitre.Text = lblTitre.Text + "  "+p.nom_Projet;

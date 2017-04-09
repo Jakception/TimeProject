@@ -291,7 +291,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\sablier.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Images\logo.png" />
   </ItemGroup>

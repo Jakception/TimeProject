@@ -43,11 +43,11 @@ namespace TimeProject.Models.Class
         {
             if (Convert.ToInt32(this.etat)  > 3)
             {
-                return "RENDU " + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
+                return "RENDU " + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User + "  " + ConfigItem.getStatus(Convert.ToInt32(this.etat));
             }
             else
             {
-                return projet.getConcerne() + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User;
+                return projet.getConcerne() + projet.nom_Projet + ": " + this.event_Corps + " Prévu le : " + this.dt_Event.ToShortDateString() + " Crée par : " + this.user.init_User + "  " + ConfigItem.getStatus(Convert.ToInt32(this.etat)); 
             }
             
         }

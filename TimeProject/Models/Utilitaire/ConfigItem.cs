@@ -61,5 +61,21 @@ namespace TimeProject
         {
             return lstImportance;
         }
+
+        public static string getStatus(int stat)
+        {
+            string libelle;
+            libelle = "";
+
+            foreach (var item in lstStatus)
+            {
+                if(item.codeStatus == stat)
+                {
+                    libelle = item.libelleStatus;
+                }
+            }
+            return libelle;
+        }
+        
     }
 }

@@ -26,7 +26,10 @@ namespace TimeProject
 
         public FormAccueil()
         {
+           
             InitializeComponent();
+            
+            pnlLoading.Visible = false;
             if (sessionUser.getTpProfil() == "adm")
             {
                 BDDProjet.ProjetEncours();
@@ -40,10 +43,13 @@ namespace TimeProject
 
         private void FormAccueil_Load(object sender, EventArgs e)
         {
+
             ConfigItem.initListImportance();
             lstBoxProjet.DataSource = null;
             lstBoxProjet.DataSource = sessionUser.getListProj();
-            
+            lstBoxProjet.HorizontalScrollbar = true;
+            lstBoxRendu.HorizontalScrollbar = true;
+            lstBoxTask.HorizontalScrollbar = true;
             
             // TO DO Fonction permettant de charger les tâches des projets. 
 
@@ -133,7 +139,7 @@ namespace TimeProject
         {
             foreach (Projet item in sessionUser.getListProj())
             {
-
+                pnlLoading.Visible = true;
                 item.lstSalarieProjet = BDDProjet.getUserProjet(item.code_Projet);
                 item.chefProjet = BDDProjet.getChefProjet(item.code_Projet);
                 lstAct = BDDEvent.getActionProjet(item.code_Projet);
@@ -162,6 +168,7 @@ namespace TimeProject
 
             lstBoxTask.DataSource = lstActImp;
             lstBoxRendu.DataSource = lstRendu;
+            pnlLoading.Visible = false ;
         }
 
         #region Mouse
