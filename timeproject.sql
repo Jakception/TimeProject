@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 01 Mars 2017 à 11:05
+-- Généré le :  Ven 07 Avril 2017 à 09:20
 -- Version du serveur :  5.6.15-log
--- Version de PHP :  5.5.8
+-- Version de PHP :  5.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,19 +29,23 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `action` (
   `ID_EVENT` char(32) NOT NULL,
   `ETAT` char(32) DEFAULT NULL,
-  `DT_EVENT` char(32) DEFAULT NULL,
+  `DT_EVENT` date DEFAULT NULL,
   `EVENT_CORPS` char(32) DEFAULT NULL,
   `importance` int(11) NOT NULL,
-  PRIMARY KEY (`ID_EVENT`)
+  `ID_USER` varchar(32) NOT NULL,
+  PRIMARY KEY (`ID_EVENT`),
+  KEY `ID_USER` (`ID_USER`),
+  KEY `ID_USER_2` (`ID_USER`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `action`
 --
 
-INSERT INTO `action` (`ID_EVENT`, `ETAT`, `DT_EVENT`, `EVENT_CORPS`, `importance`) VALUES
-('proj0_01', 'en attente', '11/03/2017', 'tu as une tache urgente a faire', 1),
-('proj0_02', 'en attente', '12/03/2017', 'tu as une tache a faire', 3);
+INSERT INTO `action` (`ID_EVENT`, `ETAT`, `DT_EVENT`, `EVENT_CORPS`, `importance`, `ID_USER`) VALUES
+('proj0_01', '2', '2017-03-17', 'tu as une tache urgente a faire', 1, '1'),
+('proj0_02', '4', '2017-03-29', 'ttu as un rendu a faire', 1, '1'),
+('projetTestACT4', '1', '2017-04-05', 'ere', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -191,8 +195,10 @@ CREATE TABLE IF NOT EXISTS `eventprojet` (
 --
 
 INSERT INTO `eventprojet` (`CODE_PROJET`, `ID_EVENT`) VALUES
-('proj0', 'proj0_01'),
-('proj0', 'proj0_02');
+('projetTest', 'inf01'),
+('projetTest', 'proj0_01'),
+('projetTest', 'proj0_02'),
+('projetTest', 'projetTestACT4');
 
 -- --------------------------------------------------------
 
@@ -202,10 +208,19 @@ INSERT INTO `eventprojet` (`CODE_PROJET`, `ID_EVENT`) VALUES
 
 CREATE TABLE IF NOT EXISTS `information` (
   `ID_EVENT` char(32) NOT NULL,
-  `DT_EVENT` char(32) DEFAULT NULL,
+  `DT_EVENT` date DEFAULT NULL,
   `EVENT_CORPS` char(32) DEFAULT NULL,
-  PRIMARY KEY (`ID_EVENT`)
+  `ID_USER` varchar(32) NOT NULL,
+  PRIMARY KEY (`ID_EVENT`),
+  KEY `ID_USER` (`ID_USER`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `information`
+--
+
+INSERT INTO `information` (`ID_EVENT`, `DT_EVENT`, `EVENT_CORPS`, `ID_USER`) VALUES
+('inf01', '2017-03-29', 'information', '2');
 
 -- --------------------------------------------------------
 
@@ -224,6 +239,15 @@ CREATE TABLE IF NOT EXISTS `plan` (
   PRIMARY KEY (`CODE_PLAN`,`INDICE`),
   KEY `I_FK_PLAN_PROJET` (`CODE_PROJET`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `plan`
+--
+
+INSERT INTO `plan` (`CODE_PLAN`, `INDICE`, `CODE_PROJET`, `NUMERO_PLAN`, `LIBELLE_PLAN`, `DESIGNATION`, `DT_PLAN`) VALUES
+('plan1', '1', 'proj0', 'proj0_p1', 'plan 1 test', 'sdkhjldskjlsd', '09/03/2017'),
+('plan2', '2', 'proj0', 'proj0_p1', 'plan 1 test indice 2', 'azertyuiop', '11/03/2017'),
+('plan3', '1', 'proj0', 'proj0_f1', 'plan 1 plan type f', 'yfugjhkbopkjm', '11/03/2017');
 
 -- --------------------------------------------------------
 
@@ -266,8 +290,13 @@ CREATE TABLE IF NOT EXISTS `projet` (
 --
 
 INSERT INTO `projet` (`CODE_PROJET`, `ID_BC`, `ID_ARCHI`, `ID_USER`, `NOM_PROJET`, `NOM_CLIENT`, `ADRESSE_CLIENT`, `VILLE_CLIENT`, `DT_DEB_PROJET`, `DT_OBJ_FIN`, `DT_FIN_REEL`) VALUES
-('proj0', 5, 5, '1', 'Projet de test', 'client michel', 'adresse de michel', 'ville de michel', '2017-03-08', '2017-03-31', NULL),
-('proj02', 0, 0, '1', 'test alpha charly tango', 'charly', 'adresse charly', 'ville de charly', '2017-01-08', '2018-02-15', NULL);
+('proj0', 5, 5, '1', 'Projet de test', 'client michel', 'adresse de michel', 'ville de michel', '2017-03-08', '2017-03-31', '2017-03-16'),
+('proj02', 0, 0, '1', 'test alpha charly tango', 'charly', 'adresse charly', 'ville de charly', '2017-01-08', '2018-02-15', '2017-03-16'),
+('proj03', 0, 0, '0', 'Salam', 'Marmoud', 'ichy', 'hrjzk', '2017-03-16', '2017-03-18', '2017-03-17'),
+('test insert', 0, 0, '0', 'creationProjet', 'ghjklm', 'ghjkl', 'atghjj', '2017-03-16', '2017-03-15', '2017-03-17'),
+('projAlpha', 0, 0, '0', 'test 2 creation', 'dsfdsfds', 'azehj', 'erhjk', '2017-03-17', '2017-03-24', NULL),
+('projetTest', 0, 0, '0', 'jfdkmls', 'hvizjklm', 'jhklm', 'jokdfo^kfd', '2017-03-17', '2017-03-25', NULL),
+('zaeazazazazazp', 0, 0, '0', 'jfdkmls', 'hvizjklm', 'jhklm', 'jokdfo^kfd', '2017-03-17', '2017-03-25', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `NOM_USER` char(32) DEFAULT NULL,
   `PRENOM_USER` char(32) DEFAULT NULL,
   `MAIL` char(32) DEFAULT NULL,
-  `PWD` char(32) DEFAULT NULL,
+  `PWD` char(100) DEFAULT NULL,
   PRIMARY KEY (`ID_USER`),
   KEY `I_FK_USER_TYPE_PROFIL` (`CODE_TP_PROFIL`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -313,7 +342,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID_USER`, `CODE_TP_PROFIL`, `INIT_USER`, `NOM_USER`, `PRENOM_USER`, `MAIL`, `PWD`) VALUES
-('0', 'adm', 'jc', 'Caliste', 'Janvre', 'janvre.caliste@admin.fr', 'root'),
+('0', 'adm', 'JC', 'Caliste', 'Janvre', 'janvre.caliste@admin.fr', 'CA-29-37-76-1B-43-FE-89-4D-4E-13-5B-0B-CA-FD-2E'),
 ('1', 'sal', 'RR', 'Radiguet', 'Romain', 'romain.radiguet@mail.fr', 'romain'),
 ('2', 'sal', 'GB', 'Beulaygue', 'Guillaume', 'guillaume.beulaygue@mail.fr', 'guillaume');
 
@@ -358,6 +387,15 @@ CREATE TABLE IF NOT EXISTS `user_projet` (
   KEY `I_FK_USER_PROJET_PROJET` (`CODE_PROJET`),
   KEY `I_FK_USER_PROJET_USER` (`ID_USER`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `user_projet`
+--
+
+INSERT INTO `user_projet` (`CODE_PROJET`, `ID_USER`) VALUES
+('projAlpha', '0'),
+('projAlpha', '1'),
+('projetTest', '1');
 
 -- --------------------------------------------------------
 

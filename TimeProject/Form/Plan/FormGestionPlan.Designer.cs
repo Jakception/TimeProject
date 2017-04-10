@@ -97,7 +97,7 @@
             this.btn_SuppressionPlan.Name = "btn_SuppressionPlan";
             this.btn_SuppressionPlan.Size = new System.Drawing.Size(195, 61);
             this.btn_SuppressionPlan.TabIndex = 26;
-            this.btn_SuppressionPlan.Text = "Suprression";
+            this.btn_SuppressionPlan.Text = "Supression";
             this.btn_SuppressionPlan.UseVisualStyleBackColor = false;
             this.btn_SuppressionPlan.Click += new System.EventHandler(this.btn_SuppressionPlan_Click);
             // 

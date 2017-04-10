@@ -15,6 +15,7 @@ using TimeProject.Models.request;
 using TimeProject.Models.Utilitaire;
 
 
+
 namespace TimeProject
 {
     public partial class Form1 : Form
@@ -52,7 +53,7 @@ namespace TimeProject
 
                     Document doc = new Document(PageSize.A4.Rotate());
                     PdfWriter writer = PdfWriter.GetInstance(doc, fs);
-                    Boolean samePage = true;
+                    label_Affairesuivie.Text = referentAffaire;
 
                     doc.Open();
                     /* document.AddAuthor("Micke Blomquist");
@@ -80,7 +81,7 @@ namespace TimeProject
 
                     // PERSONNE EN CHARGE DU DOSSIER
                     cb.SetTextMatrix(30, matrixY);
-                    cb.ShowText(label_Affairesuivie.Text += "CALISTE Janvre");
+                    cb.ShowText(label_Affairesuivie.Text);
                     matrixY -= 20;
 
                     //REFERENCE DU DOSSIER -> Adresse client, afficher boite dialogue pour récupérer addr
@@ -115,7 +116,10 @@ namespace TimeProject
 
                     doc.Add(new Paragraph(" "));
 
+                    float[] largeurs = {5,50,30,15 };
                     PdfPTable tableau = new PdfPTable(4);
+                    tableau.SetWidths(largeurs);
+                    
                     PdfPCell celluleTitre1 = new PdfPCell(new Paragraph("N°"));
                     celluleTitre1.Colspan = 1;
                     tableau.AddCell(celluleTitre1);
@@ -133,6 +137,7 @@ namespace TimeProject
                     tableau.AddCell(celluleTitre4);
 
                     plans.ForEach (delegate(Plan p){
+                        tableau.AddCell(p.Numero_Plan.ToString());
                         tableau.AddCell(p.Designation);
                         tableau.AddCell(p.Dt_Plan.ToString());
                         tableau.AddCell(p.Indice.ToString());
@@ -277,6 +282,9 @@ namespace TimeProject
             {
                 try
                 {
+                    label_Affairesuivie.Text = referentAffaire;
+                    label_date.Text = DateTime.Now.Date.ToString();
+
                     FileStream fs = new FileStream("..\\PDF\\Bordereau.pdf", FileMode.Create);
 
                     Document doc = new Document(PageSize.A4);
@@ -367,9 +375,9 @@ namespace TimeProject
                     doc.Add(new Paragraph(" "));
 
                     // TABLE DES INFOS
-                    float[] largeurs = { 5, 45, 20, 15, 15 };
-                    PdfPTable tableau = new PdfPTable(5);
-                    tableau.TotalWidth = doc.PageSize.Width - 100;
+                    float[] largeurs = { 10, 5, 30, 20, 15, 15, 10 };
+                    PdfPTable tableau = new PdfPTable(7);
+                    tableau.TotalWidth = doc.PageSize.Width - 50;
                     tableau.LockedWidth = true;
                     tableau.SetWidths(largeurs);
 
@@ -403,10 +411,24 @@ namespace TimeProject
 
                     bordereaux.ForEach(delegate (BordereauEnvoi be)
                     {
+                        String plans = "";
                         tableau.AddCell(be.Code_Bordereau);
                         tableau.AddCell(be.Numero_Bordereau.ToString());
                         tableau.AddCell(be.Designation);
-                        tableau.AddCell(be.ListPlan.ToString());
+                        List<Plan> listPlan = be.ListPlan;
+                        if (listPlan.Count > 1)
+                        {
+                            listPlan.ForEach(delegate (Plan p)
+                            {
+
+                                plans += p.Libelle_Plan + " ; ";
+                            });
+                        }
+                        else
+                        {
+                            plans = listPlan[1].Libelle_Plan;
+                        }
+                        tableau.AddCell(plans);
                         tableau.AddCell(be.Exemplaire);
                         tableau.AddCell(be.Version);
                         tableau.AddCell(be.Etat.ToString());
