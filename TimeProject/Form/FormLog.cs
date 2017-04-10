@@ -102,6 +102,7 @@ namespace TimeProject
         private void FormLog_Load(object sender, EventArgs e)
         {
             ConfigItem.initListeStatus();
+            linkLabelCM.Visible = false;
         }
 
         private void linkLabelCM_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -8,13 +8,9 @@ namespace TimeProject.Models.Class
 {
     public class ValidArchi
     {
-        private int code_Plan { get; set; }
-        private int indice { get; set; }
-        private int id_Archi { get; set; }
-        private DateTime dt_Rep_Archi { get; set; }
-        private int num_Cour_Archi { get; set; }
-        private int rep_Archi { get; set; }
-        public virtual Architecte architecte { get; set; }
-        public virtual Plan plan { get; set; }
+        public DateTime dt_Rep_Archi { get; set; }
+        public int num_Cour_Archi { get; set; }
+        public int rep_Archi { get; set; }
+
     }
 }

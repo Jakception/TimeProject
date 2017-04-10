@@ -45,7 +45,7 @@ namespace TimeProject.Models.request
         {
             List<Projet> lstProj = new List<Projet>();
             DataBase.ConnexionToDataBase();
-            req = "SELECT  Distinct p.* FROM projet p, user_projet up where up.code_projet = p.code_projet and p.DT_FIN_REEL is null and up.id_user = '"+ sessionUser.getID() +"' or p.id_user ='"+ sessionUser.getID() + "' ;";
+            req = "SELECT  Distinct p.* FROM projet p, user_projet up where up.code_projet = p.code_projet and p.DT_FIN_REEL is null and up.id_user = '"+ sessionUser.getID() +"' or p.id_user ='"+ sessionUser.getID() + "' and p.DT_FIN_REEL is null ;";
 
             dataReader = DataBase.DBSelect(req);
 
