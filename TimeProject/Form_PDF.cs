@@ -28,7 +28,7 @@ namespace TimeProject
         public Form1()
         {
            // (String dossier, String title, String name)
-            referentAffaire = "Affaire suivie par : CALISTE JANVRE";
+            referentAffaire = "CALISTE JANVRE";
            // refDossier = dossier;
             PDFname = "..\\PDF\\Liste_plans.pdf"; //name
            // PDFTitle = title;
@@ -49,11 +49,13 @@ namespace TimeProject
             {
                 try
                 {
+                    label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
+                    label_signature.Text = referentAffaire;
                     FileStream fs = new FileStream("..\\PDF\\Liste_plans.pdf", FileMode.Create);
 
                     Document doc = new Document(PageSize.A4.Rotate());
                     PdfWriter writer = PdfWriter.GetInstance(doc, fs);
-                    label_Affairesuivie.Text = referentAffaire;
+                    
 
                     doc.Open();
                     /* document.AddAuthor("Micke Blomquist");
@@ -146,7 +148,8 @@ namespace TimeProject
                     tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
                     tableau.SpacingAfter = 30;
                     doc.Add(tableau);
-
+                    cb.SetTextMatrix(doc.PageSize.Width - label_signature.Width - 40, doc.PageSize.Height - tableau.TotalHeight + 20);
+                    cb.ShowText(label_signature.Text);
 
                     cb.EndText();
                     doc.Close();
@@ -166,10 +169,12 @@ namespace TimeProject
             } 
                 }
 
-        public void createCRpdf(){ 
-
+        public void createCRpdf(){
+            
                 try
                 {
+                    label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
+
                     FileStream fs = new FileStream("..\\PDF\\Compte_Rendu.pdf", FileMode.Create);
 
                     Document doc = new Document(PageSize.A4);
@@ -282,8 +287,9 @@ namespace TimeProject
             {
                 try
                 {
-                    label_Affairesuivie.Text = referentAffaire;
+                    label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
                     label_date.Text = DateTime.Now.Date.ToString();
+                    label_signature.Text = referentAffaire;
 
                     FileStream fs = new FileStream("..\\PDF\\Bordereau.pdf", FileMode.Create);
 
@@ -438,6 +444,8 @@ namespace TimeProject
                     tableau.SpacingAfter = 30;
                     doc.Add(tableau);
 
+                    cb.SetTextMatrix(doc.PageSize.Width - label_signature.Width - 40, doc.PageSize.Height - tableau.TotalHeight + 20);
+                    cb.ShowText(label_signature.Text);
 
                     cb.EndText();
                     doc.Close();

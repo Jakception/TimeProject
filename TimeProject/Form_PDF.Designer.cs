@@ -42,6 +42,7 @@
             this.label_adr3 = new System.Windows.Forms.Label();
             this.label_adr2 = new System.Windows.Forms.Label();
             this.label_adr1 = new System.Windows.Forms.Label();
+            this.label_signature = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,10 +96,10 @@
             // label_contact1
             // 
             this.label_contact1.AutoSize = true;
-            this.label_contact1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_contact1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_contact1.Location = new System.Drawing.Point(345, 355);
             this.label_contact1.Name = "label_contact1";
-            this.label_contact1.Size = new System.Drawing.Size(69, 9);
+            this.label_contact1.Size = new System.Drawing.Size(87, 9);
             this.label_contact1.TabIndex = 6;
             this.label_contact1.Text = "Global Engeniering";
             // 
@@ -106,11 +107,11 @@
             // 
             this.label_contact2.AutoSize = true;
             this.label_contact2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_contact2.Location = new System.Drawing.Point(345, 368);
+            this.label_contact2.Location = new System.Drawing.Point(274, 368);
             this.label_contact2.Name = "label_contact2";
-            this.label_contact2.Size = new System.Drawing.Size(115, 9);
+            this.label_contact2.Size = new System.Drawing.Size(268, 9);
             this.label_contact2.TabIndex = 7;
-            this.label_contact2.Text = "SARL blabla blablalbla blabla bla";
+            this.label_contact2.Text = "SARL au capital de 10 000 euros - RCS Versailles - SIRET 804 526 531 00012";
             // 
             // label_contact3
             // 
@@ -118,9 +119,9 @@
             this.label_contact3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_contact3.Location = new System.Drawing.Point(345, 381);
             this.label_contact3.Name = "label_contact3";
-            this.label_contact3.Size = new System.Drawing.Size(159, 9);
+            this.label_contact3.Size = new System.Drawing.Size(202, 9);
             this.label_contact3.TabIndex = 8;
-            this.label_contact3.Text = "Siège social adresse machin RAMBOUILLET";
+            this.label_contact3.Text = "Siège social : 5, rue Joseph Cugnot 78120 RAMBOUILLET";
             // 
             // label_contact4
             // 
@@ -128,9 +129,10 @@
             this.label_contact4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_contact4.Location = new System.Drawing.Point(345, 394);
             this.label_contact4.Name = "label_contact4";
-            this.label_contact4.Size = new System.Drawing.Size(70, 9);
+            this.label_contact4.Size = new System.Drawing.Size(272, 9);
             this.label_contact4.TabIndex = 9;
-            this.label_contact4.Text = "Contact tel fax mail";
+            this.label_contact4.Text = "Tél  : 01 64 90 33 56 - Fax : 09 89 11 51 10 - Mail : contact@globalengineering.f" +
+    "r";
             // 
             // label_contact5
             // 
@@ -138,9 +140,9 @@
             this.label_contact5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_contact5.Location = new System.Drawing.Point(345, 407);
             this.label_contact5.Name = "label_contact5";
-            this.label_contact5.Size = new System.Drawing.Size(105, 9);
+            this.label_contact5.Size = new System.Drawing.Size(140, 9);
             this.label_contact5.TabIndex = 10;
-            this.label_contact5.Text = "www.global.monsiteweb.com";
+            this.label_contact5.Text = "Site web : www.global.monsiteweb.com";
             // 
             // label_adr4
             // 
@@ -178,11 +180,21 @@
             this.label_adr1.TabIndex = 14;
             this.label_adr1.Text = "CBS";
             // 
+            // label_signature
+            // 
+            this.label_signature.AutoSize = true;
+            this.label_signature.Location = new System.Drawing.Point(700, 307);
+            this.label_signature.Name = "label_signature";
+            this.label_signature.Size = new System.Drawing.Size(86, 13);
+            this.label_signature.TabIndex = 15;
+            this.label_signature.Text = "CALISTE Janvre";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 429);
+            this.Controls.Add(this.label_signature);
             this.Controls.Add(this.label_adr1);
             this.Controls.Add(this.label_adr2);
             this.Controls.Add(this.label_adr3);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.Label label_adr3;
         private System.Windows.Forms.Label label_adr2;
         private System.Windows.Forms.Label label_adr1;
+        private System.Windows.Forms.Label label_signature;
     }
 }
