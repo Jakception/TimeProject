@@ -265,6 +265,8 @@ namespace TimeProject
                     tableau.SpacingAfter = 30;
                     doc.Add(tableau);
 
+                    cb.SetTextMatrix(doc.PageSize.Width - label_signature.Width - 40, doc.PageSize.Height - tableau.TotalHeight + 20);
+                    cb.ShowText(label_signature.Text);
 
                     cb.EndText();
                     doc.Close();
@@ -280,19 +282,22 @@ namespace TimeProject
                 }
         }
         
-        public void createBordereau(String code)
+        public void createBordereau(List<BordereauEnvoi> bordereaux, String ad1, String ad2, String ad3, String ad4)
         {
-            List<BordereauEnvoi> bordereaux = BDDBordereauEnvoi.getAllBE(code);
+         //   List <BordereauEnvoi> bordereaux = BDDBordereauEnvoi.getAllBE(code);
             if (bordereaux.Count > 0)
             {
+                label_adr1.Text = ad1;
+                label_adr2.Text = ad2;
+                if(ad3 != "") { label_adr3.Text = ad3; } else { label_adr3.Text = ""; }
+                label_adr4.Text = ad4;
+                label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
+                label_date.Text = DateTime.Now.Date.ToString();
+                label_signature.Text = referentAffaire;
+
                 try
                 {
-                    label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
-                    label_date.Text = DateTime.Now.Date.ToString();
-                    label_signature.Text = referentAffaire;
-
                     FileStream fs = new FileStream("..\\PDF\\Bordereau.pdf", FileMode.Create);
-
                     Document doc = new Document(PageSize.A4);
                     PdfWriter writer = PdfWriter.GetInstance(doc, fs);
                     doc.Open();
@@ -335,16 +340,18 @@ namespace TimeProject
                     matrixY -= 20;
 
                     //  ADRESSE
-
                     cb.SetTextMatrix(doc.PageSize.Width - label_adr1.Width - 30, adrY);
                     cb.ShowText(label_adr1.Text);
                     adrY -= 20;
                     cb.SetTextMatrix(doc.PageSize.Width - label_adr2.Width - 30, adrY);
                     cb.ShowText(label_adr2.Text);
                     adrY -= 20;
-                    cb.SetTextMatrix(doc.PageSize.Width - label_adr3.Width - 30, adrY);
-                    cb.ShowText(label_adr3.Text);
-                    adrY -= 20;
+                    if (label_adr3.Text != "")
+                    {
+                        cb.SetTextMatrix(doc.PageSize.Width - label_adr3.Width - 30, adrY);
+                        cb.ShowText(label_adr3.Text);
+                        adrY -= 20;
+                    }
                     cb.SetTextMatrix(doc.PageSize.Width - label_adr4.Width - 30, adrY);
                     cb.ShowText(label_adr4.Text);
 
@@ -381,7 +388,7 @@ namespace TimeProject
                     doc.Add(new Paragraph(" "));
 
                     // TABLE DES INFOS
-                    float[] largeurs = { 10, 5, 30, 20, 15, 15, 10 };
+                    float[] largeurs = { 10, 5, 30, 20, 17, 13, 10 };
                     PdfPTable tableau = new PdfPTable(7);
                     tableau.TotalWidth = doc.PageSize.Width - 50;
                     tableau.LockedWidth = true;
@@ -432,7 +439,7 @@ namespace TimeProject
                         }
                         else
                         {
-                            plans = listPlan[1].Libelle_Plan;
+                            plans = listPlan[0].Libelle_Plan;
                         }
                         tableau.AddCell(plans);
                         tableau.AddCell(be.Exemplaire);

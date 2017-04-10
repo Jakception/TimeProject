@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\BordereauEnvoi\FormAdresseBorderau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\BordereauEnvoi\FormAdresseBorderau.Designer.cs">
+      <DependentUpon>FormAdresseBorderau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Plan\FormAjoutPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,10 +180,10 @@
     <Compile Include="Form\FormProjet.Designer.cs">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_PDF.cs">
+    <Compile Include="Form\Form_PDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_PDF.Designer.cs">
+    <Compile Include="Form\Form_PDF.Designer.cs">
       <DependentUpon>Form_PDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Class\ActionProjet.cs" />
@@ -217,6 +223,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\classStatic\sessionUser.cs" />
+    <EmbeddedResource Include="Form\BordereauEnvoi\FormAdresseBorderau.resx">
+      <DependentUpon>FormAdresseBorderau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\BordereauEnvoi\FormCUBordereauEnvoi.resx">
       <DependentUpon>FormCUBordereauEnvoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,7 +274,7 @@
     <EmbeddedResource Include="Form\FormProjet.resx">
       <DependentUpon>FormProjet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_PDF.resx">
+    <EmbeddedResource Include="Form\Form_PDF.resx">
       <DependentUpon>Form_PDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
