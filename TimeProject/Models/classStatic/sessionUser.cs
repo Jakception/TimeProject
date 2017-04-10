@@ -12,6 +12,7 @@ namespace TimeProject
         static public User utilisateur { get; set; }
         static private List<Projet> lstProjetUSer;
         static public Projet projetModif { get; set; }
+        static public List<BordPlan> lstBordPlan { get; set; }
 
         static public void loadUser(User user)
         {

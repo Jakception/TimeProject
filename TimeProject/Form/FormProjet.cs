@@ -79,18 +79,23 @@ namespace TimeProject
             lstBoxInfo.DataSource = p.lstInfo;
 
             List<ActionProjet> lstActPro = new List<ActionProjet>();
-            foreach (var item in p.lstAction)
+
+            if (p.lstAction.Count != 0)
             {
-                if (item.importance == 1)
+                foreach (var item in p.lstAction)
                 {
-                    if (Convert.ToInt32(item.etat) < 3)
+                    if (item.importance == 1)
                     {
-                        lstActPro.Add(item);
+                        if (Convert.ToInt32(item.etat) < 3)
+                        {
+                            lstActPro.Add(item);
+                        }
                     }
                 }
-            }
 
-            lstTaskImp.DataSource = lstActPro;
+                lstTaskImp.DataSource = lstActPro;
+            }
+            
         }
 
         private void btn_bordereau_Click(object sender, EventArgs e)
@@ -104,6 +109,11 @@ namespace TimeProject
         }
 
         private void btn_cptRendu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_suiviValidations_Click(object sender, EventArgs e)
         {
 
         }

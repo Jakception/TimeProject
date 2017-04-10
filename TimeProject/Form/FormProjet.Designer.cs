@@ -126,6 +126,7 @@
             this.btn_suiviValidations.TabIndex = 14;
             this.btn_suiviValidations.Text = "Suivi des validations";
             this.btn_suiviValidations.UseVisualStyleBackColor = false;
+            this.btn_suiviValidations.Click += new System.EventHandler(this.btn_suiviValidations_Click);
             // 
             // btn_historique
             // 
