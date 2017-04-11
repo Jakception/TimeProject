@@ -135,6 +135,8 @@
       <DependentUpon>FormAjoutEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\request\BDDPlan.cs" />
+    <Compile Include="Models\request\BDDValidArchi.cs" />
+    <Compile Include="Models\request\BDDValidBC.cs" />
     <Compile Include="Models\Utilitaire\ConfigItem.cs" />
     <Compile Include="Form\Administration\personne\FormGestionProfil.cs">
       <SubType>Form</SubType>

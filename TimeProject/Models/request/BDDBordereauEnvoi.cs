@@ -95,7 +95,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
+            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' AND Date_Creation = NOW() WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
 
             nbLigne = DataBase.DBUpdate(req);
 

@@ -79,7 +79,16 @@ namespace TimeProject
                 be = new BordereauEnvoi(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[1].Value), dataGridViewBE.CurrentRow.Cells[2].Value.ToString(), dataGridViewBE.CurrentRow.Cells[4].Value.ToString(), dataGridViewBE.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[6].Value), BDDPlan.getAllPlanBE(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), sessionUser.projetModif.code_Projet));
                 if (be.Etat == 1)
                 {
+                    // Validation bordereau envoi
                     BDDBordereauEnvoi.UpdateBordereauEnvoiValidation(be.Code_Bordereau, 2);
+                    foreach(Plan plan in be.ListPlan)
+                    {
+                        // Valid_Archi
+
+                        // Valid_BC
+
+                    }
+
                 }
                 else
                 {
