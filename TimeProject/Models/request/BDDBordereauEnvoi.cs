@@ -54,7 +54,8 @@ namespace TimeProject.Models.request
             req = "SELECT DISTINCT BE.CODE_BORDEREAU, BE.NUMERO_BORDEREAU, BE.DESIGNATION, BE.EXEMPLAIRE, BE.VERSION, BE.ETAT, BE.date_crea " +
                   "FROM bordereau_envoi BE " +
                   "INNER JOIN bord_projet BP ON BE.CODE_BORDEREAU = BP.CODE_BORDEREAU " +
-                  "WHERE BP.code_projet = '" + codeProjet + "';";
+                  "WHERE BP.code_projet = '" + codeProjet + "' " +
+                  "AND BE.ETAT = 2;";
 
             dataReader = DataBase.DBSelect(req);
 
@@ -62,7 +63,7 @@ namespace TimeProject.Models.request
             {
                 BordereauEnvoi be;
                 List<Plan> listPlan = new List<Plan>();
-
+                System.Windows.Forms.MessageBox.Show(dataReader[6].ToString());
                 be = new BordereauEnvoi(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), Convert.ToInt32(dataReader[5]), listPlan, Convert.ToDateTime(dataReader[6].ToString()));
 
                 listBE.Add(be);
@@ -126,7 +127,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' AND date_crea = NOW() WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
+            req = "UPDATE `bordereau_envoi` SET ETAT = '" + etat + "' , date_crea = NOW() WHERE CODE_BORDEREAU = '" + codeBordereau + "';";
 
             nbLigne = DataBase.DBUpdate(req);
 

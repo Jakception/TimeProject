@@ -88,6 +88,7 @@ namespace TimeProject
                         // Valid_BC
                         BDDValidBC.CreateVBC(plan.Code_Plan, plan.Indice, 1);
                     }
+                    LoadBE();
 
                 }
                 else
