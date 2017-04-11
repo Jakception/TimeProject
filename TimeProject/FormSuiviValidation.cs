@@ -16,5 +16,17 @@ namespace TimeProject
         {
             InitializeComponent();
         }
+
+        private void btValidArchi_Click(object sender, EventArgs e)
+        {
+            FormValidation f = new FormValidation();
+            f.ShowDialog();
+        }
+
+        private void btValidBC_Click(object sender, EventArgs e)
+        {
+            FormValidation f = new FormValidation();
+            f.ShowDialog();
+        }
     }
 }

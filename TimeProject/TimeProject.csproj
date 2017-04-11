@@ -82,6 +82,12 @@
     <Compile Include="FormSuiviValidation.Designer.cs">
       <DependentUpon>FormSuiviValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormValidation.Designer.cs">
+      <DependentUpon>FormValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\BordereauEnvoi\FormAdresseBorderau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\classStatic\sessionUser.cs" />
+    <EmbeddedResource Include="FormSuiviValidation.resx">
+      <DependentUpon>FormSuiviValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormValidation.resx">
+      <DependentUpon>FormValidation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\BordereauEnvoi\FormCUBordereauEnvoi.resx">
       <DependentUpon>FormCUBordereauEnvoi.cs</DependentUpon>
     </EmbeddedResource>
