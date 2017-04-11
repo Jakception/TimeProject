@@ -19,7 +19,7 @@ namespace TimeProject.Models.request
         {
             ValidArchi vA;
 
-            req = "SELECT * FROM `valid_archi` WHERE `CODE_PLAN` = '" + codePlan + "' AND `INDICE` = '" + indice.ToString() + "' AND `ID_ARCHI` = '" + idArchi + "';";
+            req = "SELECT CODE_PLAN, INDICE, ID_ARCHI, DT_REP_ARCHI, NUM_COUR_ARCHI, REP_ARCHI FROM `valid_archi` WHERE `CODE_PLAN` = '" + codePlan + "' AND `INDICE` = '" + indice.ToString() + "' AND `ID_ARCHI` = '" + idArchi + "';";
             dataReader = DataBase.DBSelect(req);
             if (dataReader.Read())
             {
@@ -39,7 +39,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `valid_bc`(`CODE_PLAN`, `INDICE`, `ID_BC`) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idBC + "')";
+            req = "INSERT INTO `valid_bc`(`CODE_PLAN`, `INDICE`, `ID_BC`, '	DT_REP_ARCHI', 'NUM_COUR_ARCHI', '	REP_ARCHI' ) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idBC + "', '1900-01-01', '0', '0')";
 
             nbLigne = DataBase.DBInsert(req);
 

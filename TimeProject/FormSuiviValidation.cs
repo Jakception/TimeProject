@@ -60,7 +60,7 @@ namespace TimeProject
                         {
                             vA = BDDValidArchi.GetVA(plan.Code_Plan, plan.Indice, 1);
                             vBC = BDDValidBC.GetVBC(plan.Code_Plan, plan.Indice, 1);
-                            this.dataGridViewValidation.Rows.Add(be.Code_Bordereau, be.DateCrea, plan.Code_Plan, vA.DT_REP_ARCHI, vA.Num_Cour_Arch, vA.Rep_Archi, vBC.Dt_Rep_Bc, vBC.Num_Courrir_Bc, vBC.Rep_Bc);
+                            this.dataGridViewValidation.Rows.Add(be.Code_Bordereau, be.DateCrea, plan.Code_Plan, plan.Indice,vA.DT_REP_ARCHI, vA.Num_Cour_Arch, vA.Rep_Archi, vBC.Dt_Rep_Bc, vBC.Num_Courrir_Bc, vBC.Rep_Bc);
                         }
                         vA = null;
                         vBC = null;
