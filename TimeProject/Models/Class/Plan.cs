@@ -15,8 +15,8 @@ namespace TimeProject.Models.Class
         private string libelle_Plan;
         private string designation;
         private DateTime dt_Plan;
-        //public ValidArchi validArc { get; set; }
-       // public ValidBc validBc { get; set; }
+        private ValidArchi validArc;
+         private ValidBc validBc;
 
         public string Code_Plan
         {
