@@ -17,6 +17,7 @@ namespace TimeProject.Models.Class
         private List<Plan> listPlan;
         private List<BordPlan> listBordPlan;
         private List<BordProjet> listBordProjet;
+        private DateTime dateCrea;
 
         public string Code_Bordereau
         {
@@ -135,6 +136,19 @@ namespace TimeProject.Models.Class
             }
         }
 
+        public DateTime DateCrea
+        {
+            get
+            {
+                return dateCrea;
+            }
+
+            set
+            {
+                dateCrea = value;
+            }
+        }
+
         public BordereauEnvoi(string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version, int etat)
         {
             this.Code_Bordereau = codeBordereau;
@@ -153,6 +167,17 @@ namespace TimeProject.Models.Class
             this.Version = version;
             this.Etat = etat;
             this.listPlan = listPlan;
+        }
+        public BordereauEnvoi(string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version, int etat, List<Plan> listPlan, DateTime dateCrea)
+        {
+            this.Code_Bordereau = codeBordereau;
+            this.Numero_Bordereau = numeroBordereau;
+            this.Designation = designation;
+            this.Exemplaire = exemplaire;
+            this.Version = version;
+            this.Etat = etat;
+            this.listPlan = listPlan;
+            this.dateCrea = dateCrea;
         }
         public BordereauEnvoi(string codeBordereau, int numeroBordereau, string designation, string exemplaire, string version, int etat, List<BordPlan> ListBordPlan)
         {

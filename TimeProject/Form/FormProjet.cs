@@ -115,7 +115,12 @@ namespace TimeProject
 
         private void btn_suiviValidations_Click(object sender, EventArgs e)
         {
+            FormSuiviValidation fSV = new FormSuiviValidation();
 
+            this.Hide();
+            fSV.ShowDialog();
+            loadListBox();
+            this.Show();
         }
     }
 }

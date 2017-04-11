@@ -14,5 +14,35 @@ namespace TimeProject.Models.request
     {
         private static DbDataReader dataReader { get; set; }
         private static string req;
+
+        public static ValidBc GetVBC(string codePlan, int indice, int idBC)
+        {
+            ValidBc vBC;
+
+            req = "SELECT * FROM `valid_bc` WHERE `CODE_PLAN` = '" + codePlan + "' AND `INDICE` = '" + indice.ToString() + "' AND `ID_BC` = '" + idBC + "';";
+            dataReader = DataBase.DBSelect(req);
+            if (dataReader.Read())
+            {
+                vBC = new ValidBc(Convert.ToDateTime(dataReader[3].ToString()), Convert.ToInt32(dataReader[4]), dataReader[5].ToString());
+            }
+            else
+            {
+                vBC = null;
+            }
+
+            DataBase.FermeDataReader(dataReader);
+
+            return vBC;
+        }
+        public static int CreateVBC(string codePlan, int indice, int id_Archi)
+        {
+            int nbLigne = 0;
+
+            req = "INSERT INTO `valid_archi`(`CODE_PLAN`, `INDICE`, `ID_ARCHI`) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + id_Archi + "')";
+
+            nbLigne = DataBase.DBInsert(req);
+
+            return nbLigne;
+        }
     }
 }
