@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 07 Avril 2017 à 09:20
+-- Généré le :  Mar 11 Avril 2017 à 19:29
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.4.24
 
@@ -45,7 +45,12 @@ CREATE TABLE IF NOT EXISTS `action` (
 INSERT INTO `action` (`ID_EVENT`, `ETAT`, `DT_EVENT`, `EVENT_CORPS`, `importance`, `ID_USER`) VALUES
 ('proj0_01', '2', '2017-03-17', 'tu as une tache urgente a faire', 1, '1'),
 ('proj0_02', '4', '2017-03-29', 'ttu as un rendu a faire', 1, '1'),
-('projetTestACT4', '1', '2017-04-05', 'ere', 1, '0');
+('ydaysACT3', '3', '2017-04-12', 'Presentation du projet', 1, 'RiRo342'),
+('ydaysACT1', '4', '2017-04-10', 'Compte rendu d avancement du pro', 1, 'RiRo342'),
+('ydaysACT2', '5', '2017-04-12', 'video de presentation du projet', 1, 'RiRo342'),
+('ydaysACT4', '1', '2017-04-12', 'finalisation de l affichage', 3, 'RiRo342'),
+('ydaysACT6', '1', '2017-04-10', 'ACTION FORTE', 1, 'RiRo342'),
+('ydaysACT7', '1', '2017-04-10', 'ACTION FORTE EN ATTENTE', 1, 'RiRo342');
 
 -- --------------------------------------------------------
 
@@ -60,7 +65,14 @@ CREATE TABLE IF NOT EXISTS `architecte` (
   `CP_ARCHI` char(32) DEFAULT NULL,
   `VILLE_ARCHI` char(32) DEFAULT NULL,
   PRIMARY KEY (`ID_ARCHI`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `architecte`
+--
+
+INSERT INTO `architecte` (`ID_ARCHI`, `NOM_ARCHI`, `ADRESSE_ARCHI`, `CP_ARCHI`, `VILLE_ARCHI`) VALUES
+(1, 'Architecte generique', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -75,8 +87,16 @@ CREATE TABLE IF NOT EXISTS `bordereau_envoi` (
   `EXEMPLAIRE` char(32) DEFAULT NULL,
   `VERSION` char(32) DEFAULT NULL,
   `ETAT` int(11) NOT NULL,
+  `date_crea` date NOT NULL,
   PRIMARY KEY (`CODE_BORDEREAU`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `bordereau_envoi`
+--
+
+INSERT INTO `bordereau_envoi` (`CODE_BORDEREAU`, `NUMERO_BORDEREAU`, `DESIGNATION`, `EXEMPLAIRE`, `VERSION`, `ETAT`, `date_crea`) VALUES
+('ydays0', '1', 'Validation maquette', '1', '1', 2, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -93,6 +113,14 @@ CREATE TABLE IF NOT EXISTS `bord_plan` (
   KEY `I_FK_BORD_PLAN_PLAN` (`CODE_PLAN`,`INDICE`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `bord_plan`
+--
+
+INSERT INTO `bord_plan` (`CODE_BORDEREAU`, `CODE_PLAN`, `INDICE`) VALUES
+('ydays0', 'ydays2', '1'),
+('ydays0', 'ydays4', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -107,6 +135,13 @@ CREATE TABLE IF NOT EXISTS `bord_projet` (
   KEY `I_FK_BORD_PROJET_PROJET` (`CODE_PROJET`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `bord_projet`
+--
+
+INSERT INTO `bord_projet` (`CODE_BORDEREAU`, `CODE_PROJET`) VALUES
+('ydays0', 'ydays');
+
 -- --------------------------------------------------------
 
 --
@@ -120,7 +155,14 @@ CREATE TABLE IF NOT EXISTS `bureau_controle` (
   `CP_BC` char(32) DEFAULT NULL,
   `VILLE_BC` char(32) DEFAULT NULL,
   PRIMARY KEY (`ID_BC`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `bureau_controle`
+--
+
+INSERT INTO `bureau_controle` (`ID_BC`, `NOM_BC`, `ADRESSE_BC`, `CP_BC`, `VILLE_BC`) VALUES
+(1, 'bureau de controle generique', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -198,7 +240,13 @@ INSERT INTO `eventprojet` (`CODE_PROJET`, `ID_EVENT`) VALUES
 ('projetTest', 'inf01'),
 ('projetTest', 'proj0_01'),
 ('projetTest', 'proj0_02'),
-('projetTest', 'projetTestACT4');
+('ydays', 'ydaysACT1'),
+('ydays', 'ydaysACT2'),
+('ydays', 'ydaysACT3'),
+('ydays', 'ydaysACT4'),
+('ydays', 'ydaysACT6'),
+('ydays', 'ydaysACT7'),
+('ydays', 'ydaysINF5');
 
 -- --------------------------------------------------------
 
@@ -220,7 +268,8 @@ CREATE TABLE IF NOT EXISTS `information` (
 --
 
 INSERT INTO `information` (`ID_EVENT`, `DT_EVENT`, `EVENT_CORPS`, `ID_USER`) VALUES
-('inf01', '2017-03-29', 'information', '2');
+('inf01', '2017-03-29', 'information', '2'),
+('ydaysINF5', '2017-04-10', 'Aucun retour de l equipe WEB, do', 'RiRo342');
 
 -- --------------------------------------------------------
 
@@ -247,7 +296,11 @@ CREATE TABLE IF NOT EXISTS `plan` (
 INSERT INTO `plan` (`CODE_PLAN`, `INDICE`, `CODE_PROJET`, `NUMERO_PLAN`, `LIBELLE_PLAN`, `DESIGNATION`, `DT_PLAN`) VALUES
 ('plan1', '1', 'proj0', 'proj0_p1', 'plan 1 test', 'sdkhjldskjlsd', '09/03/2017'),
 ('plan2', '2', 'proj0', 'proj0_p1', 'plan 1 test indice 2', 'azertyuiop', '11/03/2017'),
-('plan3', '1', 'proj0', 'proj0_f1', 'plan 1 plan type f', 'yfugjhkbopkjm', '11/03/2017');
+('plan3', '1', 'proj0', 'proj0_f1', 'plan 1 plan type f', 'yfugjhkbopkjm', '11/03/2017'),
+('ydays2', '1', 'ydays', '2', 'Maquette video', 'maqVid', '12/04/2017 13:07:05'),
+('ydays1', '1', 'ydays', '1', 'Maquette présentation', 'maqPres', '11/04/2017 13:05:58'),
+('ydays4', '1', 'ydays', '4', 'tests', 'test', '11/04/2017 13:07:25'),
+('ydays1', '2', 'ydays', '1', 'Maquette présentation', 'maqPres', '11/04/2017 13:05:58');
 
 -- --------------------------------------------------------
 
@@ -290,13 +343,11 @@ CREATE TABLE IF NOT EXISTS `projet` (
 --
 
 INSERT INTO `projet` (`CODE_PROJET`, `ID_BC`, `ID_ARCHI`, `ID_USER`, `NOM_PROJET`, `NOM_CLIENT`, `ADRESSE_CLIENT`, `VILLE_CLIENT`, `DT_DEB_PROJET`, `DT_OBJ_FIN`, `DT_FIN_REEL`) VALUES
-('proj0', 5, 5, '1', 'Projet de test', 'client michel', 'adresse de michel', 'ville de michel', '2017-03-08', '2017-03-31', '2017-03-16'),
-('proj02', 0, 0, '1', 'test alpha charly tango', 'charly', 'adresse charly', 'ville de charly', '2017-01-08', '2018-02-15', '2017-03-16'),
-('proj03', 0, 0, '0', 'Salam', 'Marmoud', 'ichy', 'hrjzk', '2017-03-16', '2017-03-18', '2017-03-17'),
-('test insert', 0, 0, '0', 'creationProjet', 'ghjklm', 'ghjkl', 'atghjj', '2017-03-16', '2017-03-15', '2017-03-17'),
-('projAlpha', 0, 0, '0', 'test 2 creation', 'dsfdsfds', 'azehj', 'erhjk', '2017-03-17', '2017-03-24', NULL),
+('test', 0, 0, '0', 'test', 'Janvre Caliste', '13 rue de quelquepart', '91310 Monthlery', '2017-04-10', '2017-04-25', '2017-04-10'),
+('projAlpha', 0, 0, '0', 'test 2 creation', 'dsfdsfds', 'azehj', 'erhjk', '2017-03-17', '2017-03-24', '2017-04-10'),
 ('projetTest', 0, 0, '0', 'jfdkmls', 'hvizjklm', 'jhklm', 'jokdfo^kfd', '2017-03-17', '2017-03-25', NULL),
-('zaeazazazazazp', 0, 0, '0', 'jfdkmls', 'hvizjklm', 'jhklm', 'jokdfo^kfd', '2017-03-17', '2017-03-25', NULL);
+('testCr', 0, 0, 'RiRo541', 'Test de création', 'Ingésup Paris', '29 rue fontarabie', '75020 Päris', '2017-04-10', '2017-04-30', '2017-04-10'),
+('ydays', 0, 0, 'RaRo674', 'Presentation Ydays', 'Ynov Paris', '29 rue Fontarabie', '75020 Paris', '2017-04-10', '2017-04-30', NULL);
 
 -- --------------------------------------------------------
 
@@ -343,8 +394,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`ID_USER`, `CODE_TP_PROFIL`, `INIT_USER`, `NOM_USER`, `PRENOM_USER`, `MAIL`, `PWD`) VALUES
 ('0', 'adm', 'JC', 'Caliste', 'Janvre', 'janvre.caliste@admin.fr', 'CA-29-37-76-1B-43-FE-89-4D-4E-13-5B-0B-CA-FD-2E'),
-('1', 'sal', 'RR', 'Radiguet', 'Romain', 'romain.radiguet@mail.fr', 'romain'),
-('2', 'sal', 'GB', 'Beulaygue', 'Guillaume', 'guillaume.beulaygue@mail.fr', 'guillaume');
+('RiRo342', 'sal', 'RIR', 'Richard', 'Robert', 'romain.radiguet@ynov.com', '4A-EA-68-EB-73-C3-47-A4-51-F2-A1-0F-79-FA-7E-B2'),
+('BeGu952', 'sal', 'GB', 'Beulaygue', 'Guillaume', 'guillaume.beulaygue@ynov.com', '69-4B-8D-0F-FD-07-CA-42-5C-C0-6C-E0-0B-F5-24-88'),
+('RaRo674', 'sal', 'RR', 'Radiguet', 'Romain', 'romain.radiguet@ynov.com', '16-FD-70-6F-E8-35-F0-DF-7D-1B-D0-39-B2-F1-35-04');
 
 -- --------------------------------------------------------
 
@@ -393,9 +445,15 @@ CREATE TABLE IF NOT EXISTS `user_projet` (
 --
 
 INSERT INTO `user_projet` (`CODE_PROJET`, `ID_USER`) VALUES
+('Pres', '0'),
+('Pres', 'RaRo674'),
 ('projAlpha', '0'),
-('projAlpha', '1'),
-('projetTest', '1');
+('testCr', '0'),
+('testCr', 'BeGu952'),
+('testCr', 'RaRo674'),
+('ydays', '0'),
+('ydays', 'BeGu952'),
+('ydays', 'RiRo342');
 
 -- --------------------------------------------------------
 
