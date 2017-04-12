@@ -51,6 +51,7 @@ namespace TimeProject
                 {
                     label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
                     label_signature.Text = referentAffaire;
+
                     FileStream fs = new FileStream("..\\PDF\\Liste_plans.pdf", FileMode.Create);
 
                     Document doc = new Document(PageSize.A4.Rotate());
@@ -118,7 +119,7 @@ namespace TimeProject
 
                     doc.Add(new Paragraph(" "));
 
-                    float[] largeurs = {5,50,30,15 };
+                    float[] largeurs = {5,45,35,15};
                     PdfPTable tableau = new PdfPTable(4);
                     tableau.SetWidths(largeurs);
                     
@@ -137,11 +138,12 @@ namespace TimeProject
                     PdfPCell celluleTitre4 = new PdfPCell(new Paragraph("INDICE"));
                     celluleTitre4.Colspan = 1;
                     tableau.AddCell(celluleTitre4);
+                    
 
                     plans.ForEach (delegate(Plan p){
                         tableau.AddCell(p.Numero_Plan.ToString());
                         tableau.AddCell(p.Designation);
-                        tableau.AddCell(p.Dt_Plan.ToString());
+                        tableau.AddCell(p.Dt_Plan.ToShortDateString());
                         tableau.AddCell(p.Indice.ToString());
                     });
 
@@ -299,8 +301,7 @@ namespace TimeProject
                 if(ad3 != "") { label_adr3.Text = ad3; } else { label_adr3.Text = ""; }
                 label_adr4.Text = ad4;
                 label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
-                label_date.Text = DateTime.Now.Date.ToString();
-                label_date.Text = label_date.Text.Substring(0, 10);
+                label_date.Text = DateTime.Now.ToShortDateString();
                 label_signature.Text = referentAffaire;
 
                 try
