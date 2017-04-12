@@ -284,7 +284,14 @@ namespace TimeProject
         
         public void createBordereau(BordereauEnvoi bordereau, String ad1, String ad2, String ad3, String ad4)
         {
-         //   List <BordereauEnvoi> bordereaux = BDDBordereauEnvoi.getAllBE(code);
+            label_adr1.Text = "";
+            label_adr2.Text = "";
+            label_adr3.Text = "";
+            label_adr4.Text = "";
+            label_Affairesuivie.Text = "";
+            label_date.Text = "";
+            label_signature.Text = "";
+
             if (bordereau != null)
             {
                 label_adr1.Text = ad1;
@@ -293,6 +300,7 @@ namespace TimeProject
                 label_adr4.Text = ad4;
                 label_Affairesuivie.Text = "Affaire suivie par : " + referentAffaire;
                 label_date.Text = DateTime.Now.Date.ToString();
+                label_date.Text = label_date.Text.Substring(0, 10);
                 label_signature.Text = referentAffaire;
 
                 try
@@ -388,8 +396,8 @@ namespace TimeProject
                     doc.Add(new Paragraph(" "));
 
                     // TABLE DES INFOS
-                    float[] largeurs = { 10, 5, 30, 20, 17, 13, 10 };
-                    PdfPTable tableau = new PdfPTable(7);
+                    float[] largeurs = {10, 40, 20, 15, 15};
+                    PdfPTable tableau = new PdfPTable(5);
                     tableau.TotalWidth = doc.PageSize.Width - 50;
                     tableau.LockedWidth = true;
                     tableau.SetWidths(largeurs);
