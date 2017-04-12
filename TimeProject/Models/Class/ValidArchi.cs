@@ -10,9 +10,9 @@ namespace TimeProject.Models.Class
     {
         private DateTime dT_REP_ARCHI;
         private int num_Cour_Arch;
-        private int rep_Archi;
+        private string rep_Archi;
 
-        public ValidArchi(DateTime dT_REP_ARCHI, int num_Cour_Archi, int rep_Archi)
+        public ValidArchi(DateTime dT_REP_ARCHI, int num_Cour_Archi, string rep_Archi)
         {
             this.dT_REP_ARCHI = dT_REP_ARCHI;
             this.Num_Cour_Arch = num_Cour_Archi;
@@ -45,7 +45,7 @@ namespace TimeProject.Models.Class
             }
         }
 
-        public int Rep_Archi
+        public string Rep_Archi
         {
             get
             {
