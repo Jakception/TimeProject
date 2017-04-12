@@ -23,7 +23,7 @@ namespace TimeProject
 
         private void btValidArchi_Click(object sender, EventArgs e)
         {
-            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[4].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[5].Value), dataGridViewValidation.CurrentRow.Cells[6].Value.ToString());
+            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[4].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[5].Value), dataGridViewValidation.CurrentRow.Cells[6].Value.ToString(), 1);
             // string codePlan, int indice, DateTime dtRep, int numCour, string rep
             f.ShowDialog();
             loadTabValidation();
@@ -31,7 +31,7 @@ namespace TimeProject
 
         private void btValidBC_Click(object sender, EventArgs e)
         {
-            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[7].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[8].Value), dataGridViewValidation.CurrentRow.Cells[9].Value.ToString());
+            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[7].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[8].Value), dataGridViewValidation.CurrentRow.Cells[9].Value.ToString(), 2);
             f.ShowDialog();
             loadTabValidation();
         }

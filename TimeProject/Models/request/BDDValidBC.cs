@@ -44,5 +44,15 @@ namespace TimeProject.Models.request
 
             return nbLigne;
         }
+        public static int UpdateValidBC(string codePlan, int indice, int idBC, DateTime dtRep, string rep, int numCour)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE `valid_bc` SET DT_REP_BC = '" + dtRep + "' , NUM_COURR_BC = '" + numCour + "', REP_BC = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_BC = '" + idBC + "';";
+
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
     }
 }

@@ -45,5 +45,15 @@ namespace TimeProject.Models.request
 
             return nbLigne;
         }
+        public static int UpdateValidArchi(string codePlan, int indice, int idArchi, DateTime dtRep, string rep, int numCour)
+        {
+            int nbLigne = 0;
+
+            req = "UPDATE `valid_archi` SET DT_REP_ARCHI = '" + dtRep + "' , NUM_COUR_ARCHI = '" + numCour + "', REP_ARCHI = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_ARCHI = '" + idArchi + "';";
+            
+            nbLigne = DataBase.DBUpdate(req);
+
+            return nbLigne;
+        }
     }
 }
