@@ -148,6 +148,24 @@ namespace TimeProject.Models.Class
 
             return result;
         }
+        public bool EqualsByCode(Plan plan)
+        {
+            bool result = false;
+            // If parameter is null return false:
+            if (plan == null)
+            {
+                result = false;
+            }
+            else
+            {
+                if (this.Code_Plan == plan.code_Plan && this.indice != plan.indice && this.Code_Projet == plan.code_Projet && this.Numero_Plan == plan.numero_Plan && this.Libelle_Plan == plan.libelle_Plan &&
+                    this.Designation == plan.designation && this.Dt_Plan == plan.dt_Plan)
+                {
+                    result = true;
+                }
+            }
 
+            return result;
+        }
     }
 }

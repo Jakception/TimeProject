@@ -84,6 +84,7 @@ namespace TimeProject
         {
             string codeBordereau = "", designation = "", exemplaire = "", version = "", messErreur = "";
             int numeroBordereau = 0, nbLigne = 0, nbdtgv = 0;
+            List<Plan> listPlan = new List<Plan>();
 
             if(textBoxNumeroBordereau.Text != "" && textBoxDesignationBordereau.Text != "" && textBoxExemplaireBordereau.Text != "" && textBoxVersionBordereau.Text != "")
             {
@@ -96,7 +97,28 @@ namespace TimeProject
                     messErreur = (err.Message);
                 }
 
-                if(messErreur == "")
+                foreach (DataGridViewRow row in dataGridViewPlan.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value))
+                    {
+                        //nbLigne = BDDBordPlan.CreateBordPlan(codeBordereau, row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value));
+                        Plan plan = new Plan(row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString(), Convert.ToDateTime(row.Cells[7].Value));
+                        listPlan.Add(plan);
+                    }
+                }
+                foreach (DataGridViewRow row in dataGridViewPlan.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value))
+                    {
+                        Plan plan = new Plan(row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString(), Convert.ToDateTime(row.Cells[7].Value));
+                        if(BDDPlan.containsInListPlanByCode(listPlan, plan))
+                        {
+                            messErreur += "Veuillez à ne pas cocher le même plan : '" + plan.Code_Plan + "' !\n";
+                        }
+                    }
+                }
+
+                if (messErreur == "")
                 {
                     designation = textBoxDesignationBordereau.Text;
                     exemplaire = textBoxExemplaireBordereau.Text;

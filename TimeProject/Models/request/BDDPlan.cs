@@ -163,5 +163,19 @@ namespace TimeProject.Models.request
 
             return result;
         }
+        public static bool containsInListPlanByCode(List<Plan> listPlan, Plan plan)
+        {
+            bool result = false;
+
+            foreach (Plan p in listPlan)
+            {
+                if (p.EqualsByCode(plan))
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
     }
 }
