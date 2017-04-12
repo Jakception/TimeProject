@@ -65,9 +65,9 @@ namespace TimeProject
                 {
                     numCour = Convert.ToInt32(textBox1.Text);
                 }
-                catch(Exception e)
+                catch(Exception err)
                 {
-                    messErreur = (e.Message);
+                    messErreur = (err.Message);
                 }
 
                 if(messErreur != "")
