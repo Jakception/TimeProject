@@ -12,9 +12,16 @@ namespace TimeProject
 {
     public partial class FormValidation : Form
     {
-        public FormValidation()
+        public FormValidation(string codePlan, int indice, DateTime dtRep, int numCour, string rep)
         {
             InitializeComponent();
+
+            dtTimeValidation.Value = dtRep;
+            if(rep != "0")
+            {
+
+            }
+            textBox1.Text = numCour.ToString();
         }
     }
 }

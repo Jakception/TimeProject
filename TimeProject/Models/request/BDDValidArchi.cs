@@ -23,7 +23,7 @@ namespace TimeProject.Models.request
             dataReader = DataBase.DBSelect(req);
             if (dataReader.Read())
             {
-                vA = new ValidArchi(Convert.ToDateTime(dataReader[3].ToString()), Convert.ToInt32(dataReader[4]), Convert.ToInt32(dataReader[5]));
+                vA = new ValidArchi(Convert.ToDateTime(dataReader[3].ToString()), Convert.ToInt32(dataReader[4]), dataReader[5].ToString());
             }
             else
             {
