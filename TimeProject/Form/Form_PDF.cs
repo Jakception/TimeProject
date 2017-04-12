@@ -394,56 +394,38 @@ namespace TimeProject
                     tableau.LockedWidth = true;
                     tableau.SetWidths(largeurs);
 
-                    PdfPCell celluleTitre1 = new PdfPCell(new Paragraph("Code"));
+                    PdfPCell celluleTitre1 = new PdfPCell(new Paragraph("N°")); // N° plan
                     celluleTitre1.Colspan = 1;
                     tableau.AddCell(celluleTitre1);
 
-                    PdfPCell celluleTitre2 = new PdfPCell(new Paragraph("N°"));
+                    PdfPCell celluleTitre2 = new PdfPCell(new Paragraph("DESGINATION")); // Desgination du plan
                     celluleTitre2.Colspan = 1;
                     tableau.AddCell(celluleTitre2);
 
-                    PdfPCell celluleTitre3 = new PdfPCell(new Paragraph("DESGINATION"));
+                    PdfPCell celluleTitre3 = new PdfPCell(new Paragraph("EXEMPLAIRE")); // Indice du plan
                     celluleTitre3.Colspan = 1;
                     tableau.AddCell(celluleTitre3);
 
-                    PdfPCell celluleTitre4 = new PdfPCell(new Paragraph("PLAN"));
+                    PdfPCell celluleTitre4 = new PdfPCell(new Paragraph("VERSION PDF")); // Vide
                     celluleTitre4.Colspan = 1;
                     tableau.AddCell(celluleTitre4);
 
-                    PdfPCell celluleTitre5 = new PdfPCell(new Paragraph("EXEMPLAIRE"));
+                    PdfPCell celluleTitre5 = new PdfPCell(new Paragraph("VERSION PAPIER")); // Vide
                     celluleTitre5.Colspan = 1;
                     tableau.AddCell(celluleTitre5);
 
-                    PdfPCell celluleTitre6 = new PdfPCell(new Paragraph("VERSION"));
-                    celluleTitre6.Colspan = 1;
-                    tableau.AddCell(celluleTitre6);
-
-                    PdfPCell celluleTitre7 = new PdfPCell(new Paragraph("ETAT"));
-                    celluleTitre7.Colspan = 1;
-                    tableau.AddCell(celluleTitre7);
-
-                    String plans = "";
-                    tableau.AddCell(bordereau.Code_Bordereau);
-                    tableau.AddCell(bordereau.Numero_Bordereau.ToString());
-                    tableau.AddCell(bordereau.Designation);
+                    
                     List<Plan> listPlan = bordereau.ListPlan;
-                    if (listPlan.Count > 1)
-                        {
-                            listPlan.ForEach(delegate (Plan p)
-                            {
-                                plans += p.Libelle_Plan + " ; ";
-                            });
-                        }
-                        else
-                        {
-                            plans = listPlan[0].Libelle_Plan;
-                        }
-                     tableau.AddCell(plans);
-                     tableau.AddCell(bordereau.Exemplaire);
-                     tableau.AddCell(bordereau.Version);
-                     tableau.AddCell(bordereau.Etat.ToString());
-       
+                    listPlan.ForEach(delegate (Plan p)
+                     {
+                         tableau.AddCell(p.Numero_Plan.ToString());
+                         tableau.AddCell(p.Designation);
+                         tableau.AddCell(p.Indice.ToString());
+                         tableau.AddCell("");
+                         tableau.AddCell("");
 
+                     });
+                     
                     tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
                     tableau.SpacingAfter = 30;
                     doc.Add(tableau);
