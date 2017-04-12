@@ -23,7 +23,7 @@ namespace TimeProject
 
         private void btValidArchi_Click(object sender, EventArgs e)
         {
-            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[4].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[5].Value), dataGridViewValidation.CurrentRow.Cells[6].Value.ToString(), 1);
+            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[0].Value.ToString(), dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[4].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[5].Value), dataGridViewValidation.CurrentRow.Cells[6].Value.ToString(), 1);
             // string codePlan, int indice, DateTime dtRep, int numCour, string rep
             f.ShowDialog();
             loadTabValidation();
@@ -31,7 +31,7 @@ namespace TimeProject
 
         private void btValidBC_Click(object sender, EventArgs e)
         {
-            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[7].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[8].Value), dataGridViewValidation.CurrentRow.Cells[9].Value.ToString(), 2);
+            FormValidation f = new FormValidation(dataGridViewValidation.CurrentRow.Cells[0].Value.ToString(), dataGridViewValidation.CurrentRow.Cells[2].Value.ToString(), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[3].Value), Convert.ToDateTime(dataGridViewValidation.CurrentRow.Cells[7].Value), Convert.ToInt32(dataGridViewValidation.CurrentRow.Cells[8].Value), dataGridViewValidation.CurrentRow.Cells[9].Value.ToString(), 2);
             f.ShowDialog();
             loadTabValidation();
         }
@@ -59,8 +59,8 @@ namespace TimeProject
                     {
                         foreach (Plan plan in be.ListPlan)
                         {
-                            vA = BDDValidArchi.GetVA(plan.Code_Plan, plan.Indice, 1);
-                            vBC = BDDValidBC.GetVBC(plan.Code_Plan, plan.Indice, 1);
+                            vA = BDDValidArchi.GetVA(be.Code_Bordereau, plan.Code_Plan, plan.Indice, 1);
+                            vBC = BDDValidBC.GetVBC(be.Code_Bordereau, plan.Code_Plan, plan.Indice, 1);
                             this.dataGridViewValidation.Rows.Add(be.Code_Bordereau, be.DateCrea, plan.Code_Plan, plan.Indice,vA.DT_REP_ARCHI, vA.Num_Cour_Arch, vA.Rep_Archi, vBC.Dt_Rep_Bc, vBC.Num_Courrir_Bc, vBC.Rep_Bc);
                         }
                         vA = null;
