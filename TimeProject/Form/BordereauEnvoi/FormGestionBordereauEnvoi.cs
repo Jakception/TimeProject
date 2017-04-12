@@ -86,9 +86,9 @@ namespace TimeProject
                     foreach(Plan plan in be.ListPlan)
                     {
                         // Valid_Archi
-                        BDDValidArchi.CreateVA(plan.Code_Plan, plan.Indice, 1);
+                        BDDValidArchi.CreateVA(be.Code_Bordereau, plan.Code_Plan, plan.Indice, 1);
                         // Valid_BC
-                        BDDValidBC.CreateVBC(plan.Code_Plan, plan.Indice, 1);
+                        BDDValidBC.CreateVBC(be.Code_Bordereau, plan.Code_Plan, plan.Indice, 1);
                     }
                     LoadBE();
 

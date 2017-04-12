@@ -15,11 +15,11 @@ namespace TimeProject.Models.request
         private static DbDataReader dataReader { get; set; }
         private static string req;
 
-        public static ValidBc GetVBC(string codePlan, int indice, int idBC)
+        public static ValidBc GetVBC(string codeBordereau, string codePlan, int indice, int idBC)
         {
             ValidBc vBC;
 
-            req = "SELECT `ID_BC`, `CODE_PLAN`, `INDICE`, `DT_REP_BC`, `NUM_COURR_BC`, `REP_BC` FROM `valid_bc` WHERE `CODE_PLAN` = '" + codePlan + "' AND `INDICE` = '" + indice.ToString() + "' AND `ID_BC` = '" + idBC + "';";
+            req = "SELECT `ID_BC`, `CODE_PLAN`, `INDICE`, `DT_REP_BC`, `NUM_COURR_BC`, `REP_BC` FROM `valid_bc` WHERE `CODE_PLAN` = '" + codePlan + "' AND `INDICE` = '" + indice.ToString() + "' AND `ID_BC` = '" + idBC + "' AND CODE_BORDEREAU = '" + codeBordereau + "';";
             dataReader = DataBase.DBSelect(req);
             if (dataReader.Read())
             {
@@ -34,21 +34,21 @@ namespace TimeProject.Models.request
 
             return vBC;
         }
-        public static int CreateVBC(string codePlan, int indice, int idBC)
+        public static int CreateVBC(string codeBordereau, string codePlan, int indice, int idBC)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `valid_bc`(CODE_PLAN, INDICE, ID_BC, DT_REP_BC, NUM_COURR_BC, REP_BC) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idBC + "', '1900-01-01', '0', '0')";
+            req = "INSERT INTO `valid_bc`(CODE_PLAN, CODE_BORDEREAU, INDICE, ID_BC, DT_REP_BC, NUM_COURR_BC, REP_BC) VALUES ('" + codePlan + "', '" + codeBordereau + "', '" + indice.ToString() + "', '" + idBC + "', '1900-01-01', '0', '0')";
 
             nbLigne = DataBase.DBInsert(req);
 
             return nbLigne;
         }
-        public static int UpdateValidBC(string codePlan, int indice, int idBC, DateTime dtRep, string rep, int numCour)
+        public static int UpdateValidBC(string codeBordereau, string codePlan, int indice, int idBC, DateTime dtRep, string rep, int numCour)
         {
             int nbLigne = 0;
 
-            req = "UPDATE `valid_bc` SET DT_REP_BC = '" + dtRep.ToString("yy-MM-dd") + "' , NUM_COURR_BC = '" + numCour + "', REP_BC = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_BC = '" + idBC + "';";
+            req = "UPDATE `valid_bc` SET DT_REP_BC = '" + dtRep.ToString("yy-MM-dd") + "' , NUM_COURR_BC = '" + numCour + "', REP_BC = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_BC = '" + idBC + "' AND CODE_BORDEREAU = '" + codeBordereau + "';";
 
             nbLigne = DataBase.DBUpdate(req);
 

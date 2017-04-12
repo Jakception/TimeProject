@@ -18,13 +18,15 @@ namespace TimeProject
     {
         string mode;
         string messErreur = "";
+        string codeBordereau;
         string codePlan;
         int indice;
 
-        public FormValidation(string code_Plan, int indicePlan, DateTime dtRep, int numCour, string rep, int param)
+        public FormValidation(string code_Bordereau, string code_Plan, int indicePlan, DateTime dtRep, int numCour, string rep, int param)
         {
             InitializeComponent();
 
+            codeBordereau = code_Bordereau;
             codePlan = code_Plan;
             indice = indicePlan;
             if (param == 1)
@@ -37,8 +39,15 @@ namespace TimeProject
                 mode = "ValidBC";
                 this.Text = "Validation BC";
             }
-
-            dtTimeValidation.Value = dtRep;
+            
+            if(dtRep.ToString("yyyy-MM-dd") == "1900-01-01")
+            {
+                dtTimeValidation.Value = DateTime.Now;
+            }
+            else
+            {
+                dtTimeValidation.Value = dtRep;
+            }
             if (rep != "0")
             {
                 if (rep == "Favorable")
@@ -75,11 +84,11 @@ namespace TimeProject
                     // Trt
                     if(mode == "ValidArchi")
                     {
-                        nbLigne = BDDValidArchi.UpdateValidArchi(codePlan, indice, 1, dtRep, rep, numCour);
+                        nbLigne = BDDValidArchi.UpdateValidArchi(codeBordereau, codePlan, indice, 1, dtRep, rep, numCour);
                     }
                     else
                     {
-                        nbLigne = BDDValidBC.UpdateValidBC(codePlan, indice, 1, dtRep, rep, numCour);
+                        nbLigne = BDDValidBC.UpdateValidBC(codeBordereau, codePlan, indice, 1, dtRep, rep, numCour);
                     }
                 }
             }
