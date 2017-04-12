@@ -423,7 +423,6 @@ namespace TimeProject
                          tableau.AddCell(p.Indice.ToString());
                          tableau.AddCell("");
                          tableau.AddCell("");
-
                      });
                      
                     tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
