@@ -282,10 +282,10 @@ namespace TimeProject
                 }
         }
         
-        public void createBordereau(List<BordereauEnvoi> bordereaux, String ad1, String ad2, String ad3, String ad4)
+        public void createBordereau(BordereauEnvoi bordereau, String ad1, String ad2, String ad3, String ad4)
         {
          //   List <BordereauEnvoi> bordereaux = BDDBordereauEnvoi.getAllBE(code);
-            if (bordereaux.Count > 0)
+            if (bordereau != null)
             {
                 label_adr1.Text = ad1;
                 label_adr2.Text = ad2;
@@ -422,18 +422,15 @@ namespace TimeProject
                     celluleTitre7.Colspan = 1;
                     tableau.AddCell(celluleTitre7);
 
-                    bordereaux.ForEach(delegate (BordereauEnvoi be)
-                    {
-                        String plans = "";
-                        tableau.AddCell(be.Code_Bordereau);
-                        tableau.AddCell(be.Numero_Bordereau.ToString());
-                        tableau.AddCell(be.Designation);
-                        List<Plan> listPlan = be.ListPlan;
-                        if (listPlan.Count > 1)
+                    String plans = "";
+                    tableau.AddCell(bordereau.Code_Bordereau);
+                    tableau.AddCell(bordereau.Numero_Bordereau.ToString());
+                    tableau.AddCell(bordereau.Designation);
+                    List<Plan> listPlan = bordereau.ListPlan;
+                    if (listPlan.Count > 1)
                         {
                             listPlan.ForEach(delegate (Plan p)
                             {
-
                                 plans += p.Libelle_Plan + " ; ";
                             });
                         }
@@ -441,11 +438,11 @@ namespace TimeProject
                         {
                             plans = listPlan[0].Libelle_Plan;
                         }
-                        tableau.AddCell(plans);
-                        tableau.AddCell(be.Exemplaire);
-                        tableau.AddCell(be.Version);
-                        tableau.AddCell(be.Etat.ToString());
-                    });
+                     tableau.AddCell(plans);
+                     tableau.AddCell(bordereau.Exemplaire);
+                     tableau.AddCell(bordereau.Version);
+                     tableau.AddCell(bordereau.Etat.ToString());
+       
 
                     tableau.SpacingBefore = doc.PageSize.Height - matrixY - 30;
                     tableau.SpacingAfter = 30;

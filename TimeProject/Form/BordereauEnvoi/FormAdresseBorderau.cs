@@ -16,11 +16,11 @@ namespace TimeProject
 {
     public partial class FormAdresseBordereau : Form
     {
-        private List<BordereauEnvoi> bordereaux;
+        private BordereauEnvoi bordereau;
 
-        public FormAdresseBordereau(String code)
+        public FormAdresseBordereau(BordereauEnvoi b)
         {
-            bordereaux = BDDBordereauEnvoi.getAllBE(code);
+            bordereau = b;
             InitializeComponent();
         }
 
@@ -151,7 +151,7 @@ namespace TimeProject
             if(txtBox_adr1.Text != "" && txtBox_adr2.Text != "" && txtBox_CPVille.Text != "")
             {
                 Form1 f1 = new Form1();
-                f1.createBordereau(bordereaux, txtBox_adr1.Text, txtBox_adr2.Text, txtBox_adr3.Text, txtBox_CPVille.Text);
+                f1.createBordereau(bordereau, txtBox_adr1.Text, txtBox_adr2.Text, txtBox_adr3.Text, txtBox_CPVille.Text);
                 this.Close();
             }
             else

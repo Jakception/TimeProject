@@ -66,7 +66,9 @@ namespace TimeProject
 
         private void btn_EditionPDF_Click(object sender, EventArgs e)
         {
-            FormAdresseBordereau fAd = new FormAdresseBordereau(sessionUser.projetModif.code_Projet);
+
+            BordereauEnvoi be = new BordereauEnvoi(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[1].Value), dataGridViewBE.CurrentRow.Cells[2].Value.ToString(), dataGridViewBE.CurrentRow.Cells[4].Value.ToString(), dataGridViewBE.CurrentRow.Cells[5].Value.ToString(), Convert.ToInt32(dataGridViewBE.CurrentRow.Cells[6].Value), BDDPlan.getAllPlanBE(dataGridViewBE.CurrentRow.Cells[0].Value.ToString(), sessionUser.projetModif.code_Projet));
+            FormAdresseBordereau fAd = new FormAdresseBordereau(be);
             fAd.ShowDialog();
         }
 
