@@ -39,8 +39,15 @@ namespace TimeProject
                 mode = "ValidBC";
                 this.Text = "Validation BC";
             }
-
-            dtTimeValidation.Value = dtRep;
+            
+            if(dtRep.ToString("yyyy-MM-dd") == "1900-01-01")
+            {
+                dtTimeValidation.Value = DateTime.Now;
+            }
+            else
+            {
+                dtTimeValidation.Value = dtRep;
+            }
             if (rep != "0")
             {
                 if (rep == "Favorable")
