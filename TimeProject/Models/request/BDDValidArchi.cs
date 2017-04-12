@@ -49,7 +49,7 @@ namespace TimeProject.Models.request
         {
             int nbLigne = 0;
 
-            req = "UPDATE `valid_archi` SET DT_REP_ARCHI = '" + dtRep + "' , NUM_COUR_ARCHI = '" + numCour + "', REP_ARCHI = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_ARCHI = '" + idArchi + "';";
+            req = "UPDATE `valid_archi` SET DT_REP_ARCHI = '" + dtRep.ToString("yy-MM-dd") + "' , NUM_COUR_ARCHI = '" + numCour + "', REP_ARCHI = '" + rep + "' WHERE CODE_PLAN = '" + codePlan + "' AND INDICE = '" + indice + "' AND ID_ARCHI = '" + idArchi + "';";
             
             nbLigne = DataBase.DBUpdate(req);
 

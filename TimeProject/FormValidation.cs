@@ -55,9 +55,9 @@ namespace TimeProject
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            string rep = listBox1.SelectedItems.ToString();
+            string rep = (string)listBox1.SelectedItem;
             DateTime dtRep = dtTimeValidation.Value;
-            int numCour = 0;
+            int numCour = 0, nbLigne = 0;
 
             if(rep != "" && dtRep != null && textBox1.Text != "")
             {
@@ -65,21 +65,21 @@ namespace TimeProject
                 {
                     numCour = Convert.ToInt32(textBox1.Text);
                 }
-                catch(Exception e)
+                catch(Exception err)
                 {
-                    messErreur = (e.Message);
+                    messErreur = (err.Message);
                 }
 
-                if(messErreur != "")
+                if(messErreur == "")
                 {
                     // Trt
                     if(mode == "ValidArchi")
                     {
-                        BDDValidArchi.UpdateValidArchi(codePlan, indice, 1, dtRep, rep, numCour);
+                        nbLigne = BDDValidArchi.UpdateValidArchi(codePlan, indice, 1, dtRep, rep, numCour);
                     }
                     else
                     {
-                        BDDValidArchi.UpdateValidArchi(codePlan, indice, 1, dtRep, rep, numCour);
+                        nbLigne = BDDValidBC.UpdateValidBC(codePlan, indice, 1, dtRep, rep, numCour);
                     }
                 }
             }
@@ -88,7 +88,15 @@ namespace TimeProject
                 messErreur = "Veuillez remplir tous les champs !";
             }
 
-            MessageBox.Show(messErreur);
+            if(messErreur != "")
+            {
+                MessageBox.Show(messErreur);
+            }
+            if(nbLigne != 0)
+            {
+                this.Close();
+            }
+            
         }
 
         private void buttonAnnule_Click(object sender, EventArgs e)
