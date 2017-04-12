@@ -63,7 +63,6 @@ namespace TimeProject.Models.request
             {
                 BordereauEnvoi be;
                 List<Plan> listPlan = new List<Plan>();
-                System.Windows.Forms.MessageBox.Show(dataReader[6].ToString());
                 be = new BordereauEnvoi(dataReader[0].ToString(), Convert.ToInt32(dataReader[1]), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), Convert.ToInt32(dataReader[5]), listPlan, Convert.ToDateTime(dataReader[6].ToString()));
 
                 listBE.Add(be);

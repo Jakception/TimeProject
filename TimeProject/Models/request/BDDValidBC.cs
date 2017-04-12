@@ -34,11 +34,11 @@ namespace TimeProject.Models.request
 
             return vBC;
         }
-        public static int CreateVBC(string codePlan, int indice, int id_Archi)
+        public static int CreateVBC(string codePlan, int indice, int idBC)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `valid_archi`(`CODE_PLAN`, `INDICE`, `ID_ARCHI`, 'DT_REP_BC', 'NUM_COURR_BC', 'REP_BC') VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + id_Archi + "', '1900-01-01', '0', ' ')";
+            req = "INSERT INTO `valid_bc`(CODE_PLAN, INDICE, ID_BC, DT_REP_BC, NUM_COURR_BC, REP_BC) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idBC + "', '1900-01-01', '0', '0')";
 
             nbLigne = DataBase.DBInsert(req);
 

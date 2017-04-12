@@ -35,11 +35,11 @@ namespace TimeProject.Models.request
             return vA;
         }
 
-        public static int CreateVA(string codePlan, int indice, int idBC)
+        public static int CreateVA(string codePlan, int indice, int idArchi)
         {
             int nbLigne = 0;
 
-            req = "INSERT INTO `valid_bc`(`CODE_PLAN`, `INDICE`, `ID_BC`, '	DT_REP_ARCHI', 'NUM_COUR_ARCHI', '	REP_ARCHI' ) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idBC + "', '1900-01-01', '0', '0')";
+            req = "INSERT INTO `valid_archi` (CODE_PLAN, INDICE, ID_ARCHI, DT_REP_ARCHI, NUM_COUR_ARCHI, REP_ARCHI ) VALUES ('" + codePlan + "', '" + indice.ToString() + "', '" + idArchi + "', '1900-01-01', '0', '0')";
 
             nbLigne = DataBase.DBInsert(req);
 
